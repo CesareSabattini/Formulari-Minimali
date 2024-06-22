@@ -1,0 +1,446 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\title{Formulario Fenomeni Ondulatori}
+\author{Cesare Sabattini}
+\date{June 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+
+\section{Oscillazioni}
+\subsection{Oscillazioni forzate}
+Equazioni lineare non omogenea:
+\begin{equation}
+    m\Ddot{x}+\beta\dot{x}+kx=F_0 e^{i\Omega t}
+\end{equation}
+
+Soluzione:
+\begin{equation}
+    \begin{aligned}
+    x = x_{omo} + x_{part} &= A_0 e^{-\frac{t}{2\tau}} \cos\left( \omega t + \phi \right) \\
+    &\quad + \frac{\frac{F_0}{m}}{\sqrt{(\omega_0^2 - \Omega^2)^2 + (\gamma \Omega)^2}} 
+    \cdot \cos\left( \Omega t - \arctan{\frac{\gamma \Omega}{\omega_0^2 - \Omega^2}} \right) \\
+    &\simeq x_{part}
+    \end{aligned}
+\end{equation}
+
+La soluzione particolare è detta stazionaria.
+
+\subsection{Impedenza}
+Misura la tendenza di un mezzo di opporsi ad una variazione di tipo ondulatorio. Intercorre dunque in relazioni di tipo causa-effetto.
+\begin{equation}
+    Z\equiv\frac{f(t)}{\dot{z}} \rightarrow Z\in \mathcal{C}
+\end{equation}
+
+\subsection{Funzione di risposta R}
+
+\begin{equation}
+    R(\Omega)=\frac{\gamma^2\Omega^2}{(\omega_0^2-\Omega^2)^2+(\gamma\Omega)^2}
+\end{equation}
+
+\subsection{Fattore di qualità Q}
+Costante caratteristica di un oscillatore armonico, che misura la rapidità di smorzamento dell'oscillazione. Si definisce come il rapporto tra l'energia dissipata e quella immagazzinata:
+
+\begin{equation}
+    Q\equiv \frac{\omega_0}{\gamma}
+\end{equation}
+
+\subsection{Ampiezza elastica e ampiezza assorbitiva}
+
+\begin{equation}
+\left\{
+\begin{aligned}
+    &A_{el}=|A|\cos(\sigma)= \frac{F_0(\omega_0^2-\Omega^2)}{m((\omega_0-\Omega^2)^2+(\gamma\Omega)^2)} \\
+    &A_{ass}=|A|\sin(\sigma)=\frac{F_0(\gamma\Omega)}{m((\omega_0-\Omega^2)^2+(\gamma\Omega)^2)}
+\end{aligned}
+\right.    
+\end{equation}
+
+\section{Fourier}
+
+\subsection{Serie di Fourier}
+Data f(t) periodica,
+\begin{equation}
+    f(x)= a_0+\sum_{n=1}^\infty a_n\cos(n\omega t)+ b_n\sin(n\omega t)= \sum_{n=-\infty}^{+\infty} c_n e^{i\omega t}
+\end{equation}
+
+con coefficienti:
+
+\begin{equation}
+\left\{
+    \begin{aligned}
+        & a_0=\frac{1}{T} \int_0^T f(t) dt \\
+        & a_n=\frac{2}{T} \int_0^T f(t)\cos(n\omega t) dt \\
+        & b_n=\frac{2}{T} \int_0^T f(t)\sin(n\omega t) dt \\
+        & c_n = \frac{1}{T}\int_0^T f(t)e^{-i\omega t} dt
+    \end{aligned}
+    \right.
+\end{equation}
+
+\section{Onde su corda}
+
+Si trova l'equazione di d'Alembert per l'ordinata y=$\xi$:
+\begin{equation}
+    \frac{\partial^2\xi}{\partial x^2}= \frac{\mu}{T}\frac{\partial^2 \xi}{\partial t^2}
+\end{equation}
+con velocità di fase
+\begin{equation}
+    v_f=\sqrt{\frac{T}{\mu}}
+\end{equation}
+
+Per onde armoniche:
+\begin{equation}
+    \xi=A\cos(kx-\omega t)
+\end{equation}
+con numero d'onda
+\begin{equation}
+    k=\frac{\omega}{v}
+\end{equation}
+
+Potenza trasportata (onde progressive):
+
+\begin{equation}
+\left\{
+\begin{aligned}
+   & P=-T\frac{\partial \xi}{\partial x}\frac{\partial \xi}{\partial t}= Z\frac{\partial^2 \xi}{\partial t^2} \\
+   & Z=\frac{T}{v}
+    \end{aligned}
+    \right.
+\end{equation}
+
+Densità di energia:
+
+\begin{equation}
+    u=u_k+u_p= \frac{1}{2}\mu(\frac{\partial \xi}{\partial t})^2 + \frac{1}{2}T(\frac{\partial \xi}{\partial x})^2= 2u_k=2u_p
+\end{equation}
+
+Vale:
+\begin{equation}
+    P=vu
+\end{equation}
+
+Si definisce intensità di un'onda su corda la potenza mediata sul periodo:
+\begin{equation}
+    I\equiv <P>
+\end{equation}
+
+
+
+\subsection{Relazione di dispersione}
+Si definiscono velocità di fase e velocità di gruppo:
+
+\begin{equation}
+\left\{
+\begin{aligned}
+& v_f=\frac{\omega}{k} \\
+& v_g=\frac{d \omega}{d k}
+\end{aligned}
+\right.
+\end{equation}
+
+Se le due velocità differiscono, il mezzo è detto dispersivo.
+La relazione di dispersione è:
+\begin{equation}
+    \omega(k)=k v_f
+\end{equation}
+
+
+\subsection{Riflessione e trasmissione}
+
+\begin{equation}
+\left\{
+\begin{aligned}
+    & A_t=\frac{2Z_1}{Z_1+Z_2}A_i \\
+    & A_r=\frac{Z_1-Z_2}{Z_1+Z_2}A_i
+\end{aligned}
+\right.
+\end{equation}
+
+da cui sono direttamente ricavabili le intensità e i coefficienti di trasmissione e riflessione, definiti come:
+
+\begin{equation}
+\left\{
+\begin{aligned}
+    & T=\frac{I_t}{I_i}
+    & R=\frac{I_r}{I_i}
+\end{aligned}
+\right.
+\end{equation}
+
+\section{Onde Sonore}
+Onde longitudinali di pressione, densità e elongazione.
+Si ricava:
+\begin{equation}
+    v_f=\sqrt{\frac{\gamma p_0}{\rho_0}}
+\end{equation}
+
+Si definisce l'intensità come
+
+\begin{equation}
+\left\{
+\begin{aligned}
+    & I=<\frac{P}{\Sigma}>= <-\gamma p_0 \frac{\partial \xi}{\partial x} \frac{\partial \xi}{\partial t}>=<Z\frac{\partial^2 \xi}{\partial t^2}> \\
+    & Z=\frac{\gamma p_0}{v}
+\end{aligned}
+\right.
+\end{equation}
+
+\subsection{Interferenza}
+Si verifica quando 2 onde hanno la medesima pulsazione, con fase $\phi$:
+\begin{equation}
+    A_{tot}= \sqrt{A_1^2+A_2^2+2A_1A_2\cos{\phi}}
+\end{equation}
+
+\subsection{Battimenti}
+Si verificano quando $\omega_1\simeq\omega_2$. Se $A_1=A_2$ si trova
+\begin{equation}
+    \left\{
+    \begin{aligned}
+       & \xi(x,t)=2A\sin(\Delta kx-\Delta\omega t)sin(k_0x-\omega_0 t) \\
+       & \Delta k= \frac{k_2-k_1}{2} \\
+       & \Delta \omega= \frac{\omega_2-\omega_1}{2} \\
+       & k_0= \frac{k_1+k_2}{2} \\
+       & \omega_0= \frac{\omega_1+\omega_2}{2}
+    \end{aligned}
+\right.
+\end{equation}
+
+\subsection{Effetto Doppler}
+\begin{itemize}
+    \item S e R fermi:
+    \begin{equation}
+        \nu_R=\nu_S
+    \end{equation}
+    \item S in moto, R fermo:
+    \begin{equation}
+        \nu_R=\frac{\nu_s}{1-\frac{v_S}{v_M}}
+    \end{equation}
+    \item S ferma, R in moto:
+        \begin{equation}
+        \nu_R=\nu_s(1+\frac{v_R}{v_M})
+    \end{equation}
+    \item S ed R in moto:
+        \begin{equation}
+        \nu_R=\frac{\nu_s(1+\frac{v_R}{v_M})}{1+\frac{v_S}{v_M}}
+    \end{equation}
+\end{itemize}
+
+\section{Onde nello spazio}
+\subsection{Onde scalari nello spazio}
+Vale l'equazione di d'Alembert in $\mathcal{R}^3$:
+\begin{equation}
+    \nabla^2 \xi=\frac{1}{v^2}\frac{\partial^2 \xi}{\partial t^2}
+\end{equation}
+
+Onde progressive e regressive sono rispettivamente esprimibili come:
+\begin{equation}
+    \xi(x,t)=f(x \mp vt)
+\end{equation}
+
+Per le onde armoniche vale:
+\begin{equation}
+    \xi(x,t)=A\cos(k\hat{u}\cdot\Vec{x}-vt)
+\end{equation}
+
+In coordinate sferiche vale:
+\begin{equation}
+    \nabla^2= \frac{1}{r^2}\frac{\partial}{\partial r}(r^2\frac{\partial}{\partial r})+\frac{1}{r^2}\left(\frac{1}{\sin{\theta}}\frac{\partial}{\partial \theta}(\sin{\theta}\frac{\partial}{\partial \theta})+\frac{1}{\sin{\theta}^2}\frac{\partial^2}{\partial\phi^2}\right)
+\end{equation}
+
+Una generica onda progressiva in coordinate sferiche è del tipo:
+
+\begin{equation}
+\left\{
+\begin{aligned}
+     & \xi(\Vec{x}, t)= \frac{f(\Vec{k}\cdot \Vec{x}-vt)}{r}Y^m_l(\theta, \phi) \\
+     & \nabla^2Y^m_l(\theta,\phi)=-l(l-1)Y^m_l
+\end{aligned}
+\right.
+\end{equation}
+
+\subsection{Onde vettoriali}
+Perturbazioni tali per cui:
+\begin{equation}
+    \nabla^2 \Vec{\xi}=\frac{1}{v^2}\frac{\partial^2 \Vec{\xi}}{\partial t^2}
+\end{equation}
+
+\subsubsection{Polarizzazione}
+Dato $\hat{u}= \hat{k}$, si parla di polarizzazione:
+\begin{itemize}
+    \item longitudinale se
+\begin{equation}
+    \xi_x=\xi_y=0
+\end{equation}
+
+ \item lineare se
+\begin{equation}
+  \frac{\xi_x}{\xi_y}=\frac{A_x}{A_y}
+\end{equation}
+
+\item ellittica se
+\begin{equation}
+    (\frac{\xi_x}{A_x})^2+(\frac{\xi_y}{A_y})^2-2cos{\phi}\frac{\xi_x}{A_x}\frac{\xi_y}{A_y}= sin{\phi}^2
+\end{equation}
+\end{itemize}
+
+\section{Onde elettromagnetiche}
+\subsection{Equazioni di Maxwell}
+Nei mezzi:
+\begin{equation}
+    \left\{\begin{aligned}
+        & \nabla \cdot \Vec{E}=\frac{\rho}{\epsilon_0} \\
+        & \nabla \cdot \Vec{B}=0 \\
+        & \nabla \wedge  \Vec{E}=-\frac{\partial B}{\partial t}\\
+        & \nabla \wedge \Vec{B}= \mu_0\Vec{J}+ \mu\epsilon\frac{\partial E}{\partial t}\\
+    \end{aligned}
+    \right.
+\end{equation}
+Nel vuoto:
+\begin{equation}
+    \left\{\begin{aligned}
+        & \nabla \cdot \Vec{E}=0 \\
+        & \nabla \cdot \Vec{B}=0 \\
+        & \nabla \wedge  \Vec{E}=-\frac{\partial B}{\partial t}\\
+        & \nabla \wedge \Vec{B}=\mu\epsilon\frac{\partial E}{\partial t}\\
+    \end{aligned}
+    \right.
+\end{equation}
+
+Nel vuoto si trova che i campi soddisfano l'equazione di d'Alembert:
+\begin{equation}
+\left\{
+    \begin{aligned}
+        & \nabla^2 \Vec{E}= \mu\epsilon\frac{\partial^2 \Vec{E}}{\partial t^2}\\
+         & \nabla^2 \Vec{B}= \mu\epsilon\frac{\partial^2 \Vec{B}}{\partial t^2}
+    \end{aligned}
+    \right.
+\end{equation}
+
+Supponendo $\Vec{E}$ e $\Vec{B}$ onde armoniche,
+
+\begin{equation}
+    \left\{\begin{aligned}
+        & i \Vec{k} \cdot \Vec{E}=0 \\
+        & i \Vec{k} \cdot \Vec{B}=0 \\
+        & i \Vec{k} \wedge  \Vec{E}=i\omega \Vec{B} \\
+        &  i \Vec{k} \wedge \Vec{B}= -\mu\epsilon i \omega \Vec{E}
+    \end{aligned}
+    \right.
+\end{equation}
+
+Da cui si evince che:
+\begin{itemize}
+    \item \begin{equation}
+        \Vec{E}\perp \Vec{B}, \Vec{E}\perp \hat{u}, \Vec{B} \perp \hat{u}
+    \end{equation}
+
+    \item Le relazioni tra i moduli dei campi. Da
+    \begin{equation}
+        \Vec{E}=\mu v \Vec{H}
+    \end{equation}
+    si ha
+    \begin{equation}
+        Z= \mu v
+    \end{equation}
+    
+\end{itemize}
+
+\subsection{Energia, vettore di Poynting e pressione di radiazione}
+Conservazione dell'energia delle onde elettromagnetiche:
+\begin{equation}
+    \frac{\partial}{\partial t}\left( \frac{1}{2}\epsilon E^2+ \frac{1}{2\mu}B^2 \right)+\nabla\cdot\left( \frac{\Vec{E}\wedge \Vec{B}}{\mu}\right)=0
+\end{equation}
+Si definisce l'intensità come l'energia media che attraversa una sezione S ortogonale alla direzione di propagazione, nell'unità di tempo, nell'area:
+\begin{equation}
+I=<\Vec{S}>
+\end{equation}
+Si trova che l'onda esercita una pressione pari a:
+
+\begin{equation}
+    p=\frac{|\Vec{S}|}{c}
+\end{equation}
+
+\subsection{Propagazione in un dielettrico}
+Si trova che l'indice di rifrazione di un mezzo è pari a:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+    & n=n_r-in_i \\
+        & n_r= 1+ \frac{n_a e^2}{2 m \epsilon_0}\frac{\omega_0^2-\Omega^2}{
+        (\omega_0^2-\Omega^2)^2+(\gamma\omega)^2
+        } \\
+        &  n_i= 1+ \frac{n_a e^2}{2 m \epsilon_0}\frac{\gamma\omega}{
+        (\omega_0^2-\Omega^2)^2+(\gamma\omega)^2
+        } \\
+    \end{aligned}
+    \right.
+\end{equation}
+
+Segue che il numero d'onda k sarà:
+\begin{equation}
+    k= k_r-ik_i
+\end{equation}
+
+da cui si ottiene la Legge di Lambert
+
+\begin{equation}
+    I(z)= I_0e^{-2k_iz}
+\end{equation}
+
+\subsection{Propagazione nei metalli}
+\begin{equation}
+    k=\frac{\omega}{v}\sqrt{1+i\frac{\mu\sigma\v^2}{\omega}}=k_r+ik_i
+\end{equation}
+
+Anche qui vale pertanto la Legge di Lambert.
+
+\subsection{Polarizzatori}
+Dato $\phi$ angolo tra la direzione di polarizzazione dell'onda e l'asse del polarizzatore, vale la legge di Malus:
+
+\begin{equation}
+    I(\theta)=I_0\cos{\theta}^2
+\end{equation}
+
+Dato un materiale anisotropo, si può ottenere una condizione di polarizzazione circolare se:
+\begin{equation}
+    \frac{\omega d n_x}{c} -  \frac{\omega d n_y}{c}= \frac{\pi}{2}
+\end{equation}
+
+
+\subsection{Trasmissione e riflessione}
+\subsubsection{Incidenza normale}
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        & E_t= \frac{2Z_2}{Z_1+Z_2} \\
+        & E_r= \frac{Z_2-Z_1}{Z_1+Z_2} \\
+    \end{aligned}
+    \right.
+\end{equation}
+da cuoi sono ricavabili i coefficienti di trasmissione e riflessione $I_t$ e $I_r$.
+
+\subsubsection{$\Vec{E}\perp\Vec{\Sigma}$ }
+
+
+
+
+\section{Interferenza}
+\subsection{Reticoli}
+Dispersione D:
+\begin{equation}
+\mathcal{D}\equiv \frac{d\theta}{d \lambda}= \frac{n}{dcos(\theta_{max})}
+\end{equation}
+Potere risolutivo R:
+
+\begin{equation}
+\mathcal{R}\equiv \frac{\lambda}{d \lambda}= \frac{nN}{cos(\theta)}\simeq nN
+\end{equation}
+
+\end{document}
