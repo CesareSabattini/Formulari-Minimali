@@ -56,7 +56,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: compiled-documents
-          path: compiled-documents
+
+      - name: Create index.html
+        run: |
+          echo '<!DOCTYPE html><html><head><title>Documenti LaTeX</title></head><body><h1>Documenti LaTeX</h1><ul><li><a href="meccanica-analitica.pdf">Meccanica Analitica</a></li><li><a href="fenomeni-ondulatori.pdf">Fenomeni Ondulatori</a></li></ul></body></html>' > compiled-documents/index.html
 
       - name: Deploy to GitHub Pages
         run: |
