@@ -4,19 +4,24 @@ on:
   push:
     branches:
       - main
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@main
+      - name: Checkout repository
+        uses: actions/checkout@v2
         with:
           submodules: true
+
       - name: Compile LaTeX sources
-        uses: xu-cheng/latex-action@3.2.0
+        uses: xu-cheng/latex-action@v3
         with:
           work_in_root_file_dir: true
           latexmk_use_lualatex: true
@@ -24,22 +29,38 @@ jobs:
           root_file: |
             meccanica-analitica.tex
             fenomeni-ondulatori.tex
-      - name: Move PDFs
-        run: mv *.pdf dist
+
+      - name: Create output directory
+        run: mkdir -p dist
         shell: bash
-      - name: Build
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./dist
+
+      - name: Move PDFs
+        run: mv *.pdf dist/
+        shell: bash
+
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v1
+        with:
+          name: compiled-documents
+          path: ./dist
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
+
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Download artifact
+        uses: actions/download-pages-artifact@v1
+        with:
+          name: compiled-documents
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
