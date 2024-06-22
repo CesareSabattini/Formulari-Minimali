@@ -1,0 +1,52 @@
+name: Publish
+
+on:
+    push:
+        branches:
+            - main
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@main
+              with:
+                  submodules: true
+            - name: Compile LaTeX sources
+              uses: xu-cheng/latex-action@3.2.0
+              with:
+                  work_in_root_file_dir: true
+                  latexmk_use_lualatex: true # This is needed to compile the root.tex file
+                  texlive_version: 2023
+                  root_file: |
+                      tex/analysis_2/analysis_2.tex
+                      tex/bubbles/bubbles.tex
+                      tex/cavendish/cavendish.tex
+                      tex/fnad/fnad.tex
+                      tex/maxwell/maxwell.tex
+                      tex/particles/particles.tex
+                      tex/thermocouple/thermocouple.tex
+                      tex/root/root.tex
+                      tex/waves/waves.tex
+            - name: Move PDFs
+              run: mv ./tex/*/*.pdf dist
+              shell: bash
+            - name: Build
+              uses: actions/jekyll-build-pages@v1
+              with:
+                  source: ./dist
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v3
+    deploy:
+      runs-on: ubuntu-latest
+      needs: build
+      steps:
+        - name: Deploy to GitHub Pages
+          id: deployment
+          uses: actions/deploy-pages@v4
+      environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
