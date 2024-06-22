@@ -61,7 +61,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          branch: gh-pages # Specifichiamo il branch per il deploy
+          branch: gh-pages # Specificare il branch per il deploy
 
     environment:
       name: github-pages
