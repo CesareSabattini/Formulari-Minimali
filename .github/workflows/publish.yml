@@ -1,31 +1,45 @@
-name: Compile LaTeX document
+name: Publish
 
 on:
   push:
     branches:
-      - main # o un altro branch di tua scelta
-  pull_request:
-    branches:
       - main
-
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up TeX Live
-        uses: xu-cheng/latex-action@v2
+      - uses: actions/checkout@main
         with:
-          latexmk: true
-
-      - name: Compile LaTeX document
-        run: latexmk -pdf -f -interaction=nonstopmode -synctex=1 meccanica-analitica.tex
-
-      - name: Upload PDF artifact
-        uses: actions/upload-artifact@v2
+          submodules: true
+      - name: Compile LaTeX sources
+        uses: xu-cheng/latex-action@3.2.0
         with:
-          name: compiled-document
-          path: your_document.pdf
+          work_in_root_file_dir: true
+          latexmk_use_lualatex: true
+          texlive_version: 2023
+          root_file: |
+            meccanica-analitica.tex
+            fenomeni-ondulatori.tex
+      - name: Move PDFs
+        run: mv *.pdf dist
+        shell: bash
+      - name: Build
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./dist
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
