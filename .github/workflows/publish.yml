@@ -23,7 +23,6 @@ jobs:
 
       - name: Compile LaTeX document
         run: latexmk -pdf -f -interaction=nonstopmode -synctex=1 meccanica-analitica.tex
-        run: latexmk -pdf -f -interaction=nonstopmode -synctex=1 fenomeni-ondulatori.tex
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v2
