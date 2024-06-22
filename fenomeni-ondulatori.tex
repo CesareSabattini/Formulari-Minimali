@@ -396,7 +396,7 @@ da cui si ottiene la Legge di Lambert
 
 \subsection{Propagazione nei metalli}
 \begin{equation}
-    k=\frac{\omega}{v}\sqrt{1+i\frac{\mu\sigma\v^2}{\omega}}=k_r+ik_i
+    k=\frac{\omega}{v}\sqrt{1+i\frac{\mu\sigma v^2}{\omega}}=k_r+ik_i
 \end{equation}
 
 Anche qui vale pertanto la Legge di Lambert.
@@ -415,24 +415,60 @@ Dato un materiale anisotropo, si può ottenere una condizione di polarizzazione 
 
 
 \subsection{Trasmissione e riflessione}
-\subsubsection{Incidenza normale}
+\subsubsection{E parallelo al piano di incidenza}
 \begin{equation}
     \left\{
     \begin{aligned}
-        & E_t= \frac{2Z_2}{Z_1+Z_2} \\
-        & E_r= \frac{Z_2-Z_1}{Z_1+Z_2} \\
+        & E_t= \frac{2Z_2}{Z_1+Z_2}E_i \\
+        & E_r= \frac{Z_2-Z_1}{Z_1+Z_2}E_i\\
     \end{aligned}
     \right.
 \end{equation}
 da cuoi sono ricavabili i coefficienti di trasmissione e riflessione $I_t$ e $I_r$.
 
 \subsubsection{$\Vec{E}\perp\Vec{\Sigma}$ }
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        & E_t= \frac{2n_1\cos{\theta_i}}{n_1\cos{\theta_r}+n_2\cos{\theta_i}}E_i \\
+        & E_r= \frac{n_1\cos{\theta_r}-n_2\cos{\theta_i}}{n_1\cos{\theta_r}+n_2\cos{\theta_i}} E_i\\
+    \end{aligned}
+    \right.
+\end{equation}
 
+\subsubsection{E ortogonale al piano di incidenza}
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        & E_t= \frac{2n_1\cos{\theta_i}}{n_1\cos{\theta_i}+n_2\cos{\theta_r}}E_i \\
+        & E_r= \frac{n_1\cos{\theta_i}-n_2\cos{\theta_r}}{n_1\cos{\theta_i}+n_2\cos{\theta_r}} E_i\\
+    \end{aligned}
+    \right.
+\end{equation}
 
+Si definisce l'angolo di Brewster come l'angolo in corrispondenza del quale la luce risulta completamente polarizzata:
+\begin{equation}
+    \theta_b=\arctan(\frac{n_2}{n_1})
+\end{equation}
 
+\subsection{Interferenza}
+\subsubsection{Interferenza da dispositivo di Young}
+\begin{equation}
+    I(\theta)=4I_0\cos^2\left(\frac{\pi d}{\lambda}\sin{\theta} \right)
+\end{equation}
 
-\section{Interferenza}
-\subsection{Reticoli}
+\subsubsection{Interferenza da N fenditure}
+\begin{equation}
+    I(\theta)=I_0\frac{\sin^2\left(\frac{N\pi d}{\lambda}\right) \sin{\theta}}{
+    \sin^2\left(\frac{\pi d}{\lambda}\right) \sin{\theta}
+    }
+\end{equation}
+
+\begin{equation}
+    I=N^2I_0
+\end{equation}
+
+\subsubsection{Reticoli}
 Dispersione D:
 \begin{equation}
 \mathcal{D}\equiv \frac{d\theta}{d \lambda}= \frac{n}{dcos(\theta_{max})}
@@ -441,6 +477,50 @@ Potere risolutivo R:
 
 \begin{equation}
 \mathcal{R}\equiv \frac{\lambda}{d \lambda}= \frac{nN}{cos(\theta)}\simeq nN
+\end{equation}
+
+
+\subsection{Diffrazione}
+\begin{equation}
+    I(\theta)=I_0\frac{\sin^2\left(\frac{\pi a}{\lambda} \right)\sin{\theta}}{\left(\frac{\pi a}{\lambda} \sin{\theta}\right)^2}
+\end{equation}
+
+Si definisce il "Potere separatore" come:
+\begin{equation}
+    \gamma_R=1,22\frac{\lambda}{D}
+\end{equation}
+
+
+\section{Ottica}
+\subsection{Specchi}
+\begin{equation}
+\left\{
+\begin{aligned}
+      & \frac{1}{p}-\frac{1}{q}=-\frac{2}{R}=-\frac{1}{f} \\
+      & m=\frac{q}{p}
+\end{aligned}
+\right.
+\end{equation}
+
+\subsection{Diottri}
+\begin{equation}
+\left\{
+\begin{aligned}
+      & \frac{n_1}{p}+\frac{n_2}{q}=\frac{n_2-n_1}{R} \\
+      & \frac{f_1}{p}+\frac{f_2}{q}=1\\
+      & m=\frac{n_1q}{n_2p}
+\end{aligned}
+\right.
+\end{equation}
+
+\subsection{Lenti sottili}
+\begin{equation}
+\left\{
+\begin{aligned}
+      & \frac{1}{p}+\frac{1}{q}= (\frac{n_2}{n_1}-n_1)(\frac{1}{R_1}-\frac{1}{R_2})=\frac{1}{f} \\
+      & m=\frac{q}{p}
+\end{aligned}
+\right.
 \end{equation}
 
 \end{document}
