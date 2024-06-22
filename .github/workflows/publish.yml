@@ -25,7 +25,7 @@ jobs:
             meccanica-analitica.tex
             fenomeni-ondulatori.tex
       - name: Move PDFs
-        run: mv ./tex/*/*.pdf dist
+        run: mv *.pdf dist
         shell: bash
       - name: Build
         uses: actions/jekyll-build-pages@v1
