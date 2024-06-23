@@ -54,16 +54,18 @@ jobs:
 
       - name: Create compiled-documents directory
         run: mkdir -p compiled-documents
-        # Ensure the directory is created before attempting to write files into it
 
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
           name: compiled-documents
 
+      - name: Copy CSS file
+        run: cp index.css compiled-documents/index.css
+
       - name: Create index.html
         run: |
-          echo '<!DOCTYPE html><html><head><title>Documenti LaTeX</title></head><body><h1>Documenti LaTeX</h1><ul><li><a href="meccanica-analitica.pdf">Meccanica Analitica</a></li><li><a href="fenomeni-ondulatori.pdf">Fenomeni Ondulatori</a></li></ul></body></html>' > compiled-documents/index.html
+          echo '<!DOCTYPE html><html><head><title>Documenti LaTeX</title><link rel="stylesheet" type="text/css" href="index.css"></head><body><h1 class="title">Formulari LaTeX</h1><p>Formulari per il corso di Laurea in Fisica presso Alma Mater Studiorum - Università di Bologna.</p><ul><li><a href="meccanica-analitica.pdf">Meccanica Analitica</a></li><li><a href="fenomeni-ondulatori.pdf">Fenomeni Ondulatori</a></li></ul></body></html>' > compiled-documents/index.html
 
       - name: Deploy to GitHub Pages
         run: |
