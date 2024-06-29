@@ -27,8 +27,8 @@ jobs:
           latexmk_use_lualatex: true
           texlive_version: 2023
           root_file: |
-            meccanica-analitica.tex
-            fenomeni-ondulatori.tex
+            tex/meccanica-analitica.tex
+            tex/fenomeni-ondulatori.tex
 
       - name: Create output directory
         run: mkdir -p dist

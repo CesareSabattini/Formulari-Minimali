@@ -1,0 +1,381 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+
+\title{Formulario-Meccanica-Analitica}
+\author{Cesare Sabattini}
+\date{June 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Meccanica di base}
+
+Si definisce entro di massa di un sistema:
+
+\begin{equation}
+    M= \sum_i^N \frac{m_i\cdot \vec{r_i}}{
+        M_{tot}
+    }
+\end{equation}
+
+Le forze agenti sul sistema di punti materiali sono:
+
+\begin{equation}
+    \vec{F_i}=\vec{F_i}^{(e)}+\sum\vec{F_i}^{(i)}
+\end{equation}
+
+Il terzo principio della dinamica, applicato ad un modello di forza interna di tipo centrale, è:
+
+\begin{equation}
+    \vec{F_i}^{(i)}=-\vec{F_j}^{(i)}=f_{ij}(\vec{r_i}-\vec{r_j}), \quad f_{ij}=f_{ji}
+\end{equation}
+
+Ciò determina dunque una sommatoria delle forze interne nulla, da cui segue la legge di conservazione della quantità di moto.
+
+\begin{equation}
+    \sum \vec{F_e}^{(i)}= \frac{d\vec{P}}{dt}
+\end{equation}
+
+Le forze esterne determinano dunque l'accelezione del centro di massa del sistema.
+Inoltre, data l'invarianza del momento angolare rispetto al punto di applicazione della forza, si ha:
+
+\begin{equation}
+    \sum \vec{M_e}^{(i)}= \frac{d\vec{L}}{dt}
+\end{equation}
+ovvero, le forze interne non determinano variazioni del momento angolare ( il raggio vettore è parallelo alla forza).
+
+
+
+\section{Sistemi ad un grado di libertà}
+Per un sistema dinamico ad un grado di libertà, soggetto ad una forza posizionale, risulta possibile esprimere la forza come gradiente di un potenziale.
+Dall'equazione di Newton, segue:
+
+\begin{equation}
+    \Ddot{x}=f(x)=-\frac{dU}{dx}
+\end{equation}
+
+In un sistema naturale ad un grado di libertà, valendo la legge di conservazione dell'energia meccanica,
+è possibile ricondurre l'equazione differenziale del secondo ordine di Newton, ad un sistema di equazioni differenziali del primo ordine nel piano delle fasi.
+
+Ne risulta la possibilità di integrare per quadratura per risolvere analiticamente l'equazione del moto:
+
+\begin{equation}
+    \int dt = \int \frac{1}{\sqrt{2E-2U}}
+\end{equation}
+Risolvere un'equazione del moto equivale dunque a trovare le equazioni parametriche della traiettoria nello spazio delle fasi, ovvero i luoghi dei punti tali che l'energia meccanica sia costante.
+Le curve risultano simmetriche rispetto all'asse delle ascisse, in quanto risultano invarianti per inversione della velocità.
+
+
+
+\subsection{Punti di equilibrio}
+Un punto di equilibrio è tale che la forza posizionale sia nulla, ovvero:
+
+\begin{equation}
+    \nabla U(x_0)=\vec{0}
+\end{equation}
+ed è stabile se:
+
+\begin{equation}
+    \mathcal{H}''_U(x_0) \quad \text{è definita o semidefinita positiva}
+\end{equation}
+
+In caso contrario, il punto di equilibrio è instabile.
+
+Rigorosamente, andrebbe studiata la varietà delle configurazioni, in quanto un'hessiana semidefinita potrebbe indicare un punto di sella.
+
+
+E' dunque logico che un punto di equilibrio nel piano delle fasi sia del tipo:
+\begin{equation}
+    x_{eq}=(x_0,0)
+\end{equation}
+
+
+
+
+Globalità delle equazioni del moto:
+
+\begin{equation}
+    \exists \inf(U) \rightarrow |\dot x|=\sqrt{2E} \rightarrow |x-x_0|=\sqrt{2E}t<\infty \forall t \in R
+\end{equation}
+
+\subsubsection*{Esercizio teorico:}
+
+Trovare il periodo delle traiettorie sulle separatrici di un sistema conservativo.
+
+\subsubsection*{Esercizio teorico:}
+
+Dimostrare che, data S=area racchiusa da una traiettoria nello spazio delle fasi, vale:
+
+\begin{equation}
+    T=\frac{dS}{dE}
+\end{equation}
+
+\subsubsection*{Esercizio teorico:}
+
+Dimostrare che:
+
+\begin{equation}
+    \lim_{E \rightarrow U(x_{eq})} T= \frac{2\pi}{ \sqrt{U''(x_{eq})}}
+\end{equation}
+
+\subsection{Moti in campi centrali}
+Un campo centrale è identificato da una forza posizionale che dipende unicamente dalla distanza dal centro del campo.
+
+\begin{equation}
+    \vec{F}=-\nabla U(r)= |\vec{F(r)}|\hat{r}
+\end{equation}
+
+Introducendo un sistema di coordinate polari, sul piano di orbita, si ha:
+
+\begin{equation}
+    \begin{aligned}
+         & e_r= \cos{\theta}\hat{x}+\sin{\theta}\hat{y}                \\
+         & e_\theta= -\sin{\theta}\hat{x}+\cos{\theta}\hat{y}
+         & \vec{r}= r\hat{e_r}                                         \\
+         & \vec{\dot{r}}= \dot{r}\hat{e_r}+r\dot{\theta}\hat{e_\theta}
+    \end{aligned}
+\end{equation}
+
+Si ha inoltre la conservazione di L, momento angolare, e di E, energia meccanica:
+
+\begin{equation}
+    |\vec{L}|= |m\vec{r}\times \vec{\dot{r}}|= m r^2 \dot{\theta}= cost
+\end{equation}
+
+
+E' possibile ricondursi ad un grado di libertà.
+Potenziale efficace:
+\begin{equation}
+    V_{eff}=U+\frac{L^2}{2\rho^2}
+\end{equation}
+La dimostrazione è semplice: basta partire dalla conservazione di L in polari.
+
+
+\subsubsection*{Esercizio teorico:}
+Calcolare la differenza angolare tra perielio e afelio di un'orbita ellittica.
+
+\subsection*{Leggi di Keplero}
+\begin{itemize}
+    \item Le orbite dei pianeti sono ellittiche, con il sole in uno dei fuochi.
+
+          Si tratta essenzialmente di ricondursi all'equazione focale di una onica a partire da un potenziale gravitazionale.
+          Si ottiene per
+
+    \item Il raggio vettore che congiunge il pianeta al sole descrive aree uguali in tempi uguali.
+    \item Il quadrato del periodo di rivoluzione di un pianeta è proporzionale al cubo del semiasse maggiore dell'orbita.
+\end{itemize}
+
+
+
+\section{Meccanica Lagrangiana}
+
+\textit{Definizione: Funzionale}
+
+$\psi$ è un funzionale $\leftrightarrow$ $\psi$ : \L $\rightarrow$ R
+con L spazio delle curve.
+
+\textit{Estremale di un funzionale}
+
+\begin{equation}
+    L \in \mathcal{L} \text{ è estremale per } \psi \leftrightarrow \frac{d}{dt} \frac{\partial L}{\partial \dot{x}} - \frac{\partial L}{\partial x} = 0
+\end{equation}
+
+\subsection{Principio di Minima Azione di Hamilton}
+
+Le leggi orarie dei sistemi dinamici coincidono con gli estremali del funzionale
+
+\begin{equation}
+    \Phi = \int_{t_0}^{t} L dt , L=T-U
+\end{equation}
+$\forall$ sistema di coordinate ($q, \dot q$), in quanto la curva esiste indipendentemente dalla sua descrizione analitica.
+Segue il sistema di equazioni di Eulero-Lagrange nelle coordinate generalizzate:
+\begin{equation}
+    \frac{d}{dt}\frac{\partial L}{\partial \dot q}= \frac{\partial L}{\partial q}
+\end{equation}
+
+\section{Elementi di Geometria Differenziale}
+
+\subsection{Carta}
+Date U, V varietà,  si definisce carta un'applicazione $\phi$: $\phi$: U $\xrightarrow[su]{1-1}$ V , $\phi^{-1}$: V $\xrightarrow[su]{1-1}$ U, con $\phi$, $\phi^{-1}$ $\in$$ \mathcal{C}^0$.
+
+            \subsection{Atlante}
+            Una collezione di carte $V_\alpha$ si dice atlante per la varietà M se:
+            \begin{itemize}
+                \item $U V_\alpha$= M.
+                \item se $V_i \cap V_j != \emptyset \rightarrow$ $V_i$ è compatibile con $V_j$.
+            \end{itemize}
+            Al fine della parametrizzazione di una varietà, per non perdere la biettività della carta, è necessario un atlante.
+
+            \section{Sistemi vincolati}
+            Lo spazio delle configurazioni di un sistema con k vincoli, descritto da n coordinate definisce una varietà n-k dimensionale. Si può dunque ragionare intuitivamente per gradi di libertà, ovvero di coordinate necessarie a descrivere la configurazione del sistema.
+            Se un vincolo è bilatero e dipende unicamente da q e t, si dice $olonomo$.
+
+            Dunque, ai fini della risoluzione di un sistema soggetto unicamente a vincoli olonomi:
+
+            \begin{itemize}
+                \item Individuare lo spazio delle configurazioni M.
+                \item Scegliere un sistema di coordinate.
+                \item Esprimere l'energia cinetica come forma quadratia nelle coordinate generalizzate:
+                      \begin{equation}
+                          T= \sum \mathcal{A}_{ij} \dot q_i \dot q_j
+                      \end{equation}
+                \item Ricavare U(q) su M.
+                \item Costruire L= T- U e trovare le equazioni di Eulero-Lagrange.
+            \end{itemize}
+
+            \subsubsection{Esercizio esemplificativo:}
+            Ricavare il teorema di Clairaut dallo studio del moto libero di un punto materiale su una superficie di rotazione in $\mathcal{R}^3$.
+
+            \subsubsection{Esercizio esemplificativo:}
+            Ricavare equazioni del moto di un punto materiale su una guida circolare in moto rotatorio uniforme intorno ad un asse fisso.
+
+            \subsection{Principio di d'Alembert}
+            Nello studio delle equazioni del moto, si vuole ridurre il problema sostituendo all'inclusione delle reazioni vincolari, la presenza di vincoli. Il principio di d'Alembert formalizza tale possibilità.
+
+            \textit{Il lavoro delle reazioni vincolari su spostamenti virtuali è nullo, ovvero:}
+
+            \begin{equation}
+                \sum_i R \delta \vec{r}=0
+            \end{equation}
+
+            \textit{Dato un vincolo scleronomo, che individua una varietà differenziale M, una legge oraria su M è un estremale condizionato su M del funzionale $\Phi$ se e solo se per esso vale il principio di d'Alembert.}
+
+
+
+
+            Dunque il principio di d'Alembert implica l'estremalità confdizionata alla varietà M definita dal vincolo stesso.
+
+            \subsection{Teorema di Noether}
+            Dato un vincolo olonomo, che induce una varietà n-1 dimesionale in $\mathcal{E}^n$, con Lagrangiana L ivi definita, se esiste una famiglia di diffeomorfismi $h^s: M\rightarrow M$, che conservino L, allora il corrispondente sistema ammette una costante del moto, che in coordinate locali vale:
+
+            \begin{equation}
+                p_q= \frac{\partial L}{\partial \dot q}\cdot \frac{d h^s}{ds}
+            \end{equation}
+
+            \subsection{Trasformata di Legendre}
+
+            \[
+                f: A \rightarrow \mathcal{R}, \quad A \subset \mathcal{R}^n, \quad \text{con} \quad \frac{\partial ^2 f}{\partial x_i^2}>0 \quad \text{continua},
+            \]
+            \[
+                \mathcal{L}f = g: B \rightarrow \mathcal{R},
+            \]
+            \[
+                g(\vec{p}) \equiv \max_{\vec{x}} (\vec{p} \cdot \vec{x} - f(\vec{x}))
+            \]
+
+            f è l'inviluppo di g.
+        $\mathcal{L}$ è involutiva.
+
+
+            \section{Meccanica Hamiltoniana}
+
+            \subsection{Funzione Hamiltoniana}
+
+            \begin{equation}
+                \mathcal{H}(q,p, t)\equiv \mathcal{L}L(q,\dot q, t)= p\dot q- L(q,\dot q, t)
+            \end{equation}
+
+            \begin{equation}
+                L=T-U \rightarrow H= T+U
+            \end{equation}
+
+            \subsection{Equazioni di Hamilton}
+            \begin{equation}
+                \left\{
+                \begin{aligned}
+                     & \dot p=-\frac{\partial H}{\partial q} \\
+                     & \dot q= \frac{\partial H}{\partial p}
+                \end{aligned}
+                \right.
+            \end{equation}
+
+            Il sistema di 2n equazioni di Hamilton è equivalente al sistema di n equazioni del secondo ordine di Eulero-Lagrange.
+
+            \subsection{Conservazione di H}
+
+            \begin{equation}
+                \frac{d H}{dt}= \frac{\partial H}{\partial t}
+            \end{equation}
+
+
+            \section{Oscillazioni}
+            \subsection{Criterio di linearizzazione del sistema lagrangiano}
+            Dalla linearizzazione di $U$, si ottiene l'equazione di Lagrange linearizzata, che intorno ad un punto di equilibrio è data dalla somma di due forme quadratiche (che qui i ipotizzano definite positive).
+
+            \begin{equation}
+                L_l=T-U= \frac{1}{2}QAQ- \frac{1}{2}Q\mathcal{H}_UQ \quad Q=q-q_{eq}
+            \end{equation}
+
+            (La linearizzazione è tale in quanto $\nabla$$U$=0 in q=q\_{eq}, in quanto q\_e è estremo del potenziale).
+
+        da cui si ricavano le equazioni di Eulero Lagrange del sistema linearizzato:
+
+        \begin{equation}
+            A\ddot{Q} + BQ = 0, \quad B = \mathcal{H}_U
+        \end{equation}
+
+        I moti descritti dall'equazione sono oscillatori, espressi da (se A, B definite positive):
+
+        \begin{equation}
+            Q(t)=\sum_{i=1}^n \vec{m_i}[c_1 \cos{\sqrt{\lambda}t}+c_2 \sin{\sqrt{\lambda}t}]
+        \end{equation}
+
+        dove $\lambda_i$ sono gli autovalori relativi a $\Vec{m_i}$, autovettori di B rispetto ad A, cioè
+
+        \begin{equation}
+            B \vec{m_i}=\lambda_iA\vec{m_i}
+        \end{equation}
+
+        I $\lambda_i$ sono pertanto ottenibili dall'equazione:
+
+        \begin{equation}
+            det(B-A\lambda)=0
+        \end{equation}
+
+        Segue che gli autovettori sono ortogonali secondo la metrica indotta da A.
+
+        \section{Moto relativo}
+        \subsection{Cinematica relativa}
+        Dato K s.d.r. mobile, k s.d.r. fisso, q $\in$ k e Q $\in$ K, r $\in$ k coordinata di O\_K vale
+
+\begin{equation}
+    q(t)=r(t)+Q(t)= r(t)+ BQ(t)= DQ(t)
+\end{equation}
+con B matrice di rotazione che "allinea" K con k. D è la composizione di una traslazione con una rotazione, tale che
+
+\begin{equation}
+    D: K \rightarrow k
+\end{equation}
+
+Ne segue che la velocità del punto in k sia
+
+\begin{equation}
+    \dot{q}= \dot(r)+\dot{B}Q+ B\dot{Q}
+\end{equation}
+
+Si dimostra che:
+
+\begin{equation}
+    \exists \omega \in k : w \times q= \dot{B}Q
+\end{equation}
+
+dunque
+
+\begin{equation}
+    \dot{q}= \dot{r}+\omega \times q+ B\dot{Q}
+\end{equation}
+
+dunque il moto è elicoidale intorno all'asse di istantanea rotazione.
+
+\subsection{Dinamica relativa}
+
+
+
+
+
+
+
+\end{document}
