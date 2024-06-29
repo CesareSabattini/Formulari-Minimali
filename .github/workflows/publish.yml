@@ -35,7 +35,7 @@ jobs:
         shell: bash
 
       - name: Move PDFs
-        run: mv *.pdf dist/
+        run: mv tex/*.pdf dist/
         shell: bash
 
       - name: Upload artifact
