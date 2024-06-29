@@ -160,11 +160,36 @@ Calcolare la differenza angolare tra perielio e afelio di un'orbita ellittica.
 \begin{itemize}
     \item Le orbite dei pianeti sono ellittiche, con il sole in uno dei fuochi.
 
-          Si tratta essenzialmente di ricondursi all'equazione focale di una onica a partire da un potenziale gravitazionale.
-          Si ottiene per
+          \textit{Dimostrazione:} Si considera l'espressione del potenziale gravitazionale e si integra l'espressione  dell'angolo $\theta(r)$.
+          Ci si riconduce dunque all'equazione di una conica parametrizzata, del tipo:
 
+          \begin{equation}
+              r(\theta)= \frac{p}{1+e\cos{\theta}}
+          \end{equation}
+
+          Le relazioni che legano p ed e ai semiassi sono:
+
+          \begin{equation}
+              a= \frac{p}{1-e^2}, \quad b= \sqrt{a^2(1-e^2)}
+          \end{equation}
     \item Il raggio vettore che congiunge il pianeta al sole descrive aree uguali in tempi uguali.
+
+          \textit{Dimostrazione:} Si approssima l'area al primo ordine in theta,
+
+          considerando r costante, e si ottiene:
+
+          \begin{equation}
+              \frac{dA}{dt}= \frac{L}{2}
+          \end{equation}
+
     \item Il quadrato del periodo di rivoluzione di un pianeta è proporzionale al cubo del semiasse maggiore dell'orbita.
+
+          \textit{Dimostrazione:} Si tratta sostanzialmente di combinare i risultati ottenuti dalle prime due leggi: si esprime l'area in funzione del tempo e i semiassi in funzione dei parametri orbitali.
+          Si giunge a:
+
+          \begin{equation}
+              T= \frac{2\pi k}{\sqrt{\frac{k}{a}^3}}
+          \end{equation}
 \end{itemize}
 
 
@@ -173,27 +198,38 @@ Calcolare la differenza angolare tra perielio e afelio di un'orbita ellittica.
 
 \textit{Definizione: Funzionale}
 
-$\psi$ è un funzionale $\leftrightarrow$ $\psi$ : \L $\rightarrow$ R
-con L spazio delle curve.
+$\Phi$ è un funzionale $\leftrightarrow$ $\psi$ $\in$ $\mathcal{L^*}$, cioè al duale dello spazio delle curve.
 
-\textit{Estremale di un funzionale}
+
+\textit{Definizione: Estremale di $\Phi$}
 
 \begin{equation}
-    L \in \mathcal{L} \text{ è estremale per } \psi \leftrightarrow \frac{d}{dt} \frac{\partial L}{\partial \dot{x}} - \frac{\partial L}{\partial x} = 0
+    \gamma \in \mathcal{L*} \text{ è estremale per } \Phi(x,\dot{x},t) \leftrightarrow \frac{d}{dt} \frac{\partial \Phi }{\partial \dot{x}} - \frac{\partial \Phi }{\partial x} = 0
 \end{equation}
+con $\gamma$ parametrizzazione del luogo dei punti $(x,\dot{x})$ nello spazio delle fasi.
 
 \subsection{Principio di Minima Azione di Hamilton}
 
-Le leggi orarie dei sistemi dinamici coincidono con gli estremali del funzionale
+Le leggi orarie dei sistemi dinamici coincidono con gli estremali del funzionale:
 
 \begin{equation}
     \Phi = \int_{t_0}^{t} L dt , L=T-U
 \end{equation}
-$\forall$ sistema di coordinate ($q, \dot q$), in quanto la curva esiste indipendentemente dalla sua descrizione analitica.
+
+Ciò vale per ogni sistema di coordinate ($q, \dot q$) scelto, in quanto la curva esiste indipendentemente dalla sua descrizione analitica.
+
 Segue il sistema di equazioni di Eulero-Lagrange nelle coordinate generalizzate:
 \begin{equation}
-    \frac{d}{dt}\frac{\partial L}{\partial \dot q}= \frac{\partial L}{\partial q}
+    \frac{d}{dt}\nabla_{\dot{q}}L= \nabla_{q}L
 \end{equation}
+
+Si definisce impulso generalizzato:
+
+\begin{equation}
+    p_i= \frac{\partial L}{\partial \dot{q_i}}
+\end{equation}
+
+Il tutto vale anche per un potenziale generalizzato.
 
 \section{Elementi di Geometria Differenziale}
 
@@ -216,7 +252,7 @@ Date U, V varietà,  si definisce carta un'applicazione $\phi$: $\phi$: U $\xrig
 
             \begin{itemize}
                 \item Individuare lo spazio delle configurazioni M.
-                \item Scegliere un sistema di coordinate.
+                \item Scegliere un sistema di coordinate, funzionale all'esplicitazione del vincolo ed individuazione delle coordinate cicliche.
                 \item Esprimere l'energia cinetica come forma quadratia nelle coordinate generalizzate:
                       \begin{equation}
                           T= \sum \mathcal{A}_{ij} \dot q_i \dot q_j
