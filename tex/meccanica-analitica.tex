@@ -248,6 +248,22 @@ Date U, V varietà,  si definisce carta un'applicazione $\phi$: $\phi$: U $\xrig
             Lo spazio delle configurazioni di un sistema con k vincoli, descritto da n coordinate definisce una varietà n-k dimensionale. Si può dunque ragionare intuitivamente per gradi di libertà, ovvero di coordinate necessarie a descrivere la configurazione del sistema.
             Se un vincolo è bilatero e dipende unicamente da q e t, si dice $olonomo$.
 
+            \subsection{Principio di d'Alembert}
+            Nello studio delle equazioni del moto, si vuole ridurre il problema sostituendo all'inclusione delle reazioni vincolari, la presenza di vincoli. Il principio di d'Alembert formalizza tale possibilità.
+
+            \textit{Il lavoro delle reazioni vincolari su spostamenti virtuali è nullo, ovvero:}
+
+            \begin{equation}
+                \sum_i \vec{R} \delta \vec{r}=0
+            \end{equation}
+
+
+            Dato un vincolo scleronomo, che individua una varietà differenziale M, una legge oraria su M è un estremale condizionato su M del funzionale $\Phi$ se e solo se per esso vale il principio di d'Alembert.
+
+
+
+            Dunque il principio di d'Alembert implica l'estremalità conndizionata alla varietà M definita dal vincolo stesso.
+
             Dunque, ai fini della risoluzione di un sistema soggetto unicamente a vincoli olonomi:
 
             \begin{itemize}
@@ -267,22 +283,6 @@ Date U, V varietà,  si definisce carta un'applicazione $\phi$: $\phi$: U $\xrig
             \subsubsection{Esercizio esemplificativo:}
             Ricavare equazioni del moto di un punto materiale su una guida circolare in moto rotatorio uniforme intorno ad un asse fisso.
 
-            \subsection{Principio di d'Alembert}
-            Nello studio delle equazioni del moto, si vuole ridurre il problema sostituendo all'inclusione delle reazioni vincolari, la presenza di vincoli. Il principio di d'Alembert formalizza tale possibilità.
-
-            \textit{Il lavoro delle reazioni vincolari su spostamenti virtuali è nullo, ovvero:}
-
-            \begin{equation}
-                \sum_i R \delta \vec{r}=0
-            \end{equation}
-
-            \textit{Dato un vincolo scleronomo, che individua una varietà differenziale M, una legge oraria su M è un estremale condizionato su M del funzionale $\Phi$ se e solo se per esso vale il principio di d'Alembert.}
-
-
-
-
-            Dunque il principio di d'Alembert implica l'estremalità confdizionata alla varietà M definita dal vincolo stesso.
-
             \subsection{Teorema di Noether}
             Dato un vincolo olonomo, che induce una varietà n-1 dimesionale in $\mathcal{E}^n$, con Lagrangiana L ivi definita, se esiste una famiglia di diffeomorfismi $h^s: M\rightarrow M$, che conservino L, allora il corrispondente sistema ammette una costante del moto, che in coordinate locali vale:
 
@@ -300,6 +300,12 @@ Date U, V varietà,  si definisce carta un'applicazione $\phi$: $\phi$: U $\xrig
             \]
             \[
                 g(\vec{p}) \equiv \max_{\vec{x}} (\vec{p} \cdot \vec{x} - f(\vec{x}))
+            \]
+
+            Si definisce dunque la trasformata di Legendre di f:
+
+            \[
+                \mathcal{L}f(\vec{p})\equiv \tilde{f}= \vec{p} \cdot \vec{x} - f(\vec{x})
             \]
 
             f è l'inviluppo di g.
