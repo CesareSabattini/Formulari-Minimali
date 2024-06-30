@@ -321,7 +321,7 @@ Date U, V varietà,  si definisce carta un'applicazione $\phi$: $\phi$: U $\xrig
             \end{equation}
 
             \begin{equation}
-                L=T-U \rightarrow H= T+U
+                L=T-U \rightarrow H= T+U= E_m
             \end{equation}
 
             \subsection{Equazioni di Hamilton}
@@ -343,15 +343,41 @@ Date U, V varietà,  si definisce carta un'applicazione $\phi$: $\phi$: U $\xrig
             \end{equation}
 
 
+            \subsection{Teorema di Liouville}
+            \textit{Definizione:} Si definisce flusso di fase il gruppo di trasformazioni ad
+
+            un parametro nello spazio delle fasi, applicato alle soluzioni delle equazioni di Hamilton.
+
+            \textit{Teorema di Liouville:} Il volume
+
+            nello spazio delle fasi corrispondente alle equazioni di
+            Hamilton è costante.
+            Ciò risulta valido assumendo la lipsechitzianità delle soluzioni, ovvero la prolungabilità su tutto l'asse dei tempi.
+
+            In particolare, data un'equazione differenziale del tipo:
+
+            \begin{equation}
+                \dot x= f(x)
+            \end{equation}
+
+            , se $\nabla f=0$, allora il volume di flusso è conservato.
+
+            Si ha che $\nabla H=0$ per sistemi conservativi, dunque il volume di flusso delle equazioni di Hamilton è conservato.
+
+
+            \subsection{Teorema di Poincaré}
+
+            \textit{Data g(t) un operatore continuo dallo spazio euclideo, che conservi il volume, per ogni intorno di ogni punto del volume iniziale, $\exists$ x tale che $g^n(x)=x$, per un n abbastanza grande.}
+            La dimostrazione è semplice: si ricorre al fatto che l'intersezione degli intorni non può essere nulla, altrimenti il volume non verrebbe conservato da g.
             \section{Oscillazioni}
             \subsection{Criterio di linearizzazione del sistema lagrangiano}
             Dalla linearizzazione di $U$, si ottiene l'equazione di Lagrange linearizzata, che intorno ad un punto di equilibrio è data dalla somma di due forme quadratiche (che qui i ipotizzano definite positive).
 
             \begin{equation}
-                L_l=T-U= \frac{1}{2}QAQ- \frac{1}{2}Q\mathcal{H}_UQ \quad Q=q-q_{eq}
+                L_l=T-U= \frac{1}{2}\dot{Q}A\dot{Q}- \frac{1}{2}Q\mathcal{H}_UQ \quad Q=q-q_{eq}
             \end{equation}
 
-            (La linearizzazione è tale in quanto $\nabla$$U$=0 in q=q\_{eq}, in quanto q\_e è estremo del potenziale).
+            ($\nabla$$U$=0 in q=q\_{eq} ).
 
         da cui si ricavano le equazioni di Eulero Lagrange del sistema linearizzato:
 
@@ -383,41 +409,69 @@ Date U, V varietà,  si definisce carta un'applicazione $\phi$: $\phi$: U $\xrig
         \subsection{Cinematica relativa}
         Dato K s.d.r. mobile, k s.d.r. fisso, q $\in$ k e Q $\in$ K, r $\in$ k coordinata di O\_K vale
 
-\begin{equation}
-    q(t)=r(t)+Q(t)= r(t)+ BQ(t)= DQ(t)
-\end{equation}
-con B matrice di rotazione che "allinea" K con k. D è la composizione di una traslazione con una rotazione, tale che
+        \begin{equation}
+            q(t)=r(t)+Q(t)= r(t)+ BQ(t)= DQ(t)
+        \end{equation}
+        con B matrice di rotazione che "allinea" K con k. D è la composizione di una traslazione con una rotazione, tale che
+
+        \begin{equation}
+            D: K \rightarrow k
+        \end{equation}
+
+        Ne segue che la velocità del punto in k sia
+
+        \begin{equation}
+            \dot{q}= \dot(r)+\dot{B}Q+ B\dot{Q}
+        \end{equation}
+
+        Si dimostra che:
+
+        \begin{equation}
+            \exists \omega \in k : w \times q= \dot{B}Q
+        \end{equation}
+
+        dunque
+
+        \begin{equation}
+            \dot{q}= \dot{r}+\omega \times q+ B\dot{Q}
+        \end{equation}
+
+        dunque il moto è elicoidale intorno all'asse di istantanea rotazione.
+
+        Si dimostra inoltre che l'accelerazione di q è data da:
+
+        \begin{equation}
+            \ddot{q}= \ddot{r}+2\omega \times \dot{r}+ \omega \times (\omega \times q)+ \dot{\omega} \times q+ B\ddot{Q}
+        \end{equation}
+
+        \subsection{Corpo rigido}
+        Si definisce corpo rigido un sistema di punti materiali, soggetti da un vincolo del tipo:
+
+        \begin{equation}
+            |r_i-r_j|=d_{ij}=cost
+        \end{equation}
+
+        da cui segue che la varietà delle configurazioni è al massimo 6 dimensionale, in assenza di ulteriori vincoli.
+
+        \subsection{Teorema di Eulero}
+        Vale la seguente relazione per un corpo rigido:
+
+        \begin{equation}
+            \frac{d M}{dt}= \vec{M}\wedge \vec{\Omega}, \quad M, \Omega \in K
+        \end{equation}
+
+        \subsection{Teorema di König}
+
+        \begin{equation}
+            T= T_{G}++ T_{I}
+        \end{equation}
+
+        dove con $T_I$ si intende il contributo cinetico di traslazione e rotazione rispetto al centro di massa.
+\subsection{Teorema di Huygens-Steiner}
 
 \begin{equation}
-    D: K \rightarrow k
+    I_G= I_O+ md^2
 \end{equation}
-
-Ne segue che la velocità del punto in k sia
-
-\begin{equation}
-    \dot{q}= \dot(r)+\dot{B}Q+ B\dot{Q}
-\end{equation}
-
-Si dimostra che:
-
-\begin{equation}
-    \exists \omega \in k : w \times q= \dot{B}Q
-\end{equation}
-
-dunque
-
-\begin{equation}
-    \dot{q}= \dot{r}+\omega \times q+ B\dot{Q}
-\end{equation}
-
-dunque il moto è elicoidale intorno all'asse di istantanea rotazione.
-
-\subsection{Dinamica relativa}
-
-
-
-
-
-
+con d distanza tra G e O, da cui passa l'asse di rotazione rispetto al quale si calcola il momento di inerzia.
 
 \end{document}
