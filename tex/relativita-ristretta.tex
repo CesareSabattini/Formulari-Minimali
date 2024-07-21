@@ -1,0 +1,526 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\title{
+    Relatività Ristretta
+}
+\author{Cesare Sabattini}
+\date{July 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{
+ Relatività Galileiana
+}
+
+\subsection{Principi della Relatività Galileiana}
+
+\begin{enumerate}
+    \item Le leggi della meccanica sono le stesse in tutti i sistemi di riferimento inerziali.
+    \item Il tempo è assoluto.
+    \item Lo spazio è assoluto.
+\end{enumerate}
+
+Ne seguono geometricamente le trasformazioni di Galileo.
+
+\subsection{Trasformazioni di Galileo}
+
+\subsubsection{
+Trasformazioni delle coordinate
+}
+\begin{equation}
+\begin{aligned}
+    x' &= x - vt \\
+    y' &= y \\
+    z' &= z \\
+    t' &= t
+\end{aligned}
+\end{equation}
+
+\subsubsection{
+Trasformazione della velocità
+}
+\begin{equation}
+    \vec{w'} = \vec{w} - \vec{v}
+\end{equation}
+
+\subsubsection{
+    Trasformazioni delle accelerazioni
+}
+\begin{equation}
+    \vec{a'} = \vec{a}
+\end{equation}
+
+\subsubsection{Trasformazioni delle forze}
+Dalla rappresentazione della forza come un segmento orientato, dato lo spazio assoluto, si ha:
+\begin{equation}
+    \vec{F'} = \vec{F}
+\end{equation}
+
+\subsubsection{Trasformazione della massa inerziale}
+Dal secondo principio della dinamica, invariante per cambio di sistema di riferimento inerziale, si ha:
+
+\begin{equation}
+    m' = m
+\end{equation}
+
+
+\subsection{Repporto con l'elettromagnetismo}
+
+\subsubsection{Forza di Lorentz}
+\begin{equation}
+    \vec{F} = q(\vec{E} + \vec{v} \times \vec{B})
+\end{equation}
+
+da cui emerge una dipendenza della forza dalla velocità, in contrasto con il principio di relatività galileiana.
+
+\subsection*{Equazioni di Maxwell}
+Date le equazioni di Maxwell in O:
+\begin{equation}
+\begin{aligned}
+    \nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \\
+    \nabla \cdot \vec{B} &= 0 \\
+    \nabla \times \vec{E} &= -\frac{\partial \vec{B}}{\partial t} \\
+    \nabla \times \vec{B} &= \mu_0 \vec{J} + \mu_0 \varepsilon_0 \frac{\partial \vec{E}}{\partial t}
+\end{aligned}
+\end{equation}
+
+e date le leggi di trasformazione degli operatori differenziali:
+\begin{equation}
+\begin{aligned}
+    \nabla' &= \nabla \\
+    \frac{\partial}{\partial t'} &= \frac{\partial}{\partial t} - \vec{v} \cdot \nabla
+\end{aligned}
+\end{equation}
+
+si verifica, supponendo la validità delle equazioni in O', che:
+\begin{itemize}
+    \item La prima equazione non è né invariante né covariante.
+    \item La seconda equazione è invariante.
+    \item La terza equazione è covariante.
+    \item La quarta equazione non è né invariante né covariante.
+\end{itemize}
+
+\subsubsection{Invarianza di c}
+L'elettromagnetismo sancisce che:
+\begin{equation}
+    c = \frac{1}{\sqrt{\varepsilon_0 \mu_0}}
+\end{equation}
+
+in completo disaccordo con il principio di relatività galileiana.
+
+Si ipotizzò dunque che le leggi dell'elettromagnetismo dovessero valere unicamente nell'etere e che la velocità della luce fosse relativa all'etere.
+
+\subsection{Esperimento di Michelson-Morley}
+
+\begin{itemize}
+    \item Scopo: misurazione della velocità della luce rispetto all'etere, 
+    
+    confrontando le figure di interferenza originate da due raggi luminosi, dipendentemente dall'orientamento dell'interferometro rispetto al moto della Terra in esso.
+
+    \item Aspettazione: variazione della differenza di fase tra i due raggi luminosi, in base all'orientamento dell'interferometro rispetto al moto della Terra, in base a:
+    \begin{equation}
+        \Delta \phi = \frac{2L}{\lambda} \frac{v^2}{c^2}
+    \end{equation}
+
+    Il valore atteso di $\Delta \phi$ è di circa 0.4 frange.
+
+    \item Esito: nessuna variazione della figura di interferenza, in quanto $\Delta \phi$ è circa nullo.
+\end{itemize}
+
+
+\section{Relatività Ristretta}
+L'apparente conflitto tra meccanica e elettromagnetismo si risolse con la teoria della relatività ristretta.
+
+\subsection{Postulati della Relatività Ristretta}
+
+\begin{enumerate}
+    \item Le leggi della fisica sono le stesse in tutti i sistemi di riferimento inerziali.
+    \item La velocità della luce è c in tutti i sistemi di riferimento inerziali.
+\end{enumerate}
+
+\subsection{Trasformazioni di Lorentz}
+da O a O':
+\begin{equation}
+\begin{aligned}
+   & x'= \frac{x-vt}{\sqrt{1-\frac{v^2}{c^2}}} \\
+   & t'= \frac{t-\frac{v}{c^2}x}{\sqrt{1-\frac{v^2}{c^2}}} \\
+   & y'=y \\
+   & z'=z \\
+\end{aligned}
+\quad
+\begin{aligned}
+    & v_x' = \frac{v_x-v}{1-\frac{vv_x}{c^2}} \\
+    & v_y' = \frac{\sqrt{1-\frac{v^2}{c^2}}v_y}{1-\frac{vv_x}{c^2}} \\
+    & v_z' = \frac{\sqrt{1-\frac{v^2}{c^2}}v_z}{1-\frac{vv_x}{c^2}} \\
+ \end{aligned}
+\end{equation}
+
+da O' a O:
+
+\begin{equation}
+\begin{aligned}
+   & x= \frac{x'+vt'}{\sqrt{1-\frac{v^2}{c^2}}} \\
+   & t= \frac{t'+\frac{v}{c^2}x'}{\sqrt{1-\frac{v^2}{c^2}}} \\
+   & y=y' \\
+   & z=z' \\
+\end{aligned}
+\quad
+\begin{aligned}
+    & v_x=\frac{v_x'-x}{1+\frac{vv_x'}{c^2}} \\
+    & v_y=\frac{\sqrt{1-\frac{v^2}{c^2}}v_y'}{1+\frac{vv_x'}{c^2}} \\
+    & v_z=\frac{\sqrt{1-\frac{v^2}{c^2}}v_z'}{1+\frac{vv_x'}{c^2}} \\
+\end{aligned}
+\end{equation}
+
+\subsection{Effetti relativistici}
+
+\subsubsection{Dilatazione dei tempi}
+
+\begin{equation}
+    \Delta t = \frac{\Delta t'}{\sqrt{1-\frac{v^2}{c^2}}}
+\end{equation}
+
+\subsubsection{Relatività della simultaneità}
+
+\begin{equation}
+    \Delta t = \frac{\frac{v}{c^2}\Delta x'}{\sqrt{1-\frac{v^2}{c^2}}}
+\end{equation}
+
+\subsubsection{Contrazione delle lunghezze}
+
+\begin{equation}
+    L = L' \sqrt{1-\frac{v^2}{c^2}}
+\end{equation}
+
+\subsection{Onde elettromagnetiche}
+\subsubsection{Trasformazioni del vettore d'onda e frequenza}
+da O a O':
+\begin{equation}
+    \begin{aligned}
+        & k_x'= \frac{k_x'-\frac{v}{c^2}\omega'}{\sqrt{1-\frac{v^2}{c^2}}} \\
+        & k_y'= k_y' \\
+        & k_z'= k_z' \\
+        & \omega'= \frac{\omega'-vk_x'}{\sqrt{1-\frac{v^2}{c^2}}}
+    \end{aligned}
+\end{equation}
+
+da O' a O:
+\begin{equation}
+\begin{aligned}
+    & k_x= \frac{k_x'+\frac{v}{c^2}\omega'}{\sqrt{1-\frac{v^2}{c^2}}} \\
+    & k_y= k_y' \\
+    & k_z= k_z' \\
+    & \omega= \frac{\omega'+vk_x'}{\sqrt{1-\frac{v^2}{c^2}}}
+\end{aligned}
+\end{equation}
+
+\subsubsection{Aberrazione relativistica della luce}
+\begin{equation}
+    \tan \theta' = \sqrt{1-\frac{v^2}{c^2}}\frac{\sin \theta}{\cos \theta - \frac{v}{c}}
+\end{equation}
+
+\subsubsection{Effetto Doppler relativistico}
+
+\begin{equation}
+\omega' = \omega\frac{1-\frac{v}{c}\cos{\theta}}{\sqrt{1-\frac{v^2}{c^2}}}
+\end{equation}
+
+
+\subsection{Causalità}
+Due eventi possono risultare in mutua connessione causale se e solo se
+
+\begin{equation}
+   \frac{|x_2-x_1|}{|ct'_1-ct'_2|} \leq 1
+\end{equation}
+
+Se ne evince che:
+
+\begin{itemize}
+    \item L'ordine causale degli eventi è invariante.
+    \item L'ordine degli eventi non causali è relativo.
+    \item La causalità è sempre locale.
+\end{itemize}
+
+\section{Formalismo covariante}
+\textit{
+Le leggi della fisica sono essere invarianti per trasformazioni di coordinate.
+}
+\subsection{Quadrivettori controvarianti e covarianti}
+In notazione indiciale, si definiscono i quadrivettori come:
+
+\begin{equation}
+    x^\mu = (ct, \vec{x})
+\end{equation}
+
+ovvero quartetti ordinati che si trasformano secondo le trasformazioni di Lorentz.
+
+Le coordinate di un quadrivettore controvariante sono ottenute per proiezione parallela rispetto agli assi coordinati.
+Le componenti di un quadrivettore covariante sono ottenute per proiezione ortogonale rispetto agli assi coordinati.
+
+\subsection{Prodotto scalare}
+Dall'invariante spaziotemporale che emerge dalle trasformazioni di Lorentz, si induce una metrica nello spazio di Minkowski:
+
+\begin{equation}
+<x,y> = x^\mu y_\mu = x^0y^0 - \vec{x} \cdot \vec{y}
+\end{equation}
+
+che equivale ad introdurre il tensore metrico:
+
+\begin{equation}
+g_{\mu\nu} = 
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1
+\end{pmatrix}
+\end{equation}
+
+tale che:
+
+\begin{equation}
+<x,y> = x^\mu y_\mu = g_{\mu\nu}x^\mu y^\nu
+\end{equation}
+
+\subsection{Trasformazioni di Lorentz per quadrivettori}
+
+Le coordinate controvarianti si trasformano con L, mentre le coordinate covarianti si trasformano con $L^{-1}$.
+All'opposto i corrispettivi versori che ne determinano il sistema di riferimento.
+
+\begin{equation}
+    \begin{aligned}
+        & x'^j &= L^j_{\ k}x^k \\
+        & x'_j &= L_j^{\ k}x_k      
+    \end{aligned}
+\end{equation}
+
+dove $L^j_{\ k}$ è la matrice di Lorentz:
+
+\begin{equation}
+    L^j_{\ k} = 
+    \begin{pmatrix}
+    \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} & -\frac{\beta}{\sqrt{1-\frac{v^2}{c^2}}} & 0 & 0 \\
+    -\frac{\beta}{\sqrt{1-\frac{v^2}{c^2}}} & \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1
+    \end{pmatrix}
+\end{equation}
+
+Dato che i tensori di rango superiore risultano da prodotto dialico tra 
+
+quadrivettori, è facile dedurne le regole di trasformazione.
+
+
+
+\section{Meccanica relativistica}
+
+\subsection{Relazioni principali}
+
+\subsubsection{Secondo principio della dinamica relativistica}
+Si definisce la quadriforza di Minkowsky:
+\begin{equation}
+    F_j =(F_0, -\vec{F})= (\frac{\vec{F}\cdot\vec{v}}{c}, -\vec{F})
+\end{equation}
+
+\begin{equation}
+   F_j=m_0\frac{d}{d\tau}\frac{d}{d\tau}x_j=\frac{d}{\sqrt{1-\frac{v^2}{c^2}}dt}(\frac{c}{\sqrt{1-\frac{v^2}{c^2}}},-\frac{\vec{v}}{\sqrt{1-\frac{v^2}{c^2}}})
+\end{equation}
+
+\subsubsection{Equazioni cardine della dinamica relativistica}
+
+\begin{equation}
+    \begin{aligned}
+   & \vec{f}\cdot\vec{v}=\frac{d}{dt}\frac{m_0c^2}{\sqrt{1-\frac{v^2}{c^2}}}= \frac{d E_T}{dt} \\
+    & \vec{f}=\frac{d}{dt}\frac{m_0\vec{v}}{\sqrt{1-\frac{v^2}{c^2}}}=\frac{d \vec{p}}{dt}=\frac{d (\frac{E_t\vec{v}}{c^2})}{dt}
+     \end{aligned}
+\end{equation}
+
+\subsubsection{Quadrimpulso}
+
+\begin{equation}
+    P_j=m_0\frac{d}{d\tau}x_j=m_0\frac{d}{d\tau}(ct,-\vec{x})=(\frac{E_t}{c},-\vec{p})
+\end{equation}
+
+\subsubsection{Relazione Energia-Impulso}
+
+\begin{equation}
+    E_t^2=c^2p^2+m_0^2c^4
+\end{equation}
+
+\subsubsection*{Centro di massa}
+Nel sistema di riferimento del centro di massa:
+\begin{equation}
+    \begin{aligned}
+        & \vec{v}_{cm}=\frac{\sum E_i\vec{v}_i}{\sum E_i} \\
+        & M= \sum(m_j+\frac{T_j}{c^2}+\frac{V_j^2}{c^2})
+    \end{aligned}
+\end{equation}
+
+\subsection{Fotoni}
+Particelle di massa nulla, con una quantità di moto.
+La relazione energia-impulso per i fotoni è:
+
+\begin{equation}
+    E_T=cp
+\end{equation}
+
+Vale la relazione di Einstein-De Broglie:
+
+\begin{equation}
+    P_j=\hbar K_j=\hbar (\frac{\omega}{c},-\vec{k})
+\end{equation}
+
+\subsubsection{Effetto Compton}
+Urto di un fotone con una particella ferma, con variazione di lunghezza d'onda:
+
+\begin{equation}
+    \Delta \lambda = \lambda' - \lambda = \frac{h}{m_0c}(1-\cos \theta)
+\end{equation}
+
+\subsubsection{Decadimento di una particella}
+
+Basta utilizzare la conservazione del quadrimpulso
+
+e la relazione energia-impulso.
+
+\section{Elettromagnetismo}
+
+\subsection{Conservazione della carica}
+Definita la quadricorrente:
+\begin{equation}
+    J_j=(\rho c, \vec{j})
+\end{equation}
+
+Si passa alla formulazione covariante della conservazione della carica:
+
+\begin{equation}
+   \partial _k J^k=0
+\end{equation}
+
+Si definisce inoltre la quadricorrente della carica puntiforme come:
+
+\begin{equation}
+    J^k=qV_j
+\end{equation}
+con $V_j$ quadrivelocità.
+
+\subsection*{Quadriforza di Lorentz}
+
+Si definisce la densità di quadriforza di Lorentz come:
+
+\begin{equation}
+    \vec{f}=\frac{d \vec{F}}{dV}\sqrt{1-\frac{v^2}{c^2}}
+\end{equation}
+
+Esprimendo il tensore elettromagnetico misto come:
+
+\begin{equation}
+    F^j_k=
+    \begin{pmatrix}
+    0 & E_1/c & E_2/c & E_3/c \\
+    E_1/c & 0 & B_3 & -B_2 \\
+    E_2/c & -B_3 & 0 & B_1 \\
+    E_3/c & B_2 & -B_1 & 0
+    \end{pmatrix}
+\end{equation}
+
+si può scrivere la quadriforza di Lorentz come:
+
+\begin{equation}
+    f^j=F^j_k J^k
+\end{equation}
+
+\subsection{Equazioni di Maxwell}
+
+La prima e la quarta equazione di Maxwell secondo il formalismo covariante sono:
+\begin{equation}
+    \begin{aligned}
+         \partial_j F^{jk}=\mu_0 J^k
+    \end{aligned}
+\end{equation}
+
+La seconda e la terza equazione di Maxwell secondo il formalismo covariante sono:
+\begin{equation}
+    \begin{aligned}
+         \epsilon^{jklm}\partial_k F_{lm}=0 \leftrightarrow \partial_k \tilde F^{jk}=0
+    \end{aligned}
+\end{equation}
+
+con
+
+\begin{equation}
+    \tilde F^{jk}=\frac{1}{2}\epsilon^{jklm}F_{lm}
+\end{equation}
+
+\subsection{Trasformazioni dei campi elettromagnetici}
+
+Tenendo conto che $F^j_k$ è un tensore misto di rango 2, si ha che:
+
+\begin{equation}
+    F'^{jk}=L^j_{\ i}L^k_{\ l}F^{il}
+\end{equation}
+
+si trovano le trasformazioni dei campi elettrici e magnetici:
+
+\begin{equation}
+    \begin{aligned}
+        & E_1'=E_1 \\
+        & E_2'=\frac{E_2-vB_3}{\sqrt{1-\frac{v^2}{c^2}}} \\
+        & E_3'=\frac{E_3+vB_2}{\sqrt{1-\frac{v^2}{c^2}}} \\
+        & B_1'=B_1 \\
+        & B_2'=\frac{B_2+vE_3}{\sqrt{1-\frac{v^2}{c^2}}} \\
+        & B_3'=\frac{B_3-vE_2}{\sqrt{1-\frac{v^2}{c^2}}}
+    \end{aligned}
+\end{equation}
+
+\subsection{Tensore Energia-Impulso}
+Per giungere alle equazioni di conservazione per le onde elettromagnetiche, si definisce il tensore
+energia-impulso $T^{lk}$ come:
+
+\begin{equation}
+    T^{lk}=-\frac{1}{\mu_0}F^{lm}F^k_{\ m}+\frac{1}{4\mu_0}g^{lk}F_{km}F^{km}
+\end{equation}
+
+cosicché:
+
+\begin{equation}
+   f^k=\partial_l T^{lk}
+\end{equation}
+
+definita la densità di energia elettromagnetica come:
+
+\begin{equation}
+    \epsilon=\frac{1}{2\mu_0}(E^2/c^2+B^2)
+\end{equation}
+
+il vettore di Poynting come:
+
+\begin{equation}
+    \vec{S}=\frac{\vec{E}\wedge\vec{B}}{\mu_0}
+\end{equation}
+
+e il tensore degli sforzi di Maxwell come:
+
+\begin{equation}
+    \sigma_{jk}=\frac{1}{\mu_0}(E_jE_k/c^2+B_jB_k)-\delta_{jk}\epsilon
+\end{equation}
+
+si ottiene il tensore energia-impulso come:
+
+\begin{equation}
+    T^{lk}=
+    \begin{pmatrix}
+    \epsilon & S_1/c & S_2/c & S_3/c \\
+    S_1/c & \sigma_{11} & \sigma_{12} & \sigma_{13} \\
+    S_2/c & \sigma_{21} & \sigma_{22} & \sigma_{23} \\
+    S_3/c & \sigma_{31} & \sigma_{32} & \sigma_{33}
+    \end{pmatrix}
+\end{equation}
+
+
+
+\end{document}
