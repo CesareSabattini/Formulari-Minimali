@@ -23,12 +23,14 @@ body {
     }
     .container {
         padding: 15px;
+        margin-top: 3vh;
+        margin-bottom: 2vh;
         background: linear-gradient(145deg, #2c2c2c, #1a1a1a);
         box-shadow: 5px 5px 15px #0e0e0e, -5px -5px 15px #2a2a2a;
-        width: 90%;
+        width: 80%;
     }
     p {
-        font-size: 2.5vh;
+        font-size: 2vh;
         color: #cccccc;
         margin-right: 5vw;
         margin-left: 5vw;
@@ -37,7 +39,7 @@ body {
     }
     ul {
         list-style-type: none;
-        padding-inline-start: 0;
+        padding-inline-start: 2vh;
         font-size: 2.5vh;
         display: flex;
         flex-direction: column;
