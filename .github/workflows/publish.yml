@@ -61,8 +61,10 @@ jobs:
         with:
           name: compiled-documents
 
-      - name: Copy CSS file
-        run: cp index.css compiled-documents/index.css
+      - name: Copy files
+        run: |
+          cp index.html compiled-documents/index.html
+          cp index.css compiled-documents/index.css
 
       - name: Deploy to GitHub Pages
         run: |
