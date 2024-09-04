@@ -13,8 +13,8 @@
 \maketitle
 
 \section{
- Relatività Galileiana
-}
+  Relatività Galileiana
+ }
 
 \subsection{Principi della Relatività Galileiana}
 
@@ -27,28 +27,31 @@
 Ne seguono geometricamente le trasformazioni di Galileo.
 
 \subsection{Trasformazioni di Galileo}
+Per coppie di sistemi di riferimento inerziali O e O' valgono le seguenti leggi di trasformazione:
 
 \subsubsection{
-Trasformazioni delle coordinate
+    Trasformazioni delle coordinate
 }
 \begin{equation}
-\begin{aligned}
-    x' &= x - vt \\
-    y' &= y \\
-    z' &= z \\
-    t' &= t
-\end{aligned}
+    \left\{
+    \begin{aligned}
+        x' & = x - vt \\
+        y' & = y      \\
+        z' & = z      \\
+        t' & = t
+    \end{aligned}
+    \right.
 \end{equation}
 
 \subsubsection{
-Trasformazione della velocità
+    Trasformazione della velocità
 }
 \begin{equation}
     \vec{w'} = \vec{w} - \vec{v}
 \end{equation}
 
 \subsubsection{
-    Trasformazioni delle accelerazioni
+    Trasformazione delle accelerazioni
 }
 \begin{equation}
     \vec{a'} = \vec{a}
@@ -69,32 +72,49 @@ Dal secondo principio della dinamica, invariante per cambio di sistema di riferi
 
 
 \subsection{Repporto con l'elettromagnetismo}
+Si dimostra di seguito l'incompatibilità tra le trasformazioni di Galileo e le equazioni di Maxwell.
 
 \subsubsection{Forza di Lorentz}
 \begin{equation}
     \vec{F} = q(\vec{E} + \vec{v} \times \vec{B})
 \end{equation}
 
-da cui emerge una dipendenza della forza dalla velocità, in contrasto con il principio di relatività galileiana.
+da cui emerge una dipendenza della forza dalla velocità, in contrasto con i principi di relatività galileiani.
 
 \subsection*{Equazioni di Maxwell}
-Date le equazioni di Maxwell in O:
+Date le equazioni di Maxwell in O
 \begin{equation}
-\begin{aligned}
-    \nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \\
-    \nabla \cdot \vec{B} &= 0 \\
-    \nabla \times \vec{E} &= -\frac{\partial \vec{B}}{\partial t} \\
-    \nabla \times \vec{B} &= \mu_0 \vec{J} + \mu_0 \varepsilon_0 \frac{\partial \vec{E}}{\partial t}
-\end{aligned}
+    \left\{
+    \begin{aligned}
+        \nabla \cdot \vec{E}  & = \frac{\rho}{\varepsilon_0}                                              \\
+        \nabla \cdot \vec{B}  & = 0                                                                       \\
+        \nabla \times \vec{E} & = -\frac{\partial \vec{B}}{\partial t}                                    \\
+        \nabla \times \vec{B} & = \mu_0 \vec{J} + \mu_0 \varepsilon_0 \frac{\partial \vec{E}}{\partial t}
+    \end{aligned}
+    \right.
 \end{equation}
 
-e date le leggi di trasformazione degli operatori differenziali:
+le leggi di trasformazione degli operatori differenziali:
 \begin{equation}
-\begin{aligned}
-    \nabla' &= \nabla \\
-    \frac{\partial}{\partial t'} &= \frac{\partial}{\partial t} - \vec{v} \cdot \nabla
-\end{aligned}
+    \left\{
+    \begin{aligned}
+        \nabla'                      & = \nabla                                             \\
+        \frac{\partial}{\partial t'} & = \frac{\partial}{\partial t} - \vec{v} \cdot \nabla
+    \end{aligned}
+    \right.
 \end{equation}
+
+e le leggi di trasformazione dei campi elettrici e magnetici:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        \vec{E'} & = \vec{E} + \vec{v} \times \vec{B} \\
+        \vec{B'} & = \vec{B}
+    \end{aligned}
+    \right.
+\end{equation}
+
 
 si verifica, supponendo la validità delle equazioni in O', che:
 \begin{itemize}
@@ -112,21 +132,21 @@ L'elettromagnetismo sancisce che:
 
 in completo disaccordo con il principio di relatività galileiana.
 
-Si ipotizzò dunque che le leggi dell'elettromagnetismo dovessero valere unicamente nell'etere e che la velocità della luce fosse relativa all'etere.
+Si ipotizzò dunque che le leggi dell'elettromagnetismo dovessero valere unicamente nell'etere e che la velocità della luce fosse relativa ad esso.
 
 \subsection{Esperimento di Michelson-Morley}
 
 \begin{itemize}
-    \item Scopo: misurazione della velocità della luce rispetto all'etere, 
-    
-    confrontando le figure di interferenza originate da due raggi luminosi, dipendentemente dall'orientamento dell'interferometro rispetto al moto della Terra in esso.
+    \item Scopo: misurazione della velocità della luce rispetto all'etere,
+
+          confrontando le figure di interferenza originate da due raggi luminosi, dipendentemente dall'orientamento dell'interferometro rispetto al moto della Terra nel mezzo.
 
     \item Aspettazione: variazione della differenza di fase tra i due raggi luminosi, in base all'orientamento dell'interferometro rispetto al moto della Terra, in base a:
-    \begin{equation}
-        \Delta \phi = \frac{2L}{\lambda} \frac{v^2}{c^2}
-    \end{equation}
+          \begin{equation}
+              \Delta \phi = \frac{2L}{\lambda} \frac{v^2}{c^2}
+          \end{equation}
 
-    Il valore atteso di $\Delta \phi$ è di circa 0.4 frange.
+          Il valore atteso di $\Delta \phi$ è di circa 0.4 frange.
 
     \item Esito: nessuna variazione della figura di interferenza, in quanto $\Delta \phi$ è circa nullo.
 \end{itemize}
@@ -143,37 +163,35 @@ L'apparente conflitto tra meccanica e elettromagnetismo si risolse con la teoria
 \end{enumerate}
 
 \subsection{Trasformazioni di Lorentz}
-da O a O':
+Si ricercano delle leggi di trasformazione delle coordinate tali che:
+\begin{itemize}
+    \item x'=0 $\rightarrow$ x=vt, che si verifica se x'=$\alpha$(x-vt).
+    \item Per il primo postulato, deve valere x=$\alpha$(x'+vt).
+    \item x'=ct' $\rightarrow$ x=ct.
+\end{itemize}
+
+Si ricavano così le trasformazioni di Lorentz (da O a O') delle coordinate:
 \begin{equation}
-\begin{aligned}
-   & x'= \frac{x-vt}{\sqrt{1-\frac{v^2}{c^2}}} \\
-   & t'= \frac{t-\frac{v}{c^2}x}{\sqrt{1-\frac{v^2}{c^2}}} \\
-   & y'=y \\
-   & z'=z \\
-\end{aligned}
-\quad
-\begin{aligned}
-    & v_x' = \frac{v_x-v}{1-\frac{vv_x}{c^2}} \\
-    & v_y' = \frac{\sqrt{1-\frac{v^2}{c^2}}v_y}{1-\frac{vv_x}{c^2}} \\
-    & v_z' = \frac{\sqrt{1-\frac{v^2}{c^2}}v_z}{1-\frac{vv_x}{c^2}} \\
- \end{aligned}
+    \left\{
+    \begin{aligned}
+         & x'= \frac{x-vt}{\sqrt{1-\frac{v^2}{c^2}}}             \\
+         & t'= \frac{t-\frac{v}{c^2}x}{\sqrt{1-\frac{v^2}{c^2}}} \\
+         & y'=y                                                  \\
+         & z'=z                                                  \\
+    \end{aligned}
+    \right.
 \end{equation}
 
-da O' a O:
+e delle velocità:
 
 \begin{equation}
-\begin{aligned}
-   & x= \frac{x'+vt'}{\sqrt{1-\frac{v^2}{c^2}}} \\
-   & t= \frac{t'+\frac{v}{c^2}x'}{\sqrt{1-\frac{v^2}{c^2}}} \\
-   & y=y' \\
-   & z=z' \\
-\end{aligned}
-\quad
-\begin{aligned}
-    & v_x=\frac{v_x'-x}{1+\frac{vv_x'}{c^2}} \\
-    & v_y=\frac{\sqrt{1-\frac{v^2}{c^2}}v_y'}{1+\frac{vv_x'}{c^2}} \\
-    & v_z=\frac{\sqrt{1-\frac{v^2}{c^2}}v_z'}{1+\frac{vv_x'}{c^2}} \\
-\end{aligned}
+    \left\{
+    \begin{aligned}
+         & v_x' = \frac{v_x-v}{1-\frac{vv_x}{c^2}}                       \\
+         & v_y' = \frac{\sqrt{1-\frac{v^2}{c^2}}v_y}{1-\frac{vv_x}{c^2}} \\
+         & v_z' = \frac{\sqrt{1-\frac{v^2}{c^2}}v_z}{1-\frac{vv_x}{c^2}} \\
+    \end{aligned}
+    \right.
 \end{equation}
 
 \subsection{Effetti relativistici}
@@ -198,24 +216,15 @@ da O' a O:
 
 \subsection{Onde elettromagnetiche}
 \subsubsection{Trasformazioni del vettore d'onda e frequenza}
-da O a O':
 \begin{equation}
+    \left\{
     \begin{aligned}
-        & k_x'= \frac{k_x'-\frac{v}{c^2}\omega'}{\sqrt{1-\frac{v^2}{c^2}}} \\
-        & k_y'= k_y' \\
-        & k_z'= k_z' \\
-        & \omega'= \frac{\omega'-vk_x'}{\sqrt{1-\frac{v^2}{c^2}}}
+         & k_x'= \frac{k_x'-\frac{v}{c^2}\omega'}{\sqrt{1-\frac{v^2}{c^2}}} \\
+         & k_y'= k_y'                                                       \\
+         & k_z'= k_z'                                                       \\
+         & \omega'= \frac{\omega'-vk_x'}{\sqrt{1-\frac{v^2}{c^2}}}
     \end{aligned}
-\end{equation}
-
-da O' a O:
-\begin{equation}
-\begin{aligned}
-    & k_x= \frac{k_x'+\frac{v}{c^2}\omega'}{\sqrt{1-\frac{v^2}{c^2}}} \\
-    & k_y= k_y' \\
-    & k_z= k_z' \\
-    & \omega= \frac{\omega'+vk_x'}{\sqrt{1-\frac{v^2}{c^2}}}
-\end{aligned}
+    \right.
 \end{equation}
 
 \subsubsection{Aberrazione relativistica della luce}
@@ -226,7 +235,7 @@ da O' a O:
 \subsubsection{Effetto Doppler relativistico}
 
 \begin{equation}
-\omega' = \omega\frac{1-\frac{v}{c}\cos{\theta}}{\sqrt{1-\frac{v^2}{c^2}}}
+    \omega' = \omega\frac{1-\frac{v}{c}\cos{\theta}}{\sqrt{1-\frac{v^2}{c^2}}}
 \end{equation}
 
 
@@ -234,7 +243,7 @@ da O' a O:
 Due eventi possono risultare in mutua connessione causale se e solo se
 
 \begin{equation}
-   \frac{|x_2-x_1|}{|ct'_1-ct'_2|} \leq 1
+    \frac{|x_2-x_1|}{|ct'_1-ct'_2|} \leq 1
 \end{equation}
 
 Se ne evince che:
@@ -246,8 +255,11 @@ Se ne evince che:
 \end{itemize}
 
 \section{Formalismo covariante}
+Alla base del formalismo covariante vi è il
+
+\subsection*{Postulato di Covarianza}
 \textit{
-Le leggi della fisica sono essere invarianti per trasformazioni di coordinate.
+    Le leggi della fisica sono covarianti per trasformazioni di Lorentz.
 }
 \subsection{Quadrivettori controvarianti e covarianti}
 In notazione indiciale, si definiscono i quadrivettori come:
@@ -259,60 +271,62 @@ In notazione indiciale, si definiscono i quadrivettori come:
 ovvero quartetti ordinati che si trasformano secondo le trasformazioni di Lorentz.
 
 Le coordinate di un quadrivettore controvariante sono ottenute per proiezione parallela rispetto agli assi coordinati.
+
 Le componenti di un quadrivettore covariante sono ottenute per proiezione ortogonale rispetto agli assi coordinati.
 
 \subsection{Prodotto scalare}
 Dall'invariante spaziotemporale che emerge dalle trasformazioni di Lorentz, si induce una metrica nello spazio di Minkowski:
 
 \begin{equation}
-<x,y> = x^\mu y_\mu = x^0y^0 - \vec{x} \cdot \vec{y}
+    <x,y> = x^\mu y_\mu = x^0y^0 - \vec{x} \cdot \vec{y}
 \end{equation}
 
 che equivale ad introdurre il tensore metrico:
 
 \begin{equation}
-g_{\mu\nu} = 
-\begin{pmatrix}
-1 & 0 & 0 & 0 \\
-0 & -1 & 0 & 0 \\
-0 & 0 & -1 & 0 \\
-0 & 0 & 0 & -1
-\end{pmatrix}
+    g_{\mu\nu} =
+    \begin{pmatrix}
+        1 & 0  & 0  & 0  \\
+        0 & -1 & 0  & 0  \\
+        0 & 0  & -1 & 0  \\
+        0 & 0  & 0  & -1
+    \end{pmatrix}
 \end{equation}
 
 tale che:
 
 \begin{equation}
-<x,y> = x^\mu y_\mu = g_{\mu\nu}x^\mu y^\nu
+    <x,y> = x^\mu y_\mu = g_{\mu\nu}x^\mu y^\nu
 \end{equation}
 
 \subsection{Trasformazioni di Lorentz per quadrivettori}
 
-Le coordinate controvarianti si trasformano con L, mentre le coordinate covarianti si trasformano con $L^{-1}$.
-All'opposto i corrispettivi versori che ne determinano il sistema di riferimento.
+I quadrivettori controvarianti si trasformano con L, mentre i covarianti si trasformano con $L^{-1}$.
 
 \begin{equation}
+    \left\{
     \begin{aligned}
-        & x'^j &= L^j_{\ k}x^k \\
-        & x'_j &= L_j^{\ k}x_k      
+         & x'^j = L^j_{\ k}x^k                              \\
+         & x'_j  = L_j^{\ k}x_k= L^{-1 j}_{\ \  \  \ k} x_k
     \end{aligned}
+    \right.
 \end{equation}
 
 dove $L^j_{\ k}$ è la matrice di Lorentz:
 
 \begin{equation}
-    L^j_{\ k} = 
+    L^j_{\ k} =
     \begin{pmatrix}
-    \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} & -\frac{\beta}{\sqrt{1-\frac{v^2}{c^2}}} & 0 & 0 \\
-    -\frac{\beta}{\sqrt{1-\frac{v^2}{c^2}}} & \frac{1}{\sqrt{1-\frac{v^2}{c^2}}} & 0 & 0 \\
-    0 & 0 & 1 & 0 \\
-    0 & 0 & 0 & 1
+        \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}      & -\frac{\beta}{\sqrt{1-\frac{v^2}{c^2}}} & 0 & 0 \\
+        -\frac{\beta}{\sqrt{1-\frac{v^2}{c^2}}} & \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}      & 0 & 0 \\
+        0                                       & 0                                       & 1 & 0 \\
+        0                                       & 0                                       & 0 & 1
     \end{pmatrix}
 \end{equation}
 
-Dato che i tensori di rango superiore risultano da prodotto dialico tra 
+Dato che i tensori di rango superiore risultano da prodotto dialico tra
 
-quadrivettori, è facile dedurne le regole di trasformazione.
+quadrivettori, è immediato dedurne le regole di trasformazione.
 
 
 
@@ -321,28 +335,55 @@ quadrivettori, è facile dedurne le regole di trasformazione.
 \subsection{Relazioni principali}
 
 \subsubsection{Secondo principio della dinamica relativistica}
-Si definisce la quadriforza di Minkowsky:
-\begin{equation}
-    F_j =(F_0, -\vec{F})= (\frac{\vec{F}\cdot\vec{v}}{c}, -\vec{F})
-\end{equation}
+Incorporando i vettori tridimensionali nei quadrivettori nello spazio di Minkowski,
+si definiscono la quadriposizione, la quadrivelocità, la quadriaccelerazione e la quadriforza:
 
 \begin{equation}
-   F_j=m_0\frac{d}{d\tau}\frac{d}{d\tau}x_j=\frac{d}{\sqrt{1-\frac{v^2}{c^2}}dt}(\frac{c}{\sqrt{1-\frac{v^2}{c^2}}},-\frac{\vec{v}}{\sqrt{1-\frac{v^2}{c^2}}})
+    \left\{
+    \begin{aligned}
+         & x^\mu = (ct, \vec{x})                          \\
+         & u^\mu = \frac{dx^\mu}{d\tau}                   \\
+         & a^\mu = \frac{du^\mu}{d\tau}                   \\
+         & F^\mu = m_0\frac{d}{d\tau}\frac{d}{d\tau}x^\mu
+    \end{aligned}
+    \right.
+\end{equation}
+
+in cui $\tau$ è il tempo proprio, ovvero relativo al sistema comovente, istantaneamente solidale con il corpo, dunque non accelerato.
+Si trova dunque che:
+
+\begin{equation}
+    F_j=m_0\frac{d}{d\tau}\frac{d}{d\tau}x_j=m_0\frac{d}{\sqrt{1-\frac{v^2}{c^2}}dt}(\frac{c}{\sqrt{1-\frac{v^2}{c^2}}},-\frac{\vec{v}}{\sqrt{1-\frac{v^2}{c^2}}})
 \end{equation}
 
 \subsubsection{Equazioni cardine della dinamica relativistica}
 
+Si definiscono quadrimpulso ed energia totale come:
+
 \begin{equation}
+    \left\{
     \begin{aligned}
-   & \vec{f}\cdot\vec{v}=\frac{d}{dt}\frac{m_0c^2}{\sqrt{1-\frac{v^2}{c^2}}}= \frac{d E_T}{dt} \\
-    & \vec{f}=\frac{d}{dt}\frac{m_0\vec{v}}{\sqrt{1-\frac{v^2}{c^2}}}=\frac{d \vec{p}}{dt}=\frac{d (\frac{E_t\vec{v}}{c^2})}{dt}
-     \end{aligned}
+         & P_j=m_0V_j                                    \\
+         & E_t^= \frac{m_0c^2}{\sqrt{1-\frac{v^2}{c^2}}}
+    \end{aligned}
+    \right.
 \end{equation}
 
-\subsubsection{Quadrimpulso}
+Dalla 2.8 seguono le equazioni cardine della dinamica relativistica:
 
 \begin{equation}
-    P_j=m_0\frac{d}{d\tau}x_j=m_0\frac{d}{d\tau}(ct,-\vec{x})=(\frac{E_t}{c},-\vec{p})
+    \left\{
+    \begin{aligned}
+         & \vec{f}\cdot\vec{v}=\frac{d}{dt}\frac{m_0c^2}{\sqrt{1-\frac{v^2}{c^2}}}= \frac{d E_T}{dt}                                  \\
+         & \vec{f}=\frac{d}{dt}\frac{m_0\vec{v}}{\sqrt{1-\frac{v^2}{c^2}}}=\frac{d \vec{p}}{dt}=\frac{d (\frac{E_t\vec{v}}{c^2})}{dt}
+    \end{aligned}
+    \right.
+\end{equation}
+
+in cui
+
+\begin{equation}
+    \vec{f}=\sqrt{1-\frac{v^2}{c^2}}\vec{F}
 \end{equation}
 
 \subsubsection{Relazione Energia-Impulso}
@@ -355,8 +396,8 @@ Si definisce la quadriforza di Minkowsky:
 Nel sistema di riferimento del centro di massa:
 \begin{equation}
     \begin{aligned}
-        & \vec{v}_{cm}=\frac{\sum E_i\vec{v}_i}{\sum E_i} \\
-        & M= \sum(m_j+\frac{T_j}{c^2}+\frac{V_j^2}{c^2})
+         & \vec{v}_{cm}=\frac{\sum E_i\vec{v}_i}{\sum E_i} \\
+         & M= \sum(m_j+\frac{T_j}{c^2}+\frac{V_j^2}{c^2})
     \end{aligned}
 \end{equation}
 
@@ -398,7 +439,7 @@ Definita la quadricorrente:
 Si passa alla formulazione covariante della conservazione della carica:
 
 \begin{equation}
-   \partial _k J^k=0
+    \partial _k J^k=0
 \end{equation}
 
 Si definisce inoltre la quadricorrente della carica puntiforme come:
@@ -421,10 +462,10 @@ Esprimendo il tensore elettromagnetico misto come:
 \begin{equation}
     F^j_k=
     \begin{pmatrix}
-    0 & E_1/c & E_2/c & E_3/c \\
-    E_1/c & 0 & B_3 & -B_2 \\
-    E_2/c & -B_3 & 0 & B_1 \\
-    E_3/c & B_2 & -B_1 & 0
+        0     & E_1/c & E_2/c & E_3/c \\
+        E_1/c & 0     & B_3   & -B_2  \\
+        E_2/c & -B_3  & 0     & B_1   \\
+        E_3/c & B_2   & -B_1  & 0
     \end{pmatrix}
 \end{equation}
 
@@ -439,14 +480,14 @@ si può scrivere la quadriforza di Lorentz come:
 La prima e la quarta equazione di Maxwell secondo il formalismo covariante sono:
 \begin{equation}
     \begin{aligned}
-         \partial_j F^{jk}=\mu_0 J^k
+        \partial_j F^{jk}=\mu_0 J^k
     \end{aligned}
 \end{equation}
 
 La seconda e la terza equazione di Maxwell secondo il formalismo covariante sono:
 \begin{equation}
     \begin{aligned}
-         \epsilon^{jklm}\partial_k F_{lm}=0 \leftrightarrow \partial_k \tilde F^{jk}=0
+        \epsilon^{jklm}\partial_k F_{lm}=0 \leftrightarrow \partial_k \tilde F^{jk}=0
     \end{aligned}
 \end{equation}
 
@@ -468,12 +509,12 @@ si trovano le trasformazioni dei campi elettrici e magnetici:
 
 \begin{equation}
     \begin{aligned}
-        & E_1'=E_1 \\
-        & E_2'=\frac{E_2-vB_3}{\sqrt{1-\frac{v^2}{c^2}}} \\
-        & E_3'=\frac{E_3+vB_2}{\sqrt{1-\frac{v^2}{c^2}}} \\
-        & B_1'=B_1 \\
-        & B_2'=\frac{B_2+vE_3}{\sqrt{1-\frac{v^2}{c^2}}} \\
-        & B_3'=\frac{B_3-vE_2}{\sqrt{1-\frac{v^2}{c^2}}}
+         & E_1'=E_1                                       \\
+         & E_2'=\frac{E_2-vB_3}{\sqrt{1-\frac{v^2}{c^2}}} \\
+         & E_3'=\frac{E_3+vB_2}{\sqrt{1-\frac{v^2}{c^2}}} \\
+         & B_1'=B_1                                       \\
+         & B_2'=\frac{B_2+vE_3}{\sqrt{1-\frac{v^2}{c^2}}} \\
+         & B_3'=\frac{B_3-vE_2}{\sqrt{1-\frac{v^2}{c^2}}}
     \end{aligned}
 \end{equation}
 
@@ -488,7 +529,7 @@ energia-impulso $T^{lk}$ come:
 cosicché:
 
 \begin{equation}
-   f^k=\partial_l T^{lk}
+    f^k=\partial_l T^{lk}
 \end{equation}
 
 definita la densità di energia elettromagnetica come:
@@ -514,10 +555,10 @@ si ottiene il tensore energia-impulso come:
 \begin{equation}
     T^{lk}=
     \begin{pmatrix}
-    \epsilon & S_1/c & S_2/c & S_3/c \\
-    S_1/c & \sigma_{11} & \sigma_{12} & \sigma_{13} \\
-    S_2/c & \sigma_{21} & \sigma_{22} & \sigma_{23} \\
-    S_3/c & \sigma_{31} & \sigma_{32} & \sigma_{33}
+        \epsilon & S_1/c       & S_2/c       & S_3/c       \\
+        S_1/c    & \sigma_{11} & \sigma_{12} & \sigma_{13} \\
+        S_2/c    & \sigma_{21} & \sigma_{22} & \sigma_{23} \\
+        S_3/c    & \sigma_{31} & \sigma_{32} & \sigma_{33}
     \end{pmatrix}
 \end{equation}
 
