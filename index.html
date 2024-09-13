@@ -16,11 +16,16 @@
             <option value="2">Secondo anno</option>
             <option value="3">Terzo anno</option>
         </select>
-        <ul id="linkList" style="display: none;">
+        <ul id="linkList2" style="display: none;">
             <li><a href="meccanica-analitica.pdf">Meccanica Analitica</a></li>
             <li><a href="fenomeni-ondulatori.pdf">Fenomeni Ondulatori</a></li>
             <li><a href="relativita-ristretta.pdf">Relatività Ristretta</a></li>
         </ul>
+        <ul id="linkList3" style="display: none;">
+            <li><a href="meccanica-quantistica.pdf" >Meccanica Quantistica</a></li>
+        </ul>
+
+
     </div>
     <p class="
     
@@ -32,10 +37,15 @@
             var yearSelect = document.getElementById("yearSelect");
             var linkList = document.getElementById("linkList");
 
-            if (yearSelect.value == "2") {
-                linkList.style.display = "block";
-            } else {
-                linkList.style.display = "none";
+            if (yearSelect.value == 1) {
+                document.getElementById("linkList2").style.display = "none";
+                document.getElementById("linkList3").style.display = "none";
+            } else if (yearSelect.value == 2) {
+                document.getElementById("linkList2").style.display = "block";
+                document.getElementById("linkList3").style.display = "none";
+            } else if (yearSelect.value == 3) {
+                document.getElementById("linkList2").style.display = "none";
+                document.getElementById("linkList3").style.display = "block";
             }
         }
     </script>
