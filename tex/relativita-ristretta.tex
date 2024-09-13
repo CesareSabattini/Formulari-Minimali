@@ -71,7 +71,7 @@ Dal secondo principio della dinamica, invariante per cambio di sistema di riferi
 \end{equation}
 
 
-\subsection{Repporto con l'elettromagnetismo}
+\subsection{Rapporto con l'elettromagnetismo}
 Si dimostra di seguito l'incompatibilità tra le trasformazioni di Galileo e le equazioni di Maxwell.
 
 \subsubsection{Forza di Lorentz}
@@ -219,10 +219,10 @@ e delle velocità:
 \begin{equation}
     \left\{
     \begin{aligned}
-         & k_x'= \frac{k_x'-\frac{v}{c^2}\omega'}{\sqrt{1-\frac{v^2}{c^2}}} \\
-         & k_y'= k_y'                                                       \\
-         & k_z'= k_z'                                                       \\
-         & \omega'= \frac{\omega'-vk_x'}{\sqrt{1-\frac{v^2}{c^2}}}
+         & k_x'= \frac{k_x-\frac{v}{c^2}\omega}{\sqrt{1-\frac{v^2}{c^2}}} \\
+         & k_y'= k_y                                                      \\
+         & k_z'= k_z                                                      \\
+         & \omega'= \frac{\omega-vk_x}{\sqrt{1-\frac{v^2}{c^2}}}
     \end{aligned}
     \right.
 \end{equation}
@@ -363,8 +363,8 @@ Si definiscono quadrimpulso ed energia totale come:
 \begin{equation}
     \left\{
     \begin{aligned}
-         & P_j=m_0V_j                                    \\
-         & E_t^= \frac{m_0c^2}{\sqrt{1-\frac{v^2}{c^2}}}
+         & P_j=m_0V_j                                   \\
+         & E_T= \frac{m_0c^2}{\sqrt{1-\frac{v^2}{c^2}}}
     \end{aligned}
     \right.
 \end{equation}
@@ -424,16 +424,14 @@ Urto di un fotone con una particella ferma, con variazione di lunghezza d'onda:
 
 \subsubsection{Decadimento di una particella}
 
-Basta utilizzare la conservazione del quadrimpulso
-
-e la relazione energia-impulso.
+Basta utilizzare la conservazione del quadrimpulso e la relazione energia-impulso.
 
 \section{Elettromagnetismo}
 
 \subsection{Conservazione della carica}
 Definita la quadricorrente:
 \begin{equation}
-    J_j=(\rho c, \vec{j})
+    J_j=(\rho c, -\vec{j})
 \end{equation}
 
 Si passa alla formulazione covariante della conservazione della carica:
@@ -451,13 +449,20 @@ con $V_j$ quadrivelocità.
 
 \subsection*{Quadriforza di Lorentz}
 
-Si definisce la densità di quadriforza di Lorentz come:
-
+L'espressione della forza di Lorentz tridimensionale è
 \begin{equation}
-    \vec{f}=\frac{d \vec{F}}{dV}\sqrt{1-\frac{v^2}{c^2}}
+    \vec{F}=\rho(\vec{E}+\vec{v}\wedge\vec{B})dV
 \end{equation}
 
-Esprimendo il tensore elettromagnetico misto come:
+Essa può essere interpretata come la componente spaziale di una densità di forza di Minkowski moltiplicata per l'elemento di volume invariante.
+Si definisce conseguentemente la densità di quadriforza di Lorentz come:
+
+\begin{equation}
+    \vec{f}=\frac{d \vec{F}}{dV}\sqrt{1-\frac{v^2}{c^2}}= \frac{d \vec{F_L}}{dV}
+\end{equation}
+in cui $\vec{F_L}$ è la quadriforza di Lorentz, modello di forza relativistica.
+
+A questo punto, dato il tensore elettromagnetico:
 
 \begin{equation}
     F^j_k=
@@ -469,45 +474,35 @@ Esprimendo il tensore elettromagnetico misto come:
     \end{pmatrix}
 \end{equation}
 
-si può scrivere la quadriforza di Lorentz come:
+si può ricavare la seguente espressione per la densità di quadriforza di Lorentz $f^j$:
 
 \begin{equation}
     f^j=F^j_k J^k
 \end{equation}
 
 \subsection{Equazioni di Maxwell}
+A rigor dell'accordo tra elettromagnetismo e postulato di covarianza, le equazioni di Maxwell sono riformulabili in forma covariante a vista,
+accoppiando I con IV:
 
-La prima e la quarta equazione di Maxwell secondo il formalismo covariante sono:
 \begin{equation}
+    \partial_j F^{jk}=\mu_0 J^k
+\end{equation}
+e II con III:
+\begin{equation}
+    \left\{
     \begin{aligned}
-        \partial_j F^{jk}=\mu_0 J^k
+         & \epsilon^{jklm}\partial_k F_{lm}=0 \leftrightarrow \partial_k \tilde F^{jk}=0 \\
+         & \tilde F^{jk}=\frac{1}{2}\epsilon^{jklm}F_{lm}
     \end{aligned}
+    \right.
 \end{equation}
 
-La seconda e la terza equazione di Maxwell secondo il formalismo covariante sono:
-\begin{equation}
-    \begin{aligned}
-        \epsilon^{jklm}\partial_k F_{lm}=0 \leftrightarrow \partial_k \tilde F^{jk}=0
-    \end{aligned}
-\end{equation}
-
-con
-
-\begin{equation}
-    \tilde F^{jk}=\frac{1}{2}\epsilon^{jklm}F_{lm}
-\end{equation}
 
 \subsection{Trasformazioni dei campi elettromagnetici}
-
-Tenendo conto che $F^j_k$ è un tensore misto di rango 2, si ha che:
-
-\begin{equation}
-    F'^{jk}=L^j_{\ i}L^k_{\ l}F^{il}
-\end{equation}
-
-si trovano le trasformazioni dei campi elettrici e magnetici:
+Dalle leggi di trasformazione di $F$ sono ricavabili le trasformazioni dei campi elettrici e magnetici:
 
 \begin{equation}
+    \left\{
     \begin{aligned}
          & E_1'=E_1                                       \\
          & E_2'=\frac{E_2-vB_3}{\sqrt{1-\frac{v^2}{c^2}}} \\
@@ -516,7 +511,17 @@ si trovano le trasformazioni dei campi elettrici e magnetici:
          & B_2'=\frac{B_2+vE_3}{\sqrt{1-\frac{v^2}{c^2}}} \\
          & B_3'=\frac{B_3-vE_2}{\sqrt{1-\frac{v^2}{c^2}}}
     \end{aligned}
+    \right.
 \end{equation}
+
+
+\subsubsection{Considerazioni}
+
+\begin{itemize}
+    \item Un campo magnetico ha natura variabile con cambio di sistema di riferimento: un campo magnetico può essere rilevato come un campo elettrico in un sistema di riferimento in moto, e viceversa.
+    \item Nel passaggio da O a O', crescono i moduli delle componenti trasversali del campo elettromagnetico, mentre le longitudinali rimangono invariate.
+    \item Data una carica ferma in O', indipendentemente dal sistema di riferimento O, il campo elettrico è radiale uscente dalla carica che lo origina.
+\end{itemize}
 
 \subsection{Tensore Energia-Impulso}
 Per giungere alle equazioni di conservazione per le onde elettromagnetiche, si definisce il tensore
@@ -529,10 +534,10 @@ energia-impulso $T^{lk}$ come:
 cosicché:
 
 \begin{equation}
-    f^k=\partial_l T^{lk}
+    f^k=-\partial_l T^{lk}
 \end{equation}
 
-definita la densità di energia elettromagnetica come:
+Definita la densità di energia elettromagnetica come:
 
 \begin{equation}
     \epsilon=\frac{1}{2\mu_0}(E^2/c^2+B^2)
@@ -547,7 +552,7 @@ il vettore di Poynting come:
 e il tensore degli sforzi di Maxwell come:
 
 \begin{equation}
-    \sigma_{jk}=\frac{1}{\mu_0}(E_jE_k/c^2+B_jB_k)-\delta_{jk}\epsilon
+    \sigma_{jk}=-\frac{1}{\mu_0}(E_jE_k/c^2+B_jB_k)+\delta_{jk}\epsilon
 \end{equation}
 
 si ottiene il tensore energia-impulso come:
@@ -560,6 +565,25 @@ si ottiene il tensore energia-impulso come:
         S_2/c    & \sigma_{21} & \sigma_{22} & \sigma_{23} \\
         S_3/c    & \sigma_{31} & \sigma_{32} & \sigma_{33}
     \end{pmatrix}
+\end{equation}
+
+\subsection{Equazioni di conservazione}
+Ricavato il tensore Energia-Impulso, tale che:
+
+\begin{equation}
+    f^k=-\partial_l T^{lk}
+\end{equation}
+
+dalla componente temporale di quest'ultima equazione tensoriale si ricava la legge d conservazione dell'energia del campo elettromagnetico:
+
+\begin{equation}
+    \frac{\partial}{\partial t}\epsilon + \nabla \cdot \vec{S} = -\vec{f} \cdot \vec{v}
+\end{equation}
+
+Dalla componente spaziale si ricava la legge di conservazione dell'impulso del campo elettromagnetico:
+
+\begin{equation}
+    \frac{1}{c^2} \frac{\partial}{\partial t} \vec{S} + \vec{\nabla} \cdot \vec{\vec{\sigma}} = -\vec{f}
 \end{equation}
 
 
