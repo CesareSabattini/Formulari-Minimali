@@ -1,0 +1,61 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\title{Meccanica Quantistica}
+\author{Cesare Sabattini Manginella}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduzione e sviluppo del formalismo}
+
+\subsection{Principio di Sovrapposizione}
+\subsection{vettori bra e ket}
+Data una varietà infinito-dimensionale $V$ su un campo $\mathbb{C}$, un \emph{ket} $<A|$ è un elemento di $V$, mentre un \emph{bra} $|A>$ è un funzionale lineare su $V$.
+Tale terminologia è intuitivamente derivante dal fatto che il prodotto scalare è il più generale funzionale lineare definito su uno spazio di Hilbert.
+Tale affermazione rappresenta una semplificazione dell'enunciato del Teorema di Rappresentazione di Fisher-Reisz, tale per cui, dato uno spazio di Hilbert H su $\mathcal{C}$:
+
+\begin{equation}
+    \forall \phi \in H^* \exists x \in H : \forall y \in H \phi(x)=<x,y>
+\end{equation}
+
+In effetti la biunivocità di tale corrispondenza permette la rappresentazione covariante-controvariante dello stesso vettore.
+Nell'ambito della meccanica quantistica, si attribuisce la rappresentazione della varietà generata da un ket ad uno stato, che, per il Principio di Sovrapposizione,
+risulta combinazione lineare di vettori della base ortonormale che origina H, spazio delle configurazioni (stati) del sistema quantistico.
+\footnote[2]{
+    Il ket nullo non è associabile a nessuno stato (? o a tutti).
+}
+Non vi è motivo di discutere la numerabilità dell'insieme di indici non nulli della combinazione, per il teorema di ...
+
+La contrazione degli indici covariante-controvariante del prodotto di bra e l'immaginario coniugato del ket (semplicemente un prodotto interno tra due elementi A e B di H),
+è tale da originare un numero complesso.
+Si considerano nel seguito prodotti scalari hermitiani, cioè tali che:
+
+\begin{equation}
+    <A|B> = \overline{<B|A>}
+\end{equation}
+
+\subsection{Spazi Operatoriali}
+
+Si definisce "operatore" un endomorfismo da uno spazio lineare in sè stesso.
+Estendendo un'algebra associativa non commutativa su insiemi di operatori, sono definibili spazi operatoriali.
+
+Ragionando in termini di indici covarianti e controvarianti, appare logico che il prodotto di un ket per un bra origini un operatore lineare, operante su bra e su ket.
+Secondo tale formalismo, ad un operaotre lineare è fisicamente associata una variabile dinamica, istantaneamente.
+Ecco dunque palesato un altra differenza tra fisica classica e quantistica: la non commutatività degli operatori, ossia dell'azione delle variabili dinamiche(?).
+
+
+
+\section{Principi Fondamentali}
+\section{Bibliografia}
+\begin{thebibliography}{9}
+    \bibitem{dirac} P.A.M. Dirac, \emph{The Principles of Quantum Mechanics}, Oxford University Press, 1930.
+\end{thebibliography}
+
+\end{document}

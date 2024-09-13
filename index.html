@@ -12,15 +12,11 @@
        
       
         <select id="yearSelect" onchange="showLinks()">
-            <option value="1">Primo anno</option>
-            <option value="2">Secondo anno</option>
-            <option value="3">Terzo anno</option>
+            <option value="2">Anno 2</option>
+            <option value="3">Anno 3</option>
         </select>
-        <ul id="linkList" style="display: none;">
-            <li><a href="meccanica-analitica.pdf">Meccanica Analitica</a></li>
-            <li><a href="fenomeni-ondulatori.pdf">Fenomeni Ondulatori</a></li>
-            <li><a href="relativita-ristretta.pdf">Relatività Ristretta</a></li>
-        </ul>
+        <ul id="linkList"></ul>
+        
     </div>
     <p class="
     
@@ -28,15 +24,47 @@
         Formulari per il corso di Laurea in Fisica presso Alma Mater Studiorum - Università di Bologna.
     </p>
     <script>
-        function showLinks() {
-            var yearSelect = document.getElementById("yearSelect");
-            var linkList = document.getElementById("linkList");
 
-            if (yearSelect.value == "2") {
-                linkList.style.display = "block";
-            } else {
-                linkList.style.display = "none";
+        const notes=[
+            {
+                title: "Meccanica Analitica",
+                year: 2,
+                link: "meccanica-analitica.pdf"
+            },
+            {
+                title: "Fenomeni Ondulatori",
+                year: 2,
+                link: "fenomeni-ondulatori.pdf"
+            },
+            {
+                title: "Relatività Ristretta",
+                year: 2,
+                link: "relativita-ristretta.pdf"
+            },
+            {
+                title: "Meccanica Quantistica",
+                year: 3,
+                link: "meccanica-quantistica.pdf"
             }
+        ];
+
+
+
+        function showLinks() {
+            const year = document.getElementById("yearSelect").value;
+            const linkList = document.getElementById("linkList");
+            linkList.innerHTML = "";
+            notes.forEach(note => {
+                if (note.year == year) {
+                    const li = document.createElement("li");
+                    const a = document.createElement("a");
+                    a.href = note.link;
+                    a.textContent = note.title;
+                    li.appendChild(a);
+                    linkList.appendChild(li);
+                }
+            });
+            linkList.style.display = "block";
         }
     </script>
 </body>

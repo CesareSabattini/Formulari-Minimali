@@ -30,6 +30,7 @@ jobs:
             tex/meccanica-analitica.tex
             tex/fenomeni-ondulatori.tex
             tex/relativita-ristretta.tex
+            tex/meccanica-quantistica.tex
 
       - name: Create output directory
         run: mkdir -p dist
