@@ -12,8 +12,10 @@
 \begin{document}
 
 \maketitle
+\section{Introduzione}
+NOTA IMPORTANTE: formulario in via di composizione. Rigore e sintesi sono ancora da ottenere.
 
-\section{Introduzione e sviluppo del formalismo}
+\section{Sviluppo del formalismo}
 
 \subsection{Principio di Sovrapposizione}
 \subsection{vettori bra e ket}
@@ -48,7 +50,125 @@ Estendendo un'algebra associativa non commutativa su insiemi di operatori, sono 
 
 Ragionando in termini di indici covarianti e controvarianti, appare logico che il prodotto di un ket per un bra origini un operatore lineare, operante su bra e su ket.
 Secondo tale formalismo, ad un operaotre lineare è fisicamente associata una variabile dinamica, istantaneamente.
-Ecco dunque palesato un altra differenza tra fisica classica e quantistica: la non commutatività degli operatori, ossia dell'azione delle variabili dinamiche(?).
+Ecco dunque palesato un' altra differenza tra fisica classica e quantistica: la non commutatività degli operatori, ossia dell'azione delle variabili dinamiche(?).
+
+
+\subsubsection{Operatore aggiunto}
+Operatore tale per cui:
+
+\begin{equation}
+    <A|\overline{\alpha}|B>= \overline{<B|\alpha|A>}
+\end{equation}
+
+Dai corsi precedenti sono note la definizione rigorsosa di tale operatore e le sue proprietà.
+$\alpha$ si dice autoaggiunto o reale se
+\begin{equation}
+    \alpha=\overline{\alpha}
+\end{equation}
+
+TEOREMA:
+
+
+\begin{equation}
+    \forall \psi \in \mathcal{L}(H) : \psi^m <P|=0 , \psi <P|=0
+\end{equation}
+
+Intuitivamente, ciò può essere desunto dalla convergenza in norma della serie operatoriale:
+la convergenza in norma implica la convergenza forte all'operatore nullo. Avendo a che fare con un m $\in N$, e trattando
+operatori lineari su un dominio ovunque denso e semplicemente connesso, la norma del ket esito dell'applicazione è minorabile
+con il prodotto della norma dell'operatore per quella del ket. Non avendo a che fare con serie infinite, non è plausibile che la produttoria
+di operatori di modulo diverso da zero m volte sia pari a 0. Dunque $\psi$ deve essere necessariamente l'operatore nullo.
+
+\subsubsection{Autovalori e autovettori}
+
+$|\xi>$ è autoket di $\xi$ relativo all'autovalore $\xi'$ \footnote{
+    ma che è sta robaccia
+} se:
+
+\begin{equation}
+    \alpha |P>= a |P>
+\end{equation}
+
+Analogamente si definiscono autobra.
+
+Segue che, riferendosi ad operatori reali:
+\begin{itemize}
+    \item gli autovalori sono reali.
+    \item gli autovalori associati agli autoket sono gli stessi associati agli autobra.
+    \item l'immaginario coniugato di un autoket è un autobra riferito allo stesso autovalore, e viceversa.
+\end{itemize}
+
+Nell'ambito del formalismo della meccanica quantistica un autoket è detto autostato del sistema rispetto alla variabile dinamica $\alpha$, operatore.
+Non riporterò di seguito ulteriori proprietà relative ad autovalori ed autovettori, in quanto già note dai corsi precedenti.
+
+\section{Osservabili}
+Se il sistema dinamico si trova in un autostato rispetto alla variabile dinamica $\xi$, allora una misura di tale variabile darà come esito
+$\xi'$. Viceversa se ogni misura riporta come esito $\xi'$, allora il sistema si trova in un autostato rispetto a $\xi$.
+Importante è osservare che $\xi'$, essendo reale, risulta compatibile con la necessità di effettuare un'unica misura per rilevarlo:
+se fossero multiple, ognuna perturberebbe le successive.
+Ovviamente $\xi'$ si otterrà per ogni sovrapposizione di autostati ad esso relativi.
+Per entrare nell'ottica della teoria, possiamo aspettarci cosa possa accadere nel caso di uno stato esito di sovrapposizione di autostati relativi ad autovalori differenti,
+dunque ortogonali (da qui la quantizzazione dell'esito della misura (terminologia discutibile?)).
+Dunque l'esito di una successiva misura sarà uguale a quello della precedente, essendo il sistema collassato nell'autostato relativo allo scalare misurato nella misura 1.
+Dunque l'insieme degli autovalori di un operatore lineare non è che l'insieme dei risultati ottenibili attraverso una misura.
+Dato che uno stato appartiene ad un insieme completo generato dalla base di autostati, si definisce osservabile una variabile dinamica i cui autostati formano un sistema completo.
+Nella pratica un osservabile è una quantità misurabile, in quanto solo i sistemi completi rendono misure.
+Dunque l'insieme delle misure possibili di una variabile dinamica è l'insieme degli autovalori associati al corrispettivo operatore lineare.
+
+La completezza di uno spazo generato da un sistema di autoket è tale che ogni $|P>$ possa essere espresso come
+
+\begin{equation}
+    |P>= \int{|\xi'c>d\xi'}+ \sum_{r}|\xi'>
+\end{equation}
+Per via del fatto che la cardinalità di base è non necessariamente numerabile.
+Ogni operatore soddisfacente un'equazione algebrica è un osservabile.
+
+\subsection{Funzioni di Osservabili}
+
+Si definisce funzione di osservabili:
+\begin{equation}
+    f(\xi): L(H) \rightarrow L(H) : f(\xi)|\xi'>= f(\xi')|\xi'>, \forall |\xi'> autostato \quad di \quad  \xi
+\end{equation}
+
+In questo modo si definisce una funzione di osservabile f, sotto la sola ipotesi di inclusione degli autovalori nel dominio della
+funzione reale, tale che gli autovalori di $f(\xi)$ siano uguali all'immagine degli autovalori di $\xi$ tramite f, con f iniettiva.
+
+\subsubsection{Inverso di un osservabile}
+L'inverso di un osservabile $\xi$ esiste se e solo se 0 non è autovalore di $\xi$, ed è definito da:
+
+\begin{equation}
+    \xi^{-1} |\xi'>= \xi'^{-1}|\xi'>
+\end{equation}
+
+ovvero $\xi$ tale che:
+
+\begin{equation}
+    \xi\xi^{-1}=\mathcal{I}
+\end{equation}
+
+\subsubsection{Radice di un osservabile}
+
+Si definisce radice di un osservabile un operatore tale che:
+
+\begin{equation}
+    \sqrt{\xi} |\xi'>= \pm \sqrt{\xi'} |\xi'>
+\end{equation}
+
+ovvero tale che
+
+\begin{equation}
+    \sqrt{\xi}\sqrt{\xi}=\xi
+\end{equation}
+
+
+\subsection{Interpretazione Fisica}
+Si ipotizza che il valor medio delle misure di un osservabile $\xi$ su un sistema dinamico in uno stato $/x>$
+assuma un valore medio pari a $<x|\xi|x>$.
+
+
+
+
+
 
 
 
