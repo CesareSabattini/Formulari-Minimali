@@ -13,7 +13,7 @@
 
 \maketitle
 \section{Introduzione}
-NOTA IMPORTANTE: formulario in via di composizione. Rigore e sintesi sono ancora da ottenere.
+ATTENZIONE: formulario ancora in fase di sviluppo. Alcune informazioni potrebbero essere incomplete o errate.
 
 \section{Sviluppo del formalismo}
 
@@ -50,7 +50,7 @@ Estendendo un'algebra associativa non commutativa su insiemi di operatori, sono 
 
 Ragionando in termini di indici covarianti e controvarianti, appare logico che il prodotto di un ket per un bra origini un operatore lineare, operante su bra e su ket.
 Secondo tale formalismo, ad un operaotre lineare è fisicamente associata una variabile dinamica, istantaneamente.
-Ecco dunque palesato un' altra differenza tra fisica classica e quantistica: la non commutatività degli operatori, ossia dell'azione delle variabili dinamiche(?).
+Ecco dunque palesato un' altra differenza tra fisica classica e quantistica: la non commutatività degli operatori, ossia delle misure delle variabili dinamiche.
 
 
 \subsubsection{Operatore aggiunto}
@@ -164,15 +164,383 @@ ovvero tale che
 \subsection{Interpretazione Fisica}
 Si ipotizza che il valor medio delle misure di un osservabile $\xi$ su un sistema dinamico in uno stato $/x>$
 assuma un valore medio pari a $<x|\xi|x>$.
+Tale interpretazione fisica è formalizzata nell'ambito della rappresentazione degli stati di un sistema quantistico,
+su basi ortonormali di cardinalità finita o infinita, numerabili o meno, tale per cui risulta, come analizzato nel seguito:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+    & |x>= \sum_{0}^{v} <x|\xi_i>|\xi_i>+ \int_{0}^{v} <x|\xi'>|\xi'>d\xi' \\
+    & <\xi' | \xi''>= \delta(\xi'-\xi'')
+    \end{aligned}
+    \right.
+\end{equation}
+
+ove $\delta$ è la delta di Dirac, e v è la cardinalità della base ortonormale numerabile. $\xi_i$ sono gli autovalori dell'osservabile $\xi$, rispetto a quali si costruisce la base degli autostati.
+Si sottointende la complementarietà dello spettro continuo rispetto al numerabile nell'ambito della rappresentazione dello spazio degli stati.
+
+
+\subsection{Commutazione di osservabili}
+Gli operatori non sono in generale commutativi.
+Si definisce pertanto il commutatore di due osservabili $\xi$ e $\eta$ l'operatore:
+
+\begin{equation}
+    [\xi,\eta]=\xi\eta-\eta\xi
+\end{equation}
+
+fisicamente, il commutatore ritorna la possibilità di misurare contemporaneamente due variabili dinamiche.
+Matematicamente, ciò equivale ad affermare che i due osservabili formano lo stesso sistema completo di autostati.
+Se due osservabili commutano, allora esiste una base di autostati comuni ad entrambi.
+Vale anche l'inverso del teorema.
+Dunque, data una funzione di osservabili che commutano, la densità di misurare un set di autovalori è data dalla produttoria:
+
+\begin{equation}
+  P_{a,b,...,n}=<x|\delta_{\xi,a}\delta_{\eta,b}...\delta_{\nu,n}|x>
+\end{equation}
+
+Solo se le variabili commutano talee probabilità ha un senso fisico.
+
+
+\section{Rappresentazioni}
+Rappresentare una grandezza equivale alla ricerca delle coordinate su una data base dello spazio di Hilbert in cui essa esiste.
+La più semplice delle basi su cui operare, nell'ambito di un osservabile $\xi$, è data dai sui autostati, normalizzati.
+La condizione di normalizzazione, nel più generale dei casi, equivalente alla composizione di uno spettro continuo con uno discreto, è data da:
+
+\begin{equation}
+<\xi'|\xi''> = \delta(\xi'-\xi'') + \delta_{\xi',\xi''}
+\end{equation}
+
+ove $\delta$ è da intendere come un funzionale astratto che restituisce 1 se i due argomenti sono uguali, 0 altrimenti.
+Nel caso di uno spettro continuo, la delta di Dirac è da intendere come un funzionale tale che:
+
+\begin{equation}
+\int_{0}^{v} \delta(\xi'-\xi'')d\xi' = 1
+\end{equation}
+
+dunque, il simbolo $\delta$ nel caso di uno spettro continuo, rappresenta, con un abuso di notazione, una generalizzazione della delta di Kronecker per uno spettro discreto.
+Data tale assunzione, si possono definire le seguenti rappresentazioni.
+Generalizzando tale concetto a varietà di dimensionalità superiore, corrispondenti cioè a spazi di Hilbert generati da prodotto dialico
+di autovettori di autovettori corrispondenti ad un set di n osservabili commutativi, si può scrivere la condizione di ortogonalità come:
+
+\begin{equation}
+    <\xi_1,\xi_2,...,\xi_n|\xi'_1,\xi'_2,...,\xi'_n> = \delta(\xi_1-\xi'_1)\delta(\xi_2-\xi'_2)...\delta(\xi_n-\xi'_n)
+\end{equation}
+
+\subsection{Rappresentazione di Bra e Ket}
+Bra e Ket rappresentano degli stati di un sistema quantistico, dunque, per il principio di sovrapposizione,
+rispetto ad una base ortonormale di H, di autovettori relativi ad un osservabile $\xi$, sono rappresentabili come
+una generalizzazione a dimensione potenzialmente infinita dei componenti della base.
+Nel caso di un ket, si ha:
+
+\begin{equation}
+    |P>= \sum_{0}^{v} <P|\xi_i>|\xi_i>+ \int <P|\xi'>|\xi'>d\xi'
+\end{equation}
+
+dove si sottointende il dominio di integrazione sulla componente continua dello spettro.
+Data la linearità dell'espressione e del prodotto scalare, si può scrivere:
+
+\begin{equation}
+    <Q|P>= \sum_{0}^{v} <Q|\xi_i><\xi_i|P>+ \int <Q|\xi'><\xi'|P>d\xi'
+\end{equation}
+
+
+\subsection{Rappresentazione di un osservabile}
+Il caso di rappresentazione di un osservabile introduce un indice di variabilità tensoriale pari a 2, in quanto si ha a che fare con un operatore lineare, operante su un ket e su un bra.
+Alla luce di ciò, si può scrivere:
+
+\begin{equation}
+    \xi = \sum_{0}^{v} \xi_i|\xi_i><\xi_i|+ \int \xi'|\xi'><\xi'|d\xi'
+\end{equation}
+
+o, analogamente:
+
+\begin{equation}
+    <\xi' | \xi | \xi''>= \xi' \delta(\xi'-\xi'')
+\end{equation}
+
+definendo così la generalizzazione di una matrice diagonale nel caso di uno spettro continuo.
+
+\subsection{Rappresentazione generica}
+
+Nel caso di uno spazio di Hilbert generato dagli autovalori di n osservabili commutative, definisco la rappresentazione per 
+un tensore di rango n $\omega$ come:
+
+\begin{equation}
+    <\xi_1,\xi_2,...,\xi_n|\omega|\xi'_1,\xi'_2,...,\xi'_n> = \omega' \delta(\xi_1-\xi'_1)\delta(\xi_2-\xi'_2)...\delta(\xi_n-\xi'_n)
+\end{equation}
+
+
+\subsection{Applicazione delle rappresentazioni alla probabilità di una misura}
+Nel caso di una misura di n set di n osservabili commutative, la probabilità di ottenere un set di autovalori $\xi_1,\xi_2,...,\xi_n$ è data da:
+
+\begin{equation}
+    P_{\xi_1,\xi_2,...,\xi_n} = <x|\delta_{\xi_1,\xi_1}\delta_{\xi_2,\xi_2}...\delta_{\xi_n,\xi_n}|x>
+\end{equation}
+
+si trova immediatamente che la probabilità di una misura non è altro che il modulo quadro dello stato a cui si applica l'operatore set di autovalori in questione.
+Tale concetto è facilmente estendibile ad un operatore con uno spettro continuo definendo un'ampiezza di probabilità, per esempio per una misura di posizione.
+
+\section{Funzione d'onda come rappresentazione di ket}
+Una generica funzione di osservabili può rappresentarre un ket in H, ovvero uno stato variabile dinamicamente nel contesto di una sistema quantistico.
+Dunque il modulo quadro di una funzione d'onda, a cui si applica un osservabile, rappresenta la probabilità di misurare un set di autovalori di tale osservabile.
+Nella notazione, si sottointende da ora:
+
+\begin{equation}
+    \psi = |\psi>
+\end{equation}
+
+dunque, sottointendendo ora la presenza del ket standard >, si desume che la differenza tra una generica funzione di osservabili f e $\psi$ è che
+quest'ultima può essere applicata ad un operatore solo a sinistra, mentre f da entrambi i lati.
+Fisicamente, f non rappresenta lo stato del sistema quantistico, mentre $\psi$ sì.
+La normalizzazione di $\psi$ consente di interpretare il modulo quadro come probabilità di misurare il sistema in dato stato.
+
+
+\section{Condizioni quantiche}
+Si definisce condizione quantica una relazione tra due osservabili, volte a descrivere il sistema quantistico.
+
+\subsection{Parentesi di Poisson quantistiche}
+Date le variabili canoniche, si definiscono le parentesi di Poisson classiche come:
+
+\begin{equation}
+    [u,v]_P = \sum_{i=1}^{n} \frac{\partial u}{\partial q_i}\frac{\partial v}{\partial p_i} - \frac{\partial u}{\partial p_i}\frac{\partial v}{\partial q_i}
+\end{equation}
+
+Servendosi del principio di corrispondenza, si instaura la corrispondenza tra esse e l'operazione di commutazione operatoriale:
+
+\begin{equation}
+    [u,v]_P = \frac{1}{i\hbar}[\hat{u},\hat{v}]
+\end{equation}
+
+\subsection{Rappresentazione di Schrödinger}
+La rappresentazione di Shrodinger consiste nel formalizzare gli operatori posizione e quantità di moto come operatori differenziali sullo spazio degli stati variabili,
+ovvero delle funzioni d'onda su uno spazio di Hilbert.
+In tal modo, si definisce l'operatore posizione come:
+
+\begin{equation}
+    \hat{q} = q
+\end{equation}
+
+e l'operatore quantità di moto come:
+
+\begin{equation}
+    \hat{p} = -i\hbar \nabla
+\end{equation}
+
+In tale rappresentazione, come affermato nel paragrafo precedente ... , la densità di probabilità di misurare una variabile dinamica è data dal modulo quadro della funzione d'onda, ma solo
+nel caso in cui la funzione d'onda normalizzata sia autostato dell'operatore.
+Alternativamente, essendo essa ket di H, è esprimibile come combinazione lineare generalizzata degli autostati dell'operatore,
+per cui è possibile calcolare la probabilità di misurare una variabile dinamica come il modulo quadro della proiezione della funzione d'onda su un autostato dell'operatore.
+
+\subsection{Principio di Indeterminazione di Heisenberg}
+Il principio di indeterminazione di Heisenberg afferma che non è possibile misurare contemporaneamente con precisione arbitraria due variabili dinamiche coniugate:
+
+\begin{equation}
+    \Delta q \Delta p \geq \frac{\hbar}{2}
+\end{equation}
+
+La sua espressione generalizzata afferma che, date due osservabili non commutative, si può affermare che:
+
+\begin{equation}
+    \Delta \xi \Delta \eta \geq \frac{1}{2i}\int <\psi|[\hat{\xi},\hat{\eta}]|\psi>d\xi
+\end{equation}
+
+
+\section{Equazioni del moto}
+Dato un generico ket P$>$, si definisce l'operatore di traslazione temporale T:
+
+\begin{equation}
+    \begin{aligned}
+    & T |P>= |P(t)>
+    \end{aligned}
+\end{equation}
+
+sotto l'ipotesi di invarianza del modulo di P per traslazione temporale (che equivale ad un'equiprobabilità di uno stato di moto imperturbato),
+si deduce che T sia un operatore unitario.
+Calcolo:
+
+\begin{equation}
+     \frac{dP(t_0)}{dt}=\lim_{ t \rightarrow t_0} \frac{|T(t)P>-|P(t_0)>}{t-t_0}= \lim{\frac{T-Id}{t-t_0}P(t_0)}|P(t_0)> \\
+\end{equation}
+
+Pongo tale operatore immaginario puro pari ad H diviso per i$\hbar$, ottenendo:
+
+\begin{equation}
+   i\hbar \frac{dP(t_0)}{dt}=H(t)|P(t_0)>
+\end{equation}
+
+dove H è l'operatore Hamiltoniano, che rappresenta l'energia del sistema.
+In termini operatoriali è equivalentemente esprimibile come:
+
+\begin{equation}
+    i\hbar \frac{d}{dt}T>=H(t)T
+\end{equation}
+
+\subsection{Equazione di Schrödinger}
+Si giunge all'equazione di Shroedinger ponendo il generico ket P$>$ come funzione d'onda $\psi(\xi, t)$, funzione di osservabili operante sul ket standard.
+Dunque, l'equazione di Schrödinger è:
+
+\begin{equation}
+    i\hbar \frac{\partial \psi(\xi, t)}{\partial t} = H(t) \psi(\xi,t)
+\end{equation}
+
+dove l'operatore $\xi$ è un generico osservabile, dipendente dallo spazio in cui si opera (spazio delle configurazioni, spazio delle impulsi, spazio delle fasi, etc.).
+
+\subsection{Forma di Heisenberg delle equazioni del moto}
+Se, a partire dalla rappresentazione di Schrödinger delle equazioni del moto, si effettua una trasformazione inversa $T^{-1}$ implicita sullo spazio dei ket
+e sugli operatori in esso agenti, si ottiene la forma di Heisenberg delle equazioni del moto, che se ne differenzia per staticità degli stati e variazione temporale degli operatori.
+Dunque, nello schema di Heisenberg si otterranno delle equazioni del moto per gli operatori, e non per gli stati.
+Le equazioni del moto di Heisenberg sono:
+
+\begin{equation}
+   \frac{d\xi}{dt}=i\hbar[\xi,H(t)]
+\end{equation}
+
+in perfetta analogia con le equazioni del moto classiche, secondo il principio di corrispondenza tra parentesi di Poisson e commutatori operatoriali.
+Si deduce immediatamente che $\xi$ è una costante del moto se e solo se commuta con l'Hamiltoniano. In tal caso, si dice che $\xi$ è un integrale primo del moto.
+In meccanica quantistica, nello schema di Heisenberg, se un operatore è il trasformato di una costante del moto classica, allora esso commuta con l'Hamiltoniano(?).
+
+\subsection{Stati stazionari}
+A partire dall'equazione differenziale operatoriale 35, si può esprimere l'operatore T come:
+
+\begin{equation}
+    T=e^{-\frac{i}{\hbar}\int_{t_0}^{t}H(t')dt'}=e^{-\frac{i}{\hbar}Ht}
+\end{equation}
+dove la seconda uguaglianza vale naturalmente per stati ad energia costante.
+Così, nelle due rappresentazioni, si può scrivere:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+    & \psi(\xi,t)=e^{-\frac{i}{\hbar}Ht}\psi(\xi,0) \\
+    & \xi(t)=e^{\frac{i}{\hbar}Ht}\xi(0)e^{-\frac{i}{\hbar}Ht}
+    \end{aligned}
+    \right.
+\end{equation}
+
+Tali equazioni, per quanto esplicative e semplici, non sono utili nella pratica, per via della difficoltà nel calcolare l'esponenziale di un operatore.
+Tuttavia, nella rappresentazione di Shrodinger, l'operazione di calcolo delle equazioni del moto se H è costante risulta immediata, nel caso in cui
+lo stato sia autostato dell'Hamiltoniano, con autovalore E. In tal caso, si ha:
+
+\begin{equation}
+    \begin{aligned}
+    \psi(\xi,t)=e^{-\frac{i}{\hbar}Et}\psi(\xi,0)
+    \end{aligned}
+\end{equation}
+
+Dunque ad H costante, un ket differisce solamente per un fattore di fase.
+Fisicamente, ciò implica un'equiprobabilità dello stato al variare del tempo, e dunque una stazionarietà dello stato, in quanto il fattore di fase non varia il modulo quadro della funzione d'onda.
+
+\subsection{Equazioni del moto per una particella libera}
+Nel caso di velocità relativistiche, l'Hamiltoniana classica corrispondente a tale stato stazionario è data da:
+
+\begin{equation}
+    H= \sqrt{p^2c^2+m^2c^4}
+\end{equation}
+
+dato che p$_x$, operatore quantità di moto, commuta con qualsiasi funzione di osservabili p$_x$, p$_y$, p$_z$, esso è  una costante del moto
+anche nel sistema quantistico. Analogamente per p$_y$ e p$_z$.
+Nella rappresentazione di Heisenberg, si ottiene:
+
+\begin{equation}
+    \dot{x}=\frac{c^2 p_x}{H}, \dot{y}=\frac{c^2 p_y}{H}, \dot{z}=\frac{c^2 p_z}{H}
+\end{equation}
+
+Nella rappresentazione di Shrodinger, cerco l'equazione di evoluzione di un autostato dell'Hamiltoniano, ossia di uno stato stazionario.
+Si ottiene l'equazione di un'onda piana:
+
+\begin{equation}
+    \psi(x,t)=e^{\frac{i}{\hbar}(<p\cdot x>-Et)}
+\end{equation}
+
+\section{Applicazioni elementari}
+\subsection{Oscillatore armonico}
+La trattazione matematica dell'oscillatore armonico quantistico conduce direttamente alla quantizzazione dell'energia per tale sistema.
+Di seguito riporto gli step logici che possono essere seguiti:
+
+\begin{itemize}
+    \item Si scrive l'Hamiltoniano dell'oscillatore armonico, mediante il principio di corrispondenza, come:
+    
+    \begin{equation}
+        \hat{H}=\frac{1}{2m}(\hat{p}^2+m^2\omega^2\hat{q}^2)
+    \end{equation}
+    \item Si scrivono le equazioni del moto nella rappresentazione di Heisenberg nelle coordinate canoniche:
+    
+    \begin{equation}
+        \left\{
+        \begin{aligned}
+            & \dot{q}=\frac{1}{m}\hat{p} \\
+            & \dot{p}=-m\omega^2\hat{q}
+        \end{aligned}
+        \right.
+    \end{equation}
+
+    \item Si introduce la variabile dinamica complessa $\eta$ tale che:
+    
+    \begin{equation}
+    \eta= \frac{\hat{p}+im\omega \hat{q}}{\sqrt{2m\hbar \omega}}
+    \end{equation}
+
+    e se ne ricava l'equazione del moto:
+
+    \begin{equation}
+     \hat{\eta}=\hat{\eta_0} e^{i\omega t}
+    \end{equation}
+
+    \item Si ricavano i commutatori tra $\hat{\eta}$ e $H$:
+    
+    \begin{equation}
+        \left\{
+        \begin{aligned}
+            & [\hat{\eta},\hat{\eta}^{\dagger}]=1 \\
+            & [\hat{\eta},H]=\hbar \omega \hat{\eta}
+        \end{aligned}
+        \right.
+    \end{equation}
+
+    \item Considerando H' autovalore di $\hat{H}$, si scrive:
+    
+    \begin{equation}
+        \hbar \omega<H' |\hat{\eta}\hat{\eta}^{\dagger}|H'>=(H'-\frac{1}{2}\hbar \omega)<H' |H'>
+    \end{equation}
+
+    che impone che un generico autovalore H' sia tale che:
+
+    \begin{equation}
+        H'\geq \frac{1}{2}\hbar \omega
+    \end{equation}
+
+    \item Dalle proprietà dei commutatori si ricava la serie di autovalori assumibili da H:
+    
+    \begin{equation}
+        H_n=(n+\frac{1}{2})\hbar \omega \quad , \quad n \in N
+    \end{equation}
+
+    \item Si può procedere nel trovare la rappresentazione di Schrödinger dell'oscillatore armonico.
+\end{itemize}
+
+\subsection{Momento angolare}
+\subsubsection{Momento angolare orbitale}
+In termini operatoriali, tramite il principio di corrispondenza, il momento angolare orbitale è rappresentabile come:
+
+\begin{equation}
+    \hat{M}=\hat{x}\times \hat{p}
+\end{equation}
+
+dove r e p sono rispettivamente gli operatori posizione e quantità di moto.
+Definendo un operatore di rotazione intorno all'asse z $r_z$, M si può scrivere come:
+
+\begin{equation}
+    \hat{M}= i\hbar r_z
+\end{equation}
+
+\subsubsection{Momento angolare di spin}
+
+\subsubsection{Quantizzazione del momento angolare}
+Si può procedere in maniera analoga alla quantizzazione dell'oscillatore armonico, considerando l'Hamiltoniano del sistema come:
 
 
 
 
-
-
-
-
-\section{Principi Fondamentali}
 \section{Bibliografia}
 \begin{thebibliography}{9}
     \bibitem{dirac} P.A.M. Dirac, \emph{The Principles of Quantum Mechanics}, Oxford University Press, 1930.

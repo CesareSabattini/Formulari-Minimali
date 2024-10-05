@@ -1,0 +1,159 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\title{Astrofisica}
+\author{Cesare Sabattini Manginella}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+    
+\end{abstract}
+
+\section{Introduzione}
+ATTENZIONE: formulario ancora in fase di sviluppo. Alcune informazioni potrebbero essere incomplete o errate.
+
+\section{Unità di misura}
+\subsubsection{Lunghezza}
+\begin{itemize}
+    \item Raggio solare: $R_{\odot} = 6.96 \times 10^8 m$
+    \item Unità astronomica (UA): $1 UA = 1.496 \times 10^{11} m$
+    \item Anno luce (AL): $1 AL = 9.461 \times 10^{15} m$
+    \item Parsec (pc): $1 pc = 3.086 \times 10^{16} m$. E' la distanza cui 1AU sottende 1''.
+    \item Redshift (lo vedremo più avanti).
+\end{itemize}
+\subsubsection{Massa}
+\begin{itemize}
+    \item Massa solare: $M_{\odot} = 1.989 \times 10^{30} kg$
+    
+\end{itemize}
+\subsubsection{Tempo}
+\begin{itemize}
+    \item Anno: $1 yr = 3.156 \times 10^7 s$
+\end{itemize}
+\subsubsection{Velocità}
+\begin{itemize}
+    \item $\frac{km}{s}$
+\end{itemize}
+\subsubsection{Temperatura}
+\begin{itemize}
+    \item Kelvin
+\end{itemize}
+
+\section{Luminosità}
+\subsection{Luminosità Bolometrica L}
+Quantità di energia emessa da una sorgente luminosa in un intervallo di tempo.
+Unità di misura:
+\begin{itemize}
+    \item Watt
+    \item Luminosità solare: $L_{\odot} = 3.83 \times 10^{26} W$
+    \item Erg/s
+\end{itemize}
+
+\subsection{Luminosità Monocromatica L$_\nu$}
+Luminosità bolometrica per unità di frequenza.
+Unità di misura:
+\begin{itemize}
+    \item Watt/Hz
+    \item erg/(s Hz)
+\end{itemize}
+Altresì esprimibile in funzione della lunghezza d'onda $\lambda$ (L$_\lambda$).
+Unità di misura:
+\begin{itemize}
+    \item Watt/$\mu m$
+    \item erg/(s $\mu $)
+\end{itemize}
+
+La relazione tra le due luminosità è data da:
+
+\begin{equation}
+    L_{\nu}d\nu = -L_{\lambda}d\lambda \rightarrow L_{\lambda}= \frac{c}{\lambda^2}L_{\nu}
+\end{equation}
+
+inoltre L e L$_\nu$ sono legate da:
+
+\begin{equation}
+    L = \int_0^{\inf} L_{\nu}d\nu
+\end{equation}
+
+
+\subsection{Flusso F}
+Si definisce Flusso il rapporto tra luminosità e l'area sottesa dalla superficie di emissione isotropa di una sorgente.
+
+\begin{equation}
+    F = \frac{L}{4\pi d^2}
+\end{equation}
+
+\subsubsection{Flusso monocromatico F$_{\nu}$}
+
+Si definisce Flusso monocromatico il rapporto tra la luminosità monocromatica e l'area sottesa dalla superficie di emissione isotropa di una sorgente.
+
+\begin{equation}
+    F_{\nu} = \frac{L_{\nu}}{4\pi d^2}
+\end{equation}
+
+Ne segue immediatamente:
+
+\begin{equation}
+    F= \int_0^{\inf} F_{\nu}d\nu
+\end{equation}
+
+\subsection{Magnitudine}
+\subsubsection{Magnitudine apparente m}
+La magnitudine è una scala logaritmica per misurare la luminosità di un oggetto celeste.
+La magnitudine apparente m è definita come:
+
+\begin{equation}
+    m = -2.5 \log_{10}(\frac{F}{F_0})
+\end{equation}
+
+dove F$_0$ rappresenta il punto di riferimento per definire un flusso, sovente la stella Vega.
+
+\subsubsection{Magnitudine assoluta M}
+
+La magnitudine assoluta M è definita come la magnitudine apparente che avrebbe un oggetto celeste se fosse posto alla distanza di 10 pc.
+
+\begin{equation}
+    M = m + 5 -\log_{10}(d_{pc})
+\end{equation}
+
+
+\subsection{Colore}
+Si definisce colore la differenza in termini di megnitudine tra due bande fotometriche.
+
+\begin{equation}
+    C = m_1 - m_2
+\end{equation}
+
+\subsection{Estinzione}
+L'estinzione è la diminuzione del flusso dovuta alla presenza di polvere interstellare.
+
+
+
+\section{Astrofisica Osservativa}
+Studio dei corpi celesti mediante il loro spettro di emissione.
+
+\subsection{Potere risolutivo}
+Si definisce potere risolutivo teorico:
+
+\begin{equation}
+    \theta = \frac{\lambda}{D}
+\end{equation}
+dove $\lambda$ è la lunghezza d'onda e D il diametro della lente o dello specchio.
+Dunque si vuole che $\theta$ sia il più piccolo possibile, aumentando la dimensione dello strumento di osservazione.
+
+\subsection{Atmospheric seeing}
+Il seeing atmosferico è la distorsione dell'immagine di un oggetto celeste dovuta alla turbolenza dell'aria.
+Si ovvia a tale problema mediante l'uso di telescopi adattivi.
+
+
+
+
+\end{document}

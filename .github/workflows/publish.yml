@@ -31,6 +31,8 @@ jobs:
             tex/fenomeni-ondulatori.tex
             tex/relativita-ristretta.tex
             tex/meccanica-quantistica.tex
+            tex/astrofisica.tex
+            tex/fisica-della-materia.tex
 
       - name: Create output directory
         run: mkdir -p dist
