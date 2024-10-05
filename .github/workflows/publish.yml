@@ -33,6 +33,7 @@ jobs:
             tex/meccanica-quantistica.tex
             tex/astrofisica.tex
             tex/fisica-della-materia.tex
+            tex/laboratorio-di-elettronica.tex
 
       - name: Create output directory
         run: mkdir -p dist

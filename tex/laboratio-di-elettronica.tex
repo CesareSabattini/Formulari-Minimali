@@ -1,0 +1,144 @@
+\documentclass{article}
+
+\title{Laboratorio di Elettronica}
+\author{Cesar}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduzione}
+
+\section{Teoria delle bande energetiche nei cristalli}
+Alla distanza reticolare del cristallo, nell'ambito di questo modello, sono identificbili tre bande:
+\begin{itemize}
+    \item la banda di conduzione, in cui gli elettroni possono muoversi liberamente;
+    \item la banda di valenza, in cui gli elettroni sono legati al nucleo.
+    \item la banda proibita, in cui non possono esistere stati elettronici.
+\end{itemize}
+
+In termini delle loro proprietà di conducibilità, i materiali possono essere classificati in:
+\begin{itemize}
+    \item conduttori, in cui la banda di valenza e la banda di conduzione si sovrappongono;
+    \item semiconduttori, in cui la banda proibita è facilmente superabile;
+    \item isolanti, in cui la banda proibita è molto ampia.
+\end{itemize}
+
+Il gap energetico corrispondente alla banda proibita è superabile dagli elettroni per mezzo di apporto energetico termico o di un campo elettrico esterno.
+La variabilità della conducibiltà dei materiali è variabile, ma particolarmente alta per i semiconduttori puri, o intrinseci.
+
+L'energia minima per la transizione alla banda di conduzione è ovviamente pari a:
+
+\begin{equation}
+    E_g = E_c - E_v
+\end{equation}
+
+\subsection*{Mobilità e conducibilità}
+\subsubsection{Conduttori}
+Il reticolo cristallino di un conduttore è approssimabile ad una successione di ioni positivi e un gas elettroni liberi,
+in moto, in assenza di campo elettrico esterno, con velocità termica, con media nulla.
+Il modulo della velocità termica è molto maggiore di quella di deriva, in presenza di campo elettrico esterno.
+L'applicazione di un campo elettrico si traduce dunque in una rottura dell'isotropia della distribuzione delle velocità, con conseguente deriva degli elettroni
+lungo la direzione del campo elettrico.
+Il modulo della velocità di deriva è dato da:
+
+\begin{equation}
+    v_d = \mu \epsilon
+\end{equation}
+
+dove $\mu$ è la mobilità elettronica, e $\epsilon$ è la differenza di potenziale applicata.
+La densità di corrente è data, nel caso di isotropia, da:
+
+\begin{equation}
+    J = n e v_d= \rho v_d=n q \mu \epsilon= \sigma \epsilon
+\end{equation}
+
+dove $n$ è la densità di elettroni, $e$ è la carica elementare, $\rho$ è la densità di carica, $q$ è la carica elettrica, $\sigma$ è la conducibilità elettrica.
+Si è così ricavata la legge di Ohm, a livello microscopico:
+
+\begin{equation}
+    J = \sigma \epsilon
+\end{equation}
+\subsubsection{Semiconduttori puri}
+Il legame chimico nella shell di valenza è di tipo covalente.
+A basse temperature, tale configurazione risulta anloga a quella di un isolante.
+Aumentando la temperatura, si ha un aumento della conducibilità, dovuto alla ionizzazione degli atomi,
+per via del superamento del gap energetico.
+In corrispondenza dell'elettrone liberato, si genera una lacuna, formalizzabile come una carica positiva.
+
+Il processo di creazione di una coppia elettrone-lacuna determina due possibili processi:
+
+\begin{itemize}
+    \item L'elettrone di valenza liberato transisce alla banda di conduzione, mentre la lacuna è immediatamente saturata.
+    Ciò coincide nella composizione di due moti opposti elettroni-lacune.
+    \item L'elettrone ricade nella lacuna, con conseguente annichilazione delle due cariche in termini di conducibilità.
+\end{itemize}
+
+In un semiconduttore intrinseco, il numero di lacune è sempre uguale a quello di elettroni liberi.
+Analogamente per la densità:
+
+\begin{equation}
+    n = p = n_i
+\end{equation}
+
+dove $n_i$ è la densità intrinseca, che aumenta con la temperatura:
+
+\begin{equation}
+   n_i^2= A_0T^3 e^{-\frac{E_g}{kT}}
+\end{equation}
+
+dove $A_0$ è una costante, $E_g$ è il gap energetico a 0K, $k$ è la costante di Boltzmann, $T$ è la temperatura.
+
+In presenza di un campo elettrico esterno, la densità di corrente totale J è pari a:
+
+\begin{equation}
+    J = J_n + J_p = q(n \mu_n + p \mu_p) \epsilon= \sigma \epsilon
+\end{equation}
+
+SI ricava immediatamente la relazione tra la conducibilità e la temperatura:
+
+\begin{equation}
+    \sigma= q(n \mu_n + p \mu_p)= qn_i(\mu_n + \mu_p)= q(\mu_n + \mu_p)A_0T^{3/2} e^{-\frac{E_g}{2kT}}
+\end{equation}
+
+Anche la mobilità è funzione della T, a la sua variazione è trascurabile, in termini di conduzione, rispetto all'aumento della densità intrinseca.
+
+\subsection{Distribuzione di energia dei portatori di carica}
+\subsubsection{Conduttori}
+\begin{equation}
+    d n_e= \rho dE
+\end{equation}
+
+$\rho$ è la densità di elettroni nell'intervallo dE, ed è data da:
+
+\begin{equation}
+    \rho = f(E) N(E)
+\end{equation}
+
+con f probabilità di occupazione di uno stato e N densità degli stati nella banda di conduzione.
+N(E) è data da:
+
+\begin{equation}
+    N(E) = \gamma E^{1/2}
+\end{equation}
+
+con $\gamma$ costante.
+La densità di probabilità di occupazione è data dalla funzione di probabilità di Fermi-Dirac:
+
+\begin{equation}
+    f(E) = \frac{1}{1+e^{\frac{E-E_F}{kT}}}
+\end{equation}
+
+con $E_F$ energia di Fermi, che rappreseenta l'energia massima di un elettrone a T=0K, e per T>0K rappresenta l'energia a cui la probabilità di occupazione è 1/2.
+Dato che il numero di elettroni liberi in un conduttore è invariante per cambio di Temperatura, in un ampio range,
+possiamo stimare la densità elettronica a T=0K:
+
+\begin{equation}
+    n = \int_{0}^{E_F} \rho dE \frac{2}{3}\gamma E_F^{3/2}
+\end{equation}
+
+\subsubsection{Semiconduttori puri}
+
+
+\end{document}
