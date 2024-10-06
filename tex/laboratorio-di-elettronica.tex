@@ -130,15 +130,203 @@ La densità di probabilità di occupazione è data dalla funzione di probabilit�
     f(E) = \frac{1}{1+e^{\frac{E-E_F}{kT}}}
 \end{equation}
 
-con $E_F$ energia di Fermi, che rappreseenta l'energia massima di un elettrone a T=0K, e per T>0K rappresenta l'energia a cui la probabilità di occupazione è 1/2.
+Tale funzione indica la distribuzione in energia degli elettroni internamente ad un conduttore, ove con $E_F$ si indica l'energia di Fermi, che rappresenta l'energia massima di un elettrone a T=0K, e per T>0K rappresenta l'energia a cui la probabilità di occupazione è 1/2.
 Dato che il numero di elettroni liberi in un conduttore è invariante per cambio di Temperatura, in un ampio range,
 possiamo stimare la densità elettronica a T=0K:
 
 \begin{equation}
-    n = \int_{0}^{E_F} \rho dE \frac{2}{3}\gamma E_F^{3/2}
+    n = \int_{0}^{E_F} \rho dE =\int_{0}^{E_F} \gamma E^{\frac{1}{2}}=\frac{2}{3}\gamma E_F^{3/2}
 \end{equation}
 
 \subsubsection{Semiconduttori puri}
+Analogamente ai conduttori, la densità di elettroni è data da:
+
+\begin{equation}
+    d n_e= \rho dE= f(E) N(E)
+\end{equation}
+
+Data E$_c$ l'energia minima della banda di conduzione, si può scrivere la densità degli stati come:
+
+\begin{equation}
+    N(E) = \gamma (E-E_c)^{1/2} \quad E > E_c
+\end{equation}
+
+la probablità di occupazione, invece, analogamente ai conduttori, è data dalla distribuzione di Fermi-Dirac:
+
+\begin{equation}
+    f(E) = \frac{1}{1+e^{\frac{E-E_F}{kT}}}
+\end{equation}
+
+La probabilità di occupazione tende a 0 per (E-$E_F$) >> kT, e a 1 per (E-$E_F$) << kT.
+La densità di elettroni è data da:
+
+\begin{equation}
+    n = \int_{E_c}^{\infty} \rho dE = \int_{E_c}^{\infty} f(E) N(E) dE \circ \gamma \int_{E_c}^{\infty} (E-E_c)^{1/2} \frac{1}{e^{\frac{E-E_F}{kT}}} dE= N_c e^{\frac{E_F-E_c}{kT}}
+\end{equation}
+
+Dove N$_c$ coincide con la concentrazione intrinseca degli elettroni nel caso in cui l'Energia di Fermi coincida con l'energia minima della banda di conduzione.
+Considerando che l'Energia di Fermi è sempre al centro della banda proibita, ciò equivale al caso limite di un conduttore.
+Dunque la densità degli elettroni aumenta con la temperatura.
+
+Nel caso delle lacune, invece, si ripete un ragionamento analogo, ottenendo:
+
+\begin{equation}
+    p = N_v e^{\frac{E_v-E_F}{kT}}
+\end{equation}
+
+\subsubsection{Livello di Fermi}
+
+Per un semiconduttore puro, n=p, ossia:
+
+\begin{equation}
+    n_i = N_c e^{\frac{E_F-E_c}{kT}} = N_v e^{\frac{E_v-E_F}{kT}}
+\end{equation}
+
+da cui si ricava, considerando le masse delle particelle fittizie rappresentanti le lacune e quelle degli elettroni dello stesso ordine di grandezza, si ottiene
+una stima dell'energia di Fermi:
+
+\begin{equation}
+    E_F = \frac{E_c + E_v}{2} + \frac{kT}{2} ln(\frac{N_v}{N_c})\circ \frac{E_c+E_v}{2}
+\end{equation}
+
+a supporto dell'affermazione precedente.
+
+\subsubsection{Concentrazione intrinseca}
+
+Il prodotto n p è dato da:
+
+\begin{equation}
+    n p = n_i^2 = N_c N_v e^{\frac{E_c-E_v}{kT}}= N_c N_v e^{\frac{E_g}{kT}}
+\end{equation}
+
+In un semiconduttore intrinseco, n=p, da cui si ricava la legge dell'azione di massa:
+
+\begin{equation}
+  np = n_i^2
+\end{equation}
+
+che implica che il prodotto delle concentrazioni è costante, data una temperatura.
+Si trova in particolare la dipendenza di n$_i$ dalla temperatura:
+
+\begin{equation}
+    n_i = A_0 T^{3/2} e^{\frac{-E_g}{2kT}}
+\end{equation}
+
+Si è così riottenuta l'equazione (6).
+
+\subsection{Semiconduttori drogati}
+Inserendo impurezze chimiche in un semiconduttore, si può ottenere una condizione tale per cui risulti n$\neq$p.
+La variabilià introdotta dipende principalmente dal livello di valenza dell'atomo drogante.
+Per esempio, un atomo del quinto gruppo della tavola periodica, come il fosforo, introduce un elettrone in più rispetto al silicio, e dunque si parla di drogaggio di tipo n.
+Ciò è realizzabile a patto di fornire la necessaria energia di attivazione dei donatori.
+Al contrario, un atomo del terzo gruppo, come il boro, introduce una lacuna in più rispetto al silicio, e dunque si parla di drogaggio di tipo p.
+n tal caso è necessario fornire l'energia di attivazione degli accettori.
+A temperatura ambiente tutti gli atomi droganti sono da considerarsi inonizzati.
+Se si aggiungono droganti in concentrazioni maggiori dell'intrinseca, si possono ottenere 3 effetti:
+
+\begin{itemize}
+\item Si ottiene un conduttore in cui i portatori sono di tipo p o n, a seconda del drogaggio;
+\end{itemize}
+
+Dato che un semiconduttore drogato è comunque elettricamente neutro, deve valere:
+
+\begin{equation}
+    n + N_d = p + N_a
+\end{equation}
+
+\subsubsection{Drogaggio di tipo n}
+
+Trascurando la concentrazione intrinseca, per un semiconduttore drogato di tipo n si ha:
+
+\begin{equation}
+    n \simeq N_d
+\end{equation}
+
+la concentrazione di lacune è pertanto:
+
+\begin{equation}
+    p = \frac{n_i^2}{n} = \frac{n_i^2}{N_d}
+\end{equation}
+
+\subsubsection{Drogaggio di tipo p}
+
+Analogamente, per un semiconduttore drogato di tipo p si ha:
+
+\begin{equation}
+    p \simeq N_a
+\end{equation}
+
+la concentrazione di elettroni è pertanto:
+
+\begin{equation}
+    n = \frac{n_i^2}{p} = \frac{n_i^2}{N_a}
+\end{equation}
+
+\subsubsection{Conducibilità}
+
+Al fine di ottenere una variazione apprezzabile della conducibilità, è necessario che la concentrazione di droganti sia molto piccola.
+La conducibilità è data da:
+
+\begin{equation}
+    \sigma = q(n \mu_n + p \mu_p)
+\end{equation}
+
+La resistività di un semiconduttore drogato è indipendente dalla temperatura, per un ampio range di valori.
+
+\subsubsection{Livello di Fermi nei semiconduttori drogati}
+
+In assenza di impurità, il livello di Fermi coincide con l'energia di Fermi, al centro della banda proibita,
+per via della medesima concentrazione di elettroni e lacune.
+
+Se l'impurità è di tipo n, il livello di Fermi si trasla verso la banda di conduzione, in quanto la concentrazione di elettroni è maggiore di quella di lacune.
+Ciò, probabilisticamente, implica che la probabilità di occupazione degli stati nella banda di conduzione è maggiore di quella nella banda di valenza,
+essendo $E_f$ l'energia alla quale corrisponde una probabilità di occupazione di 1/2.
+
+Trascurando la concentrazione intrinseca degli elettroni, si ha:
+
+\begin{equation}
+    N_D= N_c e^{\frac{E_c-E_F}{kT}} \rightarrow E_F = E_c + kT ln(\frac{N_D}{N_c})
+\end{equation}
+
+Simmetricamente, per un drogaggio di tipo p, si ha:
+
+\begin{equation}
+    N_A= N_v e^{\frac{E_F-E_v}{kT}} \rightarrow E_F = E_v - kT ln(\frac{N_A}{N_v})
+\end{equation}
+
+Da notare che all'aumentare della temperatura, il livello di fermi si sposta nuovamente al centro della banda proibita, in accordo con le considerazioni precedenti.
+
+\subsection{Corrente di diffusione}
+
+L'operazione di drogaggio può comportare un gradiente p o n all'interno del semiconduttore.
+Ciò è il risultato di un puro processo di diffusione, non elettrostatico. ertanto, la corrente di
+diffusione è esprimibile mediante la legge di Fick:
+
+\begin{equation}
+    J_n = -q D_n \frac{dn}{dx}
+\end{equation}
+
+simmetricamente, per le lacune:
+
+\begin{equation}
+    J_p = q D_p \frac{dp}{dx}
+\end{equation}
+
+La relazione tra dffusione e mobilità è data dalla relazione di Einstein:
+
+\begin{equation}
+   \frac{D_p}{\mu_p} = \frac{D_n}{\mu_n} = V_T
+\end{equation}
+
+Segue che la densità di corrente totale è data da:
+
+\begin{equation}
+    J_n= q\mu_n n \epsilon+ qD_n \frac{dn}{dx}
+\end{equation}
+
+
+
+
 
 
 \end{document}
