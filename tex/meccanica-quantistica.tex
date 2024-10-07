@@ -534,9 +534,88 @@ Definendo un operatore di rotazione intorno all'asse z $r_z$, M si può scrivere
 \end{equation}
 
 \subsubsection{Momento angolare di spin}
+Il momento angolare di spin è una proprietà intrinseca di una qualsiasi particella elementare, indipendente dal suo stato di moto.
+Ne segue che essa determini un grado di libertà aggiuntivo, e, pertanto, commuta con qualsiasi funzione delle osservabili canoniche.
+L'operatore di spin gode delle medesime proprietà dell'operatore di momento angolare orbitale, e così una loro generica combinazione lineare.
+Dato che il momento angolare commuta con qualsiasi scalare, e che l'Hamiltoniana è invariante per rotazione spaziale (e dunque uno scalare), il momento angolare è una costante del moto.
+Uno stato generico ha momento angolare nullo se e solo se è sfericamente simmetrico.
+
 
 \subsubsection{Quantizzazione del momento angolare}
-Si può procedere in maniera analoga alla quantizzazione dell'oscillatore armonico, considerando l'Hamiltoniano del sistema come:
+Si può procedere in maniera analoga alla quantizzazione dell'oscillatore armonico, considerando l'Hamiltoniano del sistema come:... (da terminare)
+
+\subsubsection{Spin dell'elettrone}
+L'elettrone è una particella elementare avente spin modulo 1/2.
+Per lo studio si pone:
+
+\begin{equation}
+    \hat{m}=\frac{\hbar}{2}\sigma
+\end{equation}
+
+di modo che risulti:
+
+\begin{equation}
+    \sigma_x^2=\sigma_y^2=\sigma_z^2=1
+\end{equation}
+
+si trova che:
+
+\begin{equation}
+  \sigma_i \sigma_j= -\sigma_j \sigma_i \quad , \quad i \neq j \leftrightarrow \sigma_i \sigma_j= i\sigma_k \quad , \quad i \neq j \neq k
+\end{equation}
+
+da cui segue
+
+\begin{equation}
+    \sigma_x \sigma_y \sigma_z = i
+\end{equation}
+
+Tali sono le proprietà di una variabile spin modulo 1/2.
+Data la base di autoket di $\sigma_z$, si può formare una rappresentazione matriciale 
+degli operatori di spin:
+
+\begin{equation}
+    \sigma_x=\begin{pmatrix}
+        0 & 1 \\
+        1 & 0
+    \end{pmatrix}
+    \quad
+    \sigma_y=\begin{pmatrix}
+        0 & -i \\
+        i & 0
+    \end{pmatrix}
+    \quad
+    \sigma_z=\begin{pmatrix}
+        1 & 0 \\
+        0 & -1
+    \end{pmatrix}
+\end{equation}
+
+in cui la rappresentazione di $\sigma_x$ e $\sigma_y$ è data in termini di $\sigma_z$, secondo le proprietà precedentemente ricavate, a meno di 
+un fattore di fase arbitrario.
+Gli stati relativi ad uno spin modulo 1/2 sono rappresentabili come:
+
+\begin{equation}
+    |\uparrow>=\begin{pmatrix}
+        1 \\
+        0
+    \end{pmatrix}
+    \quad
+    |\downarrow>=\begin{pmatrix}
+        0 \\
+        1
+    \end{pmatrix}
+\end{equation}
+
+L'equazione d'onda comprendente lo spin è pertanto fattorizzabile in una parte spaziale e in una parte di spin, e si scrive come:
+
+\begin{equation}
+    \psi(\xi, t)=\psi(\xi, t) \eta(\sigma)
+\end{equation}
+
+\subsection{Moto in un campo centrale}
+Si studa qui il moto di un elettrone attorno al nucleo atomico, sotto l'approssimazione di repulsione coulombiana trascurabile, a meno di un fattore medio, e non relativistica.
+
 
 
 
