@@ -1,0 +1,101 @@
+\documentclass{article}
+
+\title{Fisica Nucleare e Subnucleare}
+\author{Cesar}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Questo documento tratta di fisica nucleare e subnucleare.
+\end{abstract}
+
+
+\section{Introduzione}
+ATTENZIONE: formulario ancora in fase di sviluppo. Alcune informazioni potrebbero essere incomplete o errate.
+
+\section{Modelli nucleari}
+\subsection{Modello a gas di fermioni}
+Per spiegare i termini 4 e 5 del modello a goccia, viene introdotto il modello di nucleo come gas fermionico,
+fondato sui seguenti enunciati:
+\begin{itemize}
+    \item L'interazione di legame è a corto raggio ($\simeq R$).
+    \item L'interazione reciproca è determinata unicamente dalle particelle a contatto. Ne segue una densità volumetrica uniforme.
+    \item La media delle forze di interazione è zero se non sulla superficie, ove è centrale.
+\end{itemize}
+
+riassumibili nel sunto:
+
+\emph{Il nucleo è un insieme di fermioni soggetti ad un potenziale uniforme e tridimensionalmente sferico.}
+
+Ne segue che, quantisticamente,
+
+\begin{itemize}
+    \item $\psi(r, t)=0$ per $r\geq R$.
+    \item Ciò comporta la quantizzazione di Energia e lunghezza d'onda.
+    \item Si forma una distribuzione di livei energetici in cui è possibile inserire solo un protone ed un neutrone ciascuno. Essi sono
+    occupati ordinatamente fino al livello di Fermi.
+\end{itemize}
+
+Considerando per semplicità una buca di potenziale cubica, la funzione d'onda deve essere del tipo:
+
+\begin{equation}
+    \psi(\vec{r},t)= A\sin(\frac{p_x x}{\hbar})\sin(\frac{p_y y}{\hbar})\sin(\frac{p_z z}{\hbar})e^{-iEt/\hbar}
+\end{equation}
+da cui, imponendo la condizione di annullamento in corrispondenza della superficie, si ricava la quantizzazione della quantità di moto:
+
+\begin{equation}
+    p_i=\frac{n_i\pi\hbar}{L}
+\end{equation}
+
+Dunque l'energia per nucleone deve valere:
+
+\begin{equation}
+    E=\frac{p^2}{2m}=\frac{\hbar^2}{2m}(\frac{n_x^2}{L^2}+\frac{n_y^2}{L^2}+\frac{n_z^2}{L^2})
+\end{equation}
+
+Segue l'espressione della funzione d'onda per nucleone:
+
+\begin{equation}
+    \psi(\vec{r},t)=\sqrt{\frac{8}{L^3}}\sin(\frac{n_x\pi x}{L})\sin(\frac{n_y\pi y}{L})\sin(\frac{n_z\pi z}{L})e^{-iEt/\hbar}
+\end{equation}
+
+Ci si chiede ora quanti stati quantici siano disponibili al di sotto di un certo livello energetico, considerando che sia $n_i$ che E sono funzioni delle quantità di moto $p_i$.
+Data la discretizzazione dello spazio degli impulsi, con volume elementare pari a $\frac{\hbar \pi}{L}$, si ha che il numero di stati quantici disponibili è pari al rapporto
+tra il volume dell'ottente positivo della sfera di raggio P prefissato e il volume elementare:
+
+\begin{equation}
+    N=\frac{1}{8}\frac{4}{3}\pi P^3(\frac{L}{\pi\hbar})^3=\frac{V}{6\pi^2 \hbar^3}P^3
+\end{equation}
+
+a cui vanno sottratti gli stati con quantità di moto giacente sui piani coordinati:
+
+\begin{equation}
+ n_0= 3\frac{\frac{1}{4}\pi P^2}{(\frac{\pi \hbar}{L})^2}= \frac{S}{8\pi\hbar^2}P^2
+\end{equation}
+con S superficie del cubo di potenziale.
+Infine il numero di stati quantici disponibili è pari a:
+
+\begin{equation}
+    N= \frac{V}{6\pi^2 \hbar^3}P^3 - \frac{S}{8\pi\hbar^2}P^2
+\end{equation}
+
+contenenti complessivamente 2$n_s$ nucleoni.
+
+\subsection{Modello a Shell}
+Il modello a gas di fermioni semplifica eccessivamente le interazioni risultanti.
+La ragione dell'irreaizzabilità di tale modello è essenzialmente data dal cosiddetto "Pauli Blocking", che determina
+l'impossibilità di isotropia volumetrica nel volume del nucleo.
+Infatti, la variazione dello stato energetico di un nucleone, determinata da un urto con un altro,
+comporterà una variazione del suo stato quantico solamente se l'energia apportata sia sufficiente.
+Ma dal momento che ciò non avviene nella stragrande maggioranza dei casi, l'interazione efficace non è di tipo
+stocastico, bensì posizionale, dunque descrivibile da un potenziale.
+La forma del potenziale è ricercabile mediante lo studio dei cosiddetti "numeri magici" (A= 8, 20, 28, 50, 82, 126,...), ossia la serie numerica determinata dalle variazioni dell'energia differenzalegame in funzione del numero atomico A.
+Essi sono semplicemente determinati dal fatto che un elemento avente A incrementato unitariamente varierà la propria energia di legame in modo sostanziale solamente se il nucleone aggiunto si collochi in un livello energetico superiore.
+
+\subsubsection{Potenziale a buca sferica infinita}
+
+
+\end{document}

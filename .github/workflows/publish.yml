@@ -34,6 +34,7 @@ jobs:
             tex/astrofisica.tex
             tex/fisica-della-materia.tex
             tex/laboratorio-di-elettronica.tex
+            tex/fisica-nucleare-e-subnucleare.tex
 
       - name: Create output directory
         run: mkdir -p dist
