@@ -615,10 +615,133 @@ L'equazione d'onda comprendente lo spin è pertanto fattorizzabile in una parte 
 
 \subsection{Moto in un campo centrale}
 Si studa qui il moto di un elettrone attorno al nucleo atomico, sotto l'approssimazione di repulsione coulombiana trascurabile, a meno di un fattore medio, e non relativistica.
+Lo studio viene facilitato dalle conoscenza apprese sul momento angolare. 
+L'Hamiltoniana del sistema è data da:
+
+\begin{equation}
+    H=\frac{1}{2m}p^2+V(r)
+\end{equation}
+
+Si introduce un sistema di coordinate polari, tale che:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        & x=r\sin{\theta}\cos{\phi} \\
+        & y=r\sin{\theta}\sin{\phi} \\
+        & z=r\cos{\theta}
+    \end{aligned}
+    \right.
+\end{equation}
+
+Ne seguono le regole di commutazione tra le variabili cartesiane ed r:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        & [r, p_x]=\frac{x}{r} \\
+        & [r, p_y]=\frac{y}{r} \\
+        & [r, p_z]=\frac{z}{r}
+    \end{aligned}
+    \right.
+\end{equation}
+
+Si definisce $p_r$:
+
+\begin{equation}
+    p_r=\frac{1}{r}(xp_x+yp_y+zp_z) \rightarrow [r, p_r]=1
+\end{equation}
+
+Sfruttando la relazione sul modulo del momento angolare in funzione di k:
+
+\begin{equation}
+    k(k+\hbar)=m_x^2+m_y^2+m_z^2
+\end{equation}
+
+si ottiene l'Hamiltoniana in polari:
+
+\begin{equation}
+    H=\frac{1}{2m}\left ( \frac{1}{r}p_r^2 r +\frac{k(k+\hbar)}{r^2}\right )+V(r)
+\end{equation}
+
+Ne segue l'equazione di Shrodinger:
+
+\begin{equation}
+    i\hbar \frac{\partial \psi}{\partial t}= \left \{ \frac{\hbar^2}{2m}\left ( -\frac{1}{r}\frac{\partial^2}{\partial r^2}r+\frac{k(k+\hbar)}{\hbar^2r^2} \right ) +V \right \} \psi
+\end{equation}
+
+Ne discende la forma dell'operatore lineare funzione di k:
+
+\begin{equation}
+   \frac{k(k+\hbar)}{\hbar^2}= -\frac{1}{\sin{\theta}}\frac{\partial}{\partial \theta}\left ( \sin{\theta}\frac{\partial}{\partial \theta} \right ) - \frac{1}{\sin^2{\theta}}\frac{\partial^2}{\partial \phi^2}
+\end{equation}
+
+i cui autostati sono le armoniche sferiche, con autovalori del tipo n(n+1). Per un'autofunzione di questo tipo, $\psi$ risulta:
+
+\begin{equation}
+    \psi_{k,m}(\xi)=\frac{1}{r}\chi_{k,l}(r)S_n(\theta, \phi)
+\end{equation}
+
+Inserendo tale funzione d'onda nell'equazione di Shrodinger, assumendo che lo stato sia stazionario con autovalore di H pari ad H':
+
+\begin{equation}
+    H' \chi_0=\left\{\frac{\hbar^2}{2m}\left( -\frac{d^2}{dr^2}+\frac{n(n+1)}{r^2}\right)+V \right\}\chi_0
+\end{equation}
+
+Quata equazione è fondamentale per la determinazione dei livelli energetici H' del sistema:
+
+\begin{equation}
+\forall \quad n \quad in \quad N \quad \exists \quad 2n+1 \quad stati \quad indipendenti
+\end{equation}
 
 
+* discussione delle condizioni a contorno *
 
+\subsection{Atomo di idrogeno}
+La precedente derivazione è applicabile alla risoluzione del modello dell'atomo di idrogeno:
+L'equazione (72) diviene così:
 
+\begin{equation}
+ \left\{\frac{d^2}{dr^2} -\frac{n(n+1)}{r^2} +\frac{2me^2}{\hbar^2}\frac{1}{r} \right\}\chi_0= -\frac{2mH'}{\hbar^2}\chi_0
+\end{equation}
+
+ponendo:
+\begin{equation}
+    \left\{
+    \begin{aligned}
+       && \chi_0(r)=f(r)e^{-\frac{r}{a}} \\
+         && a=\pm \sqrt{\frac{-\hbar^2}{2mH'}}
+    \end{aligned}
+    \right.        
+\end{equation}
+
+l'equazione diviene:
+
+\begin{equation}
+        \left(\frac{d^2}{dr^2} -\frac{2}{a}\frac{d}{dr} -\frac{n(n+1)}{r^2} +\frac{2me^2}{\hbar^2}\frac{1}{r}\right)f(r)=0
+\end{equation}
+
+Sostituendo la f(r) sviluppata in serie di potenze, si ottiene:
+
+\begin{equation}
+    \sum_{s} c_s \{s(s-1)r^{s-2}-(2s/a)r^{s-1}-n(n+1)r^{s-2}+\frac{2me^2}{\hbar^2}r^{s-1} \}=0
+\end{equation}
+
+date le condizioni a contorno, si ottengono le energie possibili per l'elettrone nell'atomo di idrogeno:
+
+* da terminare *
+
+\begin{equation}
+    H'=-\frac{me^4}{2s^2\hbar^2}
+\end{equation}
+
+\subsection{Effetto Zeeman}
+L'effetto Zeeman è un effetto di separazione delle righe spettrali di un atomo in presenza di un campo magnetico esterno.
+Esso è dovuto al fatto che l'Hamiltoniana del sistema ammette un termine aggiuntivo, dovuto all'interazione tra il momento magnetico dell'elettrone e il campo magnetico esterno,
+che tuttavia non influisce sulla forma delle autofunzioni, ma solo sui livelli energetici, ovvero sugli autovalori di H,
+che risulteranno aumentati, immutati o diminuiti di un fattore proporzionale al campo magnetico esterno.
+Da qui si evincono le ragioni dell'Effetto Zeeman.
+* da terminare *
 
 \section{Bibliografia}
 \begin{thebibliography}{9}
