@@ -349,30 +349,132 @@ Date le variabili canoniche, si definiscono le parentesi di Poisson classiche co
 Servendosi del principio di corrispondenza, si instaura la corrispondenza tra esse e l'operazione di commutazione operatoriale:
 
 \begin{equation}
-    [u,v]_P = \frac{1}{i\hbar}[\hat{u},\hat{v}]
+     [\hat{u},\hat{v}]= \frac{1}{i\hbar}[\hat{u},\hat{v}]_P
+\end{equation}
+
+Di grande utilità sono le relazioni di commutazione delle coordinate canoniche, che si traspongono naturalmente a partire
+dalle parentesi di Poisson classiche:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        & [q_i, q_j]=0 \\
+        & [p_i, p_j]=0 \\
+        & [q_i, p_j]=i\hbar \delta_{ij}
+    \end{aligned}
+    \right.
 \end{equation}
 
 \subsection{Rappresentazione di Schrödinger}
-La rappresentazione di Shrodinger consiste nel formalizzare gli operatori posizione e quantità di moto come operatori differenziali sullo spazio degli stati variabili,
-ovvero delle funzioni d'onda su uno spazio di Hilbert.
-In tal modo, si definisce l'operatore posizione come:
+La rappresentazione di Shrodinger consiste nella formalizzazione delle coordinate canoniche come osservabili operanti sullo spazio delle funzioni d'onda.
+Se diagonalizziamo la rappresentazione rispetto alle q, otteniamo la rappresentazione di Schrodinger.
+Analizziamo le proprietà che ne derivano.
+Qualunque ket rappresentante uno stato del sistema può essere espresso secondo la formalizzazione del ket standard come:
 
 \begin{equation}
-    \hat{q} = q
+    |P>= \psi>\equiv \psi(q)
 \end{equation}
 
-e l'operatore quantità di moto come:
+Introduco ora un operatore lineare di derivazione sulle q, e ne calcolo le proprietà, da cui emergerà un'importante conclusione in termini di rappresentazione.
+Nel caso monodimesionale:
 
 \begin{equation}
-    \hat{p} = -i\hbar \nabla
+    \frac{d}{dq} : \frac{d}{dq} \psi = \frac{d \psi}{dq}
 \end{equation}
 
-In tale rappresentazione, come affermato nel paragrafo precedente ... , la densità di probabilità di misurare una variabile dinamica è data dal modulo quadro della funzione d'onda, ma solo
-nel caso in cui la funzione d'onda normalizzata sia autostato dell'operatore.
-Alternativamente, essendo essa ket di H, è esprimibile come combinazione lineare generalizzata degli autostati dell'operatore,
-per cui è possibile calcolare la probabilità di misurare una variabile dinamica come il modulo quadro della proiezione della funzione d'onda su un autostato dell'operatore.
+ne segue che l'operatore di derivazione applicato al ket standard sia uguale al ket nullo.
+Inoltre:
+
+\begin{equation}
+    \begin{aligned}
+        & <\psi \frac{d}{dq} | \psi>= <\psi |\frac{d}{dq} \psi> \quad \forall \psi\\
+        & \int <\psi \frac{d}{dq} | q'> \psi(q')dq'= \int \psi(q') dq' \frac{d\psi(q')}{dq'}=-\int \frac{\psi(q')}{dq'}dq' \psi(q') \\
+        & <\psi \frac{d}{dq}|q'>=-\frac{d\psi(q')}{dq'} \\
+        & <\psi \frac{d}{dq} = -<\frac{d\psi}{dq}
+    \end{aligned}
+\end{equation}
+
+inoltre vale che il complesso coniugato di un operatore di derivazione è l'operatore di derivazione cambiato di segno.
+Dunque si deduce che l'operatore di derivazione è immaginario puro.
+Si può anhe ricavare l'insieme rappresentativo dell'operatore di derivazione, rispetto alla base diagonalizzata rispetto alle q:
+
+\begin{equation}
+    \begin{aligned}
+        & |q''>= \delta(q-q'')> \\
+        & \frac{d}{dq}|q''>= \frac{d}{dq}\delta'(q-q'')> \\
+        & <q'|\frac{d}{dq}|q''>= \frac{d}{dq}\delta(q-q'')\delta(q-q')= \frac{d}{dq} \delta(q'-q'') \\
+    \end{aligned}
+\end{equation}
+
+Calcolo ora le condizioni quantiche tra l'operatore di posizione e quello di derivazione:
+
+\begin{equation}
+    \begin{aligned}
+        & \frac{d}{dq} q\psi>= q\frac{d}{dq}\psi> + \psi> \\
+        & q\frac{d}{dq}-\frac{d}{dq}q=1 \\
+        & [q,\frac{d}{dq}]=-i\hbar
+    \end{aligned}
+\end{equation}
+
+quindi un operatore del tipo $-i\hbar\frac{d}{dq}$ è tale che $[q,-i\hbar\frac{d}{dq}]=1$.
+Tale operatore è l'operatore quantità di moto unidimensionale nella rappresentazione di Shrodinger.
+L'operatore quantità di moto relativo alla direzione $q_r$ è esprimibile come:
+
+\begin{equation}
+    \hat{p}_r = -i\hbar \frac{\partial}{\partial q_r}
+\end{equation}
+
+Per il principio di sovrapposizione, l'operatore quantità di moto p generico è esprimibile come sommatoria
+delle produttorie delle proiettorie dell'operatore quantità di moto direzionale per il relativo ket di base.
+la rappresentazione di Shrodinger è univocamente determinata a meno di un fattore di fase.
+
+
+\subsection{Rappresentazione dell'impulso}
+Simmetricamente alla rappresentazione di Shrodinger, si può diagonalizzare lo spazio di Hilbert rispetto agli autostati dell'osservabile impulso, per
+esempio le armoniche piane, a meno di modificare il criterio di convergenza degli integrali di misura.
+* non mi torna il meno (non dovrebbe essere applicato al bra???)
+\begin{equation}
+    \begin{aligned}
+        & p'<q'|p'>==<q'|p|p'|=-i\hbar\frac{d}{dq'}<q'|p'> \\
+        & <q'|p'>=c'(p')e^{ip'q'/\hbar} \\
+        & <p' | p''> = \int_{-\inf}^{\inf} <p' |q'><p''|q'>dq'= \\
+        & \int_{-\inf}^{\inf} c'c'' e^{i(p'-p'')q'/\hbar}dq'= (c')^2 \hbar \delta(p'-p'')
+    \end{aligned}
+\end{equation}
+
+In questa rappresentazione la coppia di operatori canonici è, per simmetria, data da:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+     & \hat{p}=p \\
+     & \hat{q}=i\hbar \frac{d}{dp}
+    \end{aligned}
+    \right.
+\end{equation}
+
+Per passare dalla rappresentazione di Shrodinger a quella dell'impulso, vale la seguente regola di trasformazione:
+
+\begin{equation}
+    <q'|p'>= \frac{1}{\sqrt{h}}e^{ip'q'/\hbar}
+\end{equation}
+
+
 
 \subsection{Principio di Indeterminazione di Heisenberg}
+Dalla duplice rappresentazione di un ket generico $X>$, vale:
+
+\begin{equation}
+    \left \{
+    \begin{aligned}
+    & <p'|X>= \frac{1}{\sqrt{h}} \int_{-inf}^{\inf} e^{-iq'p'/\hbar} <q' |X> dq' \\
+    & <q'|X>= \frac{1}{\sqrt{h}} \int_{-inf}^{\inf} e^{iq'q'/\hbar} <p' |X> dp'
+    \end{aligned}
+    \right.
+\end{equation}
+
+*da terminare*
+
 Il principio di indeterminazione di Heisenberg afferma che non è possibile misurare contemporaneamente con precisione arbitraria due variabili dinamiche coniugate:
 
 \begin{equation}
