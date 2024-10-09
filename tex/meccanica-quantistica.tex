@@ -217,7 +217,7 @@ Nel caso di uno spettro continuo, la delta di Dirac è da intendere come un funz
 \int_{0}^{v} \delta(\xi'-\xi'')d\xi' = 1
 \end{equation}
 
-dunque, il simbolo $\delta$ nel caso di uno spettro continuo, rappresenta, con un abuso di notazione, una generalizzazione della delta di Kronecker per uno spettro discreto.
+dunque, il simbolo $\delta$ nel caso di uno spettro continuo, rappresenta una generalizzazione della delta di Kronecker per uno spettro discreto.
 Data tale assunzione, si possono definire le seguenti rappresentazioni.
 Generalizzando tale concetto a varietà di dimensionalità superiore, corrispondenti cioè a spazi di Hilbert generati da prodotto dialico
 di autovettori di autovettori corrispondenti ad un set di n osservabili commutativi, si può scrivere la condizione di ortogonalità come:
@@ -252,7 +252,8 @@ Alla luce di ciò, si può scrivere:
     \xi = \sum_{0}^{v} \xi_i|\xi_i><\xi_i|+ \int \xi'|\xi'><\xi'|d\xi'
 \end{equation}
 
-o, analogamente:
+Il fatto che l'integrale sia esteso solamente agli elementi diagonali di matrice è naturalmente determinato dalla diagonalizzazione
+dello spazio rispetto all'osservabile $\xi$, ossia l'introduzione degli autostati di $\xi$ come base ortonormale di H, ossia tali che:
 
 \begin{equation}
     <\xi' | \xi | \xi''>= \xi' \delta(\xi'-\xi'')
@@ -262,8 +263,8 @@ definendo così la generalizzazione di una matrice diagonale nel caso di uno spe
 
 \subsection{Rappresentazione generica}
 
-Nel caso di uno spazio di Hilbert generato dagli autovalori di n osservabili commutative, definisco la rappresentazione per 
-un tensore di rango n $\omega$ come:
+Nel caso di uno spazio di Hilbert generato dagli autostati di n osservabili commutative, definisco la rappresentazione per 
+un tensore di rango n $\omega$, dato dalla produttoria dialica degli osservabili rappresentati diagonalmente, come:
 
 \begin{equation}
     <\xi_1,\xi_2,...,\xi_n|\omega|\xi'_1,\xi'_2,...,\xi'_n> = \omega' \delta(\xi_1-\xi'_1)\delta(\xi_2-\xi'_2)...\delta(\xi_n-\xi'_n)
@@ -277,23 +278,63 @@ Nel caso di una misura di n set di n osservabili commutative, la probabilità di
     P_{\xi_1,\xi_2,...,\xi_n} = <x|\delta_{\xi_1,\xi_1}\delta_{\xi_2,\xi_2}...\delta_{\xi_n,\xi_n}|x>
 \end{equation}
 
-si trova immediatamente che la probabilità di una misura non è altro che il modulo quadro dello stato a cui si applica l'operatore set di autovalori in questione.
-Tale concetto è facilmente estendibile ad un operatore con uno spettro continuo definendo un'ampiezza di probabilità, per esempio per una misura di posizione.
+si trova immediatamente che la probabilità di una misura di un osservabile non è altro che il modulo quadro dello stato a cui si applica l'operatore set di autovalori in questione.
+Dunque la media di una misura di un osservabile è data da:
+
+\begin{equation}
+    <\xi> = \int \xi' P_{\xi'}d\xi'
+\end{equation}
+
+dove l'integrale è esteso allo spettro dell'osservabile $\xi$, nel caso in cui sia continuo. Alternativamente l'integrale si riduce ad una sommatoria.
+
 
 \section{Funzione d'onda come rappresentazione di ket}
 Una generica funzione di osservabili può rappresentarre un ket in H, ovvero uno stato variabile dinamicamente nel contesto di una sistema quantistico.
-Dunque il modulo quadro di una funzione d'onda, a cui si applica un osservabile, rappresenta la probabilità di misurare un set di autovalori di tale osservabile.
-Nella notazione, si sottointende da ora:
+Si definisce ora la funzione d'onda come rappresentazione di un ket, ovvero come funzione di osservabili operante sul ket standard $>$:
 
 \begin{equation}
     \psi = |\psi>
 \end{equation}
 
-dunque, sottointendendo ora la presenza del ket standard >, si desume che la differenza tra una generica funzione di osservabili f e $\psi$ è che
+dunque, sottointendendo ora la presenza del ket standard $>$, si desume che la differenza tra una generica funzione di osservabili f e $\psi$ è che
 quest'ultima può essere applicata ad un operatore solo a sinistra, mentre f da entrambi i lati.
-Fisicamente, f non rappresenta lo stato del sistema quantistico, mentre $\psi$ sì.
-La normalizzazione di $\psi$ consente di interpretare il modulo quadro come probabilità di misurare il sistema in dato stato.
+Le proprietà che tale funzione deve soddisfare, affinhé possa essere rappresentativa dell'evoluzione di un
+sistema quantistico nel tempo, sono:
 
+\begin{itemize}
+    \item $\psi$ $\in$ $L^2(\mathbb{R}^3)$, a meno di normalizzazione "in scatola".
+    \item $P$(x,t)=|$\psi(x,t)$|$^2$ è la densità di probabilità di misurare il sistema in x al tempo t, nel caso in cui $\psi$ sia normalizzata.
+    \item La probabilità totale estesa su tutto lo spazio è pari a 1.
+\end{itemize}
+
+Fisicamente, dunque, una generica f non rappresenta lo stato del sistema quantistico, mentre la $\psi$ così definita sì.
+In generale, è corretto affermare che per ogni funzione d'onda esiste una forma di equazione di Shrodinger tale per cui essa risulta soluzione. Questo non è in generale vero
+per una generica funzione di osservabili. (affermazione da verificare...costituirebbe un sunto delle proprietà di $\psi$).
+
+
+\subsection{Esempio di funzione d'onda}
+Sullo spazio di Hilbert degli stati, diagonalizzato rispetto all'osservabile impulso, le armoniche piane relative ad uno spettro continuo di impulsi, costituiscono una base ortonormale.
+Pertanto, considerando un modello di pacchetto d'onda, ovverosia un'onda risultante dalla sovrapposizione di armoniche di base tali che l'impulso sia incluso in
+un certo range, si può scrivere la funzione d'onda, secondo la rappresentazione di ket dell'equazione ... come:
+
+\begin{equation}
+    \psi(x,t)=\int_{p-\Delta p}^{p+\Delta p} C(p)e^{i(px-Et)/\hbar}dp
+\end{equation}
+
+Introducendo un'approssimazione tale per cui risulti:
+
+\begin{itemize}
+    \item C quasi costante nell'intervallo.
+    \item $\epsilon \simeq \Delta k$, con k vettore d'onda, dipendente da p secondo la relazione di De Broglie.
+\end{itemize}
+
+si ottiene:
+
+\begin{equation}
+    \psi(x,t)= \frac{1}{\sqrt{\pi \Delta k}}\frac{\sin[(x-\omega_1 t)\Delta k]}{x-\omega_1 t}e^i(k_0x-\omega_0t)
+\end{equation}
+
+in cui gli indici 0 e 1 sono riferiti all'indice di espansione in serie di Taylor della pulsazione.
 
 \section{Condizioni quantiche}
 Si definisce condizione quantica una relazione tra due osservabili, volte a descrivere il sistema quantistico.
@@ -742,6 +783,62 @@ che tuttavia non influisce sulla forma delle autofunzioni, ma solo sui livelli e
 che risulteranno aumentati, immutati o diminuiti di un fattore proporzionale al campo magnetico esterno.
 Da qui si evincono le ragioni dell'Effetto Zeeman.
 * da terminare *
+
+
+\section{Teoria delle perturbazioni}
+L'approccio di analisi di un sistema perturbato parte da una scissione dell'Hamiltoniana in due parti, una parte H$_0$ relativa al sistema non perturbato, e una parte H' relativa alla perturbazione, funzione di una variabile "piccola" $\epsilon$.
+* da terminare successivamente *
+
+\section{Particelle identiche}
+L'Hamiltoniana per un sistema di particelle identiche deve essere invariante per permutazione degli osservabili corrispondenti.
+E' utile dunque introdurre una notazione data dalla produttoria dialica dei ket relativi alle singole particelle, per rappresentare lo stato del sistema.
+
+\begin{equation}
+    |a_1>|a_2>...|a_n>=|a_1,a_2,...,a_n>
+\end{equation}
+
+tale rappresentazione è detta "rappresentazione simmetrica".
+Introducendo un operatore lineare volto a permutazioni indiciali pari o dispari, P.
+Un ket si dice simmetrico se:
+
+\begin{equation}
+    P|a_1,a_2,...,a_n>=|a_1,a_2,...,a_n>
+\end{equation}
+
+e antisimmetrico se:
+
+\begin{equation}
+    P|a_1,a_2,...,a_n>=\pm|a_1,a_2,...,a_n>
+\end{equation}
+(+ se la permutazione è pari, - altrimenti)
+
+Ne segue che uno stato antisimmetrico è esprimibile mediante una funzione antisimmetrica, e viceversa.
+Ciò deve valere ad ogni t.
+Un ket antisimmetrico è ottenibile dalla sommatoria estesa sulle permutazioni sugli indici del ket simmetrico, a cui viene applicato l'operatore P, con fattori moltiplicativi $\pm 1$, a
+seconda della parità della permutazione.
+Conseguentemente, tale ket èesprimibile come il determinante di una matrice ("di Slater") avente per colonne i tensori dello stato simmetrico.
+Quindi, dal fatto che colonne uguali determinerebbero un determinante nullo, si deduce che due particelle non possono occupare lo stesso stato quantico.
+Tutti gli stati per particelle antisimmetriche devono quindi essere indipendenti.
+Inoltre, si deduce che la funzione d'onda di uno stato antisimmetrico è nulla se due particelle si trovano nello stesso stato quantico.
+Particelle di questo tipo sono dette "fermioni".
+Al contrario, particelle simmetriche sono dette "bosoni".
+La funzione d'onda dei fermioni cambia di segno se si scambiano due particelle, mentre quella dei bosoni rimane invariata.
+Inoltre, si deduce che la funzione d'onda di uno stato antiimmetrico è nulla se due particelle si trovano nello stesso stato quantico.
+Particelle con spin semi-intero sono fermioni, mentre quelle con spin intero sono bosoni.
+
+Quindi, per esempio, due elettroni, protoni o neutroni non possono occupare lo stesso stato quantico, mentre due fotoni possono farlo.
+
+\subsection*{Applicazione agli elettroni}
+L'effetto dello spin non è determinante nella variazione dell'Hamiltoniana (l'interazione spin-orbita determina una correzione trascurabile se il campo
+magnetico non è intenso), ma è determinante nella variazione della funzione d'onda, in quanto provoca una duplicazione degli stati quantici,
+essendo la funzione d'onda fattorizzabile in una parte spazi-temporale e in una parte di spin.
+Si introducono due osservabili di permutazione $P^x$ e $P^\sigma$, operanti rispettivamente sulla parte orbitale e su quella di spin di $\psi$.
+Formando le permutazioni un gruppo, da una composizione di $P^x$ e $P^\sigma$ si ottiene una permutazione totale $P_a$.
+
+Per ogni stato esistente in natura, per un sistema di particelle identiche, gli autovalori di $P_a$ sono $\pm 1$.
+
+
+
 
 \section{Bibliografia}
 \begin{thebibliography}{9}
