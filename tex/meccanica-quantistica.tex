@@ -459,6 +459,29 @@ Per passare dalla rappresentazione di Shrodinger a quella dell'impulso, vale la 
     <q'|p'>= \frac{1}{\sqrt{h}}e^{ip'q'/\hbar}
 \end{equation}
 
+\subsection{Statistiche di osservabili}
+Il valor medio di un osservabile applicato ad uno stato $|\psi>$ è dato, sotto le ipotesi di funzione d'onda normalizzata su uno spazio di Hilbert diagonalizzato su autostato dell'osservabile, da:
+
+\begin{equation}
+    \begin{aligned}
+        & <\xi>= <\psi|\xi|\psi>= \sum \xi_i |\psi_i|^2 \quad discreto \\
+        & <\xi>= <\psi|\xi|\psi>= \int \psi^*\xi'\psi d\xi' \quad continuo
+    \end{aligned}
+\end{equation}
+
+lo scarto quadratico medio è invece pari a:
+
+\begin{equation}
+    (\Delta \xi)^2=<(\xi-<\xi>)^2>= <\psi|(\xi-<\xi>)^2|\psi>
+\end{equation}
+
+Si vede con evidenza che l'errore sulla misura di un osservabile è nulla se e solo se lo stato è autostato dell'osservabile, cioé se:
+
+\begin{equation}
+    \xi |\psi>= \xi |\xi'>= \xi' |\xi'>= <\xi>|\xi'>
+\end{equation}
+
+
 
 
 \subsection{Principio di Indeterminazione di Heisenberg}
