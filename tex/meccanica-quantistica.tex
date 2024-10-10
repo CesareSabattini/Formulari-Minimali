@@ -487,9 +487,91 @@ La sua espressione generalizzata afferma che, date due osservabili non commutati
     \Delta \xi \Delta \eta \geq \frac{1}{2i}\int <\psi|[\hat{\xi},\hat{\eta}]|\psi>d\xi
 \end{equation}
 
+\subsection{Operatori di traslazione}
+Si definiscono operatori di traslazione, tali per cui risulti valida la seguente relazione:
+
+\begin{equation}
+    |R>=c_1|A>+c_2|B> \rightarrow |Rd>=c_1|Ad>+c_2|Bd>
+\end{equation}
+
+in tal modo la sola arbitrarietà dei ket traslati risulta essere data da un fattore di fase.
+Si vede immediatamente che la traslazione di un ket è lineare, per cui si può definire l'operatore D:
+
+\begin{equation}
+    D|A>=|Ad>
+\end{equation}
+
+D è determinato a meno di un fattore di fase.
+Le leggi fisiche devono essere invarianti per traslazione..
+Da tale asserto si possono ricavare le principali propietà dell'operatore D:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+    & <Q |P>=c=<Qd|Pd> \\
+    & <Q |\bar{D}= <Qd| \rightarrow <Q |D \bar{D}|P>=<Qd|Pd>
+    \end{aligned}
+    \right.
+\end{equation}
+
+dunque, essendo l'immagine dell'operatore coincidente con $L(H)$, ossia l'insieme completo degli operatori
+lineari su H, D risulta unitario.
+Inoltre:
+
+\begin{equation}
+    \begin{aligned}
+        & \xi |P>=|R> \rightarrow \xi_d |Pd>= |Rd> \\
+        & D^{-1}\xi D |P>= |R> \quad \forall  \xi \in L(H)
+    \end{aligned}
+\end{equation}
+
+quindi gli osservabili si trasformano come:
+
+\begin{equation}
+    \xi_d = D \xi D^{-1}
+\end{equation}
+Considerando ora una traslazione infinitesima, mi aspetto che esista, per continuità fisica,
+
+\begin{equation}
+    \lim_{\delta x \rightarrow 0} \frac{|Pd>-|P>}{\delta x}= \frac{D-1}{\delta x}|P>\equiv d_x |P>
+\end{equation}
+dove si è definito l'operatore di traslazione infinitesimo lungo x.
+Inoltre, considerando la variabilità dell'operatore in funzione della fase, essa deve tendere ad 1 per $\delta x \rightarrow 0$:
+
+\begin{equation}
+        \lim_{\delta x \rightarrow 0} \frac{De^{i\gamma}-1}{\delta x}|P>= \frac{D-1+i\gamma}{\delta x}\equiv d_x+ia_x
+\end{equation}
+
+è infatti intuitivo routare un ket mediante un immaginario puro.
+Si dimostra inoltre che l'operatore di traslazione infinitesimo è immaginario puro.
+Per spostamenti infinitesimi vale:
+
+\begin{equation}
+    D= 1+d_x\delta x \rightarrow \delta x (\bar{d_x}+d_x)=0
+\end{equation}
+
+Si trova ora la relazione fondamentale tra operatore di traslazione e impulso:
+
+\begin{equation}
+    \begin{aligned}
+        & \lim_{\delta x \rightarrow 0} \frac{v_d-v}{\delta x}= d_xv-vd_x \\
+        & d_x x- xd_x= \lim_{\delta x \rightarrow 0} \frac{x-\delta x -x}{\delta x}= -1 \\
+        & p_x= i\hbar d_x
+    \end{aligned}
+\end{equation}
+
+Dove si sono trascurati i termini $\delta x^2$, e si è dimostrata la validità della commutazione di $d_x$ con la sola variabile x.
+Si trova con ragionamenti analoghi che le condizioni quantiche di $i\hbar d_x$ e $p_x$, rispetto alle altre variabili canoniche, sono le stesse.
+Perciò è lecita tale rappresentazione.
+La traslazione è un operatore unitario, e dunque è un'isometria. Non è in generale vero che un'isometria sia un operatore unitario, per via
+della condizione di suriettività.
+
 
 \section{Equazioni del moto}
-Dato un generico ket P$>$, si definisce l'operatore di traslazione temporale T:
+Si vuole ora studiare l'evoluzione di un sistema quantistico in funzione del tempo.
+In linea con il principio di causlità, possiamo supporre l'evoluzione temporale come un operatore di traslazione, in accordo con quanto sviluppato
+nel paragrafo precedente.
+Dato un  ket $|P>$, si può definire l'operatore di traslazione temporale T:
 
 \begin{equation}
     \begin{aligned}
@@ -497,103 +579,119 @@ Dato un generico ket P$>$, si definisce l'operatore di traslazione temporale T:
     \end{aligned}
 \end{equation}
 
-sotto l'ipotesi di invarianza del modulo di P per traslazione temporale (che equivale ad un'equiprobabilità di uno stato di moto imperturbato),
-si deduce che T sia un operatore unitario.
-Calcolo:
+che gode delle proprietà precedentemente dimostrate per un generico operatore di traslazione.
+Come precedentemente dimostrato, vale la relazione:
 
 \begin{equation}
-     \frac{dP(t_0)}{dt}=\lim_{ t \rightarrow t_0} \frac{|T(t)P>-|P(t_0)>}{t-t_0}= \lim{\frac{T-Id}{t-t_0}P(t_0)}|P(t_0)> \\
+    d_t= \lim_{\delta t \rightarrow 0} \frac{T-1}{\delta t}
 \end{equation}
 
-Pongo tale operatore immaginario puro pari ad H diviso per i$\hbar$, ottenendo:
+In analogia con quanto fatto precedentemente per l'operatore di tralazione di coordinate e l'impulso, posso porre:
 
 \begin{equation}
-   i\hbar \frac{dP(t_0)}{dt}=H(t)|P(t_0)>
+    \begin{aligned}
+    & d_t= i\hbar H
+    \end{aligned}
 \end{equation}
 
-dove H è l'operatore Hamiltoniano, che rappresenta l'energia del sistema.
-In termini operatoriali è equivalentemente esprimibile come:
+in questo modo ho:
 
 \begin{equation}
-    i\hbar \frac{d}{dt}T>=H(t)T
+    \begin{aligned}
+    & \lim_{\delta t \rightarrow 0} \frac{T-1}{\delta t}|P>= \frac{d |P>}{d to_0}= d_t |P> \\
+    & i\hbar \frac{d |P>}{dt}= H|P>
+    \end{aligned}
 \end{equation}
 
-\subsection{Equazione di Schrödinger}
-Si giunge all'equazione di Shroedinger ponendo il generico ket P$>$ come funzione d'onda $\psi(\xi, t)$, funzione di osservabili operante sul ket standard.
-Dunque, l'equazione di Schrödinger è:
+o, operatorialmente:
 
 \begin{equation}
-    i\hbar \frac{\partial \psi(\xi, t)}{\partial t} = H(t) \psi(\xi,t)
+    i\hbar \frac{d T}{dt}= HT \rightarrow T=e^{-\frac{i}{\hbar}Ht}
 \end{equation}
 
-dove l'operatore $\xi$ è un generico osservabile, dipendente dallo spazio in cui si opera (spazio delle configurazioni, spazio delle impulsi, spazio delle fasi, etc.).
+Si dimostra che H è l'hamiltoniana del sistema per un principio di simmetria:
+l'invarianza del sistema fisico per traslazioni di coordinate determina la conservazione della quantità di moto,
+mentre l'invarianza per traslazioni temporali determina la conservazione dell'energia \footnote{
+    Ragionamento non di certo formale, ma logicamente esaustivo. Magari in futuro proverò a fare una dimostrazione
+    più rigorosa.
+}
+
+Introducendo ora il formalismo del ket standard, su uno spazio di Hilbert tale per cui un osservabile $\xi$ sia diagonale,
+si giunge all'equazione di Schrödinger, che descrive l'evoluzione temporale dello stato di un sistema quantistico:
+
+\begin{equation}
+    i\hbar \frac{\partial \psi(\epsilon,t)>}{\partial t}= H\psi(\epsilon,t)>
+\end{equation}
 
 \subsection{Forma di Heisenberg delle equazioni del moto}
-Se, a partire dalla rappresentazione di Schrödinger delle equazioni del moto, si effettua una trasformazione inversa $T^{-1}$ implicita sullo spazio dei ket
-e sugli operatori in esso agenti, si ottiene la forma di Heisenberg delle equazioni del moto, che se ne differenzia per staticità degli stati e variazione temporale degli operatori.
-Dunque, nello schema di Heisenberg si otterranno delle equazioni del moto per gli operatori, e non per gli stati.
-Le equazioni del moto di Heisenberg sono:
+Simmetricamente alla rappresentazione di Schrödinger, è possibile costruire un formalismo tale per cui gli stati rimangano invariati nel tempo,
+mentre le osservabili mutino.
+Matematicamente, ciò equivale a ripercorrere il processo di ricavazione della trasformazione di una generica variabile dinamica $v$, fatta nella sezione precedente,
+nell'ambito di una traslazione temporale.
+Si ricavano di seguito le equazioni del moto di Heisenberg per un generico osservabile $\xi$:
 
 \begin{equation}
-   \frac{d\xi}{dt}=i\hbar[\xi,H(t)]
+    \begin{aligned}
+        & v_t=T^{-1}vT \rightarrow Tv_t= vT \\
+        & \frac{dT}{dt}v_t+T\frac{dv_t}{dt}= v\frac{dT}{dt} \\
+        & HTv_t+i\hbar T \frac{d v_t}{dt}=v\frac{dT}{dt} \\
+        & i\hbar \frac{dv_t}{dt}=v_tH_t-H_tv_t \\
+        & \frac{dv_t}{dt}=[v_t, H_t]
+    \end{aligned}
 \end{equation}
 
-in perfetta analogia con le equazioni del moto classiche, secondo il principio di corrispondenza tra parentesi di Poisson e commutatori operatoriali.
-Si deduce immediatamente che $\xi$ è una costante del moto se e solo se commuta con l'Hamiltoniano. In tal caso, si dice che $\xi$ è un integrale primo del moto.
-In meccanica quantistica, nello schema di Heisenberg, se un operatore è il trasformato di una costante del moto classica, allora esso commuta con l'Hamiltoniano(?).
+In accordo con il principio di corrispondenza, si è ricavata una perfetta analogia con le equazioni del moto classiche.
+In particolare, se $\xi$ è una costante del moto, allora commuta con l'Hamiltoniano.
+Si può dimostrare che in meccanica quantistica valgono le stesse leggi di conservazione della meccanica classica.
 
 \subsection{Stati stazionari}
-A partire dall'equazione differenziale operatoriale 35, si può esprimere l'operatore T come:
+Per sistemi stazionari, cioè ad energia costante, vale l'equazione 57.
+Diagonalizando lo spazio di Hilbert rispetto all'Hamiltoniana, si può scrivere, per un generico autostato $|H'>$:
 
 \begin{equation}
-    T=e^{-\frac{i}{\hbar}\int_{t_0}^{t}H(t')dt'}=e^{-\frac{i}{\hbar}Ht}
-\end{equation}
-dove la seconda uguaglianza vale naturalmente per stati ad energia costante.
-Così, nelle due rappresentazioni, si può scrivere:
-
-\begin{equation}
-    \left\{
-    \begin{aligned}
-    & \psi(\xi,t)=e^{-\frac{i}{\hbar}Ht}\psi(\xi,0) \\
-    & \xi(t)=e^{\frac{i}{\hbar}Ht}\xi(0)e^{-\frac{i}{\hbar}Ht}
-    \end{aligned}
-    \right.
+    T |H'>= e^{-\frac{i}{\hbar}Ht}|H'>= e^{-\frac{i}{\hbar}H't}|H'>
 \end{equation}
 
-Tali equazioni, per quanto esplicative e semplici, non sono utili nella pratica, per via della difficoltà nel calcolare l'esponenziale di un operatore.
-Tuttavia, nella rappresentazione di Shrodinger, l'operazione di calcolo delle equazioni del moto se H è costante risulta immediata, nel caso in cui
-lo stato sia autostato dell'Hamiltoniano, con autovalore E. In tal caso, si ha:
+semplificando notevolmente l'equazione (per via della difficoltà di calcolare l'esponenziale di un operatore).
+In questo modo, si è ricavato il seguente risultato: Per un sistema stazionario, lo stato evolve nel tempo solo per un fattore di fase.
+Un sistema stazionario è così rappresentato da un autostato dell'Hamiltoniana.
+La rappresentazione di ket su uno spazio di Hilbert diagonalizzato rispetto ad H prende il nome di rappresentazione di Heisenberg.
+In questa base, è ricavabile l'espressione matriciale dell'evoluzione nel tempo di una generica osservabile $\xi$:
 
 \begin{equation}
     \begin{aligned}
-    \psi(\xi,t)=e^{-\frac{i}{\hbar}Et}\psi(\xi,0)
+        <H'|\xi(t)|H''>=<H'|e^{\frac{i}{\hbar}Ht}\epsilon e^{-\frac{i}{\hbar}Ht}|H''>=e^{\frac{i}{\hbar}(H'-H'')t}<H'|\xi|H''>
     \end{aligned}
 \end{equation}
+Nel caso degli elementi di matrice dell'osservabile $\xi$, risulta una periodicità con frequenza pari a:
 
-Dunque ad H costante, un ket differisce solamente per un fattore di fase.
-Fisicamente, ciò implica un'equiprobabilità dello stato al variare del tempo, e dunque una stazionarietà dello stato, in quanto il fattore di fase non varia il modulo quadro della funzione d'onda.
+\begin{equation}
+    \nu= \frac{E'-E''}{h}
+\end{equation}
+in accordo con il modello di Bohr.
 
 \subsection{Equazioni del moto per una particella libera}
-Nel caso di velocità relativistiche, l'Hamiltoniana classica corrispondente a tale stato stazionario è data da:
+L'evoluzione temporale dello stato di unsistema quantistico in uno spazio di Hilbert diagonalizzato rispetto all'impulso,
+è descritta dall'equazione di Schrödinger, come già affrontato.
+Si calcolano ora le equazioni delle osservabili canoniche nel tempo,secondo la rappresentazione di Heisenberg.
+L'Hamiltoniana di un sistema quantistico di particella libera, senza approssimazioni relativistiche, è pari a:
 
 \begin{equation}
-    H= \sqrt{p^2c^2+m^2c^4}
+    H=c\sqrt{p^2+m^2c^4}
 \end{equation}
 
-dato che p$_x$, operatore quantità di moto, commuta con qualsiasi funzione di osservabili p$_x$, p$_y$, p$_z$, esso è  una costante del moto
-anche nel sistema quantistico. Analogamente per p$_y$ e p$_z$.
-Nella rappresentazione di Heisenberg, si ottiene:
+le equazioni del moto di Heisenberg per la coordinata x sono date da:
 
 \begin{equation}
-    \dot{x}=\frac{c^2 p_x}{H}, \dot{y}=\frac{c^2 p_y}{H}, \dot{z}=\frac{c^2 p_z}{H}
+    \begin{aligned}
+        & \frac{dx(t)}{dt}= [x(t),H(t)] \\
+        & i\hbar \frac{dx}{dt}= \frac{c^2p_x}{H}
+    \end{aligned}
 \end{equation}
 
-Nella rappresentazione di Shrodinger, cerco l'equazione di evoluzione di un autostato dell'Hamiltoniano, ossia di uno stato stazionario.
-Si ottiene l'equazione di un'onda piana:
-
-\begin{equation}
-    \psi(x,t)=e^{\frac{i}{\hbar}(<p\cdot x>-Et)}
-\end{equation}
+Analoghe equazioni si ottengono per le altre coordinate.
+nella rappresentazione di Schrödinger, con diagonalizzazione rispetto all'impulso, si ottiene la ben nota equazione di De Broglie.
+E' utile notare che le onde piane sono anche autostati di H. Dunque, l'impulso e l'Hamiltoniano commutano. Pertanto l'impulso è una costante del moto di una particella libera.
 
 \section{Applicazioni elementari}
 \subsection{Oscillatore armonico}
