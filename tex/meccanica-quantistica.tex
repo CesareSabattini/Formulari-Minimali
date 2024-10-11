@@ -170,8 +170,8 @@ su basi ortonormali di cardinalità finita o infinita, numerabili o meno, tale p
 \begin{equation}
     \left\{
     \begin{aligned}
-    & |x>= \sum_{0}^{v} <x|\xi_i>|\xi_i>+ \int_{0}^{v} <x|\xi'>|\xi'>d\xi' \\
-    & <\xi' | \xi''>= \delta(\xi'-\xi'')
+         & |x>= \sum_{0}^{v} <x|\xi_i>|\xi_i>+ \int_{0}^{v} <x|\xi'>|\xi'>d\xi' \\
+         & <\xi' | \xi''>= \delta(\xi'-\xi'')
     \end{aligned}
     \right.
 \end{equation}
@@ -195,7 +195,7 @@ Vale anche l'inverso del teorema.
 Dunque, data una funzione di osservabili che commutano, la densità di misurare un set di autovalori è data dalla produttoria:
 
 \begin{equation}
-  P_{a,b,...,n}=<x|\delta_{\xi,a}\delta_{\eta,b}...\delta_{\nu,n}|x>
+    P_{a,b,...,n}=<x|\delta_{\xi,a}\delta_{\eta,b}...\delta_{\nu,n}|x>
 \end{equation}
 
 Solo se le variabili commutano talee probabilità ha un senso fisico.
@@ -207,14 +207,14 @@ La più semplice delle basi su cui operare, nell'ambito di un osservabile $\xi$,
 La condizione di normalizzazione, nel più generale dei casi, equivalente alla composizione di uno spettro continuo con uno discreto, è data da:
 
 \begin{equation}
-<\xi'|\xi''> = \delta(\xi'-\xi'') + \delta_{\xi',\xi''}
+    <\xi'|\xi''> = \delta(\xi'-\xi'') + \delta_{\xi',\xi''}
 \end{equation}
 
 ove $\delta$ è da intendere come un funzionale astratto che restituisce 1 se i due argomenti sono uguali, 0 altrimenti.
 Nel caso di uno spettro continuo, la delta di Dirac è da intendere come un funzionale tale che:
 
 \begin{equation}
-\int_{0}^{v} \delta(\xi'-\xi'')d\xi' = 1
+    \int_{0}^{v} \delta(\xi'-\xi'')d\xi' = 1
 \end{equation}
 
 dunque, il simbolo $\delta$ nel caso di uno spettro continuo, rappresenta una generalizzazione della delta di Kronecker per uno spettro discreto.
@@ -263,7 +263,7 @@ definendo così la generalizzazione di una matrice diagonale nel caso di uno spe
 
 \subsection{Rappresentazione generica}
 
-Nel caso di uno spazio di Hilbert generato dagli autostati di n osservabili commutative, definisco la rappresentazione per 
+Nel caso di uno spazio di Hilbert generato dagli autostati di n osservabili commutative, definisco la rappresentazione per
 un tensore di rango n $\omega$, dato dalla produttoria dialica degli osservabili rappresentati diagonalmente, come:
 
 \begin{equation}
@@ -349,7 +349,7 @@ Date le variabili canoniche, si definiscono le parentesi di Poisson classiche co
 Servendosi del principio di corrispondenza, si instaura la corrispondenza tra esse e l'operazione di commutazione operatoriale:
 
 \begin{equation}
-     [\hat{u},\hat{v}]= \frac{1}{i\hbar}[\hat{u},\hat{v}]_P
+    [\hat{u},\hat{v}]= \frac{1}{i\hbar}[\hat{u},\hat{v}]_P
 \end{equation}
 
 Di grande utilità sono le relazioni di commutazione delle coordinate canoniche, che si traspongono naturalmente a partire
@@ -358,9 +358,9 @@ dalle parentesi di Poisson classiche:
 \begin{equation}
     \left\{
     \begin{aligned}
-        & [q_i, q_j]=0 \\
-        & [p_i, p_j]=0 \\
-        & [q_i, p_j]=i\hbar \delta_{ij}
+         & [q_i, q_j]=0                  \\
+         & [p_i, p_j]=0                  \\
+         & [q_i, p_j]=i\hbar \delta_{ij}
     \end{aligned}
     \right.
 \end{equation}
@@ -387,10 +387,10 @@ Inoltre:
 
 \begin{equation}
     \begin{aligned}
-        & <\psi \frac{d}{dq} | \psi>= <\psi |\frac{d}{dq} \psi> \quad \forall \psi\\
-        & \int <\psi \frac{d}{dq} | q'> \psi(q')dq'= \int \psi(q') dq' \frac{d\psi(q')}{dq'}=-\int \frac{\psi(q')}{dq'}dq' \psi(q') \\
-        & <\psi \frac{d}{dq}|q'>=-\frac{d\psi(q')}{dq'} \\
-        & <\psi \frac{d}{dq} = -<\frac{d\psi}{dq}
+         & <\psi \frac{d}{dq} | \psi>= <\psi |\frac{d}{dq} \psi> \quad \forall \psi                                                  \\
+         & \int <\psi \frac{d}{dq} | q'> \psi(q')dq'= \int \psi(q') dq' \frac{d\psi(q')}{dq'}=-\int \frac{\psi(q')}{dq'}dq' \psi(q') \\
+         & <\psi \frac{d}{dq}|q'>=-\frac{d\psi(q')}{dq'}                                                                             \\
+         & <\psi \frac{d}{dq} = -<\frac{d\psi}{dq}
     \end{aligned}
 \end{equation}
 
@@ -400,9 +400,9 @@ Si può anhe ricavare l'insieme rappresentativo dell'operatore di derivazione, r
 
 \begin{equation}
     \begin{aligned}
-        & |q''>= \delta(q-q'')> \\
-        & \frac{d}{dq}|q''>= \frac{d}{dq}\delta'(q-q'')> \\
-        & <q'|\frac{d}{dq}|q''>= \frac{d}{dq}\delta(q-q'')\delta(q-q')= \frac{d}{dq} \delta(q'-q'') \\
+         & |q''>= \delta(q-q'')>                                                                     \\
+         & \frac{d}{dq}|q''>= \frac{d}{dq}\delta'(q-q'')>                                            \\
+         & <q'|\frac{d}{dq}|q''>= \frac{d}{dq}\delta(q-q'')\delta(q-q')= \frac{d}{dq} \delta(q'-q'') \\
     \end{aligned}
 \end{equation}
 
@@ -410,9 +410,9 @@ Calcolo ora le condizioni quantiche tra l'operatore di posizione e quello di der
 
 \begin{equation}
     \begin{aligned}
-        & \frac{d}{dq} q\psi>= q\frac{d}{dq}\psi> + \psi> \\
-        & q\frac{d}{dq}-\frac{d}{dq}q=1 \\
-        & [q,\frac{d}{dq}]=-i\hbar
+         & \frac{d}{dq} q\psi>= q\frac{d}{dq}\psi> + \psi> \\
+         & q\frac{d}{dq}-\frac{d}{dq}q=1                   \\
+         & [q,\frac{d}{dq}]=-i\hbar
     \end{aligned}
 \end{equation}
 
@@ -435,10 +435,10 @@ esempio le armoniche piane, a meno di modificare il criterio di convergenza degl
 * non mi torna il meno (non dovrebbe essere applicato al bra???)
 \begin{equation}
     \begin{aligned}
-        & p'<q'|p'>==<q'|p|p'|=-i\hbar\frac{d}{dq'}<q'|p'> \\
-        & <q'|p'>=c'(p')e^{ip'q'/\hbar} \\
-        & <p' | p''> = \int_{-\inf}^{\inf} <p' |q'><p''|q'>dq'= \\
-        & \int_{-\inf}^{\inf} c'c'' e^{i(p'-p'')q'/\hbar}dq'= (c')^2 \hbar \delta(p'-p'')
+         & p'<q'|p'>==<q'|p|p'|=-i\hbar\frac{d}{dq'}<q'|p'>                                \\
+         & <q'|p'>=c'(p')e^{ip'q'/\hbar}                                                   \\
+         & <p' | p''> = \int_{-\inf}^{\inf} <p' |q'><p''|q'>dq'=                           \\
+         & \int_{-\inf}^{\inf} c'c'' e^{i(p'-p'')q'/\hbar}dq'= (c')^2 \hbar \delta(p'-p'')
     \end{aligned}
 \end{equation}
 
@@ -447,8 +447,8 @@ In questa rappresentazione la coppia di operatori canonici è, per simmetria, da
 \begin{equation}
     \left\{
     \begin{aligned}
-     & \hat{p}=p \\
-     & \hat{q}=i\hbar \frac{d}{dp}
+         & \hat{p}=p                   \\
+         & \hat{q}=i\hbar \frac{d}{dp}
     \end{aligned}
     \right.
 \end{equation}
@@ -464,8 +464,8 @@ Il valor medio di un osservabile applicato ad uno stato $|\psi>$ è dato, sotto 
 
 \begin{equation}
     \begin{aligned}
-        & <\xi>= <\psi|\xi|\psi>= \sum \xi_i |\psi_i|^2 \quad discreto \\
-        & <\xi>= <\psi|\xi|\psi>= \int \psi^*\xi'\psi d\xi' \quad continuo
+         & <\xi>= <\psi|\xi|\psi>= \sum \xi_i |\psi_i|^2 \quad discreto     \\
+         & <\xi>= <\psi|\xi|\psi>= \int \psi^*\xi'\psi d\xi' \quad continuo
     \end{aligned}
 \end{equation}
 
@@ -485,30 +485,48 @@ Si vede con evidenza che l'errore sulla misura di un osservabile è nulla se e s
 
 
 \subsection{Principio di Indeterminazione di Heisenberg}
-Dalla duplice rappresentazione di un ket generico $X>$, vale:
-
+Dati due ket $|a>$ e $|b>$:
 \begin{equation}
-    \left \{
+    \left\{
     \begin{aligned}
-    & <p'|X>= \frac{1}{\sqrt{h}} \int_{-inf}^{\inf} e^{-iq'p'/\hbar} <q' |X> dq' \\
-    & <q'|X>= \frac{1}{\sqrt{h}} \int_{-inf}^{\inf} e^{iq'q'/\hbar} <p' |X> dp'
+         & |a>=(A-<A>)|\psi> \\
+         & |b>=(B-<B>)|\psi>
     \end{aligned}
     \right.
 \end{equation}
 
-*da terminare*
-
-Il principio di indeterminazione di Heisenberg afferma che non è possibile misurare contemporaneamente con precisione arbitraria due variabili dinamiche coniugate:
+vale:
 
 \begin{equation}
-    \Delta q \Delta p \geq \frac{\hbar}{2}
+    \begin{aligned}
+         & (\Delta A)^2=<a|a> \quad , \quad (\Delta B)^2=<b|b> \rightarrow                         \\
+         & (\Delta A)^2(\Delta B)^2=<a|a><b|b> \geq |<a|b>|^2 \geq \frac{(<f|g>-<g|f>)^2}{(2i)^2}= \\
+         & =\frac{(<FG>-<F><G>-<GF>+<G><F>)^2}{(2i)^2}=\frac{<[A,B]>^2}{(2i)^2} \rightarrow        \\
+         & \rightarrow \Delta A \Delta B \geq |\frac{<[A,B]>}{2i}|
+    \end{aligned}
 \end{equation}
 
-La sua espressione generalizzata afferma che, date due osservabili non commutative, si può affermare che:
+Nel caso degli operatori canonici, vale in particolare, discendendo dalle relazioni di commutazione fondamentali:
 
 \begin{equation}
-    \Delta \xi \Delta \eta \geq \frac{1}{2i}\int <\psi|[\hat{\xi},\hat{\eta}]|\psi>d\xi
+    \Delta q_i \Delta p_j\geq \frac{\hbar}{2}\delta_{ij}
 \end{equation}
+
+E' possibile anche ricavare la relazione che intercorre tra $\Delta t$ e $\Delta E$.
+Per un generico stato $\psi$, non necessariamente autostato di H e per una generica variabile F, vale:
+
+\begin{equation}
+    \begin{aligned}
+         & <H>\equiv E_0= <\psi|H|\psi>                                               \\
+         & \Delta E=\sqrt{<H^2>-<H>^2}                                                \\
+         & \frac{d}{dt}<F>=\frac{i}{\hbar}<[H,F]>                                     \\
+         & \Delta F\Delta H \geq \frac{|<[H,F]>|}{2}=\frac{\hbar}{2}|\frac{d}{dt}<F>| \\
+         & dt \simeq Dt \rightarrow \Delta H\Delta t \geq \frac{\hbar}{2}
+    \end{aligned}
+\end{equation}
+
+
+
 
 \subsection{Operatori di traslazione}
 Si definiscono operatori di traslazione, tali per cui risulti valida la seguente relazione:
@@ -531,8 +549,8 @@ Da tale asserto si possono ricavare le principali propietà dell'operatore D:
 \begin{equation}
     \left\{
     \begin{aligned}
-    & <Q |P>=c=<Qd|Pd> \\
-    & <Q |\bar{D}= <Qd| \rightarrow <Q |D \bar{D}|P>=<Qd|Pd>
+         & <Q |P>=c=<Qd|Pd>                                       \\
+         & <Q |\bar{D}= <Qd| \rightarrow <Q |D \bar{D}|P>=<Qd|Pd>
     \end{aligned}
     \right.
 \end{equation}
@@ -543,8 +561,8 @@ Inoltre:
 
 \begin{equation}
     \begin{aligned}
-        & \xi |P>=|R> \rightarrow \xi_d |Pd>= |Rd> \\
-        & D^{-1}\xi D |P>= |R> \quad \forall  \xi \in L(H)
+         & \xi |P>=|R> \rightarrow \xi_d |Pd>= |Rd>         \\
+         & D^{-1}\xi D |P>= |R> \quad \forall  \xi \in L(H)
     \end{aligned}
 \end{equation}
 
@@ -562,7 +580,7 @@ dove si è definito l'operatore di traslazione infinitesimo lungo x.
 Inoltre, considerando la variabilità dell'operatore in funzione della fase, essa deve tendere ad 1 per $\delta x \rightarrow 0$:
 
 \begin{equation}
-        \lim_{\delta x \rightarrow 0} \frac{De^{i\gamma}-1}{\delta x}|P>= \frac{D-1+i\gamma}{\delta x}\equiv d_x+ia_x
+    \lim_{\delta x \rightarrow 0} \frac{De^{i\gamma}-1}{\delta x}|P>= \frac{D-1+i\gamma}{\delta x}\equiv d_x+ia_x
 \end{equation}
 
 è infatti intuitivo routare un ket mediante un immaginario puro.
@@ -577,9 +595,9 @@ Si trova ora la relazione fondamentale tra operatore di traslazione e impulso:
 
 \begin{equation}
     \begin{aligned}
-        & \lim_{\delta x \rightarrow 0} \frac{v_d-v}{\delta x}= d_xv-vd_x \\
-        & d_x x- xd_x= \lim_{\delta x \rightarrow 0} \frac{x-\delta x -x}{\delta x}= -1 \\
-        & p_x= i\hbar d_x
+         & \lim_{\delta x \rightarrow 0} \frac{v_d-v}{\delta x}= d_xv-vd_x               \\
+         & d_x x- xd_x= \lim_{\delta x \rightarrow 0} \frac{x-\delta x -x}{\delta x}= -1 \\
+         & p_x= i\hbar d_x
     \end{aligned}
 \end{equation}
 
@@ -598,7 +616,7 @@ Dato un  ket $|P>$, si può definire l'operatore di traslazione temporale T:
 
 \begin{equation}
     \begin{aligned}
-    & T |P>= |P(t)>
+         & T |P>= |P(t)>
     \end{aligned}
 \end{equation}
 
@@ -613,7 +631,7 @@ In analogia con quanto fatto precedentemente per l'operatore di tralazione di co
 
 \begin{equation}
     \begin{aligned}
-    & d_t= i\hbar H
+         & d_t= i\hbar H
     \end{aligned}
 \end{equation}
 
@@ -621,8 +639,8 @@ in questo modo ho:
 
 \begin{equation}
     \begin{aligned}
-    & \lim_{\delta t \rightarrow 0} \frac{T-1}{\delta t}|P>= \frac{d |P>}{d to_0}= d_t |P> \\
-    & i\hbar \frac{d |P>}{dt}= H|P>
+         & \lim_{\delta t \rightarrow 0} \frac{T-1}{\delta t}|P>= \frac{d |P>}{d to_0}= d_t |P> \\
+         & i\hbar \frac{d |P>}{dt}= H|P>
     \end{aligned}
 \end{equation}
 
@@ -655,11 +673,11 @@ Si ricavano di seguito le equazioni del moto di Heisenberg per un generico osser
 
 \begin{equation}
     \begin{aligned}
-        & v_t=T^{-1}vT \rightarrow Tv_t= vT \\
-        & \frac{dT}{dt}v_t+T\frac{dv_t}{dt}= v\frac{dT}{dt} \\
-        & HTv_t+i\hbar T \frac{d v_t}{dt}=v\frac{dT}{dt} \\
-        & i\hbar \frac{dv_t}{dt}=v_tH_t-H_tv_t \\
-        & \frac{dv_t}{dt}=[v_t, H_t]
+         & v_t=T^{-1}vT \rightarrow Tv_t= vT                 \\
+         & \frac{dT}{dt}v_t+T\frac{dv_t}{dt}= v\frac{dT}{dt} \\
+         & HTv_t+i\hbar T \frac{d v_t}{dt}=v\frac{dT}{dt}    \\
+         & i\hbar \frac{dv_t}{dt}=v_tH_t-H_tv_t              \\
+         & \frac{dv_t}{dt}=[v_t, H_t]
     \end{aligned}
 \end{equation}
 
@@ -707,8 +725,8 @@ le equazioni del moto di Heisenberg per la coordinata x sono date da:
 
 \begin{equation}
     \begin{aligned}
-        & \frac{dx(t)}{dt}= [x(t),H(t)] \\
-        & i\hbar \frac{dx}{dt}= \frac{c^2p_x}{H}
+         & \frac{dx(t)}{dt}= [x(t),H(t)]          \\
+         & i\hbar \frac{dx}{dt}= \frac{c^2p_x}{H}
     \end{aligned}
 \end{equation}
 
@@ -717,70 +735,531 @@ nella rappresentazione di Schrödinger, con diagonalizzazione rispetto all'impul
 E' utile notare che le onde piane sono anche autostati di H. Dunque, l'impulso e l'Hamiltoniano commutano. Pertanto l'impulso è una costante del moto di una particella libera.
 
 \section{Applicazioni elementari}
+Considerando uno stato stazionario, esso evolve nel tempo a meno di un fattore di fase, essendo l'operatore di traslazione temporale dato da:
+
+\begin{equation}
+    T=e^{-\frac{i}{\hbar}H't}
+\end{equation}
+con H' autovalore di H nella rappresentazione di Heisenberg.
+Per cui, il problema si riduce semplicemente a calcolare le soluzioni dell'equazione agli autovalori di H per t=0, per poi applicarvi l'operatore di traslazione temporale T.
+E' importante notare come la soluzione $\psi(x,t)$ risulti essere ancora un autostato dell'Hamiltoniano, ovviamente, essendo a questo punto la funzione d'onda fattorizzata.
+
+Sebbene i sistemi unidimensionali rappresentino una sorta di paradosso a livello quantistico, essi si rivelano utili nell'estensione a sistemi multidimensionali.
+Si pensi, per esempio, al fatto che ogni sistema naturale periodico ammette una decomposizione in oscillazioni proprie.
+Si tratta ora di studiare casi specifici, in funzione del potenziale V(x).
+
+\subsection{Buca di potenziale infinita}
+
+Il potenziale V(x) è definito da:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & V(x)=0 \quad se \quad 0\leq x\leq L \\
+         & V(x)=\infty \quad altrimenti
+    \end{aligned}
+    \right.
+\end{equation}
+
+seguono le condizioni al contorno:
+
+\begin{equation}
+    \psi(0)=\psi(L)=0
+\end{equation}
+
+L'equazione di Shroedinger nella regione interna è quella di una particella libera, nell'ambito di un'approssimazione
+non relativistica. Per t=0:
+
+\begin{equation}
+    -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\psi_0= E\psi_0
+\end{equation}
+
+la cui soluzione è del tipo:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & \psi_0=A\sin(kx)+B\cos(kx) \\
+         & k=\frac{\sqrt{2mE}}{\hbar}
+    \end{aligned}
+    \right.
+\end{equation}
+
+che, a sistema con le condizioni a contorno diviene:
+
+\begin{equation}
+    \begin{aligned}
+        \psi_0= A\sin(kx) \quad , \quad k=\frac{n\pi}{L}
+    \end{aligned}
+\end{equation}
+
+Da cui emerge una quantizzazione dell'energia:
+
+\begin{equation}
+    E_n=\frac{\hbar^2n^2\pi^2}{2mL^2}
+\end{equation}
+
+Per calcolare la distribuzione di probabilità dello stato n-esimo, calcolo la costante di normalizzazione A:
+\begin{equation}
+    \begin{aligned}
+         & <\psi_n | \psi_n>=1                                              \\
+         & \int_{0}^{L} A^2\sin^2(kx)dx=1  \rightarrow A=\sqrt{\frac{2}{L}} \\
+         & \psi_n=\sqrt{\frac{2}{L}}\sin(\frac{n\pi x}{L})
+    \end{aligned}
+\end{equation}
+
+essendo lo spazio di Hilbert dato dalla produttoria dialica R per R, per via della fattorizzazione eseguita, e sapendo che le armoniche piane costituiscono un sistema completo (in un intervallo simmetrico rispetto all'origine, dunque a meno di una traslazione),
+è sufficiente dimostrare che le onde stazionarie così trovate formano una base ortonormale per R.
+La dimostrazione è semplice e sfrutta la disparità della funzione seno.
+Dunque la funzione d'onda traslata temporalmente a t è data da, per un generico stato, come sovrapposizione delle armoniche di base traslate:
+
+\begin{equation}
+    T\psi_{0_n}>= e^{-\frac{i}{\hbar}E_nt}\psi_{0_n}= \sum_{1}^{\infty} B_n \sin(\frac{n\pi x}{L})e^{-\frac{i}{\hbar}E_nt}
+\end{equation}
+
+Il valor medio della posizione è dato da \footnote{il calcolo si svolge eseguendo un'integrazione per parti}
+
+\begin{equation}
+    \begin{aligned}
+         & <x>=<\psi_n |x|\psi_>=...=L/2
+    \end{aligned}
+\end{equation}
+
+Si evince che il valor medio non dipende dal tempo, secondo le aspettazioni.
+
+\subsection{Potenziale deltiforme}
+
+Considero un potenziale attrattivo del tipo:
+
+\begin{equation}
+    V(x)= -\alpha \delta(x) \quad , \quad \alpha>0
+\end{equation}
+
+da cui segue un'equazione di Shroedinger agli autovalori pari a (omettendo il pedice 0)
+
+\begin{equation}
+    -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\psi-\alpha \delta(x)\psi=E\psi
+\end{equation}
+
+\subsubsection[short]{Stati legati}
+Mi chiedo se possano esistere stati legati, ossia stati tali per cui la probabilità all'infinito sia nulla.
+Per x $\neq$ 0, l'equazione di Shroedinger è:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & \psi(x)=Be^{k|x|}
+         & k=\frac{\sqrt{2mE}}{\hbar}
+        \\ B= \sqrt{k}
+    \end{aligned}
+    \right.
+\end{equation}
+
+Dunque esiste solo uno stato legato per E<0.
+Tale funzione risulta a quadrato sommabile, ma con derivata discontinua per x=0. Esaminiamone le conseguenze, integrando
+l'equazione agli autovalori:
+
+\begin{equation}
+    \begin{aligned}
+         & \int_{-\epsilon}^{\epsilon} \frac{d^2}{dx^2} \psi dx = \int_{-\epsilon}^{\epsilon}\frac{2m\alpha}{\hbar^2}\delta(x)\psi dx= \int_{-\epsilon}^{\epsilon} \frac{2mE}{\hbar^2}\psi dx \\
+         & \psi'(\epsilon)-\psi'(-\epsilon)+\frac{2m\alpha}{\hbar^2}\psi(0)=k^2[\psi(\epsilon)- \psi(-\epsilon)] \rightarrow                                                                  \\
+         & \rightarrow \Delta \psi'= -\frac{2m\alpha}{\hbar^2}\sqrt{k} \rightarrow                                                                                                            \\
+         & k= \frac{m\alpha}{\hbar^2} \rightarrow E=-\frac{m\alpha^2}{2\hbar^2}
+    \end{aligned}
+\end{equation}
+
+dunque il salto è finito, per via del fatto che il potenziale è infinito.
+
+Si calcolano ora i valori medi delle osservabili canoniche: * da terminare *
+
+\subsection{Stati del continuo}
+Considero E>0, per cui l'equazione agli autovalori assume la forma:
+
+\begin{equation}
+    \frac{d^2}{dx^2} \psi+k^2\psi=0
+\end{equation}
+
+la cui soluzione più generale sull'intero asse reale è:
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & \psi(x)=Ae^{ikx}+Be^{-ikx} \quad , x<0 \\
+         & \psi(x)=Fe^{ikx}+Ge^{-ikx} \quad , x>0 \\
+         & k=\frac{\sqrt{2mE}}{\hbar}>0
+    \end{aligned}
+    \right.
+\end{equation}
+
+per le condizioni di riflessione e trasmissione si ha:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & A+B=F+G                                                                        \\
+         & ik(A-B)=ik(F-G) \rightarrow \Delta= ik(F-G-A+B)=-\frac{2m\alpha}{\hbar^2}(A+B)
+    \end{aligned}
+    \right.
+\end{equation}
+
+ne segue, ponendo $\beta=\frac{m\alpha}{\hbar^2k}$:
+
+\begin{equation}
+    F-G=A(1+2i\beta)-B(1-2i\beta)
+\end{equation}
+
+se G=0 (onda proveniente da $-infty$), si ha:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & F=A+B
+         & F= A(1+2i\beta)-B(1-2i\beta)
+    \end{aligned}
+    \right.
+\end{equation}
+
+da cui:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & B= \frac{i\beta}{1-i\beta}A \\
+         & F= \frac{1}{1-i\beta}A
+    \end{aligned}
+    \right.
+\end{equation}
+
+considerando che il modulo quadro dei coefficienti rappresenta la densità di probabilità dello stato nella rispettiva regione,
+è possibile definire le correnti di probabilità come:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & J_{inc}= \frac{\hbar k}{m}|A|^2 \\
+         & J_{tr}= \frac{\hbar k}{m}|F|^2  \\
+         & J_{rif}= \frac{\hbar k}{m}|B|^2
+    \end{aligned}
+    \right.
+\end{equation}
+
+da cui si ricavano i coefficienti di riflessione e trasmissione:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & R= \frac{|B|^2}{|A|^2}= \frac{\beta^2}{1+\beta^2} \\
+         & T= \frac{|F|^2}{|A|^2}= \frac{1}{1+\beta^2}       \\
+         & \beta= \frac{m\alpha}{\hbar^2k}
+    \end{aligned}
+    \right.
+\end{equation}
+
+\subsection{Buca di potenziale rettangolare simmetrica}
+
+Il potenziale è dato da:
+
+\begin{equation}
+    V(x)=
+    \left\{
+    \begin{aligned}
+         & 0 \quad se \quad |x|<L \\
+         & V_0 \quad altrimenti
+    \end{aligned}
+    \right.
+\end{equation}
+
+\subsubsection{Stati legati}
+Cerco gli staticon energia tale per cui risulti un confinamento nella buca (0$<$E$<V_0$).
+Il procedimento è analogo a quello seguito per ricavare le funzioni d'onda nei casi precedenti:
+si risolvono le equazioni differenziali agli autovalori nelle 3 aree in cui lla retta risulta divisa, e si raccordano
+le soluzioni.
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & \psi''+k^2\psi=0 \quad , \quad |x|<L                                        \\
+         & \psi''-\eta^2\psi=0 \quad , \quad |x|>L                                     \\
+         & \eta= \frac{\sqrt{2m(V_0-E)}}{\hbar} \quad \kappa= \frac{\sqrt{2mE}}{\hbar}
+    \end{aligned}
+    \right.
+\end{equation}
+
+da cui, risolvendo ed applicando le condizioni a contorno, si ha:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & \psi_1(x)= Ce^{\eta x}+De^{-\eta x}= Ce^{\eta x}  \\
+         & \psi_2(x)= A\cos(kx)+B\sin(kx)                    \\
+         & \psi_3(x)= Fe^{\eta x}+Ge^{-\eta x}= Ge^{-\eta x}
+    \end{aligned}
+    \right.
+\end{equation}
+
+Per il teorema di parità, le soluzioni devono essere pari o dispari. Analizzo il caso in cui siano pari.
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & \psi_1(x)= Ce^{\eta x} \rightarrow \psi'_1(x)= \eta Ce^{\eta x}    \\
+         & \psi_2(x)= A\cos(kx) \rightarrow \psi'_2(x)= -Ak\sin(kx)           \\
+         & \psi_3(x)= Ce^{-\eta x} \rightarrow \psi'_3(x)= -\eta Ce^{-\eta x}
+    \end{aligned}
+    \right.
+\end{equation}
+
+* inserire tutto il calcolo fatto con tavoletta *
+
+\subsubsection{Stati del continuo}
+*da terminare*
+
+\subsection{Effetto tunnel}
+Si consideri un potenziale del tipo:
+
+\begin{equation}
+    V(x)=
+    \left\{
+    \begin{aligned}
+         & 0 \quad se \quad |x|>L \\
+         & V_0 \quad altrimenti
+    \end{aligned}
+    \right.
+\end{equation}
+
+Non essendovi chiaramente stati legati, si calcolano i coefficienti di riflessione e trasmissione.
+
+Consideriamo solamente il caso in cui $0<E<V_0$.
+L'equazione di Shrodinger agli autovalori diviene:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & \psi''+k^2\psi=0  \quad , \quad |x|>L                                       \\
+         & \psi''-\eta^2\psi=0  \quad , \quad |x|<L                                    \\
+         & \eta= \frac{\sqrt{2m(V_0-E)}}{\hbar} \quad \kappa= \frac{\sqrt{2mE}}{\hbar}
+    \end{aligned}
+    \right.
+\end{equation}
+
+Nella regione esterna, le soluzioni saranno funzioni oscillanti, mentre in quella interna vi saranno oscillazioni smorzate.
+
+\begin{equation}
+    \psi(x)=
+    \left\{
+    \begin{aligned}
+         & Ae^{ikx}+Be^{-ikx} \quad , \quad x<-L        \\
+         & Ce^{\eta x}+De^{-\eta x} \quad , \quad |x|<L
+         & Fe^{ikx} \quad , \quad x>L
+    \end{aligned}
+    \right.
+\end{equation}
+
+le derivate prime sono:
+
+\begin{equation}
+    \psi'(x)=
+    \left\{
+    \begin{aligned}
+         & ik(Ae^{ikx}-Be^{-ikx}) \quad , \quad x<-L          \\
+         & \eta(Ce^{\eta x}-De^{-\eta x}) \quad , \quad |x|<L
+         & ikFe^{ikx} \quad , \quad x>L
+    \end{aligned}
+    \right.
+\end{equation}
+
+imponendo la continuità delle funzioni e delle derivate prime, si ottengono le seguenti relazioni:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & A= \frac{C}{2}\left(1+\frac{ik}{\eta}\right)e^{(ik-\eta)L}+ \frac{D}{2}\left(1-\frac{ik}{\eta}\right)e^{(ik+\eta)L}   \\
+         & B= \frac{C}{2}\left(1-\frac{ik}{\eta}\right)e^{-(ik+\eta)L}+ \frac{D}{2}\left(1+\frac{ik}{\eta}\right)e^{(-ik+\eta)L} \\
+         & C=\frac{F}{2}\left(1+\frac{ik}{\eta}\right)e^(ik-\eta)L                                                               \\
+         & D=\frac{F}{2}\left(1-\frac{ik}{\eta}\right)e^(ik+\eta)L                                                               \\
+    \end{aligned}
+    \right.
+\end{equation}
+
+da cui:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & A=\frac{F}{4ik\eta}e^{2ikL}\left[(\eta+ik)^2e^{-2\eta L}- (\eta-ik)^2e^{2\eta L}\right] \\
+         & B= \frac{F}{2ik\eta}(\eta^2+k^2)\sinh(2\eta L)
+    \end{aligned}
+    \right.
+\end{equation}
+
+Da cui è possibile ricavare i coefficienti di riflessione e trasmissione:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & R= \frac{|B|^2}{|A|^2} \\
+         & T= \frac{1}{|A|^2}
+    \end{aligned}
+    \right.
+\end{equation}
+
+Questo risultato è noto come "Effetto Tunnel" e non ha un analogo in meccanica classica, ed indica che esiste una probabilità non nulla
+che una particella attraversi una barriera di potenziale, anche se la sua energia è inferiore a quella della barriera stessa.
+
+Tale effetto è alla base del funzionamento dei diodi.
+
+
+
 \subsection{Oscillatore armonico}
+\subsubsection{Metodo 1}
 La trattazione matematica dell'oscillatore armonico quantistico conduce direttamente alla quantizzazione dell'energia per tale sistema.
 Di seguito riporto gli step logici che possono essere seguiti:
 
 \begin{itemize}
     \item Si scrive l'Hamiltoniano dell'oscillatore armonico, mediante il principio di corrispondenza, come:
-    
-    \begin{equation}
-        \hat{H}=\frac{1}{2m}(\hat{p}^2+m^2\omega^2\hat{q}^2)
-    \end{equation}
+
+          \begin{equation}
+              \hat{H}=\frac{1}{2m}(\hat{p}^2+m^2\omega^2\hat{q}^2)
+          \end{equation}
     \item Si scrivono le equazioni del moto nella rappresentazione di Heisenberg nelle coordinate canoniche:
-    
-    \begin{equation}
-        \left\{
-        \begin{aligned}
-            & \dot{q}=\frac{1}{m}\hat{p} \\
-            & \dot{p}=-m\omega^2\hat{q}
-        \end{aligned}
-        \right.
-    \end{equation}
+
+          \begin{equation}
+              \left\{
+              \begin{aligned}
+                   & \dot{q}=\frac{1}{m}\hat{p} \\
+                   & \dot{p}=-m\omega^2\hat{q}
+              \end{aligned}
+              \right.
+          \end{equation}
 
     \item Si introduce la variabile dinamica complessa $\eta$ tale che:
-    
-    \begin{equation}
-    \eta= \frac{\hat{p}+im\omega \hat{q}}{\sqrt{2m\hbar \omega}}
-    \end{equation}
 
-    e se ne ricava l'equazione del moto:
+          \begin{equation}
+              \eta= \frac{\hat{p}+im\omega \hat{q}}{\sqrt{2m\hbar \omega}}
+          \end{equation}
 
-    \begin{equation}
-     \hat{\eta}=\hat{\eta_0} e^{i\omega t}
-    \end{equation}
+          e se ne ricava l'equazione del moto:
+
+          \begin{equation}
+              \hat{\eta}=\hat{\eta_0} e^{i\omega t}
+          \end{equation}
 
     \item Si ricavano i commutatori tra $\hat{\eta}$ e $H$:
-    
-    \begin{equation}
-        \left\{
-        \begin{aligned}
-            & [\hat{\eta},\hat{\eta}^{\dagger}]=1 \\
-            & [\hat{\eta},H]=\hbar \omega \hat{\eta}
-        \end{aligned}
-        \right.
-    \end{equation}
+
+          \begin{equation}
+              \left\{
+              \begin{aligned}
+                   & [\hat{\eta},\hat{\eta}^{\dagger}]=1    \\
+                   & [\hat{\eta},H]=\hbar \omega \hat{\eta}
+              \end{aligned}
+              \right.
+          \end{equation}
 
     \item Considerando H' autovalore di $\hat{H}$, si scrive:
-    
-    \begin{equation}
-        \hbar \omega<H' |\hat{\eta}\hat{\eta}^{\dagger}|H'>=(H'-\frac{1}{2}\hbar \omega)<H' |H'>
-    \end{equation}
 
-    che impone che un generico autovalore H' sia tale che:
+          \begin{equation}
+              \hbar \omega<H' |\hat{\eta}\hat{\eta}^{\dagger}|H'>=(H'-\frac{1}{2}\hbar \omega)<H' |H'>
+          \end{equation}
 
-    \begin{equation}
-        H'\geq \frac{1}{2}\hbar \omega
-    \end{equation}
+          che impone che un generico autovalore H' sia tale che:
+
+          \begin{equation}
+              H'\geq \frac{1}{2}\hbar \omega
+          \end{equation}
 
     \item Dalle proprietà dei commutatori si ricava la serie di autovalori assumibili da H:
-    
-    \begin{equation}
-        H_n=(n+\frac{1}{2})\hbar \omega \quad , \quad n \in N
-    \end{equation}
+
+          \begin{equation}
+              H_n=(n+\frac{1}{2})\hbar \omega \quad , \quad n \in N
+          \end{equation}
 
     \item Si può procedere nel trovare la rappresentazione di Schrödinger dell'oscillatore armonico.
 \end{itemize}
+
+\subsubsection{Metodo 2, Algebrico}
+
+Considero la rappresentazione di Heisenberg (diagonalizzazione dello spazio di Hilbert rispetto all'Hamiltoniana).
+L'Hamiltoniana dell'oscillatore armonico monodimensionale è data da:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & H=\hbar\omega\tilde{H}=\hbar\omega\frac{1}{2}(\tilde{p}^2+\tilde{x}^2) \\
+         & \tilde{p}=\frac{p}{\sqrt{m\hbar \omega}}                               \\
+         & \tilde{x}= \sqrt{\frac{m\omega}{\hbar}}x                               \\
+         & \tilde{H}|\nu>=\epsilon|\nu>
+    \end{aligned}
+    \right.
+\end{equation}
+
+Introduco ora i seguenti operatori:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & a= \frac{1}{\sqrt{2}}(\tilde{x}+i\tilde{p})           \\
+         & a^{\dagger}= \frac{1}{\sqrt{2}}(\tilde{x}-i\tilde{p})
+    \end{aligned}
+    \right.
+\end{equation}
+
+tali per cui valgano:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & [a,a^{\dagger}]=1                                    \\
+         & \tilde{H}=\dagger aa+\frac{1}{2}\equiv N+\frac{1}{2} \\
+         & [N,a]=-a \quad , \quad [N,a^{\dagger}]=a^{\dagger}
+    \end{aligned}
+    \right.
+\end{equation}
+
+vale la diagonalizzazione simultanea di N e H, per via della commutazione tra i due operatori.
+
+\begin{equation}
+    \epsilon_\nu=\nu+\frac{1}{2} \rightarrow E_\nu=\hbar \omega(\nu+\frac{1}{2})
+\end{equation}
+
+\begin{itemize}
+    \item Lo spettro di N è tutto positivo, o al più nullo.
+    \item Lo spettro è strettamente positivo.
+    \item Lo stato $a|\nu>$ appatiene all'autospazio di N relativo all'autovalore $\nu-1$.
+          \begin{equation}
+              Na|\nu>=aN|\nu>-a|\nu>=(\nu-1)a|\nu>
+          \end{equation}
+          Considerando autostati normalizzati, vale:
+          \begin{equation}
+              ||a|\nu>||= \sqrt{<\nu|\dagger a a|\nu>}=\sqrt{<\nu|N|\nu>}=\sqrt{\nu} \rightarrow a|\nu>=\sqrt{\nu}|\nu-1>
+          \end{equation}
+    \item Analogamente, si trova che:
+          \begin{equation}
+              a^{\dagger}|\nu>=\sqrt{\nu+1}|\nu+1>
+          \end{equation}
+    \item Applicando l'operatore a, si ottiene un autostato di N relativo all'autovalore $\nu-1$. Dunque,
+          procedendo con la sua applicazione ad un generico autostato di N, si deve arrivare ad ottenere uno stato nullo e mai negativo.
+
+          Al contrario, applicando l'operatore $a^{\dagger}$, si ottiene un autostato di N relativo all'autovalore $\nu+1$, senza vincoli di limitatezza.
+          Dunque si è dimostrato che lo spettro di N è $\mathcal{N}$.
+    \item A questo punto, abbiamo terminato, in quanto:
+
+          \begin{equation}
+              \begin{aligned}
+                   & N |n>=n|n> \quad , \quad n \in \mathcal{N}                                \\
+                   & H= \hbar\omega(N+\frac{1}{2}) \rightarrow E_n= \hbar\omega(n+\frac{1}{2})
+              \end{aligned}
+          \end{equation}
+    \item Lo stato ad energia minima (Energia del vuoto) sarà dunque:
+
+          \begin{equation}
+              E_0=\frac{1}{2}\hbar \omega
+          \end{equation}
+\end{itemize}
+
+Questo approccio è fertile in termini di formalismo.
+
+\subsubsection{Metodo Analitico}
+*da terminare*
+
 
 \subsection{Momento angolare}
 \subsubsection{Momento angolare orbitale}
@@ -825,7 +1304,7 @@ di modo che risulti:
 si trova che:
 
 \begin{equation}
-  \sigma_i \sigma_j= -\sigma_j \sigma_i \quad , \quad i \neq j \leftrightarrow \sigma_i \sigma_j= i\sigma_k \quad , \quad i \neq j \neq k
+    \sigma_i \sigma_j= -\sigma_j \sigma_i \quad , \quad i \neq j \leftrightarrow \sigma_i \sigma_j= i\sigma_k \quad , \quad i \neq j \neq k
 \end{equation}
 
 da cui segue
@@ -835,7 +1314,7 @@ da cui segue
 \end{equation}
 
 Tali sono le proprietà di una variabile spin modulo 1/2.
-Data la base di autoket di $\sigma_z$, si può formare una rappresentazione matriciale 
+Data la base di autoket di $\sigma_z$, si può formare una rappresentazione matriciale
 degli operatori di spin:
 
 \begin{equation}
@@ -850,12 +1329,12 @@ degli operatori di spin:
     \end{pmatrix}
     \quad
     \sigma_z=\begin{pmatrix}
-        1 & 0 \\
+        1 & 0  \\
         0 & -1
     \end{pmatrix}
 \end{equation}
 
-in cui la rappresentazione di $\sigma_x$ e $\sigma_y$ è data in termini di $\sigma_z$, secondo le proprietà precedentemente ricavate, a meno di 
+in cui la rappresentazione di $\sigma_x$ e $\sigma_y$ è data in termini di $\sigma_z$, secondo le proprietà precedentemente ricavate, a meno di
 un fattore di fase arbitrario.
 Gli stati relativi ad uno spin modulo 1/2 sono rappresentabili come:
 
@@ -879,7 +1358,7 @@ L'equazione d'onda comprendente lo spin è pertanto fattorizzabile in una parte 
 
 \subsection{Moto in un campo centrale}
 Si studa qui il moto di un elettrone attorno al nucleo atomico, sotto l'approssimazione di repulsione coulombiana trascurabile, a meno di un fattore medio, e non relativistica.
-Lo studio viene facilitato dalle conoscenza apprese sul momento angolare. 
+Lo studio viene facilitato dalle conoscenza apprese sul momento angolare.
 L'Hamiltoniana del sistema è data da:
 
 \begin{equation}
@@ -891,9 +1370,9 @@ Si introduce un sistema di coordinate polari, tale che:
 \begin{equation}
     \left\{
     \begin{aligned}
-        & x=r\sin{\theta}\cos{\phi} \\
-        & y=r\sin{\theta}\sin{\phi} \\
-        & z=r\cos{\theta}
+         & x=r\sin{\theta}\cos{\phi} \\
+         & y=r\sin{\theta}\sin{\phi} \\
+         & z=r\cos{\theta}
     \end{aligned}
     \right.
 \end{equation}
@@ -903,9 +1382,9 @@ Ne seguono le regole di commutazione tra le variabili cartesiane ed r:
 \begin{equation}
     \left\{
     \begin{aligned}
-        & [r, p_x]=\frac{x}{r} \\
-        & [r, p_y]=\frac{y}{r} \\
-        & [r, p_z]=\frac{z}{r}
+         & [r, p_x]=\frac{x}{r} \\
+         & [r, p_y]=\frac{y}{r} \\
+         & [r, p_z]=\frac{z}{r}
     \end{aligned}
     \right.
 \end{equation}
@@ -937,7 +1416,7 @@ Ne segue l'equazione di Shrodinger:
 Ne discende la forma dell'operatore lineare funzione di k:
 
 \begin{equation}
-   \frac{k(k+\hbar)}{\hbar^2}= -\frac{1}{\sin{\theta}}\frac{\partial}{\partial \theta}\left ( \sin{\theta}\frac{\partial}{\partial \theta} \right ) - \frac{1}{\sin^2{\theta}}\frac{\partial^2}{\partial \phi^2}
+    \frac{k(k+\hbar)}{\hbar^2}= -\frac{1}{\sin{\theta}}\frac{\partial}{\partial \theta}\left ( \sin{\theta}\frac{\partial}{\partial \theta} \right ) - \frac{1}{\sin^2{\theta}}\frac{\partial^2}{\partial \phi^2}
 \end{equation}
 
 i cui autostati sono le armoniche sferiche, con autovalori del tipo n(n+1). Per un'autofunzione di questo tipo, $\psi$ risulta:
@@ -955,7 +1434,7 @@ Inserendo tale funzione d'onda nell'equazione di Shrodinger, assumendo che lo st
 Quata equazione è fondamentale per la determinazione dei livelli energetici H' del sistema:
 
 \begin{equation}
-\forall \quad n \quad in \quad N \quad \exists \quad 2n+1 \quad stati \quad indipendenti
+    \forall \quad n \quad in \quad N \quad \exists \quad 2n+1 \quad stati \quad indipendenti
 \end{equation}
 
 
@@ -966,23 +1445,23 @@ La precedente derivazione è applicabile alla risoluzione del modello dell'atomo
 L'equazione (72) diviene così:
 
 \begin{equation}
- \left\{\frac{d^2}{dr^2} -\frac{n(n+1)}{r^2} +\frac{2me^2}{\hbar^2}\frac{1}{r} \right\}\chi_0= -\frac{2mH'}{\hbar^2}\chi_0
+    \left\{\frac{d^2}{dr^2} -\frac{n(n+1)}{r^2} +\frac{2me^2}{\hbar^2}\frac{1}{r} \right\}\chi_0= -\frac{2mH'}{\hbar^2}\chi_0
 \end{equation}
 
 ponendo:
 \begin{equation}
     \left\{
     \begin{aligned}
-       && \chi_0(r)=f(r)e^{-\frac{r}{a}} \\
-         && a=\pm \sqrt{\frac{-\hbar^2}{2mH'}}
+         &  & \chi_0(r)=f(r)e^{-\frac{r}{a}}     \\
+         &  & a=\pm \sqrt{\frac{-\hbar^2}{2mH'}}
     \end{aligned}
-    \right.        
+    \right.
 \end{equation}
 
 l'equazione diviene:
 
 \begin{equation}
-        \left(\frac{d^2}{dr^2} -\frac{2}{a}\frac{d}{dr} -\frac{n(n+1)}{r^2} +\frac{2me^2}{\hbar^2}\frac{1}{r}\right)f(r)=0
+    \left(\frac{d^2}{dr^2} -\frac{2}{a}\frac{d}{dr} -\frac{n(n+1)}{r^2} +\frac{2me^2}{\hbar^2}\frac{1}{r}\right)f(r)=0
 \end{equation}
 
 Sostituendo la f(r) sviluppata in serie di potenze, si ottiene:
