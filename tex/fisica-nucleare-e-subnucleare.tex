@@ -1,4 +1,6 @@
 \documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
 
 \title{Fisica Nucleare e Subnucleare}
 \author{Cesare Sabattini Manginella}
@@ -15,6 +17,199 @@
 
 \section{Introduzione}
 ATTENZIONE: formulario ancora in fase di sviluppo. Alcune informazioni potrebbero essere incomplete o errate.
+
+\section{Momento angolare}
+\subsection{Momento angolare orbitale}
+Si definisce momento angolare orbitale, nella rappresentazione di Shrodienger, l'operatore:
+
+\begin{equation}
+    \hat{L}=\hat{r}\times\hat{p}
+\end{equation}
+
+per il quale valgono le seguenti regole di commutazione:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & [\hat{L}_i,\hat{L}_j]=i\hbar\epsilon_{ijk}\hat{L}_k \\
+         & [\hat{L}^2,\hat{L}_i]=0
+    \end{aligned}
+    \right.
+\end{equation}
+
+$L_z$ (per convenzione) e $L^2$, commutando, sono diagonalizzabili simultaneamente, ossia formano un insieme completo di osservabili.
+
+Lo spazio degli stati è dunque generabile dalle armoniche sferiche, che diagonalizzano $L^2$ e $L_z$:
+
+\begin{equation}
+    Y^m_l(\theta,\phi)=(-1)^m\sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}P^m_l(\cos\theta)e^{im\phi}
+\end{equation}
+
+con autovalori tali che:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & \hat{L}^2Y^m_l(\theta,\phi)=\hbar^2l(l+1)Y^m_l(\theta,\phi) \\
+         & \hat{L}_zY^m_l(\theta,\phi)=\hbar mY^m_l(\theta,\phi)       \\
+         & |m|\leq l                                                   \\
+         & \hat{P}Y^m_l(\theta,\phi)=(-1)^lY^m_l(\theta,\phi)
+    \end{aligned}
+    \right.
+\end{equation}
+
+Nei sistemi che studieremo, le funzioni d'onda saranno prodotti tensoriali di funzioni radiali, armoniche sferiche e funzioni di spin.
+Dunque la degenerazione sarà determinata da 4 numeri: n, l, m, s.
+
+\subsection{Momento angolare di spin}
+Il momento angolare di spin è una proprietà intrinseca delle particelle elementari.
+Nella rappresentazione di Shroedinger, è esprimibile operatorialmente come un'osservabile analoga al momento angolare orbitale.
+Lo spin definisce un ulteriore grado di libertà per lo stato del istema, motivo per cui la funzione d'onda è fattorizzabile in un prodotto tensoriale di funzioni radiali, armoniche sferiche e funzioni di spin.
+Il momento angolare totale è dunque dato da una somma "operatoriale" di $\hat{L}$ e $\hat{S}$.
+
+
+\subsection{Momento angolare totale}
+La somma di due momenti angolari generici $J_1$ e $J_2$ è un operatore tale che:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & \hat{J}=\hat{J}_1+\hat{J}_2                                       \\
+         & \hat{J}^2\psi=j(j+1)\hbar^2\psi \quad |j_1-j_2|\leq j\leq j_1+j_2 \\
+         & \hat{J}_z\psi=m_j\hbar\psi \quad m=m_{j_1}+m_{j_2}
+         & |m_j|\leq j
+    \end{aligned}
+    \right.
+\end{equation}
+
+Per esempio, sommando due particelle a spin 1/2, posso ottenere quattro stati possibili:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & |\uparrow\uparrow\rangle \quad j=1 \quad m=1                                                   \\
+         & \frac{1}{\sqrt{2}} (|\uparrow\downarrow\rangle+|\downarrow\uparrow\rangle) \quad j=1 \quad m=0 \\
+         & |\downarrow\downarrow\rangle \quad j=1 \quad m=-1                                              \\
+         & \frac{1}{\sqrt{2}} (|\uparrow\downarrow\rangle-|\downarrow\uparrow\rangle) \quad j=0 \quad m=0
+    \end{aligned}
+    \right.
+\end{equation}
+
+La base degli autostati dello spin totale è dunque data da 4 ket, da cui è ottenibile ogni altro stato, mediante combinazioni lineari normalizzate.
+Gli stati di spin totale nullo sono detti "singletti", mentre quelli aventi spin totale 1 sono detti "tripletti".
+E' fondamentale notare che gli stati di spin totale nullo sono antisimmetrici rispetto allo scambio di particelle, mentre quelli di spin totale 1 sono simmetrici.
+Ciò si riflette sui possibili stati assumibili da particelle identiche:
+
+\begin{itemize}
+    \item Bosoni: stati simmetrici, ossia tali che $\psi(\vec{r}_1,\vec{r}_2)=\psi(\vec{r}_2,\vec{r}_1)$
+    \item Fermioni: stati antisimmetrici, ossia tali che $\psi(\vec{r}_1,\vec{r}_2)=-\psi(\vec{r}_2,\vec{r}_1)$
+\end{itemize}
+
+Nei modelli nucleari bisognerà dunque tenere conto del fatto che i nucleoni sono fermioni.
+Per quanto riguarda lo spin nucleare totale è dunque possibile affermare che:
+
+\begin{itemize}
+    \item Se A è pari, lo spin nucleare totale è intero
+    \item Se A è dispari, lo spin nucleare totale è semi-intero
+\end{itemize}
+
+
+\section{Momento magnetico}
+In fisica classica, per una carica puntiforme in moto cicolare uniforme, si definisce il momento magnetico:
+
+\begin{equation}
+    \vec{\mu}=\frac{q}{2m}\vec{L}
+\end{equation}
+
+Mediante il principio di corrispondenza, si definisce Il momento magnetico di una particella quantistica come:
+
+\begin{equation}
+    \vec{\mu}=\frac{Q}{2M}g\hbar\vec{S}
+\end{equation}
+
+dove g è il fattore giromagnetico.
+Si definiscono per comodità i magnetoni di Bohr e nucleare:
+
+\begin{equation}
+    \mu_B=\frac{e\hbar}{2m_e} \quad \mu_N=\frac{e\hbar}{2m_p}
+\end{equation}
+
+\subsection{Momento magnetico totale}
+Il momento magnetico totale è dato da \footnote{Il calcolo completo del fattore di Landé $g_j$ verrà inserito successivamente (forse)}:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & \vec{\mu}_J=\vec{\mu}_L+\vec{\mu}_S                                                  \\
+         & \vec{\mu}_J=g_J\mu_B\vec{J}                                                          \\
+         & g_J= g_L\frac{j(j+1)+l(l+1)-s(s+1)}{2j(j+1)}+g_S\frac{j(j+1)+s(s+1)-l(l+1)}{2j(j+1)}
+    \end{aligned}
+    \right.
+\end{equation}
+
+\section{Deutone}
+Il deutone è il nucleo dell'isotopo di idrogeno avente un protone e un neutrone, dunque rappresenta il più semplice stato nucleare legato.
+Le principali proprietà utili a livello concettuale sono:
+
+\begin{itemize}
+    \item Lo spin totale è intero, dunque il deutone è un bosone. In notazione spin-parità:
+          \begin{equation}
+              J^P=1^+
+          \end{equation}
+    \item In natura si osservano stati legati con s=1, l=0,2. Non si osservano stati con s=0. Si evince che lo spin sia fondamentale nella determinazione del potenziale atomico.
+    \item Non esistono stati pp o nn. Questo perché un nucleo simile definirebbe un sistema di particelle fermioniche identiche, dunque la sua funzione d'onda sarebbe antisimmetrica. Ma contemporaneamente sarebbe un bosone, che è assurdo.
+    \item Il momento magnetico tale è dato da:
+          \begin{equation}
+              \mu_d=g_s\mu_nS= g_p\mu_nS_p+g_n\mu_nS_n
+          \end{equation}
+          Se S=1 e L=0, si ottiene $\mu_D=0,879\mu_N$, mentre si osserva sperimentalmente $\mu_D=0,857\mu_N$.
+          Ciò è dovuto al fatto che bisogna considerare un termine di correzione relatico allo stato con L=2.
+\end{itemize}
+
+\subsection{Modello a buca di potenziale del deutone}
+
+Ipotizzo che valga il seguente potenziale:
+
+\begin{equation}
+    V(r)=
+    \left\{
+    \begin{aligned}
+         & -V_0 \quad 0<r<R \\
+         & 0 \quad r\geq R
+    \end{aligned}
+    \right.
+\end{equation}
+
+L'equazione di Shroedinger del sistema stazionario agli autovalori dell'Hamiltoniano è:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & -\frac{\hbar^2}{2m}\nabla^2\psi+V(r)\psi=E\psi \quad 0<r<R \\
+         & -\frac{\hbar^2}{2m}\nabla^2\psi=E\psi \quad r\geq R
+    \end{aligned}
+    \right.
+\end{equation}
+
+La soluzione è del tipo:
+
+\begin{equation}
+    \psi(r, \theta, \phi)=\frac{u(r)}{r}Y^m_l(\theta, \phi)
+\end{equation}
+
+Analizzando il caso in cui l=0 (lo spin naturalmente non influisce in questa equazione, per via della fattorizzazione della funzione d'onda),
+l'equazione di Shroedinger si riduce a:
+
+\begin{equation}
+    \begin{aligned}
+         & -\frac{\hbar^2}{2\mu}\frac{d^2u(r)}{dr^2}+V(r)u(r)=Eu(r) \\
+    \end{aligned}
+\end{equation}
+
+con $\mu$ massa ridotta del sistema.
+L'intero calcolo è riportato nei calcoli integrativi (da inserire da OneNote).
+Questo approccio, esteso ad un numero maggiore di nucleoni, costituisce il modello nucleare di gas di fermioni, analizzato nella seguente sezione.
+
 
 \section{Modelli nucleari}
 \subsection{Modello a gas di fermioni}
@@ -35,9 +230,10 @@ Ne segue che, quantisticamente,
 \begin{itemize}
     \item $\psi(r, t)=0$ per $r\geq R$.
     \item Ciò comporta la quantizzazione di Energia e lunghezza d'onda.
-    \item Si forma una distribuzione di livei energetici in cui è possibile inserire solo un protone ed un neutrone ciascuno. Essi sono
-    occupati ordinatamente fino al livello di Fermi.
+    \item Si forma una distribuzione di livelli energetici in cui è possibile inserire solo un protone ed un neutrone ciascuno. Essi sono
+          occupati ordinatamente fino al livello di Fermi.
 \end{itemize}
+
 
 Considerando per semplicità una buca di potenziale cubica, la funzione d'onda deve essere del tipo:
 
@@ -73,7 +269,7 @@ tra il volume dell'ottente positivo della sfera di raggio P prefissato e il volu
 a cui vanno sottratti gli stati con quantità di moto giacente sui piani coordinati:
 
 \begin{equation}
- n_0= 3\frac{\frac{1}{4}\pi P^2}{(\frac{\pi \hbar}{L})^2}= \frac{S}{8\pi\hbar^2}P^2
+    n_0= 3\frac{\frac{1}{4}\pi P^2}{(\frac{\pi \hbar}{L})^2}= \frac{S}{8\pi\hbar^2}P^2
 \end{equation}
 con S superficie del cubo di potenziale.
 Infine il numero di stati quantici disponibili è pari a:
@@ -92,12 +288,132 @@ Infatti, la variazione dello stato energetico di un nucleone, determinata da un 
 comporterà una variazione del suo stato quantico solamente se l'energia apportata sia sufficiente.
 Ma dal momento che ciò non avviene nella stragrande maggioranza dei casi, l'interazione efficace non è di tipo
 stocastico, bensì posizionale, dunque descrivibile da un potenziale.
-La forma del potenziale è ricercabile mediante lo studio dei cosiddetti "numeri magici" (A= 8, 20, 28, 50, 82, 126,...), ossia la serie numerica determinata dalle variazioni dell'energia differenzalegame in funzione del numero atomico A.
-Essi sono semplicemente determinati dal fatto che un elemento avente A incrementato unitariamente varierà la propria energia di legame in modo sostanziale solamente se il nucleone aggiunto si collochi in un livello energetico superiore.
+La forma del potenziale è ricercabile mediante lo studio dei cosiddetti "numeri magici" (A= 8, 20, 28, 50, 82, 126,...), ossia la serie numerica determinata dalle variazioni dell'energia di legame, separatamente per protoni e neutroni in funzione del numero atomico A.
+La ragione della loro esistenza è da ricercare nel completamento di un determinato livello energetico, che comporta una diminuzione dell'energia di legame.
 Il percorso di ricavazione è il seguente: il modello di potenziale centrale coulombiano è inadatto, per cui si ipotizza un potenziale a buca sferica infinita, per poi trovare un "compromesso di rapidità", ossia il potenziale di Saxon-Woods.
 Tuttavia, tale potenziale non giustifica l'andamento dei numeri magici sopra il 20, quindi è necessaria una correzione di tipo spin-orbitale, analoga a quella dell'elettrone, ma più intensa.
 
+\subsection{Degenerazione da Potenziale Coulombiano}
+L'ipotesi di potenziale coulombiano da centro di carica è incompatibile con i numeri magici, per via del disaccordo in termini di degenerazione dei livelli energetici.
+Essendo il potenziale centrale, la funzione d'onda è fattorizzabile in un prodotto tensoriale di funzioni radiali, armoniche sferiche e funzioni di spin.
+La degenerazione è dunque determinata da n (da quantizzazione di E, derivante dalla parte radiale), l, m (da armonica sferica) ed s (da funzione di spin), ed è analoga a quella degli elettroni atomici ed è pari a 2n$^2$.
+Tuttavia, tale degenerazione non è in accordo con i numeri magici, per cui è necessario cambiare modello di potenziale.
+
 \subsubsection{Potenziale a buca sferica infinita}
+La degenerazione degli stati relativa ai livelli energetici determinati da un potenziale Coulombiano non è in accordo con
+i numeri magici. Ipotizzo dunque un modello a buca di potenziale sferica infinita, ossia tale che:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & V=0 \quad r<R          \\
+         & V=\infty \quad r\geq R
+    \end{aligned}
+    \right.
+\end{equation}
+
+Il sistema è stazionario, per cui l'equazione di Shrodinger si riduce ad un'equazione agli autovalori, alla cui
+soluzione si applicherà in seguito un operatore di traslazione temporale T:
+
+\begin{equation}
+    \hat{H}\psi=E\psi \leftrightarrow
+    \left\{
+    \begin{aligned}
+         & -\frac{\hbar^2}{2m}\nabla^2\psi= E\psi \quad r<R \\
+         & \psi=0 \quad r\geq R
+    \end{aligned}
+    \right.
+\end{equation}
+
+La soluzione è del tipo:
+
+\begin{equation}
+    \psi=j_l(k,r)Y^m_l(\theta, \phi) \quad k=\sqrt{\frac{2mE}{\hbar^2}}=\frac{p}{\hbar}
+\end{equation}
+
+dove $j_l$ è la funzione di Bessel.
+Il raccordo delle soluzioni implica che se r=R, allora $j_l(k,R)=0$, ossia:
+
+\begin{equation}
+    kr=z_{l,n} \quad z_{l,n} \text{ è lo zero n-esimo di } j_l
+\end{equation}
+
+Segue la quantizzazione di k e di E.
+La degenerazione è tale che per ogni coppia n, l vi sono 2l+1 stati\footnote{La differenza con il caso degli elettroni è che, per via del
+    potenziale non Coulombiano, vi sono infiniti zeri della funzione di Bessel, per ogni n. Per questo motivo, essendo la scala energetica determinata ivi da n ed l, essa stessa costituisce la differenza tra i due casi. }
+
+La degenerazione ottenuta non è comunque in linea con i numeri magici sopra il 20, per cui è necessario cambiare modello di potenziale.
+
+\subsubsection{Potenziale di Saxon-Woods}
+
+Il potenziale di Saxon-Woods modellizza una salita ripida, definendo tuttavia una funzione continua e derivabile.
+
+\begin{equation}
+    V(r)=-\frac{V_0}{1+e^{\frac{r-R}{a}}}
+\end{equation}
+
+Il potenziale è radiale, dunque la degenerazione continua ad andare con n ed l, ma l'energia è distribuita differentemente per ogni coppia n,l.
+Ogni livello contiene 2l+1 stati.
+
+La degenerazione è più in accordo con i numeri magici, ma non è ancora sufficiente.
+
+La correzione del potenziale è data dall'interazione spin-orbitale, che si manifesta come un termine aggiuntivo al potenziale di Saxon-Woods.
+
+\subsubsection{Interazione spin-orbita nucleare}
+Una correzione del potenziale di Saxon-Woods è da ricercare in un termine addizionale dovuto all'interazione elettromagnetica di un nucleone tra i campi magnetici generati dai momenti angolari orbitali e di spin.
+
+Si tratta matematicamente il caso di un elettrone, sebbene in questo caso il contributo al potenziale coulombiano atomico sia trascurabile, per poi applicarlo al caso nucleare.
+
+\begin{equation}
+    \begin{aligned}
+         & U_{s-o}=-\vec{\mu}\cdot \vec{B}= \frac{Q}{2M}g\hbar\vec{S}\cdot \frac{\mu_0\vec{L}}{4\pi r^3}\alpha \vec{L} \\
+         & V_{tot}= V(r)+U_{s-o}=V(r)+a\vec{L}\cdot \vec{S}
+    \end{aligned}
+\end{equation}
+
+dove, per un fermione a spin 1/2:
+
+\begin{equation}
+    <L\cdot S>=
+    \left\{
+    \begin{aligned}
+         & \frac{l}{2}\hbar^2 se j=l+\frac{1}{2}
+         & -\frac{l+1}{2}\hbar^2 se j=l-\frac{1}{2}
+    \end{aligned}
+    \right.
+\end{equation}
+
+Il potenziale è dunque:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & V(r)=\frac{-V_0}{1+e^{\frac{r-R}{a}}}+V_{ls}(r)L\cdot S                                          \\
+         & <L\cdot S>= \frac{l}{2}\hbar^2 se j=l+\frac{1}{2} \quad -\frac{l+1}{2}\hbar^2 se j=l-\frac{1}{2}
+    \end{aligned}
+    \right.
+\end{equation}
+
+e i livelli energetici corrispondenti ad l diversi sono separati da un'energia pari a:
+
+\begin{equation}
+    \Delta E= \frac{2l+1}{2}<V_{ls}>
+\end{equation}
+
+Si trova che $<V_{ls}<0$, dunque gli stati con j=l+1/2 hanno energia minore.
+Ora si riscontra l'andamento dei numeri magici (separatamente per protoni e neutroni).
+
+Una notazione utile per quanto riguarda l'energia dei livelli è quella spettroscopica:
+un livello con n, l, j è indicato come $nL_j$, in cui L è la lettera corrispondente ad l.
+Ad apice si inserisce il numero di stati quantici riempiti.
+
+Per esempio:
+
+\begin{equation}
+    ^{17}_{8}=_9 \quad : \quad
+\end{equation}
+
+
 
 
 \end{document}
