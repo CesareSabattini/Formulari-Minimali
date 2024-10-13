@@ -1,7 +1,9 @@
 \documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
 
 \title{Laboratorio di Elettronica}
-\author{Cesar}
+\author{Cesare Sabattini Manginella}
 \date{\today}
 
 \begin{document}
@@ -71,7 +73,7 @@ Il processo di creazione di una coppia elettrone-lacuna determina due possibili 
 
 \begin{itemize}
     \item L'elettrone di valenza liberato transisce alla banda di conduzione, mentre la lacuna è immediatamente saturata.
-    Ciò coincide nella composizione di due moti opposti elettroni-lacune.
+          Ciò coincide nella composizione di due moti opposti elettroni-lacune.
     \item L'elettrone ricade nella lacuna, con conseguente annichilazione delle due cariche in termini di conducibilità.
 \end{itemize}
 
@@ -85,7 +87,7 @@ Analogamente per la densità:
 dove $n_i$ è la densità intrinseca, che aumenta con la temperatura:
 
 \begin{equation}
-   n_i^2= A_0T^3 e^{-\frac{E_g}{kT}}
+    n_i^2= A_0T^3 e^{-\frac{E_g}{kT}}
 \end{equation}
 
 dove $A_0$ è una costante, $E_g$ è il gap energetico a 0K, $k$ è la costante di Boltzmann, $T$ è la temperatura.
@@ -202,7 +204,7 @@ Il prodotto n p è dato da:
 In un semiconduttore intrinseco, n=p, da cui si ricava la legge dell'azione di massa:
 
 \begin{equation}
-  np = n_i^2
+    np = n_i^2
 \end{equation}
 
 che implica che il prodotto delle concentrazioni è costante, data una temperatura.
@@ -225,7 +227,7 @@ A temperatura ambiente tutti gli atomi droganti sono da considerarsi inonizzati.
 Se si aggiungono droganti in concentrazioni maggiori dell'intrinseca, si possono ottenere 3 effetti:
 
 \begin{itemize}
-\item Si ottiene un conduttore in cui i portatori sono di tipo p o n, a seconda del drogaggio;
+    \item Si ottiene un conduttore in cui i portatori sono di tipo p o n, a seconda del drogaggio;
 \end{itemize}
 
 Dato che un semiconduttore drogato è comunque elettricamente neutro, deve valere:
@@ -299,34 +301,96 @@ Da notare che all'aumentare della temperatura, il livello di fermi si sposta nuo
 \subsection{Corrente di diffusione}
 
 L'operazione di drogaggio può comportare un gradiente p o n all'interno del semiconduttore.
-Ciò è il risultato di un puro processo di diffusione, non elettrostatico. ertanto, la corrente di
+Ciò è il risultato di un puro processo di diffusione, non elettrostatico. Pertanto, la corrente di
 diffusione è esprimibile mediante la legge di Fick:
 
 \begin{equation}
-    J_n = -q D_n \frac{dn}{dx}
+    J_n = q D_n \frac{dn}{dx}
 \end{equation}
 
 simmetricamente, per le lacune:
 
 \begin{equation}
-    J_p = q D_p \frac{dp}{dx}
+    J_p = -q D_p \frac{dp}{dx}
 \end{equation}
 
-La relazione tra dffusione e mobilità è data dalla relazione di Einstein:
+La relazione tra diffusione e mobilità è data dalla relazione di Einstein:
 
 \begin{equation}
-   \frac{D_p}{\mu_p} = \frac{D_n}{\mu_n} = V_T
+    \frac{D_p}{\mu_p} = \frac{D_n}{\mu_n} = V_T= \frac{\tilde{k}T}{q}
 \end{equation}
 
-Segue che la densità di corrente totale è data da:
+Segue che la densità di corrente totale per gli elettroni è data da:
 
 \begin{equation}
     J_n= q\mu_n n \epsilon+ qD_n \frac{dn}{dx}
 \end{equation}
 
+e simmetricamente per le lacune:
+
+\begin{equation}
+    J_p= q\mu_p p \epsilon- qD_p \frac{dp}{dx}
+\end{equation}
+
+\subsection{Generazione e ricombinazione di cariche}
+Considero un semiconduttore di tipo n, con concentrazioni $p_0$ e $n_0$ all'equilibrio termico, con $n_0 >> p_0$.
+Se lo si illumina uniformemente, con fotoni ad energia superiore a quella di gap, si ha la formazione di coppia p-n.
+Dopo un transiente, si ha:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & \Delta n= \overline{n} - n_0 \\
+         & \Delta p= \overline{p} - p_0
+         & \Delta n = \Delta p
+    \end{aligned}
+    \right.
+\end{equation}
+
+Percentualmente, è maggiore la variazione di lacune rispetto a quella di elettroni.
+
+Analizziamo l'andamento della concentrazione delle lacune dopo aver spento la luce, assumendo $\tau_p$ indipendente dalla concentrazione di lacune.
+Detto $\frac{p}{\tau_p}$ è la diminuzione di lacune per ricombinazione, $\frac{p_0}{\tau_p}$ è l'aumento delle lacune per generazione termica.
+La variazione del numero di lacune nel tempo è dunque, esprimendo il numero di lacune aggiuntive rispetto a $p_0$ come p':
+\begin{equation}
+    \frac{dp}{dt} = \frac{p_0-p}{\tau_p} \rightarrow \frac{dp'}{dt}= -\frac{p'}{\tau_p} \rightarrow p'= p_0 e^{-\frac{t}{\tau_p}}
+\end{equation}
+
+\subsection{Equazione di continuità}
 
 
+Considerando un volume infinitesimo di semiconduttore e supponendo la corrente funzione della sola coordinata x, si ha:
 
+\begin{equation}
+    \frac{1}{qA}\frac{dI_p}{dx}=\frac{1}{q}\frac{dJ_p}{dx}
+\end{equation}
 
+Per quanto ricavato nel paragrfo precedente, la variazione della concentrazione di lacune per via della ricombinazione dovrà eguagliare l'espressione appena ottenuta della densità di corrente di diffusione
+per le lacune stesse:
+
+\begin{equation}
+    \frac{\partial}{\partial t} p= \frac{p_0-p}{\tau_p}- \frac{1}{q}\frac{\partial J_p}{\partial x}
+\end{equation}
+
+\subsection{Low Level Injection}
+Considerando l'irraggiamento di una faccia di un semiconduttore drogato n con fotoni ad energia sufficiente, studio l'andamento dei portatori minoritari in condizioni stazionarie, con il fascio acceso, in funzione di x.
+Considero l'intensità del fascio debole, in modo tale che il numero di minoritari rimanga inferiore a quello dei maggioritari (???).
+La corrente di deriva, in assenza di campo elettrico, è nulla, dunque:
+
+\begin{equation}
+    \begin{aligned}
+         & J_p=-qD_p\frac{dp}{dx}                                                                            \\
+         & \frac{\partial}{\partial t} p= \frac{p_0-p}{\tau_p}- \frac{1}{q}\frac{\partial J_p}{\partial x}=0 \\
+         & \frac{d^2}{dx^2} p= \frac{p-p_0}{D_p \tau_p}\equiv \frac{p'}{L_p^2}
+    \end{aligned}
+\end{equation}
+
+Dove $L_p$ è la lunghezza di diffusione delle lacune.
+Questa equazione prende il nome di equazione di Helmholtz.
+La sua soluzione, considerando che non deve divergere in x, è:
+
+\begin{equation}
+    p(x)= p'(0)e^{-\frac{x}{L_p}}
+\end{equation}
 
 \end{document}
