@@ -1266,10 +1266,66 @@ Questo approccio è fertile in termini di formalismo.
 In termini operatoriali, tramite il principio di corrispondenza, il momento angolare orbitale è rappresentabile come:
 
 \begin{equation}
-    \hat{M}=\hat{x}\times \hat{p}
+    \hat{M}=\hat{x}\wedge \hat{p} \leftrightarrow \hat{L_i}=\epsilon_{ijk}\hat{x}_j\hat{p}_k
 \end{equation}
 
-dove r e p sono rispettivamente gli operatori posizione e quantità di moto.
+E' possibile ricavare le seguenti fondamentali condizioni quadratiche di commutazione:
+
+\begin{itemize}
+    \item Tra $L_i$ e $x_r$:
+
+          \begin{equation}
+              \begin{aligned}
+                   & [L_i, x_r]= \epsilon_{ijk}[x_jp_k, x_r]=\epsilon_{ijk}{x_j[p_k, x_r]+[x_j, x_r]p_k} = \\
+                   & = -\epsilon_{ijk}{x_ji\hbar\delta_{kr}}=i\hbar\epsilon_{ijr}x_j
+              \end{aligned}
+          \end{equation}
+    \item Tra $L_i$ e $p_r$:
+
+          \begin{equation}
+              \begin{aligned}
+                   & [L_i, p_r]= \epsilon_{ijk}[x_jp_k, p_r]= \epsilon_{ijk}{x_j[p_k, p_r]+[x_j, p_r]p_k}= \\
+                   & = \epsilon_{ijk}{i\hbar \delta_{jr}p_k}=i\hbar\epsilon_{irj}p_j
+              \end{aligned}
+          \end{equation}
+
+
+    \item Tra $L_i$ e $L_j$ (Calcoli su "Calcoli integrativi"):
+
+          \begin{equation}
+              \begin{aligned}
+                   & [L_i,L_j]=...=i\hbar\epsilon_{ijk}L_k
+              \end{aligned}
+          \end{equation}
+
+    \item Tra $L^2$ e $L_i$:
+          \begin{equation}
+              \begin{aligned}
+                   & [L^2,L_i]=...=0
+              \end{aligned}
+          \end{equation}
+\end{itemize}
+
+Dunque è possibile diagonalizzare simultaneamente lo spazio di Hilbert rispetto a $L^2$ e $L_i$
+Per convenzione si sceglie la base di autoket di $L^2$ e $L_z$.
+
+In coordinate polari, gli operatori $L^2$ e $L_z$ assumono la forma:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & L^2=-\hbar^2\left(\frac{\frac{\partial^2}{\partial \theta^2}+\cot{\theta}\frac{\partial}{\partial \phi}+\frac{1}{\sin^2(\theta)}\frac{\partial^2}{\partial \phi^2}   }{} \right)
+         & L_z=-i\hbar\frac{\partial}{\partial \phi}
+    \end{aligned}
+    \right.
+\end{equation}
+
+e le autofunzioni di base sono le armoniche sferiche:
+
+\begin{equation}
+    Y_{lm}(\theta, \phi) = \frac{(-1)^{l+m}}{2^l l!} \sqrt{\frac{2l+1}{4\pi} \frac{(l-m)!}{(l+m)!}} \sin^m(\theta) \left( \frac{d}{d\cos{\theta}} \right)^{l+m} e^{im\phi}
+\end{equation}
+
 Definendo un operatore di rotazione intorno all'asse z $r_z$, M si può scrivere come:
 
 \begin{equation}
@@ -1354,6 +1410,148 @@ L'equazione d'onda comprendente lo spin è pertanto fattorizzabile in una parte 
 
 \begin{equation}
     \psi(\xi, t)=\psi(\xi, t) \eta(\sigma)
+\end{equation}
+
+
+\section{Sistemi stazionari a potenziale centrale}
+L'Hamiltoniana di sistemi a campo centrale è del tipo:
+
+\begin{equation}
+    H=\frac{1}{2m}p^2+V(r)
+\end{equation}
+
+Trattandosi di sistemi stazionari, ci si può ricondurre alla risoluzione dell'equazione agli autovalori dell'Hamiltoniano,
+con l'aggiuntiva prerogativa di fattorizzazione delle soluzioni in una parte spaziale e in una angolare (trascurando lo spin).
+
+In particolare, ciò è dato dal fatto che l'Hamiltoniano commuta con $L_3$ e $L^2$, e dunque è possibile trovare delle autofunzioni simultanee dei tre operatori:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & H|\psi>=E|\psi>           \\
+         & \psi= R(r)Y(\theta, \phi)
+    \end{aligned}
+    \right.
+\end{equation}
+
+da cui segue l'equazione degli autovalori dell'Hamiltoniano:
+
+\begin{equation}
+    \begin{aligned}
+         & \frac{\hbar^2r^2}{R(r)}\left(\frac{\partial^2}{\partial r^2}+\frac{2}{r}\frac{\partial}{\partial r}  \right)R(r)+2mr^2[V(r)-E] =-\frac{1}{Y^l_m(\theta,\phi)}L^2Y^l_m(\theta,\phi) \\
+    \end{aligned}
+\end{equation}
+
+Dunque entrambi i membri, dipendendo da variabili diverse, devono necessariamente essere uguali ad una costante,
+ossia:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & L^2Y^l_m(\theta,\phi)=l(l+1)\hbar^2Y^l_m(\theta,\phi)                                 \\
+         & L_3Y^l_m(\theta,\phi)=m\hbar Y^l_m(\theta,\phi)                                       \\
+         & \frac{d^2}{dr^2}R_l + \left(\frac{2m[E-V(r)]}{\hbar^2}-\frac{l(l+1)}{r^2}\right)R_l=0
+    \end{aligned}
+    \right.
+\end{equation}
+
+ridefinendo la funzione $R_l(r)=\frac{\chi_l(r)}{r}$, si ottiene:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & -\frac{\hbar^2}{2m}\frac{d^2}{dr^2}\chi_l(r)+V_{eff}(r)\chi_l(r)=E\chi_l(r) \\
+         & V_{eff}(r)=V(r)+\frac{\hbar^2}{2m}\frac{l(l+1)}{r^2}
+    \end{aligned}
+    \right.
+\end{equation}
+
+\subsection{Buca di potenziale sferica}
+Il potenziale è del tipo:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & -V_0 \quad se \quad 0<r<a \\
+         & 0 \quad altrimenti
+    \end{aligned}
+    \right.
+\end{equation}
+
+Si studiano gli stati legati, ovvero tali per cui $-V_0<E<0$.
+
+Per r<a, l'equazione degli autovalori per la parte radiale diviene:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & \frac{d^2}{dr^2}R_l(r)+\frac{2}{r}\frac{d}{dr}R_l(r)+\left(\alpha^2-\frac{l(l+1)}{r^2}\right)R_l(r)=0 \\
+         & \alpha=\frac{\sqrt{2m(E+V_0)}}{\hbar}
+    \end{aligned}
+    \right.
+\end{equation}
+
+Per r>a, l'equazione diviene:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & \frac{d^2}{dr^2}R_l(r)+\frac{2}{r}\frac{d}{dr}R_l(r)-\left(\beta^2+\frac{l(l+1)}{r^2}\right)R_l(r)=0 \\
+         & \beta=\frac{\sqrt{-2mE}}{\hbar}
+    \end{aligned}
+    \right.
+\end{equation}
+
+
+La prima è risolvibile con funzioni di Bessel, mentre la seconda con funzioni di Hankel.
+Per $r<a$ si ha, ponendo $x=\alpha r$:
+
+\begin{equation}
+    \frac{d^2}{dx^2}R_l(x)+\frac{2}{x}\frac{d}{dx}R_l(x)+\left(1-\frac{l(l+1)}{x^2}\right)R_l(x)=0
+\end{equation}
+
+con soluzione:
+
+\begin{equation}
+    R_l(x)=A_j j_l(x)=A_l \frac{\sqrt{\pi}}{2}\sum_{n=0}^{\infty}\frac{(-1)^nx^{2n+l}}{2{2n+l}n!\Gamma(n+l+\frac{3}{2})}
+\end{equation}
+
+Per $r>a$ si ha, ponendo $x=i\beta r$:
+
+\begin{equation}
+    R_l(r)=Bh_l(i\beta r)
+\end{equation}
+
+Esprimendo le condizioni a contorno per le funzioni di Bessel e di Hankel e le loro derivate prime, si ottiene:
+
+\begin{equation}
+    \alpha \frac{j'_l(\alpha a)}{j_l(\alpha a)}=\beta \frac{h'_l(i\beta a)}{h_l(i\beta a)}
+\end{equation}
+
+La soluzione non è sempre ricavabile analiticamente, ma è possibile analizzare alcuni casi semplici, in funzione di l.
+
+Nel caso di una "onda s" (l=0), si ha:
+
+\begin{equation}
+    \psi_0(r)=
+    \left\{
+    \begin{aligned}
+         & A\frac{sin{\alpha r}}{r} \quad se \quad r<a \\
+         & B\frac{e^{-\beta r}}{r} \quad se \quad r>a
+    \end{aligned}
+    \right.
+\end{equation}
+
+con condizioni a contorno tali che risulti
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & \alpha \cot{\alpha a}=-\beta \leftrightarrow \eta=-\epsilon \cot{\epsilon}
+         & \epsilon=\alpha a \quad , \quad \eta=\beta a
+         & \epsilon^2+\eta^2=\frac{2mV_0^2}{\hbar^2}a^2
+    \end{aligned}
+    \right.
 \end{equation}
 
 \subsection{Moto in un campo centrale}
@@ -1538,7 +1736,6 @@ Si introducono due osservabili di permutazione $P^x$ e $P^\sigma$, operanti risp
 Formando le permutazioni un gruppo, da una composizione di $P^x$ e $P^\sigma$ si ottiene una permutazione totale $P_a$.
 
 Per ogni stato esistente in natura, per un sistema di particelle identiche, gli autovalori di $P_a$ sono $\pm 1$.
-
 
 
 

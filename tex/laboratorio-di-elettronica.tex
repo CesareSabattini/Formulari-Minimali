@@ -394,6 +394,220 @@ La sua soluzione, considerando che non deve divergere in x, è:
     p(x)= p'(0)e^{-\frac{x}{L_p}}
 \end{equation}
 
+\subsubsection{Correnti dei portatori di carica}
+La corrente di diffusione dei minoritari (lacune) è pari a, in assenza di campo elettrico:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & I^{diff}_p= -qAD_p \frac{dp}{dx}= qAD_p \frac{p'}{L_p}e^{-\frac{x}{L_p}} \\
+         & p(x)= p'(0)e^{-\frac{x}{L_p}}
+    \end{aligned}
+    \right.
+\end{equation}
+
+per i maggioritari:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & I^{diff}_n= qAD_n \frac{dn}{dx}=qAD_n\frac{dp}{dx}=-\frac{D_n}{D_p}I^{diff}_p \equiv -RI^{diff}_p
+         & n-n_0=p-p_0
+    \end{aligned}
+    \right.
+\end{equation}
+
+Dunque la corrente di diffusione totale è pari a:
+
+\begin{equation}
+    I^{diff}_n+I^{diff}_p=-\frac{D_n}{D_p}I^{diff}_p+I^{diff}_p= (1-\frac{D_n}{D_p})I^{diff}_p<0
+\end{equation}
+
+Però siamo in assenza di campo elettrico esterno, dunque la corrente totale deve essere nulla.
+
+Motivo per cui ci aspettiamo che esista una componente di deriva, dovuta unicamente ai maggioritari, pari a:
+
+\begin{equation}
+    I^{de}_n=I^{diff}_p\left(\frac{D_n}{D_p}-1\right)
+\end{equation}
+
+Dimostro che la corrente di deriva dei minoritari sia trascurabile:
+
+\begin{equation}
+    \begin{aligned}
+         & J^{de}_n=nq\mu_n\epsilon_I \rightarrow \epsilon_I=\frac{1}{nq\mu_nA}\left(\frac{D_n}{D_p}-1\right)I^{diff}_p     \\
+         & I^{de}_p=pq\mu_p\epsilon_IA=\frac{p}{n}\frac{\mu_p}{\mu_n}\left(\frac{D_n}{D_p}-1\right)I^{diff}_p << I^{diff}_p
+    \end{aligned}
+\end{equation}
+
+Dove la minorazione è dovuta al fattore di proporzionalità $\frac{p}{n}$, che è molto minore di 1 in un semiconduttore drogato n.
+
+\section{Effetto Hall}
+
+L'effetto Hall costituisce la verifica sperimentale dell'assunzione delle lacune come portatrici di carica positive.
+Consideriamo un semiconduttore percorso da una corrente I lungo l'asse x, in un campo magnetico lungo z positivo.
+Segue che verrà indotto un campo elettrico lungo la direzione in y.
+In base alla differenza di potenziale indotta, è possibile determinare il segno dei portatori di carica.
+
+Inoltre, la tensione di Hall permette di determinare la densità di portatori di carica, e, nota la conducibilità, la mobilità.
+
+\begin{equation}
+    \begin{aligned}
+         & q\epsilon_H=qvB \rightarrow \epsilon_H=vB \rightarrow V_H=vBd                                      \\
+         & V_H=\frac{I}{wdnq}Bd=\frac{1}{nq}\frac{IB}{w} \rightarrow n=\frac{1}{V_Hq}\frac{IB}{w} \rightarrow \\
+         & \begin{aligned}
+                & \mu_n=\frac{1}{nq}\sigma \quad \text{In un semiconduttore drogato n} \\
+                & \mu_p=\frac{1}{pq}\sigma \quad \text{In un semiconduttore drogato p}
+           \end{aligned}
+    \end{aligned}
+\end{equation}
+
+In un semiconduttore puro, essendo la mobilità degli elettroni  maggiore di quella delle laune, si ha una tensione totale negativa.
+
+\section{Metodi di drogaggio}
+*Da terminare*
+
+\section{Giunzione p-n}
+Una giunzione p-n è una sezione di semiconduttore che separa una regione drogata p da una drogata n.
+Trascuriamo i minoritari. Le differenze di concentrazione determinano la formazione di una corrente di diffusione.
+Attraversata la giunzione, iniziano i processi di ricombinazione. Gli ioni che si vengono a formare prendono il nome di "cariche scoperte".
+Tali ioni generano un campo elettrico, che si oppone alla diffusione dei portatori di carica, raggiunto il "potenziale di contatto".
+
+A questo punto, interrotta la transizione delle cariche attraverso la giunzione per via del campo elettrico generato dagli ioni, si vengono a formare 4 zone:
+
+due, corrispondenti alle regioni drogate, due elettricamente cariche, corrispondenti alle regioni di cariche scoperte (regione di svuotamento).
+
+L'espressione del campo elettrico all'equilibrio è data da:
+
+\begin{equation}
+    \begin{aligned}
+         & J_p=q\mu_pp\epsilon-qD_p\frac{dp}{dx}=q\mu_pp\epsilon-q\mu_pV_T\frac{dp}{dx}=0 \\
+         & \epsilon=\frac{V_T}{p}\frac{dp}{dx}
+    \end{aligned}
+\end{equation}
+
+Integrando il potenziale:
+
+\begin{equation}
+    \begin{aligned}
+         & dV=-V_T\frac{dp}{p} \rightarrow V=V_t\ln{\frac{p_1}{p_2}}=\frac{kT}{q}\ln{\frac{p_1}{p_2}}=\frac{kT}{q}\ln{\frac{n_2}{n_1}} \rightarrow \\
+         & n_1p_1=n_2p_2
+    \end{aligned}
+\end{equation}
+
+Ciò significa che all'equilibrio, il prodotto np è costante, indipendentemente dal drogaggio.
+A questo punto risulta possibile calcolare la differenzia di potenziale di contatto:
+
+\begin{equation}
+    V_0=V_T \ln{\frac{p_1n_2}{n_i^2}} \simeq V_T\ln{\frac{N_AN_D}{n_i^2}}
+\end{equation}
+
+dove si sono considerate le zone corrispondenti alle regioni drogate all'equilibrio.
+Per l'equazione di Poisson:
+
+\begin{equation}
+    \begin{aligned}
+         & \frac{d^2}{dx^2} V=-\frac{\rho}{\tilde{\epsilon}}\rightarrow \\
+         & \frac{d\epsilon}{dx}=\frac{\rho}{\tilde{\epsilon}}
+    \end{aligned}
+\end{equation}
+
+\subsection{Energia di Fermi}
+L'energia di Fermi è costante in un semiconduttore puro, motivo per cui saranno le bande di conduzione e di valenza a variare in funzione del drogaggio.
+
+Lo shift energetico tra le bande è pari a:
+
+\begin{equation}
+    E_0=E_{C_p}-E_{C_n}= E_{V_p}-E_{V_n}=E_1+E_2= |\frac{E_{C_p}-E_{V_p}}{2}-E_f|+|\frac{E_{C_n}-E_{V_n}}{2}-E_f|
+\end{equation}
+
+si deduce che:
+
+\begin{equation}
+    \begin{aligned}
+         & E_0=E_1+E_2=E_g-(E_{C_n}-E_{C_F})-(E_F-E_{V_p }) \rightarrow                  \\
+         & \left\{\begin{aligned}
+                       & E_{C_n}-E_F=kT\ln{\frac{N_c}{N_d}} \quad \text{drogaggio n} \\
+                       & E_F-E_{V_p}=kT\ln{\frac{N_v}{N_a}} \quad \text{drogaggio p}
+                  \end{aligned}
+        \right.
+    \end{aligned}
+\end{equation}
+
+da cui si può trovare E$_0$:
+
+\begin{equation}
+    E_0=kT\ln{\frac{N_dN_a}{n_i^2}}=V_0
+\end{equation}
+
+E' possibile ricavare la relazione di Einstein:
+
+\begin{equation}
+    \begin{aligned}
+         & J_p=q\mu_pp\epsilon-qD_p\frac{dp}{dx}=0                                    \\
+         & \frac{dp}{p}=\frac{\mu_p}{D_p}\epsilon dx=-\frac{\mu_p}{D_p}dV \rightarrow \\
+         & \frac{D_p}{\mu_p}=V_T
+    \end{aligned}
+\end{equation}
+
+\subsection{Giunzione polarizzata (diodo)}
+
+La polarizzazione si dice:
+
+\begin{itemize}
+    \item diretta, se la regione p è collegata al terminale positivo; segue un'estensione della depletion zone.
+    \item inversa, se la regione p è collegata al terminale negativo; segue una riduzione della depletion zone.
+\end{itemize}
+In una polarizzazione inversa, i maggioritari sono attratti verso i terminali elettrici, mentre i minoritari sono respinti, e tendono ad attraversare la giunzione.
+
+Dunque, se la corrente dei maggioritari dura solo per un transiente, quella dei minoritari, a temperatura fissata, continua indefinitamente e dipende solamente dalla concentrazione intrinseca.
+
+Tale corrente prende il nome di "corrente inversa", ed è indipendente, in un ampio intervallo, dall'intensità della tensione applicata.
+
+Questa corrente, bassa, ma non nulla, si comporta come un resistore ad elevata resistenza.
+
+Tramite polarizzazione diretta, invece, i maggioritari vengono attratti dal terminale della regione opposta, per cui attraversano la giunzione, determinando un'alta densità di corrente,
+per via dell'abbassamento della barriera di potenziale di giunzione.
+Tale fenomeno risulta in un restringimento della depletion zone.
+
+Fornendo una tensione maggiore o uguale a $V_0$ ci si aspetterebbe così una corrente infinita, cosa non vera, in quanto è necessario tenere conto
+della resistenza intrinseca del semiconduttore.
+
+Si definisce diodo un dispositivo bipolo formato da una sola giunzione p-n
+
+\subsubsection{Componenti della corrente in un diodo a giunzione}
+
+Considero un diodo polarizzato direttamente sotto le seguenti approssimazioni:
+
+\begin{itemize}
+    \item $V_d \simeq V_0$ (low level injection condition)
+    \item Le corrnti dei minoritari sono trascurabili.
+    \item il potenziale è applicato direttamente alla depletion one.
+    \item Si trascura lo spessore della depletion zone
+\end{itemize}
+
+In prossimità della giunzione, si è in una situazione di non equilibrio, data dal fatto che:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & p_nn_n>>n_i^2 \quad \text{regione n} \\
+         & p_pp_n<<n_i^2 \quad \text{regione p}
+    \end{aligned}
+    \right.
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+         & J_p=q\mu_pp\epsilon-qD_p\frac{dp}{dx}=J_p^{Dif,LLI}\simeq 0 \rightarrow                                       \\
+         & q\mu_pp\epsilon=qD_p\frac{dp}{dx} \rightarrow \epsilon= \frac{V_T}{p}\frac{dp}{dx}=-\frac{dV}{dx} \rightarrow \\
+         & \int_{p_{p_0}}^{p_n(0)}\frac{dp}{p}=-\int_{0}^{V_j}\frac{dV}{V_T} \rightarrow                                 \\
+         & p_n(0)p_{n_0}e^{\frac{V_D}{V_T}}
+    \end{aligned}
+\end{equation}
+
+
+
 
 
 \end{document}
