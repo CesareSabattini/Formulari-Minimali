@@ -23,6 +23,7 @@ Considero uno spazio delle configurazioni equiprobabili in un processo di N casi
 \end{equation}
 
 Ognuna di tali configurazioni è detta "microstato".
+
 Per arrivare al "macrostato" è necessario considerare una proprietà emergente.
 Differenti microstati possono definire lo stesso macrostato (ad esempio l'insieme dei microstati aventi la medesima differenza tra i campioni in configurazioni binarie).
 Un macrostato è una caratterizzazione dei microstati.
@@ -30,6 +31,168 @@ La probabilità di un macrostato è dato dalla somma delle probabilità dei micr
 Dunque, ovviamente, microstati con egual probabilità non determinano egual probabilità dei macrostati.
 
 Considerando lo spazio delle fasi delle particelle di gas, di 6N dimensionale, ogni suo punto rappresenta un microstato, mentre un macrostato è definito da un insieme di microstati con le stesse proprietà macroscopiche.
+
+
+\subsection{Entropia}
+Statisticamente, l'entropia misura il grado di "ignoranza" sullo stato microscopico di un sistema termodinamico.
+E' possibile definire l'entropia di Boltzmann per un insieme di configurazioni equiprobabili, a partire dalla funzione di partizione:
+
+\begin{equation}
+    S = k \log \Omega
+\end{equation}
+
+\section{Insieme Microcanonico}
+Un insieme di sistemi termodinamicamente isolato si definisce microcanonico.
+
+Il concetto termodinamico di equlibrio termico si traspone in meccanica statistica in quello di massimizzazione del numero di microstati, e dunque dell'entropia.
+
+Considero due sistemi a contatto, che complessivamente definiscono un insieme microcanonico, tali che:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & U=U_1+U_2                                               \\
+         & N=N_1+N_2                                               \\
+         & \Omega(N,U_1,U_2) = \Omega_1(N_1,U_1) \Omega_2(N_2,U_2)
+    \end{aligned}
+    \right.
+\end{equation}
+
+Per $N_1, N_2 \rightarrow \infty$, applicando il teorema del limite centrale, si riscontra che le fluttuazioni dai valori di energia che
+massimizzano la funzione di molteplicita, essendo proporzionali all'inverso della radice del numero di particelle, sono trascurabili.
+
+Dunque lo stato più probabile in un sistema microcanonico lo è assolutamente.
+
+\subsection{Temperatura}
+Si procede di seguito nella ricavazione della temperatura.
+
+Detta $\hat{U}$ l'energia più probabile, si ha:
+
+\begin{equation}
+    \begin{aligned}
+         & \frac{\partial}{\partial U_1}\Omega(N,U,U_1)|_{U=\hat{U}} = 0 = \\
+         & \frac{\partial}{\partial U_1}S(N,U,U_1)|_{U=\hat{U}} = 0
+    \end{aligned}
+\end{equation}
+
+Come ci si aspettava, per via della monotonia dell'entropia in funzione della molteplicità, essa si massimizza con essa, in funzione dell'energia.
+
+Essendo data la molteplicità dell'insieme microcanonico dalla produttoria delle molteplicità dei sistemi singoli, si ha:
+\begin{equation}
+    \begin{aligned}
+         & \frac{\partial}{\partial U_1}[\Omega(N, U)]_{U=\hat{U}} = \frac{\partial}{\partial U}[\Omega_1(N_1, U_1)\Omega_2(N_2, U_2)]_{U=\hat{U}} =                                     \\
+         & \frac{\partial}{\partial U_1}\Omega_1|_{U_1=\hat{U_1}}\Omega_2|_{U_2=\hat{U_2}} + \Omega_1|_{U_1=\hat{U_1}}\frac{\partial}{\partial U_2}\Omega_2|_{U_2=\hat{U_2}} \rightarrow \\
+         & \frac{\partial}{\partial U_1}\ln{\Omega_1}|_{U_1=\hat{U_1}}=\frac{\partial}{\partial U_2}\ln{\Omega_2}|_{U_2=\hat{U_2}}
+    \end{aligned}
+\end{equation}
+
+A partire dalla condizione di massimizzazione del numero dei microstati per la configurazione più probabile, ossia di equilibrio termico,
+si definisce la temperatura T attraverso una funzione $\beta$:
+
+\begin{equation}
+    \begin{aligned}
+         & \beta=\frac{\partial}{\partial U}\Omega(N,U)|_{U=\hat{U}} = \frac{1}{k_BT} \\
+    \end{aligned}
+\end{equation}
+
+\subsection{Entropia di Gibbs}
+L'Entropia di Gibbs generalizza l'entropia di Boltzmann ad insiemi di microstati non equiprobabili:
+
+\begin{equation}
+    S_G=-k_B\sum_{i}p_i\ln{p_i}
+\end{equation}
+
+
+\section{Insieme canonico}
+Si definisce canonico un insieme di sistemi chiusi, immersi in un bagno termico.
+
+La condizione di massimizzazione dell'entropia di Gibbs a sistema con il fatto che l'energia media deve essere pari a quella del bagno, si traduce nell'aggiunta di un nuovo moltiplicatore di Lagrange:
+\begin{equation}
+    \begin{aligned}
+         & S=-\sum_{j}p_jln{p_j}-\lambda\left(\sum_{j}p_j-1\right)-\beta\left(\sum_{j}\epsilon_jp_j-U\right)                                \\
+         & \frac{d}{dp_j}S =0 \rightarrow p_j=e^{-\beta\epsilon_j-\lambda-1} \leftrightarrow 1=e^{-(1)+\lambda}\sum_{j}e^{-\beta\epsilon_j} \\
+         & Z\equiv e^{1+\lambda}= \sum_{j}e^{-\beta\epsilon_j} \rightarrow p_j=\frac{e^{-\beta\epsilon_j}}{Z}
+    \end{aligned}
+\end{equation}
+
+Se l'energia fosse la stessa per ogni microstato, si otterrebbe che la probabilità di ogni microstato sarebbe analoga a quella del sistema microcanonico, ossia data dall'inverso della funzione di partizione.
+
+\subsection{Significato fisico di $\beta$}
+Si ricava di seguito il significato fisico del moltiplicatore di Lagrange $\beta$:
+
+\begin{equation}
+    \begin{aligned}
+         & S=-k_b\sum_{j}p_j\ln{p_j}=-k_b\sum_{j}\frac{e^{-\beta \epsilon_j}}{Z}(\ln{e^{-\beta \epsilon_j}}-\ln{Z})=     \\
+         & =k_b\beta\sum_{j}\frac{\epsilon_j e^{-\beta \epsilon_j}}{Z}+k_b\ln{Z}\sum_{j}\frac{e^{-\beta \epsilon_j}}{Z}= \\
+         & =k_B\beta U+k_b\ln{Z}
+    \end{aligned}
+\end{equation}
+
+Sotto l'ipotesi di minime variazioni di energia, le variazioni delle probabilità saranno minime:
+
+*da terminare. Intero calcolo su "Calcoli integrativi*
+
+SI ottiene:
+
+\begin{equation}
+    \beta=\frac{1}{k_BT}
+\end{equation}
+
+da cui risulta l'espressione dell'Energia libera di Helmholtz statistica:
+
+\begin{equation}
+    F=U-TS=-k_BT\ln{Z}
+\end{equation}
+
+Si è ricavato che massimizzare l'entropia equivale a minimizzare l'energia libera di Helmotz.
+
+Come fatto per F, ogni quantità termodinamica è ottenibie a partire dalla funzione di partizione Z.
+
+\subsection{Distribuzione di Boltzmann}
+La distribuzione di Boltzmann, o canonica si ottiene dal rapporto tra le probabilità di due stati con energie $\epsilon_1$ e $\epsilon_2$:
+
+\begin{equation}
+    \frac{p_1}{p_2}=\frac{e^{-\beta \epsilon_1}}{e^{-\beta \epsilon_2}}=e^{-\beta(\epsilon_1-\epsilon_2)}
+\end{equation}
+
+Le probabilità dei microstati sono da interpretarsi come fattori di Boltzmann normalizzati tramite Z.
+Un'interessante e semplice applicazione della distribuzione di Boltzmann è il sistema a due livelli.
+
+
+\subsection{Oscillatore armonico quantistico}
+
+La ricavazione della quantizzazione dell'energia dell'oscillatore armonico quantistico è esposta negli appunti di Meccanica Quantistica.
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & H=\frac{1}{2m}(\hat{p}^2+m^2\omega^2\hat{q}^2) \\
+         & H\psi=\epsilon\psi
+    \end{aligned}
+    \right.
+\end{equation}
+
+si ottiene:
+
+\begin{equation}
+    \epsilon_j=\hbar\omega(j+\frac{1}{2})
+\end{equation}
+
+Segue l'espressione della funzione di partizione Z:
+
+\begin{equation}
+    Z=\sum_{j}e^{-\beta\epsilon_j}=\sum_{j}e^{-\beta\hbar\omega(j+\frac{1}{2})}=\frac{e^{-\frac{\beta\hbar\omega}{2}}}{1-e^{-\beta\hbar\omega}}
+\end{equation}
+
+da cui si ricava l'energia:
+
+
+\begin{equation}
+    \begin{aligned}
+         & U=-\frac{1}{Z}\frac{\partial Z}{\partial \beta}= -\frac{\partial}{\partial \beta}\ln{Z}= \\
+         & \frac{\hbar \omega}{2}\coth{\frac{\hbar \omega}{2k_BT}}
+    \end{aligned}
+\end{equation}
 
 
 \end{document}

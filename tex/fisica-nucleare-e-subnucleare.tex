@@ -414,5 +414,117 @@ Secondo l'ipotesi di pairing (sperimentalmente verificata), anche nucleoni appar
 Ne segue che lo spin dei nuclei con Z ed N pari è 0 e lo spin totale è determinato unicamente da nucleoni spaiati.
 
 
+\section{Reazioni e decadimenti}
+
+Un decadimento nucleare del tipo $A+B\rightarrow C+D$ risulta permesso se:
+
+\begin{equation}
+    Q=(M(A)+M(B)-M(C)-M(D))c^2>0
+\end{equation}
+
+oppure, nel caso in cui $Q<0$, esiste una soglia dell'energia cinetica di B tale per cui la reazione è possibile:
+
+\begin{equation}
+    T_B>-Q\frac{M_A+M_B}{M_A} \quad \text{Non relatiisticamentes}
+\end{equation}
+
+La fusione nucleare è il processo tale per cui due nuclei leggeri si uniscono per formare uno più pesante, ad energia minore.
+
+\subsection{Ciclo pp}
+Il ciclo pp è un processo di fuione nucleare, che avviene nelle stelle, e che ha come esito la formazione di un nucleo di elio a partire da 2 protoni.
+Il ciclo si compone di 3 passaggi:
+
+\begin{itemize}
+    \item Fusione di due protoni in un nucleo di deuterio, con emissione di un positrone e un neutrino elettronico.
+          \begin{equation}
+              p+p\rightarrow D+e^++\nu_e
+          \end{equation}
+    \item Fusione di un deuterio con un protone, con emissione di un fotone:
+          \begin{equation}
+              D+p\rightarrow ^3He+\gamma
+          \end{equation}
+    \item Fusione di due nuclei di elio, con emissione di due protoni:
+          \begin{equation}
+              ^3He+^3He\rightarrow ^4He+p+p
+          \end{equation}
+\end{itemize}
+
+Nelle stelle più massive, prevale invece il cliclo CNO (Carbonio-Azoto-Ossigeno).
+
+\subsection{Decadimento $\alpha$}
+
+Decadimento del tipo:
+
+\begin{equation}
+    ^A_ZX\rightarrow ^{A-4}_{Z-2}X'+\alpha
+\end{equation}
+Sperimentalmente, si riscontra che le $\alpha$ sono emesse ad energia fissa.
+Dal punto di vista energetico si ha ( non relativisticamente):
+
+\begin{equation}
+    T_{\alpha}=Q\frac{M_{X'}}{M_{X'}+M_{\alpha}}
+\end{equation}
+
+da cui si desume che la particella $\alpha$ è emessa con energia fissa.
+
+Il rate di decadimento è detato dalla legge empirica di Geiger-Nuttall:
+
+\begin{equation}
+    \log_{10}{t_{\frac{1}{2}}}=a+bZT_a^{-\frac{1}{2}}
+\end{equation}
+
+in cui il parametro a sembra dipendere dall'isotopo, mentre b è costante.
+
+Tale legge è una diretta conseguenza dell'Effetto Tunnel, tale per cui risulta che la probabilità di transizione per unità di tempo
+è pari a:
+
+\begin{equation}
+    \lambda=\omega \cdot N_{coll}\cdot p_{tunnel}
+\end{equation}
+
+\subsection{Decadimento $\beta$}
+
+Decadimento del tipo:
+
+\begin{equation}
+    ^A_ZX\rightarrow ^A_{Z+1}X'+e^-+\bar{\nu_e}
+\end{equation}
+
+L'esistenza del neutrino fu teorizzata per spiegare lo spettro continuo dell'energia del decadimento $\beta$.
+
+Il neutrino è un leptone, come l'elettrone, con carica elettrica nulla e spin 1/2.
+
+Se nel decadimento $\alpha$ l'energia della particella emessa è fissa, nel decadimento $\beta$ lo spettro è continuo.
+
+Bisogna utlizzare la teoria delle perturbazioni per calcolare analiticamente l'espressione di tale spettro: la Regola d'oro di Fermi.
+
+\begin{equation}
+    dP=\frac{2\pi}{\hbar}|<f|U(r)|i>^2\rho(p)dp \equiv |M_{if}|^2\rho(p)dp
+\end{equation}
+
+in cui M è la matrice generalizzata dell'osservabile U, e $\rho(p)$ è la densità degli stati corrispondenti ad unn impulso p, pari quindi a:
+
+\begin{equation}
+    \rho(p)=\frac{V}{(2\pi\hbar)^3}4\pi p^2dp
+\end{equation}
+
+
+Modello il decadimento $\beta$ ipotizzando che tutta l'eergia cinetica sia trasferita ad elettrone e neutrino (giustificata per via delle considerazioni energetiche del paragrafo ...):
+
+\begin{equation}
+    \begin{aligned}
+         & A\rightarrow A'+e^-+\bar{\nu_e}                        \\
+         & M_Ac^2=M_{A'}c^2+T_e+T_{\nu}+M_ec^2+M_{\nu}c^2         \\
+         & E_0=(M_A-M_{A'})c^2= M_ec^2+T_e+T_{\nu}+M_{\nu}c^2     \\
+         & \frac{d\omega}{dt}=\frac{2\pi}{\hbar}|<f|U(r)|i>|^2p_e
+    \end{aligned}
+\end{equation}
+
+
+
+
+
+
+
 
 \end{document}
