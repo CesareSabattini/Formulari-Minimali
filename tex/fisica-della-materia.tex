@@ -194,5 +194,136 @@ da cui si ricava l'energia:
     \end{aligned}
 \end{equation}
 
+Ciò ha delle implicazioni fondamentali in termini di attivazione di reazioni chimiche.
+
+\section{Gas ideale}
+Si definisce gas ideale un sistema di particelle non interagenti.
+
+A partire dalla funzione di partizione Z di ogni particella, si deduce facilmente che la funzione di partizione del sistema è fattorizzabile in una produttoria di funzioni di partizione di singole particelle.
+
+Ne risulta che le proprietà estenzive del gas siano somma delle proprietà estensive dei costituenti.
+
+\subsection{Distinguibilità e indistinguibilità}
+Particelle identiche quantistiche sono indistinguibili, pertanto non indicizzabili.
+
+Classicamente ciò non accade, motivo per cui la funzione Z risulta fattorizzabile:
+
+\begin{equation}
+    Z= \sum \frac{N!}{\prod_in_i!}e^{-\beta\sum n_i\epsilon_i}=\left(\sum e^-{\beta \epsilon_j}\right)^N=Z_i^N
+\end{equation}
+
+dove la produttoria compare per via della somma su tutte le possibili configurazioni di particelle. L'ultima uguaglianza è dovuta all'identità del coefficiente multinomiale.
+
+Il caso delle particelle indistinguibili è più complesso, in quanto la Z non è fattorizzabile, pertanto ci limiteremo per il momento a casistiche particolari.
+
+L'ipotesi aggiuntiva richiesta è quella di occupazione singola, che comporta la possibilità di trascurare le configurazioni in cui due o più particelle occupino lo stesso livello energetico.
+Ciò si realizzerà in sistemi a bassa densità, tali per cui la distanza tra le particelle è molto maggiore della lunghezza d'onda di De Broglie.
+In questo limite, pertanto, la funzione di partizione del sistema di particelle indistinguibili si riduce a quella di particelle distinguibili.
+
+Nel caso di occupazione singola, per particelle indistinguibili:
+
+\begin{equation}
+    Z=\sum_{n_s} e^{-\beta E_{{n_s}}}
+\end{equation}
+
+La funzione di partizione è pertanto desumibile dall'analisi energetica di una particella singola in una buca di potenziale \footnote{
+    Un procedimento analogo è stato seguito in "Fisica Nucleare e Subnucleare" per il modello di nucleo atomico di gas di fermioni.
+}
+
+L'Hamiltoniana di una particella in una buca di potenziale è data da:
+
+\begin{equation}
+    H=\frac{p^2}{2m}+V(x)
+\end{equation}
+
+Dunque l'equazione di Schrödinger stazionaria è:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & -\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+V(x)\psi=E\psi \\
+         & \psi(0)=\psi(a)=0
+    \end{aligned}
+    \right.
+\end{equation}
+
+La soluzione è data, in 3D, da:
+
+\begin{equation}
+    \psi_n(x)=\sqrt{\frac{2}{L}}\sin{\frac{n\pi x}{L}}
+\end{equation}
+
+con relativa quantizzazione dell'energia:
+
+\begin{equation}
+    E_n=\frac{\hbar^2\pi^2(n_x^2+n_y^2+n_z^2)}{2mL^2}
+\end{equation}
+
+E' ora possibile calcolare la funzione di partizione Z per particelle distinguibili:
+
+\begin{equation}
+    \begin{aligned}
+         & Z=\sum e^{-\frac{-\pi^2\hbar^2}{2mL^2}(n_x^2+n_y^2+n_z^2)\beta}= \\
+         & \sum e^{-\frac{\pi^2\hbar^2}{2mL^2k_bT}(n_x^2+n_y^2+n_z^2)}=     \\
+         & =\sum e^{-\frac{\theta_t}{T}(n_x^2+n_y^2+n_z^2)}=                \\
+         & \left(\sum e^{-\frac{\theta_tn_x^3}{T}}\right)^3
+    \end{aligned}
+\end{equation}
+
+dove $\theta_t$ è la temperatura caratteristica del moto di traslazione.
+
+Per $T>>\theta_t$:
+
+\begin{equation}
+    \begin{aligned}
+         & Z \rightarrow \left(\int_{0}^{\infty} e^{-\frac{\theta_tn^2}{T}}dn\right)^3=                                                               \\
+         & =\left(\frac{1}{2}\sqrt{\frac{\pi T}{\theta_t}}\right)^3= \left(\frac{mk_bT}{2\pi\hbar^2}\right)^{\frac{3}{2}}V= n_QV= \frac{V}{\lambda^3}
+    \end{aligned}
+\end{equation}
+
+dove $n_Q$ è la densità di stati quantistica, e $\lambda$ è la lunghezza d'onda di De Broglie.
+
+\subsection{Proprietà del gas perfetto monoatomico}
+
+Per particelle indistinguibili:
+
+\begin{equation}
+    Z=\frac{Z_D^N}{N!}=\frac{(n_QV)^N}{N!}\simeq \frac{1}{\sqrt{2\pi N}}\left(\frac{en_Q}{n}\right)^N
+\end{equation}
+
+Ora che si è trovata la funzione di partizione Z per un gas ideale composto da particelle indistinguibili, è possibile calcolare
+le quantità termodinamiche del sistema.
+
+\subsection{Entropia di mescolamento}
+
+L'equazione di Sackur-Tetrode è:
+
+\begin{equation}
+    S=\frac{\partial F}{\partial T}=Nk_b\left[\ln{\frac{n_Q}{n}}+\frac{5}{2}\right]
+\end{equation}
+
+
+Nel caso di due sistemi separati, composti dallo stesso tipodi particella, si ha:
+
+\begin{equation}
+    \begin{aligned}
+         & S^i=2Nk_b\left[\ln{\frac{n_QV}{N}}+\frac{5}{2}\right]   \\
+         & S_f=2Nk_b\left[\ln{\frac{n_Q2V}{2N}}+\frac{5}{2}\right] \\
+         & \Delta S=0
+    \end{aligned}
+\end{equation}
+
+come ci si aspettava, per via dell'indistinguibilità delle particelle.
+
+Nel caso opposto di due sistemi contenenti 2 tipi di particelle, si ha:
+
+\begin{equation}
+    \begin{aligned}
+         & S_i=Nk_b\left[\ln{\frac{n_Q^AV}{N}}+\frac{5}{2}\right]+Nk_b\left[\ln{\frac{n_Q^BV}{N}}+\frac{5}{2}\right]    \\
+         & S_f= Nk_b\left[\ln{\frac{2n_Q^AV}{N}}+\frac{5}{2}\right]+Nk_b\left[\ln{\frac{2n_Q^BV}{N}}+\frac{5}{2}\right] \\
+         & \Delta S=2Nk_b\ln{2}
+    \end{aligned}
+\end{equation}
+
 
 \end{document}
