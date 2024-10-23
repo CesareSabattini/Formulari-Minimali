@@ -602,11 +602,33 @@ In prossimità della giunzione, si è in una situazione di non equilibrio, data 
          & J_p=q\mu_pp\epsilon-qD_p\frac{dp}{dx}=J_p^{Dif,LLI}\simeq 0 \rightarrow                                       \\
          & q\mu_pp\epsilon=qD_p\frac{dp}{dx} \rightarrow \epsilon= \frac{V_T}{p}\frac{dp}{dx}=-\frac{dV}{dx} \rightarrow \\
          & \int_{p_{p_0}}^{p_n(0)}\frac{dp}{p}=-\int_{0}^{V_j}\frac{dV}{V_T} \rightarrow                                 \\
-         & p_n(0)p_{n_0}e^{\frac{V_D}{V_T}}
+         & p_n(0)=p_{n_0}e^{\frac{V_D}{V_T}}
     \end{aligned}
 \end{equation}
 
+si è così ottenuta la "Legge della giunzione".
 
+Si possono ora ricavare le componenti della corrente in un diodo a giunzione.
+
+In condizione di low level injection, la corrente dei portatori minoritari è solo di diffusione, e si può scrivere:
+
+\begin{equation}
+    I_p^{Diff}=\frac{qAD}{L_p}p'e^{-\frac{x}{L_p}}
+\end{equation}
+
+Nella giunzione polarizzata:
+
+\begin{equation}
+    I_{pn}(0)=\frac{qAD_p}{L_p}p_n'(0)=\frac{qAD_nn_{p_0}}{L_n}e^{\frac{V_D}{V_T}-1}
+\end{equation}
+
+Ne segue che la corrente totale attraverso la giunzione sia:
+
+\begin{equation}
+    I=(\frac{qAD_pp_{n_0}}{L_p}+\frac{qAD_nn_{n_0}}{L_n})(e^{\frac{V_D}{V_T}}-1)\equiv I_0(e^{\frac{V_D}{V_T}}-1)
+\end{equation}
+
+Se ne evince che il diodo non è un elemento ohmico.
 
 
 

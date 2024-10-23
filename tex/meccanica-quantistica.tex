@@ -1261,15 +1261,15 @@ Questo approccio è fertile in termini di formalismo.
 *da terminare*
 
 
-\subsection{Momento angolare}
-\subsubsection{Momento angolare orbitale}
+\section{Momento angolare}
+\subsection{Momento angolare orbitale}
 In termini operatoriali, tramite il principio di corrispondenza, il momento angolare orbitale è rappresentabile come:
 
 \begin{equation}
     \hat{M}=\hat{x}\wedge \hat{p} \leftrightarrow \hat{L_i}=\epsilon_{ijk}\hat{x}_j\hat{p}_k
 \end{equation}
 
-E' possibile ricavare le seguenti fondamentali condizioni quadratiche di commutazione:
+E' possibile ricavare le seguenti fondamentali condizioni quantiche di commutazione:
 
 \begin{itemize}
     \item Tra $L_i$ e $x_r$:
@@ -1314,66 +1314,67 @@ In coordinate polari, gli operatori $L^2$ e $L_z$ assumono la forma:
 \begin{equation}
     \left\{
     \begin{aligned}
-         & L^2=-\hbar^2\left(\frac{\frac{\partial^2}{\partial \theta^2}+\cot{\theta}\frac{\partial}{\partial \phi}+\frac{1}{\sin^2(\theta)}\frac{\partial^2}{\partial \phi^2}   }{} \right)
+         & L^2=-\hbar^2\left(\frac{\partial^2}{\partial \theta^2}+\cot{\theta}\frac{\partial}{\partial \phi}+\frac{1}{\sin^2(\theta)}\frac{\partial^2}{\partial \phi^2}\right)
          & L_z=-i\hbar\frac{\partial}{\partial \phi}
     \end{aligned}
     \right.
 \end{equation}
 
-e le autofunzioni di base sono le armoniche sferiche:
+Con tale sistema di coordinate, la quantizzazione del momento angolare viene effettuata mediante la risoluzione dell'equazione agli autovalori:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & L^2Y_{lm}(\theta, \phi)=l(l+1)\hbar^2Y_{lm}(\theta, \phi) \\
+         & L_zY_{lm}(\theta, \phi)=m\hbar Y_{lm}(\theta, \phi)
+    \end{aligned}
+    \right.
+\end{equation}
+
+tale per cui risulta che le autofunzioni di base siano le armoniche sferiche:
 
 \begin{equation}
     Y_{lm}(\theta, \phi) = \frac{(-1)^{l+m}}{2^l l!} \sqrt{\frac{2l+1}{4\pi} \frac{(l-m)!}{(l+m)!}} \sin^m(\theta) \left( \frac{d}{d\cos{\theta}} \right)^{l+m} e^{im\phi}
 \end{equation}
 
-Definendo un operatore di rotazione intorno all'asse z $r_z$, M si può scrivere come:
-
-\begin{equation}
-    \hat{M}= i\hbar r_z
-\end{equation}
-
-\subsubsection{Momento angolare di spin}
+\subsection{Momento angolare di spin}
 Il momento angolare di spin è una proprietà intrinseca di una qualsiasi particella elementare, indipendente dal suo stato di moto.
+
 Ne segue che essa determini un grado di libertà aggiuntivo, e, pertanto, commuta con qualsiasi funzione delle osservabili canoniche.
+
 L'operatore di spin gode delle medesime proprietà dell'operatore di momento angolare orbitale, e così una loro generica combinazione lineare.
 Dato che il momento angolare commuta con qualsiasi scalare, e che l'Hamiltoniana è invariante per rotazione spaziale (e dunque uno scalare), il momento angolare è una costante del moto.
-Uno stato generico ha momento angolare nullo se e solo se è sfericamente simmetrico.
 
-
-\subsubsection{Quantizzazione del momento angolare}
-Si può procedere in maniera analoga alla quantizzazione dell'oscillatore armonico, considerando l'Hamiltoniano del sistema come:... (da terminare)
-
-\subsubsection{Spin dell'elettrone}
-L'elettrone è una particella elementare avente spin modulo 1/2.
-Per lo studio si pone:
+Perciò la funzione d'onda sarà fattorizzabile, in coordinate polari, come:
 
 \begin{equation}
-    \hat{m}=\frac{\hbar}{2}\sigma
+    \psi(r,\theta, \phi,\vec{z})=R(r)Y^m_l(\theta, \phi) \chi(\vec{z})
 \end{equation}
 
-di modo che risulti:
+Assumendo lo spin soltanto due valori, la funzione d'onda sarà data dalla sovrapposizione di due stati a spin positivo e negativo:
 
 \begin{equation}
-    \sigma_x^2=\sigma_y^2=\sigma_z^2=1
+    \psi(\vec{r},\vec{z})=\psi_-(\vec{r})\chi_-(\vec{z}) + \psi_+(\vec{r})\chi_+(\vec{z})
 \end{equation}
 
-si trova che:
+Lo spazio vettoriale degli stati di spin è bidimensionale, per cui vale la rappresentazione in ket della base (detti spinori):
 
 \begin{equation}
-    \sigma_i \sigma_j= -\sigma_j \sigma_i \quad , \quad i \neq j \leftrightarrow \sigma_i \sigma_j= i\sigma_k \quad , \quad i \neq j \neq k
+    \chi_+=\begin{pmatrix}
+        1 \\
+        0
+    \end{pmatrix}
+    \quad
+    \chi_-=\begin{pmatrix}
+        0 \\
+        1
+    \end{pmatrix}
 \end{equation}
 
-da cui segue
+Le osservabili di spin, operando su uno spazio vettoriale bidimensionale, sono rappresentabili come matrici 2x2, composizione lineare di matrici di Pauli:
 
 \begin{equation}
-    \sigma_x \sigma_y \sigma_z = i
-\end{equation}
-
-Tali sono le proprietà di una variabile spin modulo 1/2.
-Data la base di autoket di $\sigma_z$, si può formare una rappresentazione matriciale
-degli operatori di spin:
-
-\begin{equation}
+    S=\frac{\hbar}{2}\sigma \leftrightarrow
     \sigma_x=\begin{pmatrix}
         0 & 1 \\
         1 & 0
@@ -1390,28 +1391,47 @@ degli operatori di spin:
     \end{pmatrix}
 \end{equation}
 
-in cui la rappresentazione di $\sigma_x$ e $\sigma_y$ è data in termini di $\sigma_z$, secondo le proprietà precedentemente ricavate, a meno di
-un fattore di fase arbitrario.
-Gli stati relativi ad uno spin modulo 1/2 sono rappresentabili come:
+\subsection{Composizione di momenti angolari}
+
+Considero la somma operatoriale di due momenti angolari generici ( e un autostato di $L^2$ e $L_z$):
 
 \begin{equation}
-    |\uparrow>=\begin{pmatrix}
-        1 \\
-        0
-    \end{pmatrix}
-    \quad
-    |\downarrow>=\begin{pmatrix}
-        0 \\
-        1
-    \end{pmatrix}
+    \left\{
+    \begin{aligned}
+         & \vec{J}=\vec{J_1}+\vec{J_2} \\
+         & J^2|j,m>=j(j+1)\hbar^2|j,m> \\
+         & J_z|j,m>=m\hbar|j,m>
+    \end{aligned}
+    \right.
 \end{equation}
 
-L'equazione d'onda comprendente lo spin è pertanto fattorizzabile in una parte spaziale e in una parte di spin, e si scrive come:
+Fissagti $j_1$ e $j_2$, considero il sottospazio vettoriale costituito da ket del tipo $|m_1,m_2>$, avente dunque dimensione pari a $(2j_1+1)(2j_2+1)$.
+
+Dimostrando che il ket $|j,m>$ costituisce una base di tale spazio, si costruisce un'agevole rappresentazione del momento angolare totale.
+
+Si verifica che $j$ assume valori compresi tra $|j_1-j_2|$ e $j_1+j_2$, e che $m=m_1+m_2$.
+
+Si può così valutare la dimensione dello spazio generato da $|j,m>$:
 
 \begin{equation}
-    \psi(\xi, t)=\psi(\xi, t) \eta(\sigma)
+    \sum_{j_1-j_2}^{j_1+j_2}=(2j_1+1)(2j_2+1)
 \end{equation}
 
+Perciò i due spazi, essendo isomorfi, ammettono entrambe le basi.
+
+La trasformazione tra le due basi è fornita dai coefficienti di Clebsch-Gordan:
+
+\begin{equation}
+    |j,m>=\sum_{m_1=-j_1}^{j_1} \sum_{m_2=-j_2}^{j_2}<m_1,m_2|j,m>|m_1,m_2>
+\end{equation}
+
+tenendo conto che se m non è somma di $m_1$ e $m_2$, il coefficiente di Clebsch-Gordan è nullo.
+
+Si utilizza anche la notazione di produttoria diretta di spazi vettoriali:
+
+\begin{equation}
+    (j_1)+(j_2)= \oplus_{j=j_1-j_2}^{j_1+j_2} (j)
+\end{equation}
 
 \section{Sistemi stazionari a potenziale centrale}
 L'Hamiltoniana di sistemi a campo centrale è del tipo:

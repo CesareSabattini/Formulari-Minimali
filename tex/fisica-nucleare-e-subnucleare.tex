@@ -425,7 +425,7 @@ Un decadimento nucleare del tipo $A+B\rightarrow C+D$ risulta permesso se:
 oppure, nel caso in cui $Q<0$, esiste una soglia dell'energia cinetica di B tale per cui la reazione è possibile:
 
 \begin{equation}
-    T_B>-Q\frac{M_A+M_B}{M_A} \quad \text{Non relatiisticamentes}
+    T_B>-Q\frac{M_A+M_B}{M_A} \quad \text{Non relativisticamentes}
 \end{equation}
 
 La fusione nucleare è il processo tale per cui due nuclei leggeri si uniscono per formare uno più pesante, ad energia minore.
@@ -448,6 +448,7 @@ Il ciclo si compone di 3 passaggi:
               ^3He+^3He\rightarrow ^4He+p+p
           \end{equation}
 \end{itemize}
+
 
 Nelle stelle più massive, prevale invece il cliclo CNO (Carbonio-Azoto-Ossigeno).
 
@@ -508,19 +509,71 @@ in cui M è la matrice generalizzata dell'osservabile U, e $\rho(p)$ è la densi
     \rho(p)=\frac{V}{(2\pi\hbar)^3}4\pi p^2dp
 \end{equation}
 
+L'intero procedimento di ricavazione dell'espressione analitica dello spettro di emissione del decadimento beta è riportato nei calcoli integrativi (da inserire da OneNote).
 
-Modello il decadimento $\beta$ ipotizzando che tutta l'eergia cinetica sia trasferita ad elettrone e neutrino (giustificata per via delle considerazioni energetiche del paragrafo ...):
+\section{Rilevazione di particelle}
+Uno degli strumenti più utilizzati per la rilevazione di particelle è la camera a nebbia, in cui si osserva la traccia lasciata da una particella ionizzante.
+
+\subsection{Ionizzazione}
+Considero una particella impattante di massa molto maggiore di quella dell'elettrone, tempi di interazione brevi e urto coulombiano.
+Si ottiene così la formula di Bethe-Bloch, trascurando effetti relativistici e quantistici (calcolo sui calcoli integrativi):
+
+\begin{equation}
+    \frac{dE}{\rho dx}=4\pi m_ec^2r_e^2N_Az^2\frac{Z}{A}\frac{1}{\beta^2}\ln{\frac{b_max}{b_min}}
+\end{equation}
+
+La formula completa è invece:
+
+\begin{equation}
+    \frac{dE}{\rho dx}=\frac{4\pi N_Ar_e^2m_ec^2z^2Z}{A\beta^2}\left[\ln{\frac{2m_ec^2\beta^2\gamma^2W_{max}}{I^2}}-\beta^2-\delta -2\frac{C}{Z}\right]
+\end{equation}
+
+in cui I è il potrenziale di ionizzazione, W è la massima energia ttrasferita, $\delta$ è il fattore di densità e C è una costante dovuta alla struttura atomica a shell.
+
+\subsubsection{Picco di Bragg}
+Il deposito di energia in un materiale da parte di una particella ionizzante è basso fino quasi al terminde della traiettoria, quando la rilascia interamente in un breve tratto.
+
+Tale picco è detto picco di Bragg.
+
+\section{Particelle elementari}
+
+\subsection{Muone}
+
+\subsection{Pione}
+
+Esistono due tipologie di pioni, $\pi^+$ e $\pi^-$, aventi rispettivamente carica positiva e negativa.
+Essi decadono secondo le reazioni:
 
 \begin{equation}
     \begin{aligned}
-         & A\rightarrow A'+e^-+\bar{\nu_e}                        \\
-         & M_Ac^2=M_{A'}c^2+T_e+T_{\nu}+M_ec^2+M_{\nu}c^2         \\
-         & E_0=(M_A-M_{A'})c^2= M_ec^2+T_e+T_{\nu}+M_{\nu}c^2     \\
-         & \frac{d\omega}{dt}=\frac{2\pi}{\hbar}|<f|U(r)|i>|^2p_e
+         & \pi^+\rightarrow \mu^++\nu_{\mu}       \\
+         & \pi^-\rightarrow \mu^-+\bar{\nu_{\mu}}
     \end{aligned}
 \end{equation}
 
+\section{Fisica Subnucleare}
 
+\subsection{Introduzione al modello standard}
+
+Il modello standard introduce la classificazione delle particelle elementari, ossia non ulteriormente scindibili, in bosoni di gauge, bosone di Higgs, leptoni e quarks.
+
+Le particelle elementari sono intese come prodotti della suscettibilità dei campi quantizzati.
+
+La Lagrangiana del modello standard è simmetrica rispetto al gruppo $U(1)xSU(2)xSU(3)$.
+
+L'invarianza sotto SU(3)$_C$ genera l'interazione forte, quella sotto SU(2)$_L$xU(1) l'interazione elettrodebole, mediata dai bosoni W, Z e i fotoni $\gamma$.
+
+Secondo la teoria elettrodebole i bosoni dovrebbero avere masse nulle, in contrasto con i risultati sperimentali.
+
+La discrepanza viene spiegata dall'esistenza di un campo scalare a valore di aspettazione non nullo nel vuoto, responsable della rottura della
+
+simmetria elettrodebole, ossia il campo di Higgs, la cui eccitazione genera il bosone di Higgs.
+
+La materia ordinaria si compone di quark u, quark d, elettroni e neutrini, tutti fermioni a spin 1/2.
+
+I leptoni sono le particelle non sensibili all'interazione forte (non si accoppiano con i gluoni).
+
+Il numero leptonico, secondo gli esperimenti, si conserva nelle reazioni e nei decadimenti.
 
 
 
