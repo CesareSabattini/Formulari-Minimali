@@ -628,8 +628,241 @@ Ne segue che la corrente totale attraverso la giunzione sia:
     I=(\frac{qAD_pp_{n_0}}{L_p}+\frac{qAD_nn_{n_0}}{L_n})(e^{\frac{V_D}{V_T}}-1)\equiv I_0(e^{\frac{V_D}{V_T}}-1)
 \end{equation}
 
-Se ne evince che il diodo non è un elemento ohmico.
+Si è così ottenuta la legge di Shockley, da cui si evince che il diodo non è un elemento ohmico.
 
 
+\subsection{Corrente inversa di saturazione e temperatura}
+
+\begin{equation}
+    \begin{aligned}
+         & I_0=\frac{qAD_pp_{n_0}}{L_p}+\frac{qAD_nn_{n_0}}{L_n} \rightarrow                    \\
+         & I_0\simeq qA \left(\frac{D_p}{L_pN_D}+\frac{D_n}{L_nN_A}\right)n_i^2=                \\
+         & =qA \left(\frac{D_p}{L_pN_D}+\frac{D_n}{L_nN_A}\right)A_0T^3e^{\frac{-V_{g_0}}{V_T}}
+    \end{aligned}
+\end{equation}
+
+Consideriamo due casi:
+
+\begin{itemize}
+    \item Germanio: sperimentalmente si rova che le correnti di diffusione varino come 1/T, quindi:
+
+          \begin{equation}
+              I_0=K_1T^2e^{\frac{-V_{g_0}}{V_T}}
+          \end{equation}
+
+
+    \item Silicio: La corrente di diffusione è trascurabile rispetto a quella creata per effetto termico
+          all'interno della depletion zone. Si trova pertanto che la corrente di saturazione inversa dipende da $_i$ e non da $n_i^2$:
+
+          \begin{equation}
+              I_0=K_2T^{1.5}e^{-\frac{V_{g_0}}{\eta V_t}}
+          \end{equation}
+
+          in cui $\eta$ è un parametro che indica la non costanza della corrente internamente alla depletion zone (???).
+          Nel silicio quindi la corrente generata dalle cariche per effetto termico internamente alla depletion zone domina su quella di diffusiione, ed è pertanto
+          data da:
+
+          \begin{equation}
+              I_0=I_{gt}=\frac{n_i}{2\tau_0}qAW_{DR}
+          \end{equation}
+
+\end{itemize}
+
+In generale, $I_0$ aumenta con T.
+
+
+\subsection{Caratteristica I-V di un diodo}
+Come ricavato precedentemente:
+
+\begin{equation}
+    I=I_0(e^{\frac{V_D}{\eta V_T}}-1)
+\end{equation}
+
+Un valore poitivo indica una corrente da p ad n, pertanto un diodo polarizzato direttamente.
+
+La corrente si annulla per $V_D=0$.
+
+Chiaramente vi sono delle dipendenze implicite dalla temperatura in V$_T$ e $I_0$. Approssimativamente, la
+corrente inversa raddoppia ogni 10 K.
+
+\begin{equation}
+    I_0=I_0(e^{\frac{V_D}{\eta V_T}}-1)=I_{01}2^{\frac{T_2-T_1}{10}}
+\end{equation}
+
+per alte tensioni:
+
+\begin{equation}
+    \begin{aligned}
+         & V_D=\eta V_T (\ln{I}-\ln{I_0}) \rightarrow                                                                \\
+         & \frac{d V_D}{dT}=\frac{V_D}{T}-\eta V_T(\frac{1}{I_0}\frac{d I_0}{dT})= \frac{V_D-(V_{g_0}+m\eta V_T)}{T}
+    \end{aligned}
+\end{equation}
+
+L'equazione ottenuta ci dice che avviene un cambiamento di verso della corrente per $V_D=V_{g_0}+m\eta V_T$.
+Tuttaia, normalmente, nel range operativo, ciò non avviene.
+
+A temperatura ambiente, si considera per Silicio e Germanio:
+
+\begin{equation}
+    \frac{V_D}{dT}\simeq -2.5 mV/K
+\end{equation}
+
+Graficamente, sulla caratteristica, un aumento della temperatura risulta in una sua traslazione verso sinistra.
+
+Esiste un valore di tensione di soglia in polarizzazionee diretta a partire dal quale la corrente aumenta rapidamente:
+per il Silicio si ha $V_{g_0}=0.6V$, per il Germanio $V_{g_0}=0.2V$.
+
+Plottando la caratteristica in scala logaritmica, si riscontra una peculiarità ad alte tensioni: sebbene ci si aspetti un andamento lineare della corrente nella tensione,
+si ha una diminuzione della slope, dovuta alla resistenza ohmica del diodo: la caduta di potenziale interna non è più trascurabile.
+
+
+\subsection{Retta di carico}
+
+Considerando un n-polo, ossia una componente da cui escano n terminali, quante misure indipendenti è possibile effettuare?
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & \sum_{j=1}^{n}I_j=0  \\
+         & V_{jk}+V_{kl}=V_{jl}
+    \end{aligned}
+    \right.
+\end{equation}
+
+quindi si hanno n-1 misure indipendenti per corrente e n-1 per tensione.
+
+Dunque il dispositiv è descrivibile fisicamente mediante n-1 caratteristiche.
+
+Il "punto di lavoro" si ottiene inserendo le n-1 variabili, tramite la connessione del dipositico con l'esterno.
+
+Considerando due bipoli connessi, si ottengono le seguenti condizioni ai terminali:
+
+\begin{equation}
+    I_{a_1}=-I_{a_2} \quad V_{a_1b_1}=V_{a_2b_2}
+\end{equation}
+
+Le soluzioni di tale sistema costituiscono i punti di lavoro. Graficamente, basta rappresentare sullo stesso grafico
+le caratteristiche dei due bipoli, e trovare il punto di intersezione, tenendo conto dei versi discordi della corrente.
+
+La scelta più ovvia per determinare caratteristica e punto di lavoro per un generico bipolo $E_1$ è
+un generatore ideale in serie con una resistenza.
+La caratteristica del dipolo "sonda" è data semplicemente dalla traslata della caratteristica della resistenza di un valore $V_0$,
+ovvero una retta che intervetti l'asse delle tensioni in $V_0$. Tale caratteristica è pertanto utilizzabile come retta di carico per
+determinare il punto di lavoro di un dispositivo, calcolandone le intersezioni con la caratteristica di quest'ultimo.
+
+\subsection{Resistenza di un diodo}
+
+Si definisce "resistenza statica R" di un diodo il rapporto tra tensione e corrente.
+Essa è data dal reciproco della slope della congiungente tra il punto di lavoro e l'origine.
+
+In regime di piccoli segnali, si definisce "Resistenza dinamica r" di un diodo la slope della caratteristica nel punto di lavoro.
+
+\begin{equation}
+    r=\frac{\eta V_T}{I+I_0}
+\end{equation}
+
+Essa può essere considerata costante nell'intorno del punto di lavoro.
+In regime di grandi segnali, si usa la rappresentazione asintotica della caratteristica:
+
+\begin{itemize}
+    \item Per $V<V_\gamma$, la corrente è nulla.
+    \item Per $V>V_\gamma$, la corrente è proporzionale alla tensione.
+\end{itemize}
+
+
+\subsection{Capacità di transizione di un diodo}
+
+L'aumento dello spessore della depletion zone può essere considerato un effetto capacitivo del diodo:
+
+\begin{equation}
+    C_T \equiv |\frac{dQ}{dV}| \rightarrow i=\frac{dQ}{dt}=C_T\frac{dV}{dt}
+\end{equation}
+
+\subsubsection{Giunzione a lega o a fusione}
+Nel caso in cui si presente una grande asimmetria di carica nella depletion zone, si parla di giuzione a lega o a fusione.
+Spesso si vuole porre un'asimmetria tra il numero di accettori e di donatori.
+Se $W_p<<W_n\simeq W$, si ha:
+
+\begin{equation}
+    \begin{aligned}
+         & N_aW_p=N_dW_n \rightarrow \frac{d^2}{dx^2} V=-\frac{qN_D}{\epsilon} \rightarrow \\
+         & \epsilon = -\frac{dV}{dx}=\frac{qN_d}{\epsilon}(x-W) \rightarrow                \\
+         & V(x)=-\frac{qN_d}{2\epsilon}(x^2-2Wx)
+    \end{aligned}
+\end{equation}
+
+Il potenziale in corrispondenza di x=W è pari a $V_j$. In polarizzazione diretta
+
+\begin{equation}
+    V_j\frac{qN_D}{2\epsilon}W^2=V_0-V_D \rightarrow W \alpha \sqrt{V_0-V_D}
+\end{equation}
+
+Si è verificato che la larghezza della depletion zone diminuisce all'aumentare della tensione.
+La capacità è dunque:
+
+\begin{equation}
+    C_T=\frac{\epsilon A}{W}=(\frac{\epsilon q}{2})^{\frac{1}{2}}(\frac{N_D}{V_j})^{1/2}
+\end{equation}
+
+\subsection{Giunzione per accrescimento}
+La variazione della densità di carica nella depletion zone è lineare:
+
+\begin{equation}
+    \rho(x)=kx \rightarrow V_j \alpha W^3 \rightarrow C_T \alpha \frac{1}{W}
+\end{equation}
+
+
+\subsubsection{Giunzione VARICAP}
+
+Un diodo VARICAP consente di variare la capacità di transizione mediante applicazione di una tensione di controllo.
+In particolare, per polarizzazione diretta, la capacità di transizione diminuisce all'aumentare della tensione applicata,
+per via del restringimento della depletion zone. Viceversa per polarizzazione inversa.
+
+\subsection{Capacità di transizione di un diodo}
+Per semplicità di trattazione, si considera un diodo in polarizzazione diretta, fortemente drogato p, in modo tale che la corrente
+di I attraverso la giunzione sia data unicamente dalle lacune.
+Si ha che la carica dei minoritari sia presente solo nella regione n:
+
+\begin{equation}
+    Q_e=\int_{0}^{\infty}Aq[p_n(0)-p_{n_0}]e^{-\frac{x}{L_p}}dx=AqL_pp'_n(0)
+\end{equation}
+La corrente di diffusione delle lacune è data da:
+
+\begin{equation}
+    I_{pn}(x)=\frac{qAD_p}{L_p}p'_n(0)e^{-\frac{x}{L_p}}=I_0e^{-\frac{x}{L_p}}
+\end{equation}
+
+da cui si ottiene che la corrente del diodo sia proporzionale alla carica Q dei minoritari in eccesso:
+
+\begin{equation}
+    I=Q_e\frac{D_p}{L_p^2}=\frac{Q_e}{\tau_p}
+\end{equation}
+
+\subsection{Capacità di diffusione}
+Si definisce capacità di diffusione la variazione della carica iniettata con la tensione:
+
+\begin{equation}
+    C_d=\frac{dQ}{dV}=\tau \frac{dI}{dV}\equiv \tau g\equiv \frac{\tau}{r}= \frac{\tau I}{\eta V_T}
+\end{equation}
+
+con g la conduttanza e r la resistenza dinamiche.
+Questa trattazione è valida solo per drogaggi fortemente asimmetrici. In caso di drogaggio uniforme, due sono le capacità di diffusione.
+Per un diodo polarizzato direttamente, la capacità di diffusione è molto maggiore di quella di transizione. All'opposto per una polarizzazione inversa.
+
+Data una tensione varabile dinamicamente, la carica initettata è dQ' e la corrente è data da:
+
+\begin{equation}
+    i=\frac{dQ'}{dt}=C_d' \frac{dV}{dt}
+\end{equation}
+dfff
+Per esempio, per una tensione sinusoidale, si ricavano i seguenti risultati:
+
+\begin{equation}
+    \begin{aligned}
+         & V=V_D+V_0e^{i\omega t} \rightarrow                                   \\
+         & C_D'= \frac{\tau}{2r} \text{A bassa frequenza}                       \\
+         & C_D'=\frac{1}{r}\sqrt{\frac{\tau}{2\omega}} \text{Ad alta frequenza}
+    \end{aligned}
+\end{equation}
 
 \end{document}

@@ -6,14 +6,17 @@
 
 \title{Fisica della Materia}
 \author{Sabattini Manginella Cesare}
-\date{\today}
+\date{Winter 2024}
 
 \begin{document}
 
 \maketitle
 
+\tableofcontents
+
 \section{Introduzione}
 ATTENZIONE: formulario ancora in fase di sviluppo. Alcune informazioni potrebbero essere incomplete o errate.
+E' inoltre in corso la riscrittura in inglese.
 
 \section{Microstati e Macrostati}
 Considero uno spazio delle configurazioni equiprobabili in un processo di N casistiche binarie, con probabilità:
@@ -132,7 +135,7 @@ Sotto l'ipotesi di minime variazioni di energia, le variazioni delle probabilit�
 
 *da terminare. Intero calcolo su "Calcoli integrativi*
 
-SI ottiene:
+Si ottiene:
 
 \begin{equation}
     \beta=\frac{1}{k_BT}
@@ -148,16 +151,7 @@ Si è ricavato che massimizzare l'entropia equivale a minimizzare l'energia libe
 
 Come fatto per F, ogni quantità termodinamica è ottenibie a partire dalla funzione di partizione Z.
 
-\subsection{Distribuzione di Boltzmann}
-La distribuzione di Boltzmann, o canonica si ottiene dal rapporto tra le probabilità di due stati con energie $\epsilon_1$ e $\epsilon_2$:
-
-\begin{equation}
-    \frac{p_1}{p_2}=\frac{e^{-\beta \epsilon_1}}{e^{-\beta \epsilon_2}}=e^{-\beta(\epsilon_1-\epsilon_2)}
-\end{equation}
-
-Le probabilità dei microstati sono da interpretarsi come fattori di Boltzmann normalizzati tramite Z.
-Un'interessante e semplice applicazione della distribuzione di Boltzmann è il sistema a due livelli.
-
+L'espressione di F risulta pertanto un'equazione "ponte".
 
 \subsection{Oscillatore armonico quantistico}
 
@@ -186,7 +180,6 @@ Segue l'espressione della funzione di partizione Z:
 
 da cui si ricava l'energia:
 
-
 \begin{equation}
     \begin{aligned}
          & U=-\frac{1}{Z}\frac{\partial Z}{\partial \beta}= -\frac{\partial}{\partial \beta}\ln{Z}= \\
@@ -194,19 +187,13 @@ da cui si ricava l'energia:
     \end{aligned}
 \end{equation}
 
-Ciò ha delle implicazioni fondamentali in termini di attivazione di reazioni chimiche.
-
 \section{Gas ideale}
 Si definisce gas ideale un sistema di particelle non interagenti.
-
-A partire dalla funzione di partizione Z di ogni particella, si deduce facilmente che la funzione di partizione del sistema è fattorizzabile in una produttoria di funzioni di partizione di singole particelle.
-
-Ne risulta che le proprietà estenzive del gas siano somma delle proprietà estensive dei costituenti.
 
 \subsection{Distinguibilità e indistinguibilità}
 Particelle identiche quantistiche sono indistinguibili, pertanto non indicizzabili.
 
-Classicamente ciò non accade, motivo per cui la funzione Z risulta fattorizzabile:
+Classicamente ciò non accade, motivo per cui la funzione Z classica risulta fattorizzabile:
 
 \begin{equation}
     Z= \sum \frac{N!}{\prod_in_i!}e^{-\beta\sum n_i\epsilon_i}=\left(\sum e^-{\beta \epsilon_j}\right)^N=Z_i^N
@@ -324,6 +311,243 @@ Nel caso opposto di due sistemi contenenti 2 tipi di particelle, si ha:
          & \Delta S=2Nk_b\ln{2}
     \end{aligned}
 \end{equation}
+
+
+\subsection{Teorema di equipartizione dell'energia}
+
+Se l'energia di un sistema classico è la somma di n modi quadratici e il sistema è in contatto con un bagno termico a temperatura T,
+l'energia media del sistema è data da:
+
+\begin{equation}
+    U=\frac{n}{2}k_BT
+\end{equation}
+
+ossia, l'energia è equamente suddivisa sui gradi di libertà.
+Di seguito si dimostra.
+
+L'energia di un sistema ad N gradi di libertà quadratici è data da:
+\begin{equation}
+    \begin{aligned}
+         & E({x_i})=\sum_{i}^{N}\epsilon_i(x_i)=\sum_{i}^{N}c_ix_i^2 \\
+         & U=<E>=<\sum_{i}^{N}\epsilon_i>=\sum_{i}^{N}<\epsilon_i>
+    \end{aligned}
+\end{equation}
+
+$<\epsilon_j>$ è la media statistica, estratta per mezzo della distribuzione canonica:
+
+\begin{equation}
+    \begin{aligned}
+         & <\epsilon_j>=\int \prod_{i}^{N}dx_i\epsilon_jP(\epsilon_j)= \frac{\int d\eta \epsilon_je^{-\beta \sum \epsilon_i}}{\int d\eta e^{-\beta \sum \epsilon_i}} \\
+         & = \frac{\int dx_j\epsilon_je^{-\beta \epsilon_j}}{\int dx_je^{-\beta \epsilon_j}}=\frac{1}{2}k_bT
+    \end{aligned}
+\end{equation}
+
+
+\section{Insieme Gran Canonico}
+Un insieme termodinamico è gran canonico se i sistemi che lo compongono sono aperti, a contatto con
+un bagno termico e di particelle.
+I costrains sono pertanto la temperatura, il volume e il potenziale chimico.
+
+\subsection{Potenziale chimico}
+
+The concept of chemical potential naturally emerges from the minimization of the free energy
+of the system composed by the ensamble and the bath, which is therefore canonical.
+
+One, indeed, finds:
+
+\begin{equation}
+    \frac{\partial}{\partial N_R}F_R|_{T,V}=\frac{\partial}{\partial N}F_S|_{T,V}\equiv \mu
+\end{equation}
+
+Moreover, examining the differential of the entropy, one finds:
+
+\begin{equation}
+    dS=\frac{dU}{T}+\frac{PdV}{T}-\frac{\mu dN}{T}
+\end{equation}
+
+
+\subsection{Gran Canonical Partition Function}
+
+The process of derivation of the partition function for the grand canonical ensamble is analogous to the canonical one,
+meaning it goes through the maximization of the entropy of the system.
+
+One finds:
+
+\begin{equation}
+    \begin{aligned}
+        \Xi= \sum_{N=0}^{+\infty}Z(N)e^{\beta\mu N} \\
+    \end{aligned}
+\end{equation}
+
+\subsection{Grand Potential}
+
+Thanks to the expression of the grand canonical partition function, the
+entropy might be written as:
+
+\begin{equation}
+    S= k_bT\ln{\Xi}+\frac{U-\mu N}{T}
+\end{equation}
+
+which can be rearranged defining the Grand Potential $\Phi$:
+
+\begin{equation}
+    \Phi=k_bT\ln{\Xi}=\mu N-F
+\end{equation}
+
+from which any thermodinamical quantity is obtainable, as shown in the compendium.
+
+For example, the average number of particle is:
+
+\begin{equation}
+    \mathcal{N}=<N>=\frac{\sum_{N=0}^{+\infty} N Z(N)e^{\mu N}}{\Xi}= \frac{\partial}{\partial \mu}\Psi
+\end{equation}
+
+
+\section{Quantum Statistical Mechanics}
+
+\subsection{Maxwell Boltzmann Statistics}
+
+The Maxwell-Boltzmann statistics describes an ensable of non interacting quantum particles in the classical
+approximation of dilute gas, meaning the grand canonical partition function is:
+
+\begin{equation}
+    \Xi=\sum_{N=0}^{+\infty}\frac{Z^N}{N!}e^{\beta\mu N}
+\end{equation}
+
+Therefore, the average number of particles per energy level is obtainable from the great potential as:
+
+\begin{equation}
+    \mathcal{N}=\frac{1}{\beta}\frac{\partial}{\partial \mu}\ln{\Xi}=\sum_{s} e^{-\beta(\epsilon_s-\mu)}
+\end{equation}
+
+so that:
+
+\begin{equation}
+    <n_s>=e^\beta(\mu-\epsilon_s)
+\end{equation}
+
+
+\subsection{Fermi-Dirac Statistics}
+
+The Fermi-Dirac statistics is necessary whenever the fermionic nature of the particles
+can't be disregarded.
+It can be derived from the grand canonical partition function, and it is given by:
+
+\begin{equation}
+    <n_s>=\frac{1}{e^{\beta(\epsilon_s-\mu)}+1}
+\end{equation}
+
+Some physical observations are suitable:
+
+\begin{itemize}
+    \item The average number of particles per energy level is always less than 1.
+    \item If $\mu>\epsilon_s$, as T goes to 0, the average number of particles per energy level goes to 1,
+          whereas if $\mu<\epsilon_s$, it goes to 0. This implies that the average number of particles per energy level tends to
+          the Heaviside step function.
+    \item The T=0 potential is called Fermi Energy, and it is the energy of the highest occupied state.
+\end{itemize}
+
+\subsection{Bose-Einstein Statistics}
+
+The Bose-Einstein statistics is necessary whenever the bosonic nature of the particles
+can't be disregarded.
+It can be derived from the grand canonical partition function, and it is given by:
+
+\begin{equation}
+    <n_s>=\frac{1}{e^{\beta(\epsilon_s-\mu)}-1}
+\end{equation}
+
+Some physical observations are suitable:
+
+\begin{itemize}
+    \item The average number of particles per energy level is always greater than 1.
+    \item If $\mu<\epsilon_s$, as T goes to 0, the average number of particles per energy level goes to 0,
+          whereas if $\mu>\epsilon_s$, it goes to -1, which is non-physical. This behaviour is indeed prevented by
+          the fact that the chemical potential is never greater than the energy of the state, at any temperature.
+\end{itemize}
+
+\newpage
+\section{Compendium}
+
+
+\fbox{
+    \begin{minipage}{0.9\textwidth}
+        \textbf{Grand Canonical Ensemble}
+        \begin{itemize}
+            \item Constrains: T,V,$\mu$.
+            \item \( \mu = \frac{\partial F}{\partial N} \).
+            \item \( \Xi = \sum_{N=0}^{+\infty} Z(N) e^{\beta \mu N} \).
+            \item \( \Phi = k_B T \ln \Xi = \mu N - F \).
+            \item <N>=\(\frac{1}{\beta}\frac{\partial}{\partial \mu}\ln{\Xi}\)
+        \end{itemize}
+
+        \textbf{Quantum Statistical Mechanics}
+        \begin{itemize}
+            \item Maxwell-Boltzmann Statistics: \(<n_s>=e^\beta(\mu-\epsilon_s)\).
+            \item Fermi-Dirac Statistics: \(<n_s>=\frac{1}{e^{\beta(\epsilon_s-\mu)}+1}\).
+            \item Bose-Einstein Statistics: \(<n_s>=\frac{1}{e^{\beta(\epsilon_s-\mu)}-1}\).
+            \item \( g(E)= \frac{dN}{dE}=\frac{g_sV}{4\pi}(\frac{2m}{\hbar^2})^{\frac{3}{2}}\sqrt{E} \)
+        \end{itemize}
+
+    \end{minipage}
+}
+
+\newpage
+\section{Compendium of Hyperbolic and Trigonometric Functions}
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Function} & \textbf{Exponential Expression}     & \textbf{Derivative} & \textbf{McLaurin Expansion}                    \\
+        \hline
+        $\sinh{x}$        & $\frac{e^x - e^{-x}}{2}$            & $\cosh{x}$          & $x + \frac{x^3}{3!} + \frac{x^5}{5!} + \cdots$ \\
+        \hline
+        $\cosh{x}$        & $\frac{e^x + e^{-x}}{2}$            & $\sinh{x}$          & $1 + \frac{x^2}{2!} + \frac{x^4}{4!} + \cdots$ \\
+        \hline
+        $\tanh{x}$        & $\frac{e^x - e^{-x}}{e^x + e^{-x}}$ & $1 - \tanh^2{x}$    & $x - \frac{x^3}{3} + \frac{2x^5}{15} + \cdots$ \\
+        \hline
+        $\coth{x}$        & $\frac{e^x + e^{-x}}{e^x - e^{-x}}$ & $1 - \coth^2{x}$    & $x + \frac{x^3}{3} + \frac{x^5}{5} + \cdots$   \\
+        \hline
+        $\sin{x}$         & $\frac{e^{ix} - e^{-ix}}{2i}$       & $\cos{x}$           & $x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots$ \\
+        \hline
+        $\cos{x}$         & $\frac{e^{ix} + e^{-ix}}{2}$        & $-\sin{x}$          & $1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots$ \\
+        \hline
+        $\tan{x}$         & $\frac{\sin{x}}{\cos{x}}$           & $1 + \tan^2{x}$     & $x + \frac{x^3}{3} + \frac{2x^5}{15} + \cdots$ \\
+        \hline
+        $\cot{x}$         & $\frac{\cos{x}}{\sin{x}}$           & $-1 - \cot^2{x}$    & $x - \frac{x^3}{3} + \frac{x^5}{5} + \cdots$   \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\section{Compendium of Series Convergence}
+
+
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Series}                                       & \textbf{Convergence Condition} & \textbf{Sum}                       \\
+        \hline
+        $\sum_{n=0}^{\infty} x^n$                             & $|x| < 1$                      & $\frac{1}{1-x}$                    \\
+        \hline
+        $\sum_{n=1}^{\infty} \frac{1}{n^p}$                   & $p > 1$                        & $\zeta(p)$ (Riemann zeta function) \\
+        \hline
+        $\sum_{n=0}^{\infty} \frac{x^n}{n!}$                  & $\forall x \in \mathcal{R}$    & $e^x$                              \\
+        \hline
+        $\sum_{n=0}^{\infty} (-1)^n x^n$                      & $|x| < 1$                      & $\frac{1}{1+x}$                    \\
+        \hline
+        $\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n}$            & $\forall x \in \mathcal{R}$    & $\ln(2)$                           \\
+        \hline
+        $\sum_{n=1}^{\infty} \frac{x^n}{n}$                   & $|x| \leq 1, x \neq 1$         & $-\ln(1-x)$                        \\
+        \hline
+        $\sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{(2n+1)!}$ & $\forall x \in \mathcal{R}$    & $\sin(x)$                          \\
+        \hline
+        $\sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{(2n)!}$     & $\forall x \in \mathcal{R}$    & $\cos(x)$                          \\
+        \hline
+        $\sum_{n=1}^{\infty} \frac{1}{n(n+1)}$                & $\forall n \in \mathcal{N}$    & $1$                                \\
+        \hline
+    \end{tabular}
+\end{center}
 
 
 \end{document}

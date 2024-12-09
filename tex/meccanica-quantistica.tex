@@ -1789,6 +1789,76 @@ Formando le permutazioni un gruppo, da una composizione di $P^x$ e $P^\sigma$ si
 
 Per ogni stato esistente in natura, per un sistema di particelle identiche, gli autovalori di $P_a$ sono $\pm 1$.
 
+\section{Meccanica quantistica relativistica}
+Questa sezione esula dagli argomenti del corso.
+
+Si sviluppa qui una teoria quantistica per gli elettroni invariante per trasformazioni di Lorentz.
+Si utilizzerà conseguentemente la notazione indiciale, tale per cui l'impulso, per il principio di covarianza, sarò espresso come:
+
+\begin{equation}
+    p_\mu=i\hbar\frac{\partial}{\partial r^{\mu}}
+\end{equation}
+
+
+Per semplicità, si considera c=1 e si sottointende spesso la natura operatoriale delle quantità in questione, in quanto perlopiù deducibile
+dal contesto.
+
+\subsection{Equazione di Dirac}
+
+
+Si consideri il moto di una particella libera, tale per cui l'Hamiltoniana e l'equazione agli autovalori siano date da:
+
+\begin{equation}
+    H=\sqrt{p^2c^2+m^2c^4} \rightarrow p_0-\sqrt{m^2c^4+p_1^2+p_2^2+p_3^2}\psi=0
+\end{equation}
+
+Tale equazione tiene conto della relazione energia-impulso, ma non è affatto simmetrica per le componenti spaziali e temporali.
+
+Si può facilmente giungere alla seguente forma:
+
+\begin{equation}
+    {p_0^2-p_1^2-p_2^2-p_3^2-m^2c^2}\psi=0
+\end{equation}
+
+che è relativisticamente invariante, ma non lineare nell'energia ($p_0$), come invece la teoria quantistica richiede, per la linearità dell'equazione di Schrodinger.
+
+Dunque ricerco un'equazione del tipo:
+
+\begin{equation}
+    \left\{p_o-\alpha_1p_1-\alpha_2p_2-\alpha_3p_3-\beta\right\}\psi=0
+\end{equation}
+
+da cui si ottiene:
+
+\begin{equation}
+    \left\{p_0^2-\sum_{123}[\alpha_1^2p_1^2+(\alpha_1\alpha_2+\alpha_2\alpha_1)p_1p_2+(\alpha_1\beta+\beta\alpha_1)p_1]-\beta^2\right\}\psi=0
+\end{equation}
+
+da cui risultano le seguenti condizioni per i coefficienti:
+
+\begin{equation}
+    \alpha_a\alpha_b+\alpha_b\alpha_a=2\delta_{ab} \quad (a,b=1,2,3 o m)
+\end{equation}
+
+Dunque le $\alpha$ anticommutano fra di loro e sono di modulo unitario.
+
+E' possibile esprimere le alpha in termini di matrici di Pauli e matrici $rho$ a 4 componenti:
+
+\begin{equation}
+    \alpha_i=\begin{pmatrix}
+        0 & \sigma_i \\
+        \sigma_i & 0
+    \end{pmatrix}
+    \quad
+    \beta=\begin{pmatrix}
+        I & 0 \\
+        0 & -I
+    \end{pmatrix}
+\end{equation}
+
+Naturalmente ora avremo a che fare con una funzione d'onda a 4 componenti.
+Si perviene così all'equazione di Dirac:
+
 
 
 \section{Bibliografia}
