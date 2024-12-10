@@ -70,7 +70,7 @@ jobs:
         run: |
           cp website/index.html compiled-documents/index.html
           cp website/index.css compiled-documents/index.css
-          cp website/script.js compiled-documents/index.js
+          cp website/script.js compiled-documents/script.js
           cp -r website/images compiled-documents/images
 
       - name: Deploy to GitHub Pages
