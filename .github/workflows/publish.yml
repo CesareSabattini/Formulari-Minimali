@@ -68,8 +68,10 @@ jobs:
 
       - name: Copy files
         run: |
-          cp index.html compiled-documents/index.html
-          cp index.css compiled-documents/index.css
+          cp website/index.html compiled-documents/index.html
+          cp website/index.css compiled-documents/index.css
+          cp website/script.js compiled-documents/index.js
+          cp -r website/images compiled-documents/images
 
       - name: Deploy to GitHub Pages
         run: |
