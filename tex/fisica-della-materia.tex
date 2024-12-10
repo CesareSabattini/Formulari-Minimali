@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage[most]{tcolorbox}
 
 \title{Fisica della Materia}
 \author{Sabattini Manginella Cesare}
@@ -14,42 +15,39 @@
 
 \tableofcontents
 
-\section{Introduzione}
+\section{Introduction}
 ATTENZIONE: formulario ancora in fase di sviluppo. Alcune informazioni potrebbero essere incomplete o errate.
 E' inoltre in corso la riscrittura in inglese.
 
-\section{Microstati e Macrostati}
-Considero uno spazio delle configurazioni equiprobabili in un processo di N casistiche binarie, con probabilità:
+\section{Micro and Macrostates}
+A macrostate is the state of a system, emerging from different microscopical configurations, namely microstates.
+The number of microstates corrisponding to a macrostate is called multiplicity $\Omega$.
 
-\begin{equation}
-    P(\alpha) = \frac{1}{2^N}
-\end{equation}
+\subsection{Entropy}
+Statistically, the entropy aims to measure the degree of "ignorance" about the microscopical state of a thermodynamical system.
+The formula of the S($\Omega$) function can be deduced stating the following properties:
 
-Ognuna di tali configurazioni è detta "microstato".
+\begin{itemize}
+    \item S(1)=0.
+    \item $\Omega_1>\Omega_2$ $\rightarrow$ S($\Omega_1$)>S($\Omega_2$).
+    \item $\Omega=\Omega_1\Omega_2$ $\rightarrow$ S($\Omega$)=S($\Omega_1$)+S($\Omega_2$).
+\end{itemize}
 
-Per arrivare al "macrostato" è necessario considerare una proprietà emergente.
-Differenti microstati possono definire lo stesso macrostato (ad esempio l'insieme dei microstati aventi la medesima differenza tra i campioni in configurazioni binarie).
-Un macrostato è una caratterizzazione dei microstati.
-La probabilità di un macrostato è dato dalla somma delle probabilità dei microstati che lo definiscono, normalizzata.
-Dunque, ovviamente, microstati con egual probabilità non determinano egual probabilità dei macrostati.
+Hence, ultimately, one can find the expression of the entropy for a macrostate from:
 
-Considerando lo spazio delle fasi delle particelle di gas, di 6N dimensionale, ogni suo punto rappresenta un microstato, mentre un macrostato è definito da un insieme di microstati con le stesse proprietà macroscopiche.
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Boltzmann Entropy]
+    Given a set of equiprobable configurations, the Boltzmann entropy can be defined from the partition function:
+    \begin{equation}
+        S = k \log \Omega
+    \end{equation}
+\end{tcolorbox}
 
+\section{The Microcanonical Ensamble}
+A set of isoleted systems is called Microcanonical Ensamble. Since it does not exchange energy and particles,
+the constrains are U, V, N.
 
-\subsection{Entropia}
-Statisticamente, l'entropia misura il grado di "ignoranza" sullo stato microscopico di un sistema termodinamico.
-E' possibile definire l'entropia di Boltzmann per un insieme di configurazioni equiprobabili, a partire dalla funzione di partizione:
-
-\begin{equation}
-    S = k \log \Omega
-\end{equation}
-
-\section{Insieme Microcanonico}
-Un insieme di sistemi termodinamicamente isolato si definisce microcanonico.
-
-Il concetto termodinamico di equlibrio termico si traspone in meccanica statistica in quello di massimizzazione del numero di microstati, e dunque dell'entropia.
-
-Considero due sistemi a contatto, che complessivamente definiscono un insieme microcanonico, tali che:
+\subsection{Temperature T}
+Thermally coupling two systems, isolated from the rest of the universe, the multiplicity of the combined system is given by the product of the multiplicities of the two systems:
 
 \begin{equation}
     \left\{
@@ -61,26 +59,11 @@ Considero due sistemi a contatto, che complessivamente definiscono un insieme mi
     \right.
 \end{equation}
 
-Per $N_1, N_2 \rightarrow \infty$, applicando il teorema del limite centrale, si riscontra che le fluttuazioni dai valori di energia che
-massimizzano la funzione di molteplicita, essendo proporzionali all'inverso della radice del numero di particelle, sono trascurabili.
+The most probable state is the one that maximizes the entropy, therefore the multiplicity.
+For the central limit theorem, as $N_1, N_2 \rightarrow \infty$, the fluctuations are negligible, since the standard deviation is proportional to the inverse of the square root of the number of particles.
 
-Dunque lo stato più probabile in un sistema microcanonico lo è assolutamente.
+Maximizing $\Omega(N, U, U_1)$, one can define the doncept of temperature T:
 
-\subsection{Temperatura}
-Si procede di seguito nella ricavazione della temperatura.
-
-Detta $\hat{U}$ l'energia più probabile, si ha:
-
-\begin{equation}
-    \begin{aligned}
-         & \frac{\partial}{\partial U_1}\Omega(N,U,U_1)|_{U=\hat{U}} = 0 = \\
-         & \frac{\partial}{\partial U_1}S(N,U,U_1)|_{U=\hat{U}} = 0
-    \end{aligned}
-\end{equation}
-
-Come ci si aspettava, per via della monotonia dell'entropia in funzione della molteplicità, essa si massimizza con essa, in funzione dell'energia.
-
-Essendo data la molteplicità dell'insieme microcanonico dalla produttoria delle molteplicità dei sistemi singoli, si ha:
 \begin{equation}
     \begin{aligned}
          & \frac{\partial}{\partial U_1}[\Omega(N, U)]_{U=\hat{U}} = \frac{\partial}{\partial U}[\Omega_1(N_1, U_1)\Omega_2(N_2, U_2)]_{U=\hat{U}} =                                     \\
@@ -89,266 +72,219 @@ Essendo data la molteplicità dell'insieme microcanonico dalla produttoria delle
     \end{aligned}
 \end{equation}
 
-A partire dalla condizione di massimizzazione del numero dei microstati per la configurazione più probabile, ossia di equilibrio termico,
-si definisce la temperatura T attraverso una funzione $\beta$:
+These functions depend on two independent variables, so they must equalize to a constant, which ultimately defines the temperature T:
 
 \begin{equation}
     \begin{aligned}
-         & \beta=\frac{\partial}{\partial U}\Omega(N,U)|_{U=\hat{U}} = \frac{1}{k_BT} \\
+         & \beta=\frac{\partial}{\partial U}\ln{\Omega(N,U)}|_{U=\hat{U}} \equiv \frac{1}{k_BT}= \frac{1}{k_B}\frac{\partial S}{\partial U}|_{N,V} \\
     \end{aligned}
 \end{equation}
 
 \subsection{Entropia di Gibbs}
-L'Entropia di Gibbs generalizza l'entropia di Boltzmann ad insiemi di microstati non equiprobabili:
+The Gibbs Entropy generalizes the Boltzmann Entropy to the case of non-isolated systems, where different microstates have different probabilities.
 
 \begin{equation}
     S_G=-k_B\sum_{i}p_i\ln{p_i}
 \end{equation}
 
+Maximizing the Gibbs Entropy with the constraint of unitary of the sum of the probabilities, one finds that
+the Boltzmann Entropy is actually a particular case of the Gibbs Entropy for equiprobable microstates.
 
-\section{Insieme canonico}
-Si definisce canonico un insieme di sistemi chiusi, immersi in un bagno termico.
 
-La condizione di massimizzazione dell'entropia di Gibbs a sistema con il fatto che l'energia media deve essere pari a quella del bagno, si traduce nell'aggiunta di un nuovo moltiplicatore di Lagrange:
+\section{The Canonical Ensamble}
+
+An ensamble of closed systems in thermal contact with a bath is called canonical.
+This implies that the constrains of this ensamble are N, T and V, meaning that the
+energy can instead fluctuate around a mean value U.
+
+\subsection{Partition Function}
+
+Maximizing the Gibbs entropy similiarly as done for the microcanonical ensamble, but with the constraint of fixed energy, one finds the partition function:
+
 \begin{equation}
     \begin{aligned}
-         & S=-\sum_{j}p_jln{p_j}-\lambda\left(\sum_{j}p_j-1\right)-\beta\left(\sum_{j}\epsilon_jp_j-U\right)                                \\
-         & \frac{d}{dp_j}S =0 \rightarrow p_j=e^{-\beta\epsilon_j-\lambda-1} \leftrightarrow 1=e^{-(1)+\lambda}\sum_{j}e^{-\beta\epsilon_j} \\
-         & Z\equiv e^{1+\lambda}= \sum_{j}e^{-\beta\epsilon_j} \rightarrow p_j=\frac{e^{-\beta\epsilon_j}}{Z}
+         & S= -k_B\sum_{j}p_j\ln{p_j}-\lambda\left(\sum_{j}p_j-1\right)-\beta\left(\sum_{j}\epsilon_jp_j-U\right) \\
+         & \frac{dS}{dp_j}=0 \rightarrow p_j=e^{-\beta\epsilon_j-\lambda-1} \rightarrow                           \\
+         & \rightarrow 1=e^{-(1+\lambda)}\sum_{j}e^{-\beta\epsilon_j}                                             \\
+         & Z\equiv e^{1+\lambda}=\sum_{j}e^{-\beta\epsilon_j} \rightarrow p_j=\frac{e^{-\beta\epsilon_j}}{Z}
     \end{aligned}
 \end{equation}
 
-Se l'energia fosse la stessa per ogni microstato, si otterrebbe che la probabilità di ogni microstato sarebbe analoga a quella del sistema microcanonico, ossia data dall'inverso della funzione di partizione.
+As expected, the probability of a microstate is no longer uniform, but depends on its energy.
+As a matter of fact, one can find the microcanonical probability if all the microstates have the same energy.
 
-\subsection{Significato fisico di $\beta$}
-Si ricava di seguito il significato fisico del moltiplicatore di Lagrange $\beta$:
+\subsubsection{$\beta$ Lagrange multiplier}
+
+The physical content of the $\beta$ multiplier can be derived from computing
+an infinitesimal variation of the entropy:
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+         & \sigma S= S(p_j+\delta p_j)-S(p_j) = -k_B\sum_{j}(\ln{(p_j+\delta p_j)}-\ln{p_j})=...=                                                        \\
+         & = -k_B\beta\sigma U \rightarrow \beta=\frac{1}{k_B}\frac{\sigma S}{\sigma U}\simeq \frac{1}{k_B}\frac{\partial S}{\partial U}= \frac{1}{k_BT}
+    \end{aligned}
+    \right.
+\end{equation}
+
+\subsection{Free Energy}
+Computing the physical expression of $\beta$, one can rewrite the entropy and find the free energy in terms of partition function Z:
 
 \begin{equation}
     \begin{aligned}
          & S=-k_b\sum_{j}p_j\ln{p_j}=-k_b\sum_{j}\frac{e^{-\beta \epsilon_j}}{Z}(\ln{e^{-\beta \epsilon_j}}-\ln{Z})=     \\
          & =k_b\beta\sum_{j}\frac{\epsilon_j e^{-\beta \epsilon_j}}{Z}+k_b\ln{Z}\sum_{j}\frac{e^{-\beta \epsilon_j}}{Z}= \\
-         & =k_B\beta U+k_b\ln{Z}
+         & =k_B\beta U+k_b\ln{Z}=\frac{U}{T}-k_BT\ln{Z} \rightarrow U-TS=-k_BT\ln{Z}=F
     \end{aligned}
 \end{equation}
 
-Sotto l'ipotesi di minime variazioni di energia, le variazioni delle probabilità saranno minime:
+Maximizing the entropy is hence equivalent to minimizing the free energy of Helmotz.
 
-*da terminare. Intero calcolo su "Calcoli integrativi*
+As done for F, every thermodynamical quantity is obtainable from the partition function Z.
+Most of them are presented in the compendium of this section.
 
-Si ottiene:
 
-\begin{equation}
-    \beta=\frac{1}{k_BT}
-\end{equation}
+\section{Ideal Gas}
 
-da cui risulta l'espressione dell'Energia libera di Helmholtz statistica:
+An ideal gas in contact with a fixed temperature external bath is well described by the canonical ensamble,
+since the constrains are satisfied.
 
-\begin{equation}
-    F=U-TS=-k_BT\ln{Z}
-\end{equation}
+\subsection{Particle distinguishability}
 
-Si è ricavato che massimizzare l'entropia equivale a minimizzare l'energia libera di Helmotz.
+The distinguishability is the property that in statistical mechanics mainly discerns classical particles from quantistic ones,
+beside the bosonic and fermionic nature, whether quantum.
+This concept has important repercussions on the partition function of the system.
 
-Come fatto per F, ogni quantità termodinamica è ottenibie a partire dalla funzione di partizione Z.
 
-L'espressione di F risulta pertanto un'equazione "ponte".
+\subsubsection{Distinguishable particles}
 
-\subsection{Oscillatore armonico quantistico}
-
-La ricavazione della quantizzazione dell'energia dell'oscillatore armonico quantistico è esposta negli appunti di Meccanica Quantistica.
+Given a set of N classical distinguishable particles, the partition function is:
 
 \begin{equation}
-    \left\{
-    \begin{aligned}
-         & H=\frac{1}{2m}(\hat{p}^2+m^2\omega^2\hat{q}^2) \\
-         & H\psi=\epsilon\psi
-    \end{aligned}
-    \right.
+    Z= \sum \frac{N!}{\prod_in_i!}e^{-\beta\sum n_i\epsilon_i}=Z_1^N
 \end{equation}
 
-si ottiene:
+where the sum is over all the possible configurations of particles. In the last equality, the multinomial coefficient is used.
+
+\subsubsection{Indistinguishable particles}
+
+The case of indistinguishable particles is hereby treated in the approximation of single occupation, which is valid for low density systems, where the distance between particles is much greater than the De Broglie wavelength,
+which directly implies that the product of the occupation numbers for each configuration is one.
+Moreover, since the particles are non indexable, the partition function is reduced to that of distinguishable particles, divided by N!:
 
 \begin{equation}
-    \epsilon_j=\hbar\omega(j+\frac{1}{2})
+    Z=\frac{Z_1^N}{N!}=\sum_{{n_s}}e^-\beta\sum_{s}E_{\{n_s\}}
 \end{equation}
 
-Segue l'espressione della funzione di partizione Z:
+\subsection{Quantum ideal gas in a box}
 
-\begin{equation}
-    Z=\sum_{j}e^{-\beta\epsilon_j}=\sum_{j}e^{-\beta\hbar\omega(j+\frac{1}{2})}=\frac{e^{-\frac{\beta\hbar\omega}{2}}}{1-e^{-\beta\hbar\omega}}
-\end{equation}
-
-da cui si ricava l'energia:
+In the low density approximation, it's easy to find the partition function of an ensamble of particles,
+knowing the single particle one.
+In the model of a gas constrained in an infinite potential well, the single particle partition function is given by
+\footnote{
+    The complete derivation of the energy for a quantum particle constrained in a box can be found in the Quantum Mechanics notes.
+}:
 
 \begin{equation}
     \begin{aligned}
-         & U=-\frac{1}{Z}\frac{\partial Z}{\partial \beta}= -\frac{\partial}{\partial \beta}\ln{Z}= \\
-         & \frac{\hbar \omega}{2}\coth{\frac{\hbar \omega}{2k_BT}}
+         & Z=\sum e^{-\frac{-\pi^2\hbar^2}{2mL^2}(n_x^2+n_y^2+n_z^2)\beta}=  \\
+         & \sum e^{-\frac{\pi^2\hbar^2}{2mL^2k_bT}(n_x^2+n_y^2+n_z^2)}\equiv \\
+         & \equiv\sum e^{-\frac{\theta_t}{T}(n_x^2+n_y^2+n_z^2)}=            \\
+         & =\left(\sum e^{-\frac{\theta_tn_x^3}{T}}\right)^3
     \end{aligned}
 \end{equation}
 
-\section{Gas ideale}
-Si definisce gas ideale un sistema di particelle non interagenti.
-
-\subsection{Distinguibilità e indistinguibilità}
-Particelle identiche quantistiche sono indistinguibili, pertanto non indicizzabili.
-
-Classicamente ciò non accade, motivo per cui la funzione Z classica risulta fattorizzabile:
-
-\begin{equation}
-    Z= \sum \frac{N!}{\prod_in_i!}e^{-\beta\sum n_i\epsilon_i}=\left(\sum e^-{\beta \epsilon_j}\right)^N=Z_i^N
-\end{equation}
-
-dove la produttoria compare per via della somma su tutte le possibili configurazioni di particelle. L'ultima uguaglianza è dovuta all'identità del coefficiente multinomiale.
-
-Il caso delle particelle indistinguibili è più complesso, in quanto la Z non è fattorizzabile, pertanto ci limiteremo per il momento a casistiche particolari.
-
-L'ipotesi aggiuntiva richiesta è quella di occupazione singola, che comporta la possibilità di trascurare le configurazioni in cui due o più particelle occupino lo stesso livello energetico.
-Ciò si realizzerà in sistemi a bassa densità, tali per cui la distanza tra le particelle è molto maggiore della lunghezza d'onda di De Broglie.
-In questo limite, pertanto, la funzione di partizione del sistema di particelle indistinguibili si riduce a quella di particelle distinguibili.
-
-Nel caso di occupazione singola, per particelle indistinguibili:
-
-\begin{equation}
-    Z=\sum_{n_s} e^{-\beta E_{{n_s}}}
-\end{equation}
-
-La funzione di partizione è pertanto desumibile dall'analisi energetica di una particella singola in una buca di potenziale \footnote{
-    Un procedimento analogo è stato seguito in "Fisica Nucleare e Subnucleare" per il modello di nucleo atomico di gas di fermioni.
-}
-
-L'Hamiltoniana di una particella in una buca di potenziale è data da:
-
-\begin{equation}
-    H=\frac{p^2}{2m}+V(x)
-\end{equation}
-
-Dunque l'equazione di Schrödinger stazionaria è:
-
-\begin{equation}
-    \left\{
-    \begin{aligned}
-         & -\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+V(x)\psi=E\psi \\
-         & \psi(0)=\psi(a)=0
-    \end{aligned}
-    \right.
-\end{equation}
-
-La soluzione è data, in 3D, da:
-
-\begin{equation}
-    \psi_n(x)=\sqrt{\frac{2}{L}}\sin{\frac{n\pi x}{L}}
-\end{equation}
-
-con relativa quantizzazione dell'energia:
-
-\begin{equation}
-    E_n=\frac{\hbar^2\pi^2(n_x^2+n_y^2+n_z^2)}{2mL^2}
-\end{equation}
-
-E' ora possibile calcolare la funzione di partizione Z per particelle distinguibili:
+Per $T>>\theta_t$, the sum is approximated by an integral:
 
 \begin{equation}
     \begin{aligned}
-         & Z=\sum e^{-\frac{-\pi^2\hbar^2}{2mL^2}(n_x^2+n_y^2+n_z^2)\beta}= \\
-         & \sum e^{-\frac{\pi^2\hbar^2}{2mL^2k_bT}(n_x^2+n_y^2+n_z^2)}=     \\
-         & =\sum e^{-\frac{\theta_t}{T}(n_x^2+n_y^2+n_z^2)}=                \\
-         & \left(\sum e^{-\frac{\theta_tn_x^3}{T}}\right)^3
+         & Z \rightarrow \left(\int_{0}^{\infty} e^{-\frac{\theta_tn^2}{T}}dn\right)^3=                                                                    \\
+         & =\left(\frac{1}{2}\sqrt{\frac{\pi T}{\theta_t}}\right)^3= \left(\frac{mk_bT}{2\pi\hbar^2}\right)^{\frac{3}{2}}V= n_QV= \frac{V}{\lambda_{dB}^3}
     \end{aligned}
 \end{equation}
 
-dove $\theta_t$ è la temperatura caratteristica del moto di traslazione.
+where $\lambda_{dB}$ is the De Broglie wavelength of the particle, so $n_Q$ is the number of quantum states density in the semiclassical limit.
 
-Per $T>>\theta_t$:
-
-\begin{equation}
-    \begin{aligned}
-         & Z \rightarrow \left(\int_{0}^{\infty} e^{-\frac{\theta_tn^2}{T}}dn\right)^3=                                                               \\
-         & =\left(\frac{1}{2}\sqrt{\frac{\pi T}{\theta_t}}\right)^3= \left(\frac{mk_bT}{2\pi\hbar^2}\right)^{\frac{3}{2}}V= n_QV= \frac{V}{\lambda^3}
-    \end{aligned}
-\end{equation}
-
-dove $n_Q$ è la densità di stati quantistica, e $\lambda$ è la lunghezza d'onda di De Broglie.
-
-\subsection{Proprietà del gas perfetto monoatomico}
-
-Per particelle indistinguibili:
+When N particles are considered, the partition function is:
 
 \begin{equation}
-    Z=\frac{Z_D^N}{N!}=\frac{(n_QV)^N}{N!}\simeq \frac{1}{\sqrt{2\pi N}}\left(\frac{en_Q}{n}\right)^N
+    Z=\frac{Z_1^N}{N!}=\frac{(n_QV)^N}{N!}\simeq \frac{1}{\sqrt{2\pi N}}\left(\frac{g_sen_Q}{n}\right)^N
 \end{equation}
 
-Ora che si è trovata la funzione di partizione Z per un gas ideale composto da particelle indistinguibili, è possibile calcolare
-le quantità termodinamiche del sistema.
+where $g_s$ is the spin degeneracy of the particle.
 
-\subsection{Entropia di mescolamento}
 
-L'equazione di Sackur-Tetrode è:
+\subsection{Properties of the monoatomic ideal gas}
+
+Any property of the ideal gas can be derived from the partition function,
+simply using their definition and the canonical bridge equation, given by the Helmholtz free energy.
+
+\subsubsection{Entropy of mixing}
+
+A curious property of the ideal gas is the entropy of mixing, derivable from the partition function Z and
+leading to the Sackur-Tetrode equation:
 
 \begin{equation}
-    S=\frac{\partial F}{\partial T}=Nk_b\left[\ln{\frac{n_Q}{n}}+\frac{5}{2}\right]
+    S=-Nk_b\left[\ln{\frac{n_QV}{N}}+\frac{5}{2}\right]
 \end{equation}
 
+Here we can distinguish two cases:
 
-Nel caso di due sistemi separati, composti dallo stesso tipodi particella, si ha:
+\begin{itemize}
+    \item Two separated systems, composed by the same type of particle, have a null entropy variation when mixed.
 
-\begin{equation}
-    \begin{aligned}
-         & S^i=2Nk_b\left[\ln{\frac{n_QV}{N}}+\frac{5}{2}\right]   \\
-         & S_f=2Nk_b\left[\ln{\frac{n_Q2V}{2N}}+\frac{5}{2}\right] \\
-         & \Delta S=0
-    \end{aligned}
-\end{equation}
+          \begin{equation}
+              \begin{aligned}
+                   & S_i=2Nk_b\left[\ln{\frac{n_QV}{N}}+\frac{5}{2}\right]   \\
+                   & S_f=2Nk_b\left[\ln{\frac{n_Q2V}{2N}}+\frac{5}{2}\right] \\
+                   & \Delta S=0
+              \end{aligned}
+          \end{equation}
 
-come ci si aspettava, per via dell'indistinguibilità delle particelle.
+    \item Two separated systems, composed by two types of particles, have a positive entropy variation when mixed.
 
-Nel caso opposto di due sistemi contenenti 2 tipi di particelle, si ha:
+          \begin{equation}
+              \begin{aligned}
+                   & S_i=Nk_b\left[\ln{\frac{n_Q^AV}{N}}+\frac{5}{2}\right]+Nk_b\left[\ln{\frac{n_Q^BV}{N}}+\frac{5}{2}\right]    \\
+                   & S_f= Nk_b\left[\ln{\frac{2n_Q^AV}{N}}+\frac{5}{2}\right]+Nk_b\left[\ln{\frac{2n_Q^BV}{N}}+\frac{5}{2}\right] \\
+                   & \Delta S=2Nk_b\ln{2}
+              \end{aligned}
+          \end{equation}
+\end{itemize}
 
-\begin{equation}
-    \begin{aligned}
-         & S_i=Nk_b\left[\ln{\frac{n_Q^AV}{N}}+\frac{5}{2}\right]+Nk_b\left[\ln{\frac{n_Q^BV}{N}}+\frac{5}{2}\right]    \\
-         & S_f= Nk_b\left[\ln{\frac{2n_Q^AV}{N}}+\frac{5}{2}\right]+Nk_b\left[\ln{\frac{2n_Q^BV}{N}}+\frac{5}{2}\right] \\
-         & \Delta S=2Nk_b\ln{2}
-    \end{aligned}
-\end{equation}
+This is no surprise, since the particles are indistinguishable, so the reversibility of the process is different in the two instances.
 
 
-\subsection{Teorema di equipartizione dell'energia}
+\subsection{Energy equipartition theorem}
 
-Se l'energia di un sistema classico è la somma di n modi quadratici e il sistema è in contatto con un bagno termico a temperatura T,
-l'energia media del sistema è data da:
+\begin{tcolorbox}[colframe=black, colback=gray!10, coltitle=white, title=Energy equipartition theorem]
 
-\begin{equation}
-    U=\frac{n}{2}k_BT
-\end{equation}
 
-ossia, l'energia è equamente suddivisa sui gradi di libertà.
-Di seguito si dimostra.
+    \begin{equation}
+        U=\frac{n}{2}k_BT
+    \end{equation}
+    where \( n \) is the number of quadratic degrees of freedom of the system.
+\end{tcolorbox}
+
 
 L'energia di un sistema ad N gradi di libertà quadratici è data da:
 \begin{equation}
     \begin{aligned}
-         & E({x_i})=\sum_{i}^{N}\epsilon_i(x_i)=\sum_{i}^{N}c_ix_i^2 \\
-         & U=<E>=<\sum_{i}^{N}\epsilon_i>=\sum_{i}^{N}<\epsilon_i>
-    \end{aligned}
-\end{equation}
-
-$<\epsilon_j>$ è la media statistica, estratta per mezzo della distribuzione canonica:
-
-\begin{equation}
-    \begin{aligned}
+         & E({x_i})=\sum_{i}^{N}\epsilon_i(x_i)=\sum_{i}^{N}c_ix_i^2                                                                                                 \\
+         & U=<E>=<\sum_{i}^{N}\epsilon_i>=\sum_{i}^{N}<\epsilon_i>                                                                                                   \\
          & <\epsilon_j>=\int \prod_{i}^{N}dx_i\epsilon_jP(\epsilon_j)= \frac{\int d\eta \epsilon_je^{-\beta \sum \epsilon_i}}{\int d\eta e^{-\beta \sum \epsilon_i}} \\
          & = \frac{\int dx_j\epsilon_je^{-\beta \epsilon_j}}{\int dx_je^{-\beta \epsilon_j}}=\frac{1}{2}k_bT
     \end{aligned}
 \end{equation}
 
 
-\section{Insieme Gran Canonico}
-Un insieme termodinamico è gran canonico se i sistemi che lo compongono sono aperti, a contatto con
-un bagno termico e di particelle.
-I costrains sono pertanto la temperatura, il volume e il potenziale chimico.
+\section{The Gran Canonical Ensamble}
 
-\subsection{Potenziale chimico}
+An ensamble of open system in contact with an external bath is called grand canonical,
+so the energy and the number of particles can fluctuate around mean values.
+Therefore, the constrains are T, V, $\mu$, which is the chemical potential.
+
+\subsection{Chemical Potential}
 
 The concept of chemical potential naturally emerges from the minimization of the free energy
 of the system composed by the ensamble and the bath, which is therefore canonical.
@@ -402,6 +338,14 @@ For example, the average number of particle is:
     \mathcal{N}=<N>=\frac{\sum_{N=0}^{+\infty} N Z(N)e^{\mu N}}{\Xi}= \frac{\partial}{\partial \mu}\Psi
 \end{equation}
 
+
+\newpage
+
+\begin{tcolorbox}[colframe=black, colback=white, coltitle=white, sharp corners, title=\textbf{Compendium}, fonttitle=\large\bfseries, coltitle=blue!20]
+    \textbf{Topic 1}
+    \vspace{0.5em}
+
+\end{tcolorbox}
 
 \section{Quantum Statistical Mechanics}
 
@@ -465,32 +409,6 @@ Some physical observations are suitable:
           whereas if $\mu>\epsilon_s$, it goes to -1, which is non-physical. This behaviour is indeed prevented by
           the fact that the chemical potential is never greater than the energy of the state, at any temperature.
 \end{itemize}
-
-\newpage
-\section{Compendium}
-
-
-\fbox{
-    \begin{minipage}{0.9\textwidth}
-        \textbf{Grand Canonical Ensemble}
-        \begin{itemize}
-            \item Constrains: T,V,$\mu$.
-            \item \( \mu = \frac{\partial F}{\partial N} \).
-            \item \( \Xi = \sum_{N=0}^{+\infty} Z(N) e^{\beta \mu N} \).
-            \item \( \Phi = k_B T \ln \Xi = \mu N - F \).
-            \item <N>=\(\frac{1}{\beta}\frac{\partial}{\partial \mu}\ln{\Xi}\)
-        \end{itemize}
-
-        \textbf{Quantum Statistical Mechanics}
-        \begin{itemize}
-            \item Maxwell-Boltzmann Statistics: \(<n_s>=e^\beta(\mu-\epsilon_s)\).
-            \item Fermi-Dirac Statistics: \(<n_s>=\frac{1}{e^{\beta(\epsilon_s-\mu)}+1}\).
-            \item Bose-Einstein Statistics: \(<n_s>=\frac{1}{e^{\beta(\epsilon_s-\mu)}-1}\).
-            \item \( g(E)= \frac{dN}{dE}=\frac{g_sV}{4\pi}(\frac{2m}{\hbar^2})^{\frac{3}{2}}\sqrt{E} \)
-        \end{itemize}
-
-    \end{minipage}
-}
 
 \newpage
 \section{Compendium of Hyperbolic and Trigonometric Functions}
