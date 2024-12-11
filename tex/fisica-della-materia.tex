@@ -15,9 +15,13 @@
 
 \tableofcontents
 
+\newpage
+
 \section{Introduction}
 ATTENZIONE: formulario ancora in fase di sviluppo. Alcune informazioni potrebbero essere incomplete o errate.
 E' inoltre in corso la riscrittura in inglese.
+
+\newpage
 
 \section{Micro and Macrostates}
 A macrostate is the state of a system, emerging from different microscopical configurations, namely microstates.
@@ -41,6 +45,20 @@ Hence, ultimately, one can find the expression of the entropy for a macrostate f
         S = k \log \Omega
     \end{equation}
 \end{tcolorbox}
+
+\newpage
+
+\begin{tcolorbox}[colframe=gray!90, colback=gray!5, coltitle=white, sharp corners, title=\textbf{Micro and Macrostates, Summary}, fonttitle=\large\bfseries]
+
+    \textbf{Boltzmann Entropy}
+    \vspace{0.5em}
+
+    \begin{equation}
+        S_B = k_B \log \Omega
+    \end{equation}
+\end{tcolorbox}
+
+\newpage
 
 \section{The Microcanonical Ensamble}
 A set of isoleted systems is called Microcanonical Ensamble. Since it does not exchange energy and particles,
@@ -80,7 +98,7 @@ These functions depend on two independent variables, so they must equalize to a 
     \end{aligned}
 \end{equation}
 
-\subsection{Entropia di Gibbs}
+\subsection{Gibbs Entropy}
 The Gibbs Entropy generalizes the Boltzmann Entropy to the case of non-isolated systems, where different microstates have different probabilities.
 
 \begin{equation}
@@ -90,6 +108,21 @@ The Gibbs Entropy generalizes the Boltzmann Entropy to the case of non-isolated 
 Maximizing the Gibbs Entropy with the constraint of unitary of the sum of the probabilities, one finds that
 the Boltzmann Entropy is actually a particular case of the Gibbs Entropy for equiprobable microstates.
 
+\newpage
+
+\begin{tcolorbox}[colframe=gray!90, colback=gray!5, coltitle=white, sharp corners, title=\textbf{Microcanonical Ensamble, Summary}, fonttitle=\large\bfseries]
+    \textbf{Gibbs Entropy}
+    \vspace{0.5em}
+
+    \begin{equation}
+        S_G = -k_B \sum_{i} p_i \ln{p_i}
+    \end{equation}
+
+
+
+\end{tcolorbox}
+
+\newpage
 
 \section{The Canonical Ensamble}
 
@@ -143,6 +176,47 @@ Maximizing the entropy is hence equivalent to minimizing the free energy of Helm
 As done for F, every thermodynamical quantity is obtainable from the partition function Z.
 Most of them are presented in the compendium of this section.
 
+\newpage
+
+\begin{tcolorbox}[colframe=gray!90, colback=gray!5, coltitle=white, sharp corners, title=\textbf{Canonical Ensamble, Summary}, fonttitle=\large\bfseries]
+
+    \textbf{Constraints}
+
+    \begin{equation}
+        N, T, V
+    \end{equation}
+
+    \textbf{Partition Function}
+
+    \begin{equation}
+        Z = \sum e^{-\beta \epsilon_j}
+    \end{equation}
+
+    \textbf{Helmholtz Free Energy}
+
+    \begin{equation}
+        F = U - TS= -k_BT \ln{Z}
+    \end{equation}
+
+    \vspace{0.3cm} % Aggiunge uno spazio verticale per separare la sezione precedente dalla tabella
+    \textbf{Thermodynamical Quantities from Z}:
+
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \textbf{Name} & \textbf{Definition}                                           & \textbf{Statistical expression}                                           \\ \hline
+            \( U \)       & \( U = F + TS \)                                              & \( U = \langle E \rangle = -\frac{\partial}{\partial \beta} \ln Z \)      \\ \hline
+            \( S \)       & \( S = -\left( \frac{\partial F}{\partial T} \right)_{N,V} \) & \( S = k_B \ln Z + k_B T \frac{\partial \ln Z}{\partial T} \Big|_{N,V} \) \\ \hline
+            \( P \)       & \( P = -\left( \frac{\partial F}{\partial V} \right)_{N,T} \) & from \( F \).                                                             \\ \hline
+            \( G \)       & \( G = F + PV \)                                              & \( G = -k_B T \ln Z + PV \)                                               \\ \hline
+            \( H \)       & \( H = U + PV \)                                              & from \( U \) and \( P \).                                                 \\ \hline
+        \end{tabular}
+    \end{center}
+
+\end{tcolorbox}
+
+
+\newpage
 
 \section{Ideal Gas}
 
@@ -173,7 +247,7 @@ which directly implies that the product of the occupation numbers for each confi
 Moreover, since the particles are non indexable, the partition function is reduced to that of distinguishable particles, divided by N!:
 
 \begin{equation}
-    Z=\frac{Z_1^N}{N!}=\sum_{{n_s}}e^-\beta\sum_{s}E_{\{n_s\}}
+    Z=\frac{Z_1^N}{N!}=\sum_{{n_s}}e^{-\beta\sum_{s}E_{\{n_s\}}}
 \end{equation}
 
 \subsection{Quantum ideal gas in a box}
@@ -257,17 +331,17 @@ This is no surprise, since the particles are indistinguishable, so the reversibi
 
 \subsection{Energy equipartition theorem}
 
-\begin{tcolorbox}[colframe=black, colback=gray!10, coltitle=white, title=Energy equipartition theorem]
-
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Energy Equipartition Theorem]
 
     \begin{equation}
         U=\frac{n}{2}k_BT
     \end{equation}
     where \( n \) is the number of quadratic degrees of freedom of the system.
+
 \end{tcolorbox}
 
+\textbf{Proof:}
 
-L'energia di un sistema ad N gradi di libertà quadratici è data da:
 \begin{equation}
     \begin{aligned}
          & E({x_i})=\sum_{i}^{N}\epsilon_i(x_i)=\sum_{i}^{N}c_ix_i^2                                                                                                 \\
@@ -276,6 +350,49 @@ L'energia di un sistema ad N gradi di libertà quadratici è data da:
          & = \frac{\int dx_j\epsilon_je^{-\beta \epsilon_j}}{\int dx_je^{-\beta \epsilon_j}}=\frac{1}{2}k_bT
     \end{aligned}
 \end{equation}
+
+\newpage
+
+\begin{tcolorbox}[colframe=gray!90, colback=gray!5, coltitle=white, sharp corners, title=\textbf{Ideal Gas, Summary}, fonttitle=\large\bfseries]
+    \textbf{Partition functions}
+
+
+    \renewcommand{\arraystretch}{1.5}
+    \begin{center}
+        \begin{tabular}{|c|c|}
+            \hline
+            \textbf{Distinguishable} & \textbf{Indistinguishable (semiclassical)} \\ \hline
+            \( Z = Z_1^N \)          & \( Z = \frac{Z_1^N}{N!} \)                 \\ \hline
+        \end{tabular}
+
+    \end{center}
+
+
+    \textbf{Quantum monoatomic ideal gas in a box}
+
+    \begin{equation}
+        Z_1 = \frac{V}{\lambda_{dB}^3}= \left( \frac{mk_bT}{2\pi\hbar^2} \right)^{\frac{3}{2}}V= n_QV
+    \end{equation}
+
+    \begin{equation}
+        Z_N = \frac{1}{\sqrt{2\pi N}}\left( \frac{g_s n_Q}{n} \right)^N
+    \end{equation}
+
+    \textbf{Entropy of mixing}
+
+    \begin{equation}
+        S = -Nk_b\left[ \ln{\frac{n_QV}{N}} + \frac{5}{2} \right]
+    \end{equation}
+
+    \textbf{Energy Equipartition Theorem}
+
+    \begin{equation}
+        U = \frac{n}{2}k_BT
+    \end{equation}
+
+\end{tcolorbox}
+
+\newpage
 
 
 \section{The Gran Canonical Ensamble}
@@ -340,12 +457,60 @@ For example, the average number of particle is:
 
 
 \newpage
+\begin{tcolorbox}[colframe=gray!90, colback=gray!5, coltitle=white, sharp corners, title=\textbf{Grand Canonical Ensamble, Summary}, fonttitle=\large\bfseries]
 
-\begin{tcolorbox}[colframe=black, colback=white, coltitle=white, sharp corners, title=\textbf{Compendium}, fonttitle=\large\bfseries, coltitle=blue!20]
-    \textbf{Topic 1}
-    \vspace{0.5em}
+    \textbf{Constraints}
+
+    \begin{equation}
+        T, V, \mu
+    \end{equation}
+
+    \textbf{Chemical Potential}
+
+    \begin{equation}
+        \mu = \left( \frac{\partial F}{\partial N} \right)_{T,V}
+    \end{equation}
+
+    \textbf{Grand Canonical Partition Function}
+
+    \begin{equation}
+        \Xi = \sum_{N=0}^{+\infty} Z(N)e^{\beta\mu N}
+    \end{equation}
+
+    \textbf{Grand Potential}
+
+    \begin{equation}
+        \Phi = k_bT\ln{\Xi} = \mu N - F
+    \end{equation}
+
+    \textbf{\(\mu \) for an ideal gas}
+
+    \begin{equation}
+        \mu=
+        \left\{
+        \begin{aligned}
+             & k_BT\ln{\left( \frac{N}{n_QV} \right)} \quad , \quad \text{if monoatomic}  \\
+             & k_BT\ln{\left( \frac{n}{n_Q Z_r} \right)} \quad , \quad \text{if diatomic}
+        \end{aligned}
+        \right.
+    \end{equation}
+
+    \vspace{0.3cm}
+    \textbf{Thermodynamical Quantities from \(\Phi \)}
+
+    \begin{center}
+        \begin{tabular}{|c|c|}
+            \hline
+            \textbf{Name}     & \textbf{Statistical Expression}                                \\ \hline
+            \( \mathcal{N} \) & \( -\left( \frac{\partial \Phi}{\partial \mu} \right)_{T,V} \) \\ \hline
+            \( S \)           & \( -\left( \frac{\partial \Phi}{\partial T} \right)_{V,\mu} \) \\ \hline
+            \( P \)           & \( -\left( \frac{\partial \Phi}{\partial V} \right)_{T,\mu} \) \\ \hline
+            \( G \)           & \( \Phi + PV \)                                                \\ \hline
+        \end{tabular}
+    \end{center}
 
 \end{tcolorbox}
+\newpage
 
 \section{Quantum Statistical Mechanics}
 
@@ -411,6 +576,367 @@ Some physical observations are suitable:
 \end{itemize}
 
 \newpage
+\begin{tcolorbox}[colframe=gray!90, colback=gray!5, coltitle=white, sharp corners, title=\textbf{Quantum Statistical Mechanics, Summary}, fonttitle=\large\bfseries]
+    \textbf{Maxwell-Boltzmann Statistics}
+
+    \begin{equation}
+        <n_s>=e^{\beta(\mu-\epsilon_s)}
+    \end{equation}
+
+    \textbf{Fermi-Dirac Statistics}
+
+    \begin{equation}
+        <n_s>=\frac{1}{e^{\beta(\epsilon_s-\mu)}+1}
+    \end{equation}
+
+    \textbf{Bose-Einstein Statistics}
+
+    \begin{equation}
+        <n_s>=\frac{1}{e^{\beta(\epsilon_s-\mu)}-1}
+    \end{equation}
+
+    \textbf{3D Density of States}
+
+    \begin{equation}
+        g(\epsilon)=\frac{g_s}{4\pi^2}\left( \frac{2m}{\hbar^2} \right)^{\frac{3}{2}}V\sqrt{\epsilon}
+    \end{equation}
+
+    \textbf{Thermal Average}
+
+    \begin{equation}
+        <y(E)>=\frac{1}{N}\sum_{s}y(\epsilon_s)<n_s>\rightarrow \frac{1}{N}\int_0^{+\infty}g(\epsilon)y(\epsilon)f(\epsilon)d\epsilon
+    \end{equation}
+\end{tcolorbox}
+\newpage
+
+\section{Fermions}
+
+Hereby it's presented the derivation of the chemical potential for a Fermi gas,
+fist for T=0 and then for T>0, in the Sommerfeld approximation.
+
+\subsection{Fermi Gas at T=0}
+
+First of all, the Fermi-Dirac distribution is:
+
+\begin{equation}
+    <n_s>=\frac{1}{e^{\beta(\epsilon_s-\mu)}+1}
+\end{equation}
+
+At T=0, it can be approximated with the Heaviside step function:
+
+\begin{equation}
+    <n_s>=\theta(\mu-\epsilon_s)=
+    \left\{
+    \begin{aligned}
+         & 1 \quad , \quad \epsilon_s<\mu \\
+         & 0 \quad , \quad \epsilon_s>\mu
+    \end{aligned}
+    \right.
+\end{equation}
+
+Using the termal average for the number of particle, one finds:
+
+\begin{equation}
+    \begin{aligned}
+         & \mathcal{N}=\frac{\partial\Psi}{\partial \mu}=\sum_s <n>_s\rightarrow^{n\rightarrow\infty} \int_{0}^{\infty} d\epsilon g(\epsilon)f(\epsilon)= \\
+         & =\int_{0}^{\mu} d\epsilon g(\epsilon)=\frac{g_sV}{4\pi^2}\left(\frac{2m}{\hbar^2}\right)^{\frac{3}{2}}\int_{0}^{\mu}\sqrt{\epsilon}d\epsilon=  \\
+         & = \frac{g_sV}{6\pi^2}\left(\frac{2m\mu}{\hbar^2}\right)^{\frac{3}{2}}\rightarrow                                                               \\                                                 \\
+         & \rightarrow \mu(T=0)=\frac{\hbar^2}{2m}\left(\frac{6\pi^2n}{g_s}\right)^{\frac{2}{3}}\equiv \epsilon_f
+    \end{aligned}
+\end{equation}
+
+Any other thermodinamic quantity can be now derived, such as the average energy U:
+
+\begin{equation}
+    U=\int_{0}^{\mu}d\epsilon g(\epsilon)\epsilon=\frac{3}{5}\epsilon_f\mathcal{N}
+\end{equation}
+
+which is actually an important result, stating that the average energy of a Fermi gas at T=0 is 3/5 of the Fermi energy, instead
+of 0, as one might expect from a classical interpretation. Indeed, a null energy for a Fermi gas
+would violate the Pauli exclusion principle.
+
+It's now possible to define the Fermi temperature:
+
+\begin{equation}
+    T_f=\frac{\epsilon_f}{k_b}
+\end{equation}
+
+and observe that:
+
+\begin{itemize}
+    \item If T=0, $f(\epsilon)=\theta(\mu-\epsilon)$.
+    \item If $T<<T_F$, $f(\epsilon)$ is smooth around $\mu$.
+    \item If $T>T_F$, $f(\epsilon)$ tends to the Maxwell-Boltzmann distribution.
+\end{itemize}
+
+\subsection{Fermi Gas at $T>0$}
+\subsubsection{Sommerfeld Expansion}
+
+Sommerfeld perturbative approach is valid for $T<<T_F$, and will be useful to compute $\mu(T>0)$.
+
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Sommerfeld expansion]
+
+    \begin{equation}
+        I=\int_{0}^{\infty}K(\epsilon)f(\epsilon)d\epsilon \simeq \int_0^\mu d\epsilon K(\epsilon)+\frac{\pi^2}{6}(k_BT)^2K'(\mu)
+    \end{equation}
+
+\end{tcolorbox}
+
+\textbf{Proof:}
+
+Given $G(\epsilon)$, $K(\epsilon)$ generic primitive:
+\begin{equation}
+    \begin{aligned}
+         & I=\int_0^\infty K(\epsilon)\frac{1}{e^\beta(\epsilon-\mu)}d\epsilon= \quad \text{partial integration}   \\
+         & =f_0(\infty)G(\infty)-f_0(0)G(0)-\int_0^\infty f_0'(\epsilon)G(\epsilon)d\epsilon\simeq                 \\
+         & -G(0)+\int_0^\infty G(\epsilon)\left(-\frac{\partial f_0(\epsilon)}{\partial \epsilon} \right)d\epsilon
+    \end{aligned}
+\end{equation}
+
+Since the derivative of Heaviside step function is the Dirac delta function, and we're working in the limit $T<<T_F$,
+one can now expand $G(\epsilon)$ around $\mu$:
+
+\begin{equation}
+    \begin{aligned}
+         & I\simeq -G(0)+G(\mu)\int_0^\infty d\epsilon\left( -\frac{\partial f_0}{\partial \epsilon} \right) +G'(\mu)\int_0^\infty d\epsilon(\epsilon-\mu)\left( -\frac{\partial f_0}{\partial \epsilon} \right) + \\
+         & + \frac{1}{2}G''(\mu)\int_0^\infty d\epsilon(\epsilon-\mu)^2\left( -\frac{\partial f_0}{\partial \epsilon} \right)
+    \end{aligned}
+\end{equation}
+
+The generic therm multipied by $G^r(\mu)$, can be handled as follows:
+
+\begin{equation}
+    \begin{aligned}
+         & \frac{1}{r!}\int_0^\infty d\epsilon(\epsilon-\mu)^r\left( -\frac{\partial f_0}{\partial \epsilon} \right)=                                                                      \\
+         & = \frac{1}{r!}\int_0^\infty d\epsilon (\epsilon-\mu)^r\frac{\beta e^{\beta(\epsilon-\mu)}}{(e^{\beta(\epsilon-\mu)}+1)^2}= \quad \text{change variable $x=\beta(\epsilon-\mu)$} \\
+         & = \frac{(k_BT)^r}{r!}\int_{-\beta\mu}^\infty dx x^r\frac{e^x}{(e^x+1)^2}\simeq \frac{(k_BT)^r}{r!}\int_{-\infty}^\infty dx x^r\frac{e^x}{(e^x+1)^2}
+    \end{aligned}
+\end{equation}
+
+so we notice that the odd terms vanish, and the even terms are proportional to $(k_BT)^r$.
+So:
+
+\begin{equation}
+    \begin{aligned}
+         & I\simeq -G(0)+G(\mu)+\frac{1}{2}G''(\mu)\int_o^\infty \simeq                                                                                 \\
+         & -G(0)+G(\mu)+(k_BT)^2G''(\mu)\int_0^\infty dx \frac{x^2}{(1+e^x)(1+e^{-x})}=                                                                 \\
+         & =-G(0)+G(\mu)-(k_BT)2G''(\mu)\frac{\partial}{\partial \alpha}\left[\int_0^\infty dx \frac{xe^{-\alpha x}}{1+e^{-\alpha x}}\right]_{\alpha=1}
+    \end{aligned}
+\end{equation}
+
+The last integral can be handled this way:
+
+\begin{equation}
+    \begin{aligned}
+         & -\frac{\partial}{\partial \alpha}\left[\int_0^\infty dx \frac{xe^{-\alpha x}}{1+e^{-\alpha x}}\right]_{\alpha=1}=                               \\
+         & =-\sum_{n=0}^ \infty (-1)^n\frac{\partial}{\partial \alpha}\left[ \int_0^\infty dx x e^{-\alpha(n+1)x} \right]_{\alpha=1}=                      \\
+         & =-\sum_{n=0}^\infty \frac{(-1)^n}{(n+1)^2}\frac{\partial}{\partial \alpha}\left[\frac{1}{\alpha^2} \right]_{\alpha=1}\int_0^\infty dy y e^{-y}= \\
+         & = 2\Gamma(2)\sum_{n=0}^\infty \frac{(-1)^n}{(n+1)^2}=2\sum_{n=0}^\infty \frac{(-1)^n}{(n+1)^2}=\zeta(2)=\frac{\pi^2}{6}
+    \end{aligned}
+\end{equation}
+
+which leads to:
+
+\begin{equation}
+    I\simeq -G(0)+G(\mu)+\frac{\pi^2}{6}(k_BT)^2G''(\mu)
+\end{equation}
+
+and, in terms of $K(\epsilon)$:
+
+\begin{equation}
+    I=\int_0^\mu d\epsilon K(\epsilon)+\frac{\pi^2}{6}(k_BT)^2K'(\mu)+O(T^4)
+\end{equation}
+
+\subsubsection{$\mu(T>0)$}
+
+Sobsituting the density of states in the Sommerfeld expansion, one finds:
+
+\begin{equation}
+    \begin{aligned}
+         & \mathcal{N}\simeq \frac{g_sV}{4\pi^2}\left(\frac{2m}{\hbar^2}\right)^{\frac{3}{2}}\left[\int_0^\mu d\epsilon \sqrt{\epsilon}+\frac{\pi^2}{6}(k_BT)^2\frac{1}{2\sqrt{\mu}}\right]= \\
+         & =\frac{g_s V}{4\pi^2}\left(\frac{2m}{\hbar^2}\right)\left[\frac{2}{3}\mu^{\frac{3}{2}}+\frac{\pi^2}{6}(k_BT)^2\frac{1}{2\sqrt{\mu}}\right]
+    \end{aligned}
+\end{equation}
+
+Reverting the equation, one finds, after some algebra:
+
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title= $\mu(T>0)$]
+
+    \begin{equation}
+        \begin{aligned}
+            \mu(T)\simeq \epsilon_f\left[1-\frac{\pi^2}{12}\left(\frac{k_BT}{\epsilon_f}\right)^2\right]
+        \end{aligned}
+    \end{equation}
+\end{tcolorbox}
+
+
+Using this expression in the Sommerfeld expansion, it's possible to derive the average energy U:
+
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title= $U(T>0)$]
+
+    \begin{equation}
+        \begin{aligned}
+            U(T)\simeq \frac{3}{5}\epsilon_f\mathcal{N}\left[1+\frac{5\pi^2}{12}\left(\frac{k_BT}{\epsilon_f}\right)^2\right]
+        \end{aligned}
+    \end{equation}
+
+\end{tcolorbox}
+
+...da terminare con pressione e calore specifico...
+
+\newpage
+
+\newpage
+\begin{tcolorbox}[colframe=gray!90, colback=gray!5, coltitle=white, sharp corners, title=\textbf{Fermions, Summary}, fonttitle=\large\bfseries]
+    \textbf{Chemical Potential at T=0}
+
+    \begin{equation}
+        \mu(T=0)=\epsilon_f=\frac{\hbar^2}{2m}\left(\frac{6\pi^2n}{g_s}\right)^{\frac{2}{3}}
+    \end{equation}
+
+    \textbf{Fermi Temperature}
+
+    \begin{equation}
+        T_f=\frac{\epsilon_f}{k_b}
+    \end{equation}
+
+    \textbf{Chemical Potential at $T>0$}
+
+    \begin{equation}
+        \mu(T)\simeq \epsilon_f\left[1-\frac{\pi^2}{12}\left(\frac{k_BT}{\epsilon_f}\right)^2\right]
+    \end{equation}
+
+    \textbf{Average Energy at $T>0$}
+
+    \begin{equation}
+        U(T)\simeq \frac{3}{5}\epsilon_f\mathcal{N}\left[1+\frac{5\pi^2}{12}\left(\frac{k_BT}{\epsilon_f}\right)^2\right]
+    \end{equation}
+
+
+\end{tcolorbox}
+\newpage
+
+\section{Bosons}
+
+Hereby is presented the Bose gas and its peculiar proprties are derived:
+the black body radiation and the Bose-Einstein condensation.
+But first, let's recall the Bose-Einstein distribution:
+
+\begin{equation}
+    <n_s>=\frac{1}{e^{\beta(\epsilon_s-\mu)}-1}
+\end{equation}
+
+
+\subsection{Black body radiation}
+
+The density of states for a photon gas in a box is:
+
+\begin{equation}
+    g(\omega)=\frac{d N}{d\omega}=\frac{V\omega^2}{\pi^2c^3}
+\end{equation}
+
+from which one can calculate the thermal average of the density of photons:
+
+\begin{equation}
+    \begin{aligned}
+         & \frac{N}{V}\equiv<n>=\frac{1}{V}\int_0^\infty d\omega <n>_\omega g(\omega)=\frac{1}{V}\int_0^\infty d\omega \frac{V\omega^2}{\pi^2c^3}\frac{1}{e^{\beta\hbar\omega}-1}= \\
+         & =\frac{1}{\pi^2}\left(\frac{k_B T}{\hbar c}\right)^3\int_0^\infty dx \frac{x^2}{e^x-1}=                                                                                 \\
+         & = \frac{1}{\pi^2}\left(\frac{k_B T}{\hbar c}\right)^3 \Gamma(3)\Psi(3)\simeq                                                                                            \\
+         & \simeq \frac{2.404}{\pi^2}\left(\frac{k_B T}{\hbar c}\right)^3
+    \end{aligned}
+\end{equation}
+
+And now one can calculate the energy density, obtaining Planck's law:
+
+\begin{equation}
+    V u(\omega)d\omega=\hbar \omega N(\omega)d\omega=\frac{\hbar \omega^3}{\pi^2c^3}\frac{1}{e^{\beta\hbar\omega}-1}V
+\end{equation}
+
+which at low frequencies tends to Reyleigh-Jeans law, but prevents the ultraviolet catastrophe:
+
+\begin{equation}
+    u_{RJ}(\omega)=\frac{ \omega^2}{\pi^2c^3}k_BT
+\end{equation}
+
+
+\subsection{Bose-Einstein Condensation}
+
+The Bose Einstein condensation is a phase transition occurring in a Bose gas at low temperatures,
+when the number of particles is fixed.
+
+\begin{equation}
+    \begin{aligned}
+         & N=\int_0^\infty d\epsilon g(\epsilon)\frac{1}{e^{\beta(\epsilon-\mu)}-1}\simeq                                                                                                                                  \\
+         & \simeq \int_0^\infty d\epsilon g(\epsilon)\frac{1}{e^{\beta \epsilon}-1}=\frac{g_sV}{4\pi^2}\left(\frac{2m}{\hbar^2}\right)^{\frac{3}{2}}\int_0^\infty d\epsilon \frac{\sqrt{\epsilon}}{e^{\beta_0\epsilon}-1}= \\
+         & =g_sV\left(\frac{mk_BT_0}{2\pi\hbar^2}\right)^{\frac{3}{2}}\zeta\left(\frac{3}{2}\right)\simeq 2.612 g_s n_Q(T=0) V= \frac{2.612 g_s}{\lambda_{dB}^3}V
+    \end{aligned}
+\end{equation}
+
+where $\lambda_{dB}$ is the De Broglie wavelength at T=0.
+
+When such a critical density is reached, the approximation utilized to find $g(\epsilon)$ is no
+longer valid, since it would imply $g(0)=0$, which is not what physically happens: the lowest state keeps
+absorbing bosons, resulting in the Bose-Einstein condensation.
+
+So the density of states must be corrected, including the ground state:
+
+\begin{equation}
+    \begin{aligned}
+         & N=<N_0>+g_s V \left(\frac{mk_BT}{2\pi \hbar^2}\right)^{\frac{3}{2}}\zeta\left(\frac{3}{2}\right) \rightarrow \\
+         & \rightarrow \frac{<N_0>}{N}=1-\left(\frac{T}{T_0}\right)^{\frac{3}{2}}
+    \end{aligned}
+\end{equation}
+
+\subsection{Average Energy at low T}
+
+Only excited bosons contribute to the average energy, so:
+
+\begin{equation}
+    \begin{aligned}
+         & U=\int_0^\infty d\epsilon g(\epsilon) \epsilon\frac{1}{e^{\beta\epsilon}-1}=                                                                           \\
+         & \frac{g_sV}{4\pi^2}\left(\frac{2m}{\hbar^2}\right)^{\frac{3}{2}}\int_0^\infty d\epsilon \epsilon\frac{\sqrt{\epsilon}}{e^{\beta\epsilon}-1}=           \\
+         & = \frac{g_sV}{4\pi^2}\left(\frac{2m}{\hbar^2}\right)^{\frac{3}{2}}\Gamma\left(\frac{5}{2}\right)\zeta\left(\frac{5}{2}\right)\simeq 0.77N_{ecc}(T)k_BT
+    \end{aligned}
+\end{equation}
+
+\newpage
+
+\newpage
+\begin{tcolorbox}[colframe=gray!90, colback=gray!5, coltitle=white, sharp corners, title=\textbf{Bose Gas, Summary}, fonttitle=\large\bfseries]
+  \textbf{Black Body Radiation}
+  
+    \begin{equation}
+        \begin{aligned}
+            & \frac{N}{V}\equiv<n>=\frac{2.404}{\pi^2}\left(\frac{k_B T}{\hbar c}\right)^3 \\
+            & u(\omega)=\frac{\hbar \omega^3}{\pi^2c^3}\frac{1}{e^{\beta\hbar\omega}-1}
+        \end{aligned}
+    \end{equation}
+
+    \textbf{Bose-Einstein Condensation}
+
+    \begin{equation}
+        \begin{aligned}
+            & N=\frac{2.612 g_s}{\lambda_{dB}^3}V \\
+            & \frac{<N_0>}{N}=1-\left(\frac{T}{T_0}\right)^{\frac{3}{2}}
+        \end{aligned}
+    \end{equation}
+
+    \textbf{Average Energy at low T}
+
+    \begin{equation}
+        U\simeq 0.77N_{ecc}(T)k_BT
+    \end{equation}
+  
+\end{tcolorbox}
+\newpage
+
+
+
+
+\newpage
+
+
+
 \section{Compendium of Hyperbolic and Trigonometric Functions}
 
 \begin{center}
@@ -436,6 +962,8 @@ Some physical observations are suitable:
         \hline
     \end{tabular}
 \end{center}
+
+\newpage
 
 \section{Compendium of Series Convergence}
 
