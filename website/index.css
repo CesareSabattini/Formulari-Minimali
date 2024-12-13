@@ -91,6 +91,7 @@ select:hover {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  border-radius: 8px; /* Bordo arrotondato */
   transition: opacity 0.5s ease-in-out, background-image 0s linear 0.5s; /* Opacità con transizione e cambio immagine dopo la transizione */
   position: absolute; /* Posiziona assolutamente all'interno del contenitore */
   top: 0; /* Posizionato all'inizio del contenitore */
@@ -104,25 +105,4 @@ select:hover {
 #backgroundContainer.showImage {
   opacity: 0.6; /* Mostra l'immagine con opacità */
   transition: opacity 0.5s ease-in-out; /* Mantieni la transizione opacità */
-}
-
-.wbLink {
-  color: white;
-  text-decoration: none;
-  font-weight: 100;
-  color: rgb(116, 116, 249);
-  padding: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-  transition: all 0.3s ease;
-  display: inline-block;
-  margin: 0;
-}
-
-.wbLink:hover {
-  color: rgb(116, 116, 249);
-  box-shadow: none;
-  background: transparent;
-  transform: translateY(-2px);
 }

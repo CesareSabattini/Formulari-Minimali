@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <div
@@ -23,11 +24,25 @@
         background-position: center;
       "
     ></div>
+    <div style="
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    
+    gap: 20px;
+
+    ">
     <h1 class="title">Physics Lecture Notes</h1>
+    
+   
+   
+  </div>
     <div class="container">
       <div id="backgroundContainer"></div>
       <select id="yearSelect" onchange="showLinks()">
-        <option value="1">First year</option>
+        <option value="0">Select year &#x2BC6</option>
         <option value="2">Second year</option>
         <option value="3">Third year</option>
       </select>
@@ -84,11 +99,15 @@
         </li>
       </ul>
     </div>
+
+   
     <p>
       Lecture notes for the Physics BcE course at Alma Mater Studiorum -
       Università di Bologna. <br />
     </p>
-
+   
     <script src="script.js"></script>
   </body>
 </html>
+
+

@@ -575,6 +575,37 @@ Some physical observations are suitable:
           the fact that the chemical potential is never greater than the energy of the state, at any temperature.
 \end{itemize}
 
+
+\subsection{Density of States}
+
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Number of states]
+    The number of states in the limit of a continuus spectrum is given by:
+
+    \begin{equation}
+        N=\int \frac{g_s}{4\pi^2}\left( \frac{2m}{\hbar^2} \right)^{\frac{3}{2}}V\sqrt{\epsilon} <n>d\epsilon
+    \end{equation}
+\end{tcolorbox}
+
+\textbf{Proof:}
+The energy for a gas confined in a 3D box is given by:
+
+\begin{equation}
+    \epsilon=\frac{\pi^2\hbar^2}{2m}(n_x^2+n_y^2+n_z^2)
+\end{equation}
+
+In the limit of a continuus spectrum, the number of states for $E<\epsilon$ is given by the volume of the
+positive octant of the sphere in the 3D space of the wave numbers:
+
+\begin{equation}
+    N(E<\epsilon)= \frac{1}{8} \frac{4}{3}\pi \left(\sqrt{\frac{V^\frac{2}{3} \epsilon 2m}{\hbar^2\pi^2}}\right)^3
+\end{equation}
+
+Therefore, one can directly find the density of states:
+
+\begin{equation}
+    dN\simeq\frac{dN}{dE}dE=\frac{1}{4\pi^2}\left(\frac{2m}{\hbar^2}\right)^{\frac{3}{2}}V\sqrt{\epsilon}d\epsilon=g(\epsilon)d\epsilon
+\end{equation}
+
 \newpage
 \begin{tcolorbox}[colframe=gray!90, colback=gray!5, coltitle=white, sharp corners, title=\textbf{Quantum Statistical Mechanics, Summary}, fonttitle=\large\bfseries]
     \textbf{Maxwell-Boltzmann Statistics}
@@ -781,8 +812,6 @@ Using this expression in the Sommerfeld expansion, it's possible to derive the a
     \end{equation}
 
 \end{tcolorbox}
-
-...da terminare con pressione e calore specifico...
 
 \newpage
 
