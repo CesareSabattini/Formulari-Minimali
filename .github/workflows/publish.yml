@@ -32,7 +32,7 @@ jobs:
             tex/relativita-ristretta.tex
             tex/meccanica-quantistica.tex
             tex/astrofisica.tex
-            tex/fisica-della-materia.tex
+            tex/statistical-physics.tex
             tex/laboratorio-di-elettronica.tex
             tex/fisica-nucleare-e-subnucleare.tex
 

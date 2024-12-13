@@ -4,10 +4,20 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[most]{tcolorbox}
+\usepackage{hyperref}
 
-\title{Fisica della Materia}
+
+\hypersetup{
+    colorlinks=true,      
+    linkcolor=black,        
+    citecolor=blue,        
+    urlcolor=blue,         
+    pdfborder={0 0 0},     
+}
+
+\title{Statistical Physics}
 \author{Sabattini Manginella Cesare}
-\date{Winter 2024}
+\date{December 2024}
 
 \begin{document}
 
@@ -250,15 +260,15 @@ Moreover, since the particles are non indexable, the partition function is reduc
     Z=\frac{Z_1^N}{N!}=\sum_{{n_s}}e^{-\beta\sum_{s}E_{\{n_s\}}}
 \end{equation}
 
-\subsection{Quantum ideal gas in a box}
+\subsection{Quantum ideal monoatomic gas in a box}
 
 In the low density approximation, it's easy to find the partition function of an ensamble of particles,
 knowing the single particle one.
 In the model of a gas constrained in an infinite potential well, the single particle partition function is given by
 \footnote{
-    The complete derivation of the energy for a quantum particle constrained in a box can be found in the Quantum Mechanics notes.
-}:
-
+    The complete derivation of the energy for a quantum particle constrained in a box can be found in
+    \href{https://cesaresabattini.github.io/Physics-Lecture-Notes/}{Quantum Mechanics Notes}.
+}
 \begin{equation}
     \begin{aligned}
          & Z=\sum e^{-\frac{-\pi^2\hbar^2}{2mL^2}(n_x^2+n_y^2+n_z^2)\beta}=  \\
@@ -328,6 +338,12 @@ Here we can distinguish two cases:
 
 This is no surprise, since the particles are indistinguishable, so the reversibility of the process is different in the two instances.
 
+\subsection{Quantum ideal diatomic gas in a box}
+
+To derive the partition function for a diatomic gas confined in an infinite potential ell, one can follow
+an akin procedure to the monoatomic case, but considering that the rotational degree implies another energy term:
+
+...da terminare...
 
 \subsection{Energy equipartition theorem}
 
@@ -780,7 +796,7 @@ and, in terms of $K(\epsilon)$:
 
 \subsubsection{$\mu(T>0)$}
 
-Sobsituting the density of states in the Sommerfeld expansion, one finds:
+Substituting the density of states in the Sommerfeld expansion, one finds:
 
 \begin{equation}
     \begin{aligned}
@@ -1024,6 +1040,37 @@ Only excited bosons contribute to the average energy, so:
     \end{tabular}
 \end{center}
 
+
+\newpage
+
+\section{Compendium of Useful Integral Functions}
+
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Function}    & \textbf{Integral}                                                  & \textbf{Result}                          \\
+        \hline
+        Gaussian Integral    & $\int_{-\infty}^{\infty} e^{-x^2} \, dx$                           & $\sqrt{\pi}$                             \\
+        \hline
+        Euler Gamma Function & $\Gamma(z) = \int_{0}^{\infty} t^{z-1} e^{-t} \, dt$               & $\Gamma(z)$                              \\
+        \hline
+        Beta Function        & $\zeta(x,y) = \int_{0}^{1} t^{x-1} (1-t)^{y-1} \, dt$              & $\frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}$ \\
+        \hline
+        Exponential Integral & $\int_{0}^{\infty} e^{-ax} \, dx$                                  & $\frac{1}{a}$                            \\
+        \hline
+        Sine Integral        & $\int_{0}^{\infty} \frac{\sin(x)}{x} \, dx$                        & $\frac{\pi}{2}$                          \\
+        \hline
+        Cosine Integral      & $\int_{0}^{\infty} \frac{\cos(x)}{x} \, dx$                        & $\ln(x)$                                 \\
+        \hline
+        Error Function       & $\text{erf}(x) = \frac{2}{\sqrt{\pi}} \int_{0}^{x} e^{-t^2} \, dt$ & $\text{erf}(x)$                          \\
+        \hline
+        Fresnel Integrals    & $\int_{0}^{\infty} \cos(x^2) \, dx$                                & $\sqrt{\frac{\pi}{2}}$                   \\
+        \hline
+                             & $\int_{0}^{\infty} \sin(x^2) \, dx$                                & $\sqrt{\frac{\pi}{2}}$                   \\
+        \hline
+    \end{tabular}
+\end{center}
 
 \newpage
 
