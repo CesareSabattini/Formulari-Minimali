@@ -156,6 +156,12 @@ Maximizing the Gibbs entropy similiarly as done for the microcanonical ensamble,
 As expected, the probability of a microstate is no longer uniform, but depends on its energy.
 As a matter of fact, one can find the microcanonical probability if all the microstates have the same energy.
 
+Therefore, the entropy can be rewritten in terms of the partition function Z:
+
+\begin{equation}
+    S=k_B\ln{Z}+k_B\beta U
+\end{equation}
+
 \subsubsection{$\beta$ Lagrange multiplier}
 
 The physical content of the $\beta$ multiplier can be derived from computing
@@ -164,21 +170,23 @@ an infinitesimal variation of the entropy:
 \begin{equation}
     \left\{
     \begin{aligned}
-         & \sigma S= S(p_j+\delta p_j)-S(p_j) = -k_B\sum_{j}(\ln{(p_j+\delta p_j)}-\ln{p_j})=...=                                                        \\
-         & = -k_B\beta\sigma U \rightarrow \beta=\frac{1}{k_B}\frac{\sigma S}{\sigma U}\simeq \frac{1}{k_B}\frac{\partial S}{\partial U}= \frac{1}{k_BT}
+         & \delta S= S(p_j+\delta p_j)-S(p_j) = -k_B\sum_{j}(\ln{(p_j+\delta p_j)}-\ln{p_j})=...=                                                        \\
+         & = -k_B\beta\delta U \rightarrow \beta=\frac{1}{k_B}\frac{\delta S}{\delta U}\simeq \frac{1}{k_B}\frac{\partial S}{\partial U}= \frac{1}{k_BT}
     \end{aligned}
     \right.
 \end{equation}
 
-\subsection{Free Energy}
-Computing the physical expression of $\beta$, one can rewrite the entropy and find the free energy in terms of partition function Z:
+Or, in a quicker way, one can simply differentiate the entropy with respect to the energy:
 
 \begin{equation}
-    \begin{aligned}
-         & S=-k_b\sum_{j}p_j\ln{p_j}=-k_b\sum_{j}\frac{e^{-\beta \epsilon_j}}{Z}(\ln{e^{-\beta \epsilon_j}}-\ln{Z})=     \\
-         & =k_b\beta\sum_{j}\frac{\epsilon_j e^{-\beta \epsilon_j}}{Z}+k_b\ln{Z}\sum_{j}\frac{e^{-\beta \epsilon_j}}{Z}= \\
-         & =k_B\beta U+k_b\ln{Z}=\frac{U}{T}-k_BT\ln{Z} \rightarrow U-TS=-k_BT\ln{Z}=F
-    \end{aligned}
+    \beta=\frac{\partial S}{\partial U}= \frac{1}{k_BT}
+\end{equation}
+
+\subsection{Free Energy}
+From the expression of the entropy, abiding thermodinamical consistance, one can find the Helmholtz free energy F:
+
+\begin{equation}
+    F=U-TS=-k_BT\ln{Z}
 \end{equation}
 
 Maximizing the entropy is hence equivalent to minimizing the free energy of Helmotz.
@@ -340,10 +348,21 @@ This is no surprise, since the particles are indistinguishable, so the reversibi
 
 \subsection{Quantum ideal diatomic gas in a box}
 
-To derive the partition function for a diatomic gas confined in an infinite potential ell, one can follow
-an akin procedure to the monoatomic case, but considering that the rotational degree implies another energy term:
+To derive the partition function for a free diatomic gas, one can follow
+an akin procedure to the confined monoatomic case, but considering that the rotational degree implies another energy term:
 
-...da terminare...
+\begin{equation}
+    E_{n,l}=\frac{\hbar^2\pi^2 \textbf{n}^2}{2mL^2}\frac{\hbar^2 l(l+1)}{2I}
+\end{equation}
+
+where n is the quantum number of the translational energy, l is the quantum number of the rotational energy and I is the moment of inertia of the molecule.
+So, the partition function is given by:
+
+\begin{equation}
+    Z=\sum_{\left\{ n,l \right\}} e^{-\beta E_{n,l}}=\sum_{n=0}^\infty e^{-\beta\frac{\hbar^2\pi^2 \textbf{n}^2}{2mL^2}}\sum_{l=0}^{\infty}(2l+1)e^{-\beta\frac{\hbar^2 l(l+1)}{2I}}=Z_nZ_r
+\end{equation}
+
+
 
 \subsection{Energy equipartition theorem}
 
@@ -526,6 +545,65 @@ For example, the average number of particle is:
     \end{center}
 
 \end{tcolorbox}
+\newpage
+
+
+\subsection{Grand Canonical Ensamble, Excercises}
+
+\begin{tcolorbox}[colframe=orange!60, colback=gray!5, coltitle=black, title=\textbf{Kennett, 6.4}, fonttitle=\large\bfseries]
+
+    Consider a two-level system with energy levels 0 and $\epsilon$ populated by bosons (bosons
+    have norestrictions on how many particles can be in each energy level). Find the
+    average energy and occupation of the levels and calculate the heat capacity.
+
+\end{tcolorbox}
+
+\textbf{Solution:}
+
+To find the Grand Canonical partition function $\Xi$, one surely cannot use the semiclassical approximation
+of dilute gas; so there's not an immediate formulae to use.
+Therefore, one can proceed in the following way: study the partition function
+summing on the couples $(n_0, n_1)$, occupation numbers of the two levels, with the constrain
+of the total number of particles N, and then take the limit of the infinite number of particles:
+
+\begin{equation}
+    \begin{aligned}
+         & \Xi=\sum_{N=0}^{\infty}\sum_{j}Z(N)e^{\beta\mu N}=\sum_{\left\{ (n_1,n_2) \right\}} e^{-\beta(n_1\epsilon_1+n_2\epsilon_2)}e^{\beta\mu(n_1+n_2)}=                             \\
+         & =\sum_{n_1=0}^{N}e^{-\beta n_1\epsilon_1}e^{\beta\mu n_1}\sum_{n_2=0}^{N-n_1}e^{-\beta n_2\epsilon_2}e^{\beta\mu n_2}=                                                        \\
+         & =\sum_{n_1=0}^{N}e^{-\beta n_1 (\epsilon_1-\mu)}\frac{1-e^{-\beta(\mu-\epsilon_2)(N+1)}}{1-e^{-\beta(\mu-\epsilon_2)}}=                                                       \\
+         & =\frac{1-e^{-\beta(\mu-\epsilon_2)(N+1)}}{1-e^{-\beta(\mu-\epsilon_2)}}\sum_{n_1=0}^{N}e^{-\beta n_1 (\epsilon_1-\mu)}=                                                       \\
+         & =\frac{1-e^{-\beta(\mu-\epsilon_2)(N+1)}}{1-e^{-\beta(\mu-\epsilon_2)}}\frac{1-e^{-\beta(\epsilon_1-\mu)(N+1)}}{1-e^{-\beta(\epsilon_1-\mu)}}\rightarrow_{N\rightarrow\infty} \\
+         & \rightarrow_{N\rightarrow\infty}=\frac{1}{1-e^{-\beta(\mu-\epsilon_2)}}\frac{1}{1-e^{-\beta(\epsilon_1-\mu)}}= \frac{1}{1-e^{-\beta(\mu-\epsilon)}}\frac{1}{1-e^{\beta\mu}}
+    \end{aligned}
+\end{equation}
+
+Now that $\Xi$ is found, one can find the average occupation of the levels from the great potential $\Phi$:
+
+\begin{equation}
+    \begin{aligned}
+         & \mathcal{N}= \frac{\partial \Phi}{\partial \mu}= \frac{\partial}{\partial \mu}\left(k_B T \ln{\Xi}\right)= \\
+         & \sum_{j=0}^{1}\frac{1}{1-e^{\beta(\epsilon_j-\mu)}}= \sum_{j=0}^{1} <n_j>
+    \end{aligned}
+\end{equation}
+
+The average energy U is defined as:
+
+\begin{equation}
+    \begin{aligned}
+         & U=\sum_{j=0}^{1} <n_j>\epsilon_j= \frac{\epsilon_0}{1-e^{\beta(\epsilon_0-\mu)}}+\frac{\epsilon_1}{1-e^{\beta(\epsilon_1-\mu)}}= \\
+         & =\frac{\epsilon}{e^{\beta(\epsilon-\mu)}-1}
+    \end{aligned}
+\end{equation}
+
+The heat capacity is hence given by:
+
+\begin{equation}
+    \begin{aligned}
+         & C_V=\frac{\partial U}{\partial T}= \frac{\partial U}{\partial \beta}\frac{\partial \beta}{\partial T}= \frac{\partial U}{\partial \beta}\frac{1}{k_B T^2}= \\
+         & =\frac{\epsilon (\epsilon-\mu)}{k_B T^2}\frac{e^{\beta(\epsilon-\mu)}}{(e^{\beta(\epsilon-\mu)}-1)^2}
+    \end{aligned}
+\end{equation}
+
 \newpage
 
 \section{Quantum Statistical Mechanics}
@@ -1049,25 +1127,25 @@ Only excited bosons contribute to the average energy, so:
 \begin{center}
     \begin{tabular}{|c|c|c|}
         \hline
-        \textbf{Function}    & \textbf{Integral}                                                  & \textbf{Result}                          \\
+        \textbf{Function}       & \textbf{Integral}                                                  & \textbf{Result}                          \\
         \hline
-        Gaussian Integral    & $\int_{-\infty}^{\infty} e^{-x^2} \, dx$                           & $\sqrt{\pi}$                             \\
+        Gaussian Integral       & $\int_{-\infty}^{\infty} e^{-x^2} \, dx$                           & $\sqrt{\pi}$                             \\
         \hline
-        Euler Gamma Function & $\Gamma(z) = \int_{0}^{\infty} t^{z-1} e^{-t} \, dt$               & $\Gamma(z)$                              \\
+        Euler Gamma Function    & $\Gamma(z) = \int_{0}^{\infty} t^{z-1} e^{-t} \, dt$               & $\Gamma(z)$                              \\
         \hline
-        Beta Function        & $\zeta(x,y) = \int_{0}^{1} t^{x-1} (1-t)^{y-1} \, dt$              & $\frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}$ \\
+        Beta Function           & $\zeta(x,y) = \int_{0}^{1} t^{x-1} (1-t)^{y-1} \, dt$              & $\frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}$ \\
         \hline
-        Exponential Integral & $\int_{0}^{\infty} e^{-ax} \, dx$                                  & $\frac{1}{a}$                            \\
+                                & $\int_0^\infty \frac{x^m}{e^x-1}dx$                                & $\Gamma(m+1)\zeta(m+1)$                  \\
         \hline
-        Sine Integral        & $\int_{0}^{\infty} \frac{\sin(x)}{x} \, dx$                        & $\frac{\pi}{2}$                          \\
+        Sine Integral           & $\int_{0}^{\infty} \frac{\sin(x)}{x} \, dx$                        & $\frac{\pi}{2}$                          \\
         \hline
-        Cosine Integral      & $\int_{0}^{\infty} \frac{\cos(x)}{x} \, dx$                        & $\ln(x)$                                 \\
+        Cosine Integral         & $\int_{0}^{\infty} \frac{\cos(x)}{x} \, dx$                        & $\ln(x)$                                 \\
         \hline
-        Error Function       & $\text{erf}(x) = \frac{2}{\sqrt{\pi}} \int_{0}^{x} e^{-t^2} \, dt$ & $\text{erf}(x)$                          \\
+        Error Function          & $\text{erf}(x) = \frac{2}{\sqrt{\pi}} \int_{0}^{x} e^{-t^2} \, dt$ & $\text{erf}(x)$                          \\
         \hline
-        Fresnel Integrals    & $\int_{0}^{\infty} \cos(x^2) \, dx$                                & $\sqrt{\frac{\pi}{2}}$                   \\
+        Cosine Fresnel Integral & $\int_{0}^{\infty} \cos(x^2) \, dx$                                & $\sqrt{\frac{\pi}{2}}$                   \\
         \hline
-                             & $\int_{0}^{\infty} \sin(x^2) \, dx$                                & $\sqrt{\frac{\pi}{2}}$                   \\
+        Sine Fresnel Integral   & $\int_{0}^{\infty} \sin(x^2) \, dx$                                & $\sqrt{\frac{\pi}{2}}$                   \\
         \hline
     \end{tabular}
 \end{center}
