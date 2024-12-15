@@ -305,11 +305,34 @@ When N particles are considered, the partition function is:
 
 where $g_s$ is the spin degeneracy of the particle.
 
+Now it's possible to find the expression for the free energy F:
+
+\begin{equation}
+    F=-k_BT\ln{Z}=-Nk_BT\ln{\frac{n_QV}{N}}-Nk_BT
+\end{equation}
+
+where the term in $ln(2\pi N)$ has been neglected in the limit of large N.
+
 
 \subsection{Properties of the monoatomic ideal gas}
 
 Any property of the ideal gas can be derived from the partition function,
-simply using their definition and the canonical bridge equation, given by the Helmholtz free energy.
+simply using its definition and the canonical bridge equation, given by the Helmholtz free energy.
+
+\subsection{Perfect gas law}
+
+From the expression of F, one can find the pressure of the gas:
+
+\begin{equation}
+    P=-\left(\frac{\partial F}{\partial V}\right)_{T,N}=\frac{Nk_BT}{V}
+\end{equation}
+
+which can be rearranged to the well known perfect gas law:
+
+\begin{equation}
+    PV=nRT
+\end{equation}
+
 
 \subsubsection{Entropy of mixing}
 
@@ -430,7 +453,7 @@ So, the partition function is given by:
 \newpage
 
 
-\section{The Gran Canonical Ensamble}
+\section{The Grand Canonical Ensamble}
 
 An ensamble of open system in contact with an external bath is called grand canonical,
 so the energy and the number of particles can fluctuate around mean values.
@@ -1095,25 +1118,15 @@ Only excited bosons contribute to the average energy, so:
 \begin{center}
     \begin{tabular}{|c|c|c|}
         \hline
-        \textbf{Series}                                       & \textbf{Convergence Condition} & \textbf{Sum}                       \\
+        \textbf{Series}                        & \textbf{Convergence Condition} & \textbf{Sum}                       \\
         \hline
-        $\sum_{n=0}^{\infty} x^n$                             & $|x| < 1$                      & $\frac{1}{1-x}$                    \\
+        $\sum_{n=0}^{\infty} x^n$              & $|x| < 1$                      & $\frac{1}{1-x}$                    \\
         \hline
-        $\sum_{n=1}^{\infty} \frac{1}{n^p}$                   & $p > 1$                        & $\zeta(p)$ (Riemann zeta function) \\
+        $\sum_{n=1}^{\infty} \frac{1}{n^p}$    & $p > 1$                        & $\zeta(p)$ (Riemann zeta function) \\
         \hline
-        $\sum_{n=0}^{\infty} \frac{x^n}{n!}$                  & $\forall x \in \mathcal{R}$    & $e^x$                              \\
+        $\sum_{n=0}^{\infty} (-1)^n x^n$       & $|x| < 1$                      & $\frac{1}{1+x}$                    \\
         \hline
-        $\sum_{n=0}^{\infty} (-1)^n x^n$                      & $|x| < 1$                      & $\frac{1}{1+x}$                    \\
-        \hline
-        $\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n}$            & $\forall x \in \mathcal{R}$    & $\ln(2)$                           \\
-        \hline
-        $\sum_{n=1}^{\infty} \frac{x^n}{n}$                   & $|x| \leq 1, x \neq 1$         & $-\ln(1-x)$                        \\
-        \hline
-        $\sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{(2n+1)!}$ & $\forall x \in \mathcal{R}$    & $\sin(x)$                          \\
-        \hline
-        $\sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{(2n)!}$     & $\forall x \in \mathcal{R}$    & $\cos(x)$                          \\
-        \hline
-        $\sum_{n=1}^{\infty} \frac{1}{n(n+1)}$                & $\forall n \in \mathcal{N}$    & $1$                                \\
+        $\sum_{n=1}^{\infty} \frac{1}{n(n+1)}$ & $\forall n \in \mathcal{N}$    & $1$                                \\
         \hline
     \end{tabular}
 \end{center}
@@ -1137,6 +1150,8 @@ Only excited bosons contribute to the average energy, so:
         \hline
                                 & $\int_0^\infty \frac{x^m}{e^x-1}dx$                                & $\Gamma(m+1)\zeta(m+1)$                  \\
         \hline
+        Riemann Zeta Function   & $\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}$                     & $\zeta(s)$                               \\
+        \hline
         Sine Integral           & $\int_{0}^{\infty} \frac{\sin(x)}{x} \, dx$                        & $\frac{\pi}{2}$                          \\
         \hline
         Cosine Integral         & $\int_{0}^{\infty} \frac{\cos(x)}{x} \, dx$                        & $\ln(x)$                                 \\
@@ -1149,6 +1164,41 @@ Only excited bosons contribute to the average energy, so:
         \hline
     \end{tabular}
 \end{center}
+
+\subsection{Euler Gamma Function}
+
+The Euler Gamma function is defined as:
+
+\begin{equation}
+    \Gamma(z) = \int_{0}^{\infty} t^{z-1} e^{-t} \, dt
+\end{equation}
+
+and it satisfies the following properties:
+
+\begin{itemize}
+    \item $\Gamma(z+1) = z\Gamma(z)$
+    \item $\Gamma(n) = (n-1)!$
+    \item $\Gamma\left(\frac{1}{2}\right) = \sqrt{\pi}$
+\end{itemize}
+
+\subsection{Riemann Zeta Function}
+
+The Riemann Zeta function is defined as:
+
+\begin{equation}
+    \zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}
+\end{equation}
+
+Here are some useful values:
+
+\begin{itemize}
+    \item $\zeta(0) = -\frac{1}{2}$
+    \item $\zeta(2) = \frac{\pi^2}{6}$
+    \item $\zeta(4) = \frac{\pi^4}{90}$
+    \item $\zeta(6) = \frac{\pi^6}{945}$
+\end{itemize}
+
+
 
 \newpage
 
