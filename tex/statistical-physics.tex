@@ -118,6 +118,15 @@ The Gibbs Entropy generalizes the Boltzmann Entropy to the case of non-isolated 
 Maximizing the Gibbs Entropy with the constraint of unitary of the sum of the probabilities, one finds that
 the Boltzmann Entropy is actually a particular case of the Gibbs Entropy for equiprobable microstates.
 
+\subsection{Non interacting spin system}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/magnetization-mc.png}
+    \caption{Una descrizione dell'immagine.}
+    \label{fig:magnetization-mc}
+\end{figure}
+
 \newpage
 
 \begin{tcolorbox}[colframe=gray!90, colback=gray!5, coltitle=white, sharp corners, title=\textbf{Microcanonical Ensamble, Summary}, fonttitle=\large\bfseries]
@@ -193,6 +202,45 @@ Maximizing the entropy is hence equivalent to minimizing the free energy of Helm
 
 As done for F, every thermodynamical quantity is obtainable from the partition function Z.
 Most of them are presented in the compendium of this section.
+
+\subsection{Canonical Ensamble, Examples}
+
+\subsubsection{Two levels system}
+
+Given a system with two energy levels ($\epsilon_0=0$, $\epsilon_1=\epsilon$), the partition function is:
+
+\begin{equation}
+    Z=1+e^{-\beta\epsilon}
+\end{equation}
+
+The average energy is:
+
+\begin{equation}
+    U=-\frac{\partial\ln{Z}}{\partial\beta}= \frac{\epsilon}{1+e^{\beta\epsilon}}
+\end{equation}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/canonical-two-levels.png}
+    \caption{Energy levels of a two-level system.}
+    \label{fig:two-levels-system}
+\end{figure}
+
+
+while the heat capacity is:
+
+\begin{equation}
+    C_V=k_B\left(\frac{\epsilon}{k_BT}\right)^2\frac{e^{\beta\epsilon}}{(1+e^{\beta\epsilon})^2}
+\end{equation}
+
+The peak of the heat capacity is at $T=\frac{\epsilon}{k_B}$, and represents the Schottky anomaly.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/canonical-2-levels-cv.png}
+    \caption{Heat capacity of a two-level system.}
+    \label{fig:heat-capacity}
+\end{figure}
 
 \newpage
 
@@ -296,6 +344,13 @@ Per $T>>\theta_t$, the sum is approximated by an integral:
 \end{equation}
 
 where $\lambda_{dB}$ is the De Broglie wavelength of the particle, so $n_Q$ is the number of quantum states density in the semiclassical limit.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/nq-monoatomic-ideal-gas.png}
+    \caption{Quantum state density $n_Q$ as a function of temperature.}
+    \label{fig:nq}
+\end{figure}
 
 When N particles are considered, the partition function is:
 
@@ -476,6 +531,20 @@ Moreover, examining the differential of the entropy, one finds:
     dS=\frac{dU}{T}+\frac{PdV}{T}-\frac{\mu dN}{T}
 \end{equation}
 
+\subsubsection{Chemical potential for a monoatomic ideal gas}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/mu-monoatomic-ideal-gas.png}
+    \caption{Chemical potential as a function of temperature.}
+    \label{fig:chemical-potential}
+\end{figure}
+
+The chemical potential for an ideal gas can be derived from the partition function Z:
+
+\begin{equation}
+    \mu=\left( \frac{\partial F}{\partial N} \right)_{T,V}=k_BT\ln{\left( \frac{N}{n_QV} \right)}
+\end{equation}
 
 \subsection{Gran Canonical Partition Function}
 
@@ -631,6 +700,13 @@ The heat capacity is hence given by:
 
 \section{Quantum Statistical Mechanics}
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/n-distributions.png}
+    \caption{Quantum statistics for different types of particles.}
+    \label{fig:quantum-statistics}
+\end{figure}
+
 \subsection{Maxwell Boltzmann Statistics}
 
 The Maxwell-Boltzmann statistics describes an ensable of non interacting quantum particles in the classical
@@ -694,6 +770,13 @@ Some physical observations are suitable:
 
 
 \subsection{Density of States}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/state-density.png}
+    \caption{Density of states as a function of energy.}
+    \label{fig:density-of-states}
+\end{figure}
 
 \begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Number of states]
     The number of states in the limit of a continuus spectrum is given by:
@@ -763,6 +846,13 @@ Hereby it's presented the derivation of the chemical potential for a Fermi gas,
 fist for T=0 and then for T>0, in the Sommerfeld approximation.
 
 \subsection{Fermi Gas at T=0}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/mu-fermions.png}
+    \caption{Chemical potential as a function of temperature for a Fermi gas.}
+    \label{fig:mu-fermions}
+\end{figure}
 
 First of all, the Fermi-Dirac distribution is:
 
@@ -918,6 +1008,13 @@ Reverting the equation, one finds, after some algebra:
 \end{tcolorbox}
 
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/u-fermions.png}
+    \caption{Average energy as a function of temperature for a Fermi gas.}
+    \label{fig:u-fermions}
+\end{figure}
+
 Using this expression in the Sommerfeld expansion, it's possible to derive the average energy U:
 
 \begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title= $U(T>0)$]
@@ -928,6 +1025,22 @@ Using this expression in the Sommerfeld expansion, it's possible to derive the a
         \end{aligned}
     \end{equation}
 
+\end{tcolorbox}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/cv-fermions.png}
+    \caption{Heat capacity as a function of temperature for a Fermi gas.}
+    \label{fig:fermions-heat-capacity}
+\end{figure}
+From the average energy, one can derive the heat capacity:
+
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=$C_V(T>0)$]
+    \begin{equation}
+        \begin{aligned}
+            C_V(T)\simeq \frac{\pi^2}{2}\frac{k_B^2T}{\epsilon_f}N(T)
+        \end{aligned}
+    \end{equation}
 \end{tcolorbox}
 
 \newpage
@@ -975,6 +1088,12 @@ But first, let's recall the Bose-Einstein distribution:
 
 \subsection{Black body radiation}
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/black-body.png}
+    \caption{Black body radiation as a function of frequency.}
+    \label{fig:black-body-radiation}
+\end{figure}
 The density of states for a photon gas in a box is:
 
 \begin{equation}
@@ -1006,6 +1125,13 @@ which at low frequencies tends to Reyleigh-Jeans law, but prevents the ultraviol
 
 
 \subsection{Bose-Einstein Condensation}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/bose-einstein-condensation.png}
+    \caption{Bose-Einstein condensation as a function of temperature.}
+    \label{fig:bose-einstein-condensation}
+\end{figure}
 
 The Bose Einstein condensation is a phase transition occurring in a Bose gas at low temperatures,
 when the number of particles is fixed.
@@ -1146,7 +1272,7 @@ Only excited bosons contribute to the average energy, so:
         \hline
         Euler Gamma Function    & $\Gamma(z) = \int_{0}^{\infty} t^{z-1} e^{-t} \, dt$               & $\Gamma(z)$                              \\
         \hline
-        Beta Function           & $\zeta(x,y) = \int_{0}^{1} t^{x-1} (1-t)^{y-1} \, dt$              & $\frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}$ \\
+        Beta Function           & $\beta(x,y) = \int_{0}^{1} t^{x-1} (1-t)^{y-1} \, dt$              & $\frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}$ \\
         \hline
                                 & $\int_0^\infty \frac{x^m}{e^x-1}dx$                                & $\Gamma(m+1)\zeta(m+1)$                  \\
         \hline
