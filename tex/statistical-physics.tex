@@ -43,18 +43,50 @@ The formula of the S($\Omega$) function can be deduced stating the following pro
 
 \begin{itemize}
     \item S(1)=0.
-    \item $\Omega_1>\Omega_2$ $\rightarrow$ S($\Omega_1$)>S($\Omega_2$).
-    \item $\Omega=\Omega_1\Omega_2$ $\rightarrow$ S($\Omega$)=S($\Omega_1$)+S($\Omega_2$).
+    \item $\Omega_1>\Omega_2$ $\Longrightarrow$ $S(\Omega_1)>S(\Omega_2)$.
+    \item $\Omega=\Omega_1\Omega_2$ $\Longrightarrow$ S($\Omega$)=S($\Omega_1$)+S($\Omega_2$).
 \end{itemize}
 
 Hence, ultimately, one can find the expression of the entropy for a macrostate from:
 
 \begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Boltzmann Entropy]
-    Given a set of equiprobable configurations, the Boltzmann entropy can be defined from the partition function:
+    Given a set of equiprobable configurations, the Boltzmann entropy can be defined from the partition function $\Omega$:
     \begin{equation}
         S = k \log \Omega
     \end{equation}
 \end{tcolorbox}
+
+\textbf{Proof:}
+
+\begin{center}
+    \begin{align*}
+         & \left\{
+        \begin{aligned}
+             & \frac{\partial \sigma(xy)}{\partial x}=\frac{d}{dx}\sigma(x) \\
+             & \frac{\partial \sigma(xy)}{\partial y}=\frac{d}{dy}\sigma(y)
+        \end{aligned}
+        \right.                                                                                    \\
+         & \left\{
+        \begin{aligned}
+             & \frac{d\sigma(z)}{dz}=\frac{dx}{dz}\frac{\partial \sigma(z)}{\partial x}= \frac{dy}{dz}\frac{\partial \sigma(z)}{\partial y} \\
+             & z=xy
+        \end{aligned}
+        \right.                                                                                    \\
+         & \frac{1}{y}\frac{d \sigma (x)}{dx}=\frac{1}{x}\frac{d \sigma (y)}{dy}=k \Longrightarrow \\
+         & x\frac{d}{dx}\sigma(x)=y\frac{d}{dy}\sigma(y)=k \Longrightarrow                         \\
+         & \left\{
+        \begin{aligned}
+             & \sigma(x)=k\log{x}+c \\
+             & \sigma(1)=0
+        \end{aligned}
+        \right.                                                                                    \\                                                                        \\
+         & \sigma(x)=k\log{x}
+    \end{align*}
+\end{center}
+
+
+
+In the last passage, the 2 members are equal to a constant, since they depend on independent variables.
 
 \newpage
 
@@ -71,13 +103,16 @@ Hence, ultimately, one can find the expression of the entropy for a macrostate f
 \newpage
 
 \section{The Microcanonical Ensamble}
+An ensamble is an idealization of duplicates of a system in the same macrostate, but with different microstates. Therefore the fraction
+of system in a specific microscopical configuration determines the probability of a certain microstate.
+
 A set of isoleted systems is called Microcanonical Ensamble. Since it does not exchange energy and particles,
 the constrains are U, V, N.
 
 \subsection{Temperature T}
 Thermally coupling two systems, isolated from the rest of the universe, the multiplicity of the combined system is given by the product of the multiplicities of the two systems:
 
-\begin{equation}
+\begin{equation*}
     \left\{
     \begin{aligned}
          & U=U_1+U_2                                               \\
@@ -85,47 +120,139 @@ Thermally coupling two systems, isolated from the rest of the universe, the mult
          & \Omega(N,U_1,U_2) = \Omega_1(N_1,U_1) \Omega_2(N_2,U_2)
     \end{aligned}
     \right.
-\end{equation}
+\end{equation*}
 
 The most probable state is the one that maximizes the entropy, therefore the multiplicity.
-For the central limit theorem, as $N_1, N_2 \rightarrow \infty$, the fluctuations are negligible, since the standard deviation is proportional to the inverse of the square root of the number of particles.
+For the central limit theorem, as $N_1, N_2 \longrightarrow \infty$, the fluctuations are negligible, since the standard deviation of the limit gaussian is proportional to the inverse of the square root of the number of particles.
 
-Maximizing $\Omega(N, U, U_1)$, one can define the doncept of temperature T:
-
-\begin{equation}
-    \begin{aligned}
-         & \frac{\partial}{\partial U_1}[\Omega(N, U)]_{U=\hat{U}} = \frac{\partial}{\partial U}[\Omega_1(N_1, U_1)\Omega_2(N_2, U_2)]_{U=\hat{U}} =                                     \\
-         & \frac{\partial}{\partial U_1}\Omega_1|_{U_1=\hat{U_1}}\Omega_2|_{U_2=\hat{U_2}} + \Omega_1|_{U_1=\hat{U_1}}\frac{\partial}{\partial U_2}\Omega_2|_{U_2=\hat{U_2}} \rightarrow \\
-         & \frac{\partial}{\partial U_1}\ln{\Omega_1}|_{U_1=\hat{U_1}}=\frac{\partial}{\partial U_2}\ln{\Omega_2}|_{U_2=\hat{U_2}}
-    \end{aligned}
-\end{equation}
+Maximizing $\Omega(N, U, U_1)$, one can define the concept of temperature T:
+\begin{align*}
+     & \frac{\partial}{\partial U_1}[\Omega(N, U)]_{U=\hat{U}} = \frac{\partial}{\partial U}[\Omega_1(N_1, U_1)\Omega_2(N_2, U_2)]_{U=\hat{U}} =                                         \\
+     & \frac{\partial}{\partial U_1}\Omega_1|_{U_1=\hat{U_1}}\Omega_2|_{U_2=\hat{U_2}} + \Omega_1|_{U_1=\hat{U_1}}\frac{\partial}{\partial U_2}\Omega_2|_{U_2=\hat{U_2}} \Longrightarrow \\
+     & \frac{\partial}{\partial U_1}\ln{\Omega_1}|_{U_1=\hat{U_1}}=\frac{\partial}{\partial U_2}\ln{\Omega_2}|_{U_2=\hat{U_2}}
+\end{align*}
 
 These functions depend on two independent variables, so they must equalize to a constant, which ultimately defines the temperature T:
 
-\begin{equation}
-    \begin{aligned}
-         & \beta=\frac{\partial}{\partial U}\ln{\Omega(N,U)}|_{U=\hat{U}} \equiv \frac{1}{k_BT}= \frac{1}{k_B}\frac{\partial S}{\partial U}|_{N,V} \\
-    \end{aligned}
-\end{equation}
+\begin{align*}
+     & \beta=\frac{\partial}{\partial U}\ln{\Omega(N,U)}|_{U=\hat{U}} \equiv \frac{1}{k_BT}= \frac{1}{k_B}\frac{\partial S}{\partial U}|_{N,V} \\
+\end{align*}
 
 \subsection{Gibbs Entropy}
 The Gibbs Entropy generalizes the Boltzmann Entropy to the case of non-isolated systems, where different microstates have different probabilities.
 
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Gibbs Entropy]
+    \begin{equation}
+        S_G = -k \sum_{i} p_i \log p_i
+    \end{equation}
+
+    where $p_i$ is the probability of the i-th microstate.
+\end{tcolorbox}
+
+\textbf{Proof:}
+
+From the idea of ensamble, one can find the probability of a microstate from the fraction of its appearances in the ensamble.
+The number of combinations of a microstate is given by the multiplicity function $\Omega$:
+
 \begin{equation}
-    S_G=-k_B\sum_{i}p_i\ln{p_i}
+    \Omega(N,U)=\frac{N!}{\prod_{1}^{M}N_i!}
 \end{equation}
 
-Maximizing the Gibbs Entropy with the constraint of unitary of the sum of the probabilities, one finds that
+where M is the number of microstates corrisponding to the macrostate with N particles and U energy.
+So the entropy can be calculated as, in the approximation of large N:
+
+\begin{center}
+    \begin{align*}
+         & S= k_B \ln{\Omega(N,U)}= k_B \ln{\frac{N!}{\prod_{1}^{M}N_i!}}= k_B \ln{N!}-\sum_{1}^{M}k_B \ln{N_i!} \simeq \\
+         & \simeq k_B N \ln{N}-N-k_B \sum_{1}^{M}N_i \ln{N_i}+ \sum_{1}^{M}N_i =                                        \\
+         & k_B N \ln{N}-N-k_B \sum_{1}^{M}N_i \ln{N_i}+N                                                                \\
+         & = k_B N \ln{N}-k_B \sum_{1}^{M}N_i \ln{N_i} = k_B \sum_{1}^{M}N_i \ln{\frac{N}{N_i}}=                        \\
+         & = -k_B N\sum_{1}^{M}p_i \ln{p_i} \Longrightarrow                                                             \\
+         & \Longrightarrow S_G = -k_B \sum_{i} p_i \log p_i
+    \end{align*}
+\end{center}
+
+\subsubsection{Boltzmann Entropy from Gibbs Entropy}
+Maximizing the Gibbs Entropy with the constrain of unitary of the sum of the probabilities, one finds that
 the Boltzmann Entropy is actually a particular case of the Gibbs Entropy for equiprobable microstates.
 
-\subsection{Non interacting spin system}
+\textbf{Proof:}
 
-\begin{figure}[h]
+\begin{align*}
+     & S_G = -k_B \sum_{i} p_i \log p_i - \lambda \left( \sum_{i} p_i - 1 \right) \Longrightarrow                            \\
+     & \frac{\partial S_G}{\partial p_i} = 0 \Longrightarrow p_i = e^{-\lambda - 1} \quad \text{$\forall$ i} \Longrightarrow \\
+     & p_i=\frac{1}{\Omega} \Longrightarrow S_G = -k_B \sum_{i} \frac{1}{\Omega} \log \frac{1}{\Omega} = k_B \log \Omega
+\end{align*}
+
+\newpage
+
+\subsection{Microcanonical Ensamble, Examples}
+
+\subsubsection{Non interacting spin system}
+
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/magnetization-mc.png}
-    \caption{Una descrizione dell'immagine.}
-    \label{fig:magnetization-mc}
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/s-mc-spin-system.png}
+        \label{fig:image1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/m-mc-spin-system.png}
+        \label{fig:image2}
+    \end{minipage}
+    \caption{
+        Entropy S and magnetization m for a non interacting spin system.
+    }
+    \label{fig:spin-system}
 \end{figure}
+
+
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=S and m for a non interacting spin system]
+
+    \begin{equation}
+        S=Nk_B\left[\ln{2} -\frac{1}{2}\ln{1-m^2}-\frac{m}{2}\ln{\left(\frac{1+m}{1-m}\right)} \right]
+    \end{equation}
+
+    \begin{equation}
+        m=\tanh{\left(\beta \mu B\right)}
+    \end{equation}
+
+\end{tcolorbox}
+
+\textbf{Proof:}
+The multiplicity function of a M magnetized system of N non interacting spins is given by:
+
+\begin{align*}
+     & \Omega(N,M)=\frac{N!}{N_{\uparrow}!N_{\downarrow}!}= \frac{N!}{\left( \frac{N+M}{2} \right)!\left( \frac{N-M}{2} \right)!}= \\
+     & =\frac{N!}{\left(\frac{N-\frac{U}{\mu B}}{2}\right)! \left(\frac{N+\frac{U}{\mu B}}{2}\right)!}
+\end{align*}
+
+The entropy of the system can therefore be calculated:
+
+\begin{align*}
+     & S=k_B\ln{\Omega(N,M)}=k_B\ln{\frac{N!}{\left(\frac{N-\frac{U}{\mu B}}{2}\right)! \left(\frac{N+\frac{U}{\mu B}}{2}\right)!}}=...
+\end{align*}
+
+Solving the calculation, using the Stirling formula, one finds the aimed form of the entropy.
+To find the magnetization, one can derive the entropy in U and find the relation with T, and then revert the relation to find m.
+
+\textbf{Observation}
+Regarding S, one can observe that:
+\begin{itemize}
+    \item $ S \xrightarrow{\underset{m \to 0}{}} k_B \ln{2} $, meaning that the microstates are equiprobable.
+    \item $ S \xrightarrow{\underset{m \to 1}{}} 0 $, meaning that the system is in a pure state.
+\end{itemize}
+
+Regarding m, one can observe that:
+\begin{itemize}
+    \item $ m \xrightarrow{\underset{\frac{\mu B}{k_B T} \to 0}{}} 0 $, meaning that the thermal agitation is dominant on the magnetic field.
+    \item $ m \xrightarrow{\underset{\frac{\mu B}{k_B T} \to \infty}{}} 1 $, meaning that the magnetic field is dominant on the thermal agitation.
+\end{itemize}
+
+
 
 \newpage
 
@@ -136,31 +263,34 @@ the Boltzmann Entropy is actually a particular case of the Gibbs Entropy for equ
     \begin{equation}
         S_G = -k_B \sum_{i} p_i \ln{p_i}
     \end{equation}
-
-
-
 \end{tcolorbox}
 
 \newpage
 
 \section{The Canonical Ensamble}
 
-An ensamble of closed systems in thermal contact with a bath is called canonical.
+An ensamble of closed systems in thermal contact with a bath is called Canonical.
 This implies that the constrains of this ensamble are N, T and V, meaning that the
 energy can instead fluctuate around a mean value U.
 
-\subsection{Partition Function}
+\subsection{Canonical Partition Function}
+
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Canonical Partition Function]
+    \begin{equation}
+        Z = \sum e^{-\beta \epsilon_j}
+    \end{equation}
+
+    where $\epsilon_j$ is the energy of the j-th microstate.
+\end{tcolorbox}
 
 Maximizing the Gibbs entropy similiarly as done for the microcanonical ensamble, but with the constraint of fixed energy, one finds the partition function:
 
-\begin{equation}
-    \begin{aligned}
-         & S= -k_B\sum_{j}p_j\ln{p_j}-\lambda\left(\sum_{j}p_j-1\right)-\beta\left(\sum_{j}\epsilon_jp_j-U\right) \\
-         & \frac{dS}{dp_j}=0 \rightarrow p_j=e^{-\beta\epsilon_j-\lambda-1} \rightarrow                           \\
-         & \rightarrow 1=e^{-(1+\lambda)}\sum_{j}e^{-\beta\epsilon_j}                                             \\
-         & Z\equiv e^{1+\lambda}=\sum_{j}e^{-\beta\epsilon_j} \rightarrow p_j=\frac{e^{-\beta\epsilon_j}}{Z}
-    \end{aligned}
-\end{equation}
+\begin{align*}
+     & S= -k_B\sum_{j}p_j\ln{p_j}-\lambda\left(\sum_{j}p_j-1\right)-\beta\left(\sum_{j}\epsilon_jp_j-U\right) \\
+     & \frac{dS}{dp_j}=0 \Longrightarrow p_j=e^{-\beta\epsilon_j-\lambda-1} \Longrightarrow                   \\
+     & \Longrightarrow 1=e^{-(1+\lambda)}\sum_{j}e^{-\beta\epsilon_j}                                         \\
+     & Z\equiv e^{1+\lambda}=\sum_{j}e^{-\beta\epsilon_j} \Longrightarrow p_j=\frac{e^{-\beta\epsilon_j}}{Z}
+\end{align*}
 
 As expected, the probability of a microstate is no longer uniform, but depends on its energy.
 As a matter of fact, one can find the microcanonical probability if all the microstates have the same energy.
@@ -176,14 +306,10 @@ Therefore, the entropy can be rewritten in terms of the partition function Z:
 The physical content of the $\beta$ multiplier can be derived from computing
 an infinitesimal variation of the entropy:
 
-\begin{equation}
-    \left\{
-    \begin{aligned}
-         & \delta S= S(p_j+\delta p_j)-S(p_j) = -k_B\sum_{j}(\ln{(p_j+\delta p_j)}-\ln{p_j})=...=                                                        \\
-         & = -k_B\beta\delta U \rightarrow \beta=\frac{1}{k_B}\frac{\delta S}{\delta U}\simeq \frac{1}{k_B}\frac{\partial S}{\partial U}= \frac{1}{k_BT}
-    \end{aligned}
-    \right.
-\end{equation}
+\begin{align*}
+     & \delta S= S(p_j+\delta p_j)-S(p_j) = -k_B\sum_{j}(\ln{(p_j+\delta p_j)}-\ln{p_j})=...=                                                            \\
+     & = -k_B\beta\delta U \Longrightarrow \beta=\frac{1}{k_B}\frac{\delta S}{\delta U}\simeq \frac{1}{k_B}\frac{\partial S}{\partial U}= \frac{1}{k_BT}
+\end{align*}
 
 Or, in a quicker way, one can simply differentiate the entropy with respect to the energy:
 
@@ -194,18 +320,60 @@ Or, in a quicker way, one can simply differentiate the entropy with respect to t
 \subsection{Free Energy}
 From the expression of the entropy, abiding thermodinamical consistance, one can find the Helmholtz free energy F:
 
-\begin{equation}
-    F=U-TS=-k_BT\ln{Z}
-\end{equation}
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Helmholtz Free Energy]
+    \begin{equation}
+        F = U - TS = -k_BT \ln{Z}
+    \end{equation}
+\end{tcolorbox}
 
 Maximizing the entropy is hence equivalent to minimizing the free energy of Helmotz.
 
-As done for F, every thermodynamical quantity is obtainable from the partition function Z.
-Most of them are presented in the compendium of this section.
+\subsection{Thermodynamical Quantities from Z}
 
+Knowing F, one can derive all the thermodynamical quantities of the system, such as the internal energy U, the entropy S, the pressure P, the Gibbs free energy G and the enthalpy H, in terms of the partition function Z.
+
+\subsubsection{Entropy S}
+
+\begin{align*}
+     & S = -\left( \frac{\partial F}{\partial T} \right)_{N,V} = k_B \ln{Z} + k_B T \left( \frac{\partial \ln{Z}}{\partial T} \right)_{N,V}
+\end{align*}
+
+\subsubsection{Internal Energy U}
+
+\begin{align*}
+     & U= F+TS= -k_B T \ln{Z}-T\left( \frac{\partial F}{\partial T} \right)_{N,V}=                                 \\
+     & = -k_B T^2 \left( \frac{\partial \ln{Z}}{\partial T} \right)_{N,V}= -\frac{\partial}{\partial \beta} \ln{Z}
+\end{align*}
+
+\subsubsection{Pressure P}
+
+\begin{align*}
+    P=-\frac{\partial U}{\partial V}|_{T,N}=-\frac{\partial F}{\partial V}|_{T,N}=k_B T \frac{1}{Z}\frac{\partial Z}{\partial V}
+\end{align*}
+
+\newpage
 \subsection{Canonical Ensamble, Examples}
 
 \subsubsection{Two levels system}
+
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/u-canonical-2-levels.png}
+        \label{fig:image1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/cv-canonical-2-levels.png}
+        \label{fig:image2}
+    \end{minipage}
+    \caption{
+        Internal energy U and heat capacity C$_V$ for a two-level system.
+    }
+    \label{fig:spin-system}
+\end{figure}
 
 Given a system with two energy levels ($\epsilon_0=0$, $\epsilon_1=\epsilon$), the partition function is:
 
@@ -219,28 +387,71 @@ The average energy is:
     U=-\frac{\partial\ln{Z}}{\partial\beta}= \frac{\epsilon}{1+e^{\beta\epsilon}}
 \end{equation}
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{images/canonical-two-levels.png}
-    \caption{Energy levels of a two-level system.}
-    \label{fig:two-levels-system}
-\end{figure}
+which is physically consistent, since the energy differences are neglegible at hgh temperatures,
+so both energy levels are equally populated. Oppositely, as T goes to zero, the system tends to the ground state.
 
-
-while the heat capacity is:
+The heat capacity is given by:
 
 \begin{equation}
     C_V=k_B\left(\frac{\epsilon}{k_BT}\right)^2\frac{e^{\beta\epsilon}}{(1+e^{\beta\epsilon})^2}
 \end{equation}
 
-The peak of the heat capacity is at $T=\frac{\epsilon}{k_B}$, and represents the Schottky anomaly.
+At low temperature, the heat capacity is low, since the only way to increase
+U is make the system jump to the second level. Once this happens, the heat capacity increases significantly, reaching the so called Schottky anomaly.
+After this, the heat capacity decreases again, since the system is already in the excited state and thermally exciting the system will not affect the energy.
+
+
+\subsubsection{Quantum simple harmonic oscillator}
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/canonical-2-levels-cv.png}
-    \caption{Heat capacity of a two-level system.}
-    \label{fig:heat-capacity}
+    \includegraphics[width=0.5\textwidth]{images/u-soh.png}
+    \caption{
+        Internal energy U for a simple harmonic oscillator.
+    }
+    \label{fig:u-soh}
 \end{figure}
+
+Quantizing the simple harmonic oscillator
+\footnote{
+    The complete quantization of the simple harmonic oscillator can be found in
+    \href{https://cesaresabattini.github.io/Physics-Lecture-Notes/}{Quantum Mechanics Notes}.
+}
+, the energy levels are given by:
+
+\begin{equation}
+    \epsilon_n=\hbar\omega\left(n+\frac{1}{2}\right)
+\end{equation}
+
+So the partition function is:
+
+\begin{equation}
+    Z_Q=\sum e^{-\beta\hbar\omega\left(n+\frac{1}{2}\right)}=\frac{e^{-\frac{\beta\hbar\omega}{2}}}{1-e^{-\beta\hbar\omega}}=\frac{1}{2\sinh{\frac{\beta\hbar\omega}{2}}}
+\end{equation}
+
+The average energy is therefore obtainable:
+
+\begin{align*}
+    U=-\frac{\partial}{\partial \beta}\ln{Z_Q}=\frac{\hbar \omega}{2}\coth{\frac{\beta\hbar\omega}{2}}
+\end{align*}
+
+It's interesting calculating the classical partition function $Z_C$ and show
+it to be the limit for high temperatures of the quantum partition function:
+
+\begin{align*}
+    Z_C=\int_{-\infty}^\infty\int_{-\infty}^\infty \frac{dp dx}{2\pi \hbar} e^{-\beta\left(\frac{p^2}{2m}+\frac{1}{2}m\omega^2x^2\right)}=\frac{1}{\beta\hbar\omega}
+\end{align*}
+
+where the $\frac{1}{2\pi\hbar}$ factor is introduce for consistency with the quantum partition function.
+To solve the integral, one can use the gaussian integral formula.
+
+Now one can note $Z_C$ to be the limit of $Z_Q$ for high temperatures:
+
+\begin{align*}
+    Z_Q=\frac{e^{-\frac{\beta \hbar \omega}{2}}}{1-e^{-\beta\hbar\omega}}\xrightarrow{{T>>\hbar\omega}}\frac{1}{1-(1-\beta\hbar\omega+ o(\beta\hbar\omega))}=\frac{1}{\beta\hbar\omega}
+\end{align*}
+
+
 
 \newpage
 
@@ -298,11 +509,19 @@ This concept has important repercussions on the partition function of the system
 
 \subsubsection{Distinguishable particles}
 
-Given a set of N classical distinguishable particles, the partition function is:
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Distinguishable Particles Partition Function]
+    The partition function of N distinguishable particles is:
+    \begin{equation}
+        Z=Z_1^N
+    \end{equation}
+\end{tcolorbox}
 
-\begin{equation}
-    Z= \sum \frac{N!}{\prod_in_i!}e^{-\beta\sum n_i\epsilon_i}=Z_1^N
-\end{equation}
+\textbf{Proof:}
+Given a set of N classical distinguishable particles, the partition function is defined as:
+
+\begin{align*}
+    Z= \sum_{i} \frac{N!}{\prod_in_i!}e^{-\beta\sum n_i\epsilon_i}=Z_1^N
+\end{align*}
 
 where the sum is over all the possible configurations of particles. In the last equality, the multinomial coefficient is used.
 
@@ -312,36 +531,49 @@ The case of indistinguishable particles is hereby treated in the approximation o
 which directly implies that the product of the occupation numbers for each configuration is one.
 Moreover, since the particles are non indexable, the partition function is reduced to that of distinguishable particles, divided by N!:
 
-\begin{equation}
-    Z=\frac{Z_1^N}{N!}=\sum_{{n_s}}e^{-\beta\sum_{s}E_{\{n_s\}}}
-\end{equation}
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Indistinguishable Particles Partition Function]
+    The partition function of N indistinguishable particles is:
+    \begin{equation}
+        Z=\frac{Z_1^N}{N!}
+    \end{equation}
+\end{tcolorbox}
+\subsection{Monoatomic quantum ideal gas in a box}
 
-\subsection{Quantum ideal monoatomic gas in a box}
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Monoatomic Quantum Ideal Gas Z and F]
+    The partition function of a quantum ideal gas in a box, in the low density approximation, is:
+    \begin{equation}
+        Z=\frac{1}{\sqrt{2\pi N}}\left(\frac{g_s e n_Q}{n}\right)^N
+    \end{equation}
 
-In the low density approximation, it's easy to find the partition function of an ensamble of particles,
-knowing the single particle one.
+    where $n_Q$ is the number of quantum concentration and $g_s$ is the spin degeneracy of a particle.
+    The Helmotz free energy is:
+
+    \begin{equation}
+        F=-Nk_BT\ln{\frac{n_QV}{N}}-Nk_BT
+    \end{equation}
+\end{tcolorbox}
+
+\textbf{Proof:}
 In the model of a gas constrained in an infinite potential well, the single particle partition function is given by
 \footnote{
     The complete derivation of the energy for a quantum particle constrained in a box can be found in
     \href{https://cesaresabattini.github.io/Physics-Lecture-Notes/}{Quantum Mechanics Notes}.
 }
-\begin{equation}
-    \begin{aligned}
-         & Z=\sum e^{-\frac{-\pi^2\hbar^2}{2mL^2}(n_x^2+n_y^2+n_z^2)\beta}=  \\
-         & \sum e^{-\frac{\pi^2\hbar^2}{2mL^2k_bT}(n_x^2+n_y^2+n_z^2)}\equiv \\
-         & \equiv\sum e^{-\frac{\theta_t}{T}(n_x^2+n_y^2+n_z^2)}=            \\
-         & =\left(\sum e^{-\frac{\theta_tn_x^3}{T}}\right)^3
-    \end{aligned}
-\end{equation}
 
-Per $T>>\theta_t$, the sum is approximated by an integral:
+\begin{align*}
+     & Z=\sum e^{-\frac{-\pi^2\hbar^2}{2mL^2}(n_x^2+n_y^2+n_z^2)\beta}=  \\
+     & \sum e^{-\frac{\pi^2\hbar^2}{2mL^2k_bT}(n_x^2+n_y^2+n_z^2)}\equiv \\
+     & \equiv\sum e^{-\frac{\theta_t}{T}(n_x^2+n_y^2+n_z^2)}=            \\
+     & =\left(\sum e^{-\frac{\theta_tn_x^3}{T}}\right)^3
+\end{align*}
 
-\begin{equation}
-    \begin{aligned}
-         & Z \rightarrow \left(\int_{0}^{\infty} e^{-\frac{\theta_tn^2}{T}}dn\right)^3=                                                                    \\
-         & =\left(\frac{1}{2}\sqrt{\frac{\pi T}{\theta_t}}\right)^3= \left(\frac{mk_bT}{2\pi\hbar^2}\right)^{\frac{3}{2}}V= n_QV= \frac{V}{\lambda_{dB}^3}
-    \end{aligned}
-\end{equation}
+
+For $T>>\theta_t$, the sum is approximated by an integral:
+\begin{align*}
+     & Z \xrightarrow{T>>\theta_t} \left(\int_{0}^{\infty} e^{-\frac{\theta_tn^2}{T}}dn\right)^3=                                                      \\
+     & =\left(\frac{1}{2}\sqrt{\frac{\pi T}{\theta_t}}\right)^3= \left(\frac{mk_bT}{2\pi\hbar^2}\right)^{\frac{3}{2}}V= n_QV= \frac{V}{\lambda_{dB}^3}
+\end{align*}
+
 
 where $\lambda_{dB}$ is the De Broglie wavelength of the particle, so $n_Q$ is the number of quantum states density in the semiclassical limit.
 
@@ -354,17 +586,17 @@ where $\lambda_{dB}$ is the De Broglie wavelength of the particle, so $n_Q$ is t
 
 When N particles are considered, the partition function is:
 
-\begin{equation}
+\begin{align*}
     Z=\frac{Z_1^N}{N!}=\frac{(n_QV)^N}{N!}\simeq \frac{1}{\sqrt{2\pi N}}\left(\frac{g_sen_Q}{n}\right)^N
-\end{equation}
+\end{align*}
 
 where $g_s$ is the spin degeneracy of the particle.
 
 Now it's possible to find the expression for the free energy F:
 
-\begin{equation}
+\begin{align*}
     F=-k_BT\ln{Z}=-Nk_BT\ln{\frac{n_QV}{N}}-Nk_BT
-\end{equation}
+\end{align*}
 
 where the term in $ln(2\pi N)$ has been neglected in the limit of large N.
 
@@ -374,7 +606,7 @@ where the term in $ln(2\pi N)$ has been neglected in the limit of large N.
 Any property of the ideal gas can be derived from the partition function,
 simply using its definition and the canonical bridge equation, given by the Helmholtz free energy.
 
-\subsection{Perfect gas law}
+\subsubsection{Perfect gas law}
 
 From the expression of F, one can find the pressure of the gas:
 
@@ -384,9 +616,9 @@ From the expression of F, one can find the pressure of the gas:
 
 which can be rearranged to the well known perfect gas law:
 
-\begin{equation}
+\begin{align*}
     PV=nRT
-\end{equation}
+\end{align*}
 
 
 \subsubsection{Entropy of mixing}
@@ -394,32 +626,36 @@ which can be rearranged to the well known perfect gas law:
 A curious property of the ideal gas is the entropy of mixing, derivable from the partition function Z and
 leading to the Sackur-Tetrode equation:
 
-\begin{equation}
-    S=-Nk_b\left[\ln{\frac{n_QV}{N}}+\frac{5}{2}\right]
-\end{equation}
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Sackur-Tetrode Equation]
+    The entropy of an ideal gases is:
+    \begin{equation}
+        S=-Nk_b\left[\ln{\frac{n_QV}{N}}+\frac{5}{2}\right]
+    \end{equation}
+
+\end{tcolorbox}
 
 Here we can distinguish two cases:
 
 \begin{itemize}
     \item Two separated systems, composed by the same type of particle, have a null entropy variation when mixed.
 
-          \begin{equation}
-              \begin{aligned}
-                   & S_i=2Nk_b\left[\ln{\frac{n_QV}{N}}+\frac{5}{2}\right]   \\
-                   & S_f=2Nk_b\left[\ln{\frac{n_Q2V}{2N}}+\frac{5}{2}\right] \\
-                   & \Delta S=0
-              \end{aligned}
-          \end{equation}
+
+          \begin{align*}
+               & S_i=2Nk_b\left[\ln{\frac{n_QV}{N}}+\frac{5}{2}\right]   \\
+               & S_f=2Nk_b\left[\ln{\frac{n_Q2V}{2N}}+\frac{5}{2}\right] \\
+               & \Delta S=0
+          \end{align*}
+
 
     \item Two separated systems, composed by two types of particles, have a positive entropy variation when mixed.
 
-          \begin{equation}
-              \begin{aligned}
-                   & S_i=Nk_b\left[\ln{\frac{n_Q^AV}{N}}+\frac{5}{2}\right]+Nk_b\left[\ln{\frac{n_Q^BV}{N}}+\frac{5}{2}\right]    \\
-                   & S_f= Nk_b\left[\ln{\frac{2n_Q^AV}{N}}+\frac{5}{2}\right]+Nk_b\left[\ln{\frac{2n_Q^BV}{N}}+\frac{5}{2}\right] \\
-                   & \Delta S=2Nk_b\ln{2}
-              \end{aligned}
-          \end{equation}
+
+          \begin{align*}
+               & S_i=Nk_b\left[\ln{\frac{n_Q^AV}{N}}+\frac{5}{2}\right]+Nk_b\left[\ln{\frac{n_Q^BV}{N}}+\frac{5}{2}\right]    \\
+               & S_f= Nk_b\left[\ln{\frac{2n_Q^AV}{N}}+\frac{5}{2}\right]+Nk_b\left[\ln{\frac{2n_Q^BV}{N}}+\frac{5}{2}\right] \\
+               & \Delta S=2Nk_b\ln{2}
+          \end{align*}
+
 \end{itemize}
 
 This is no surprise, since the particles are indistinguishable, so the reversibility of the process is different in the two instances.
@@ -440,8 +676,6 @@ So, the partition function is given by:
     Z=\sum_{\left\{ n,l \right\}} e^{-\beta E_{n,l}}=\sum_{n=0}^\infty e^{-\beta\frac{\hbar^2\pi^2 \textbf{n}^2}{2mL^2}}\sum_{l=0}^{\infty}(2l+1)e^{-\beta\frac{\hbar^2 l(l+1)}{2I}}=Z_nZ_r
 \end{equation}
 
-
-
 \subsection{Energy equipartition theorem}
 
 \begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Energy Equipartition Theorem]
@@ -455,14 +689,12 @@ So, the partition function is given by:
 
 \textbf{Proof:}
 
-\begin{equation}
-    \begin{aligned}
-         & E({x_i})=\sum_{i}^{N}\epsilon_i(x_i)=\sum_{i}^{N}c_ix_i^2                                                                                                 \\
-         & U=<E>=<\sum_{i}^{N}\epsilon_i>=\sum_{i}^{N}<\epsilon_i>                                                                                                   \\
-         & <\epsilon_j>=\int \prod_{i}^{N}dx_i\epsilon_jP(\epsilon_j)= \frac{\int d\eta \epsilon_je^{-\beta \sum \epsilon_i}}{\int d\eta e^{-\beta \sum \epsilon_i}} \\
-         & = \frac{\int dx_j\epsilon_je^{-\beta \epsilon_j}}{\int dx_je^{-\beta \epsilon_j}}=\frac{1}{2}k_bT
-    \end{aligned}
-\end{equation}
+\begin{align*}
+     & E({x_i})=\sum_{i}^{N}\epsilon_i(x_i)=\sum_{i}^{N}c_ix_i^2                                                                                                 \\
+     & U=<E>=<\sum_{i}^{N}\epsilon_i>=\sum_{i}^{N}<\epsilon_i>                                                                                                   \\
+     & <\epsilon_j>=\int \prod_{i}^{N}dx_i\epsilon_jP(\epsilon_j)= \frac{\int d\eta \epsilon_je^{-\beta \sum \epsilon_i}}{\int d\eta e^{-\beta \sum \epsilon_i}} \\
+     & = \frac{\int dx_j\epsilon_je^{-\beta \epsilon_j}}{\int dx_je^{-\beta \epsilon_j}}=\frac{1}{2}k_bT
+\end{align*}
 
 \newpage
 
@@ -510,7 +742,7 @@ So, the partition function is given by:
 
 \section{The Grand Canonical Ensamble}
 
-An ensamble of open system in contact with an external bath is called grand canonical,
+An ensamble of open system in contact with an external bath is called Grand Canonical,
 so the energy and the number of particles can fluctuate around mean values.
 Therefore, the constrains are T, V, $\mu$, which is the chemical potential.
 
@@ -521,66 +753,169 @@ of the system composed by the ensamble and the bath, which is therefore canonica
 
 One, indeed, finds:
 
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Chemical Potential]
+    \begin{equation}
+        \frac{\partial}{\partial N_R}F_R|_{T,V}=\frac{\partial}{\partial N}F_S|_{T,V}\equiv \mu
+    \end{equation}
+\end{tcolorbox}
+
+
+Moreover, expanding the differential of the entropy, one finds:
+
 \begin{equation}
-    \frac{\partial}{\partial N_R}F_R|_{T,V}=\frac{\partial}{\partial N}F_S|_{T,V}\equiv \mu
+    dU=TdS-PdV+\mu dN
 \end{equation}
 
-Moreover, examining the differential of the entropy, one finds:
+which is nothing but the most general expression of variation of U in terms of the thermodynamical quantities.
 
-\begin{equation}
-    dS=\frac{dU}{T}+\frac{PdV}{T}-\frac{\mu dN}{T}
-\end{equation}
+This explicits the physical meaning of the chemical potential: it is the energy required to add a particle to the system,
+at constant entropy and volume.
 
-\subsubsection{Chemical potential for a monoatomic ideal gas}
+Or, equivalently the free energy required to add a particle to the system at constant temperature and volume.
+
+Or, again, equivalently, the Gibbs energy required to add a particle to the system at constant temperature and pressure.
+
+\subsubsection{Chemical potential for ideal gases}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{images/mu-monoatomic-ideal-gas.png}
-    \caption{Chemical potential as a function of temperature.}
+    \caption{Chemical potential for a monoatomic ideal gas, as a function of temperature.}
     \label{fig:chemical-potential}
 \end{figure}
 
-The chemical potential for an ideal gas can be derived from the partition function Z:
+The chemical potential for a monoatomic ideal gas can be derived from the Free energy F:
 
-\begin{equation}
-    \mu=\left( \frac{\partial F}{\partial N} \right)_{T,V}=k_BT\ln{\left( \frac{N}{n_QV} \right)}
-\end{equation}
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Chemical Potential for an Ideal Gas]
 
-\subsection{Gran Canonical Partition Function}
+    \begin{equation}
+        \mu=\left( \frac{\partial F}{\partial N} \right)_{T,V}=k_BT\ln{\left( \frac{N}{n_QV} \right)}
+    \end{equation}
+
+\end{tcolorbox}
+
+The chemical potential for a diatomic ideal gas is different, since there are 2 additional degrees of freedom (neglecting the vibrational one):
+
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Chemical Potential for a
+        Diatomic Ideal Gas]
+
+    \begin{equation}
+        \mu=k_BT\ln{\left( \frac{n}{n_QZ_r} \right)}
+    \end{equation}
+
+    where $Z_r$ is the rotational partition function, which is given by (if $T>>\theta_r$):
+
+    \begin{equation}
+        Z_r=\sum_{l=0}^{\infty}(2l+1)e^{-\beta\frac{\hbar^2 l(l+1)}{2I}}\simeq \frac{T}{\theta_r}
+    \end{equation}
+\end{tcolorbox}
+
+To understand the physical meaning of the trend of $\mu$ for a diatomic gas, one can rewrite it as:
+
+\begin{align*}
+    \mu=k_BT\ln{\left( \frac{P}{n_QZ_rk_BT} \right)}
+\end{align*}
+
+If the pressure of the gas increases, more energy is required to add a particle, keeping S and V constant.
+
+For high densities, this is no longer valid, since the quantum effects are no longer negligible.
+
+\subsection{Grand Canonical Partition Function}
 
 The process of derivation of the partition function for the grand canonical ensamble is analogous to the canonical one,
 meaning it goes through the maximization of the entropy of the system.
 
 One finds:
 
-\begin{equation}
-    \begin{aligned}
-        \Xi= \sum_{N=0}^{+\infty}Z(N)e^{\beta\mu N} \\
-    \end{aligned}
-\end{equation}
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Grand Canonical Partition Function]
+    \begin{equation}
+        \Xi= \sum_{N=0}^{+\infty}Z(N)e^{\beta\mu N}
+    \end{equation}
+\end{tcolorbox}
 
 \subsection{Grand Potential}
 
 Thanks to the expression of the grand canonical partition function, the
-entropy might be written as:
+entropy can be written as:
 
-\begin{equation}
+\begin{align*}
     S= k_bT\ln{\Xi}+\frac{U-\mu N}{T}
-\end{equation}
+\end{align*}
 
 which can be rearranged defining the Grand Potential $\Phi$:
 
-\begin{equation}
-    \Phi=k_bT\ln{\Xi}=\mu N-F
-\end{equation}
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Grand Potential]
+    \begin{equation}
+        \Phi=k_bT\ln{\Xi}=\mu N-F
+    \end{equation}
+\end{tcolorbox}
 
 from which any thermodinamical quantity is obtainable, as shown in the compendium.
 
 For example, the average number of particle is:
 
 \begin{equation}
-    \mathcal{N}=<N>=\frac{\sum_{N=0}^{+\infty} N Z(N)e^{\mu N}}{\Xi}= \frac{\partial}{\partial \mu}\Psi
+    \mathcal{N}=<N>=\frac{\sum_{N=0}^{+\infty} N Z(N)e^{\mu N}}{\Xi}= \frac{\partial}{\partial \mu}\Phi
 \end{equation}
+
+\newpage
+
+\subsection{Grand Canonical Ensamble, Excercises}
+
+\begin{tcolorbox}[colframe=orange!60, colback=gray!5, coltitle=black, title=\textbf{Kennett, 6.4}, fonttitle=\large\bfseries]
+
+    Consider a two-level system with energy levels 0 and $\epsilon$ populated by bosons (bosons
+    have norestrictions on how many particles can be in each energy level). Find the
+    average energy and occupation of the levels and calculate the heat capacity.
+
+\end{tcolorbox}
+
+\textbf{Solution:}
+
+To find the Grand Canonical partition function $\Xi$, one surely cannot use the semiclassical approximation
+of dilute gas; so there's not an immediate formulae to use.
+Therefore, one can proceed in the following way: study the partition function
+summing on the couples $(n_0, n_1)$, occupation numbers of the two levels, with the constrain
+of the total number of particles N, and then take the limit of the infinite number of particles:
+
+\begin{equation}
+    \begin{aligned}
+         & \Xi=\sum_{N=0}^{\infty}\sum_{j}Z(N)e^{\beta\mu N}=\sum_{\left\{ (n_1,n_2) \right\}} e^{-\beta(n_1\epsilon_1+n_2\epsilon_2)}e^{\beta\mu(n_1+n_2)}=                                     \\
+         & =\sum_{n_1=0}^{N}e^{-\beta n_1\epsilon_1}e^{\beta\mu n_1}\sum_{n_2=0}^{N-n_1}e^{-\beta n_2\epsilon_2}e^{\beta\mu n_2}=                                                                \\
+         & =\sum_{n_1=0}^{N}e^{-\beta n_1 (\epsilon_1-\mu)}\frac{1-e^{-\beta(\mu-\epsilon_2)(N+1)}}{1-e^{-\beta(\mu-\epsilon_2)}}=                                                               \\
+         & =\frac{1-e^{-\beta(\mu-\epsilon_2)(N+1)}}{1-e^{-\beta(\mu-\epsilon_2)}}\sum_{n_1=0}^{N}e^{-\beta n_1 (\epsilon_1-\mu)}=                                                               \\
+         & =\frac{1-e^{-\beta(\mu-\epsilon_2)(N+1)}}{1-e^{-\beta(\mu-\epsilon_2)}}\frac{1-e^{-\beta(\epsilon_1-\mu)(N+1)}}{1-e^{-\beta(\epsilon_1-\mu)}}\Longrightarrow_{N\Longrightarrow\infty} \\
+         & \Longrightarrow_{N\Longrightarrow\infty}=\frac{1}{1-e^{-\beta(\mu-\epsilon_2)}}\frac{1}{1-e^{-\beta(\epsilon_1-\mu)}}= \frac{1}{1-e^{-\beta(\mu-\epsilon)}}\frac{1}{1-e^{\beta\mu}}
+    \end{aligned}
+\end{equation}
+
+Now that $\Xi$ is found, one can find the average occupation of the levels from the great potential $\Phi$:
+
+\begin{equation}
+    \begin{aligned}
+         & \mathcal{N}= \frac{\partial \Phi}{\partial \mu}= \frac{\partial}{\partial \mu}\left(k_B T \ln{\Xi}\right)= \\
+         & \sum_{j=0}^{1}\frac{1}{1-e^{\beta(\epsilon_j-\mu)}}= \sum_{j=0}^{1} <n_j>
+    \end{aligned}
+\end{equation}
+
+The average energy U is defined as:
+
+\begin{equation}
+    \begin{aligned}
+         & U=\sum_{j=0}^{1} <n_j>\epsilon_j= \frac{\epsilon_0}{1-e^{\beta(\epsilon_0-\mu)}}+\frac{\epsilon_1}{1-e^{\beta(\epsilon_1-\mu)}}= \\
+         & =\frac{\epsilon}{e^{\beta(\epsilon-\mu)}-1}
+    \end{aligned}
+\end{equation}
+
+The heat capacity is hence given by:
+
+\begin{equation}
+    \begin{aligned}
+         & C_V=\frac{\partial U}{\partial T}= \frac{\partial U}{\partial \beta}\frac{\partial \beta}{\partial T}= \frac{\partial U}{\partial \beta}\frac{1}{k_B T^2}= \\
+         & =\frac{\epsilon (\epsilon-\mu)}{k_B T^2}\frac{e^{\beta(\epsilon-\mu)}}{(e^{\beta(\epsilon-\mu)}-1)^2}
+    \end{aligned}
+\end{equation}
+
 
 
 \newpage
@@ -637,64 +972,6 @@ For example, the average number of particle is:
     \end{center}
 
 \end{tcolorbox}
-\newpage
-
-
-\subsection{Grand Canonical Ensamble, Excercises}
-
-\begin{tcolorbox}[colframe=orange!60, colback=gray!5, coltitle=black, title=\textbf{Kennett, 6.4}, fonttitle=\large\bfseries]
-
-    Consider a two-level system with energy levels 0 and $\epsilon$ populated by bosons (bosons
-    have norestrictions on how many particles can be in each energy level). Find the
-    average energy and occupation of the levels and calculate the heat capacity.
-
-\end{tcolorbox}
-
-\textbf{Solution:}
-
-To find the Grand Canonical partition function $\Xi$, one surely cannot use the semiclassical approximation
-of dilute gas; so there's not an immediate formulae to use.
-Therefore, one can proceed in the following way: study the partition function
-summing on the couples $(n_0, n_1)$, occupation numbers of the two levels, with the constrain
-of the total number of particles N, and then take the limit of the infinite number of particles:
-
-\begin{equation}
-    \begin{aligned}
-         & \Xi=\sum_{N=0}^{\infty}\sum_{j}Z(N)e^{\beta\mu N}=\sum_{\left\{ (n_1,n_2) \right\}} e^{-\beta(n_1\epsilon_1+n_2\epsilon_2)}e^{\beta\mu(n_1+n_2)}=                             \\
-         & =\sum_{n_1=0}^{N}e^{-\beta n_1\epsilon_1}e^{\beta\mu n_1}\sum_{n_2=0}^{N-n_1}e^{-\beta n_2\epsilon_2}e^{\beta\mu n_2}=                                                        \\
-         & =\sum_{n_1=0}^{N}e^{-\beta n_1 (\epsilon_1-\mu)}\frac{1-e^{-\beta(\mu-\epsilon_2)(N+1)}}{1-e^{-\beta(\mu-\epsilon_2)}}=                                                       \\
-         & =\frac{1-e^{-\beta(\mu-\epsilon_2)(N+1)}}{1-e^{-\beta(\mu-\epsilon_2)}}\sum_{n_1=0}^{N}e^{-\beta n_1 (\epsilon_1-\mu)}=                                                       \\
-         & =\frac{1-e^{-\beta(\mu-\epsilon_2)(N+1)}}{1-e^{-\beta(\mu-\epsilon_2)}}\frac{1-e^{-\beta(\epsilon_1-\mu)(N+1)}}{1-e^{-\beta(\epsilon_1-\mu)}}\rightarrow_{N\rightarrow\infty} \\
-         & \rightarrow_{N\rightarrow\infty}=\frac{1}{1-e^{-\beta(\mu-\epsilon_2)}}\frac{1}{1-e^{-\beta(\epsilon_1-\mu)}}= \frac{1}{1-e^{-\beta(\mu-\epsilon)}}\frac{1}{1-e^{\beta\mu}}
-    \end{aligned}
-\end{equation}
-
-Now that $\Xi$ is found, one can find the average occupation of the levels from the great potential $\Phi$:
-
-\begin{equation}
-    \begin{aligned}
-         & \mathcal{N}= \frac{\partial \Phi}{\partial \mu}= \frac{\partial}{\partial \mu}\left(k_B T \ln{\Xi}\right)= \\
-         & \sum_{j=0}^{1}\frac{1}{1-e^{\beta(\epsilon_j-\mu)}}= \sum_{j=0}^{1} <n_j>
-    \end{aligned}
-\end{equation}
-
-The average energy U is defined as:
-
-\begin{equation}
-    \begin{aligned}
-         & U=\sum_{j=0}^{1} <n_j>\epsilon_j= \frac{\epsilon_0}{1-e^{\beta(\epsilon_0-\mu)}}+\frac{\epsilon_1}{1-e^{\beta(\epsilon_1-\mu)}}= \\
-         & =\frac{\epsilon}{e^{\beta(\epsilon-\mu)}-1}
-    \end{aligned}
-\end{equation}
-
-The heat capacity is hence given by:
-
-\begin{equation}
-    \begin{aligned}
-         & C_V=\frac{\partial U}{\partial T}= \frac{\partial U}{\partial \beta}\frac{\partial \beta}{\partial T}= \frac{\partial U}{\partial \beta}\frac{1}{k_B T^2}= \\
-         & =\frac{\epsilon (\epsilon-\mu)}{k_B T^2}\frac{e^{\beta(\epsilon-\mu)}}{(e^{\beta(\epsilon-\mu)}-1)^2}
-    \end{aligned}
-\end{equation}
 
 \newpage
 
@@ -835,7 +1112,7 @@ Therefore, one can directly find the density of states:
     \textbf{Thermal Average}
 
     \begin{equation}
-        <y(E)>=\frac{1}{N}\sum_{s}y(\epsilon_s)<n_s>\rightarrow \frac{1}{N}\int_0^{+\infty}g(\epsilon)y(\epsilon)f(\epsilon)d\epsilon
+        <y(E)>=\frac{1}{N}\sum_{s}y(\epsilon_s)<n_s>\Longrightarrow \frac{1}{N}\int_0^{+\infty}g(\epsilon)y(\epsilon)f(\epsilon)d\epsilon
     \end{equation}
 \end{tcolorbox}
 \newpage
@@ -876,10 +1153,10 @@ Using the termal average for the number of particle, one finds:
 
 \begin{equation}
     \begin{aligned}
-         & \mathcal{N}=\frac{\partial\Psi}{\partial \mu}=\sum_s <n>_s\rightarrow^{n\rightarrow\infty} \int_{0}^{\infty} d\epsilon g(\epsilon)f(\epsilon)= \\
-         & =\int_{0}^{\mu} d\epsilon g(\epsilon)=\frac{g_sV}{4\pi^2}\left(\frac{2m}{\hbar^2}\right)^{\frac{3}{2}}\int_{0}^{\mu}\sqrt{\epsilon}d\epsilon=  \\
-         & = \frac{g_sV}{6\pi^2}\left(\frac{2m\mu}{\hbar^2}\right)^{\frac{3}{2}}\rightarrow                                                               \\                                                 \\
-         & \rightarrow \mu(T=0)=\frac{\hbar^2}{2m}\left(\frac{6\pi^2n}{g_s}\right)^{\frac{2}{3}}\equiv \epsilon_f
+         & \mathcal{N}=\frac{\partial\Psi}{\partial \mu}=\sum_s <n>_s\Longrightarrow^{n\Longrightarrow\infty} \int_{0}^{\infty} d\epsilon g(\epsilon)f(\epsilon)= \\
+         & =\int_{0}^{\mu} d\epsilon g(\epsilon)=\frac{g_sV}{4\pi^2}\left(\frac{2m}{\hbar^2}\right)^{\frac{3}{2}}\int_{0}^{\mu}\sqrt{\epsilon}d\epsilon=          \\
+         & = \frac{g_sV}{6\pi^2}\left(\frac{2m\mu}{\hbar^2}\right)^{\frac{3}{2}}\Longrightarrow                                                                   \\                                                 \\
+         & \Longrightarrow \mu(T=0)=\frac{\hbar^2}{2m}\left(\frac{6\pi^2n}{g_s}\right)^{\frac{2}{3}}\equiv \epsilon_f
     \end{aligned}
 \end{equation}
 
@@ -1154,8 +1431,8 @@ So the density of states must be corrected, including the ground state:
 
 \begin{equation}
     \begin{aligned}
-         & N=<N_0>+g_s V \left(\frac{mk_BT}{2\pi \hbar^2}\right)^{\frac{3}{2}}\zeta\left(\frac{3}{2}\right) \rightarrow \\
-         & \rightarrow \frac{<N_0>}{N}=1-\left(\frac{T}{T_0}\right)^{\frac{3}{2}}
+         & N=<N_0>+g_s V \left(\frac{mk_BT}{2\pi \hbar^2}\right)^{\frac{3}{2}}\zeta\left(\frac{3}{2}\right) \Longrightarrow \\
+         & \Longrightarrow \frac{<N_0>}{N}=1-\left(\frac{T}{T_0}\right)^{\frac{3}{2}}
     \end{aligned}
 \end{equation}
 
