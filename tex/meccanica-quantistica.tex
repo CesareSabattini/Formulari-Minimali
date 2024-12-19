@@ -4,6 +4,17 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+
+\hypersetup{
+    colorlinks=true,      
+    linkcolor=black,        
+    citecolor=blue,        
+    urlcolor=blue,         
+    pdfborder={0 0 0},     
+}
 
 \title{Meccanica Quantistica}
 \author{Cesare Sabattini Manginella}
@@ -12,156 +23,79 @@
 \begin{document}
 
 \maketitle
+
+\tableofcontents
+
 \section{Introduzione}
 ATTENZIONE: formulario ancora in fase di sviluppo. Alcune informazioni potrebbero essere incomplete o errate.
+Inoltre, è in corso la riscrittura in inglese.
 
 \section{Sviluppo del formalismo}
 
 \subsection{Principio di Sovrapposizione}
-\subsection{vettori bra e ket}
-Data una varietà infinito-dimensionale $V$ su un campo $\mathbb{C}$, un \emph{ket} $<A|$ è un elemento di $V$, mentre un \emph{bra} $|A>$ è un funzionale lineare su $V$.
-Tale terminologia è intuitivamente derivante dal fatto che il prodotto scalare è il più generale funzionale lineare definito su uno spazio di Hilbert.
-Tale affermazione rappresenta una semplificazione dell'enunciato del Teorema di Rappresentazione di Fisher-Reisz, tale per cui, dato uno spazio di Hilbert H su $\mathcal{C}$:
+\subsection{Bra an Ket}
 
-\begin{equation}
-    \forall \phi \in H^* \exists x \in H : \forall y \in H \phi(x)=<x,y>
-\end{equation}
+Given an infinite dimensional curvature-less and tortion-less manifold, one defines a ket $<A|$ as an element of $V$, while a bra $|A>$ is a linear functional on $V$.
+The notation embodies the theorem:
 
-In effetti la biunivocità di tale corrispondenza permette la rappresentazione covariante-controvariante dello stesso vettore.
-Nell'ambito della meccanica quantistica, si attribuisce la rappresentazione della varietà generata da un ket ad uno stato, che, per il Principio di Sovrapposizione,
-risulta combinazione lineare di vettori della base ortonormale che origina H, spazio delle configurazioni (stati) del sistema quantistico.
-\footnote[2]{
-    Il ket nullo non è associabile a nessuno stato (? o a tutti).
-}
-Non vi è motivo di discutere la numerabilità dell'insieme di indici non nulli della combinazione, per il teorema di ...
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Fisher Reisz Representation Theorem]
+    Being  $H$ over $\mathcal{C}$,
 
-La contrazione degli indici covariante-controvariante del prodotto di bra e l'immaginario coniugato del ket (semplicemente un prodotto interno tra due elementi A e B di H),
-è tale da originare un numero complesso.
-Si considerano nel seguito prodotti scalari hermitiani, cioè tali che:
+    \begin{equation}
+        \forall \phi \in H^* \exists x \in H : \forall y \in H \phi(x)=<x,y>
+    \end{equation}
+\end{tcolorbox}
 
-\begin{equation}
-    <A|B> = \overline{<B|A>}
-\end{equation}
+meaning that the biunivocal correspondence between a ket and a bra allows for the covariant-contravariant representation of the same vector.
+In quantum mechanics, as it'll be shown in the following, the ket is associated to a state, while the bra is associated to the dual state, or the complex conjugate of the state:
+this implies, due to the linearity of the Hilbert space, that the most general state can be expressed as a linear combination of the basis vectors of the Hilbert space, meaning
+the ket that diagonalize a certain operator.
 
-\subsection{Spazi Operatoriali}
+\subsection{Operatorial spaces}
 
-Si definisce "operatore" un endomorfismo da uno spazio lineare in sè stesso.
-Estendendo un'algebra associativa non commutativa su insiemi di operatori, sono definibili spazi operatoriali.
+Given a linear space, an operator is defined as an endomorphism on the space itself.
+Extending a non-commutative associative algebra on sets of operators, operatorial spaces can be defined.
 
-Ragionando in termini di indici covarianti e controvarianti, appare logico che il prodotto di un ket per un bra origini un operatore lineare, operante su bra e su ket.
-Secondo tale formalismo, ad un operaotre lineare è fisicamente associata una variabile dinamica, istantaneamente.
-Ecco dunque palesato un' altra differenza tra fisica classica e quantistica: la non commutatività degli operatori, ossia delle misure delle variabili dinamiche.
+Operators in quantum mechanics represent dynamical variables: if they are self-adjoint, they represent observables.
 
+Thinking in terms of covariant and contravariant indices, it appears logical that the product of a ket by a bra originates an observable, acting on bras and kets:
+this is fundamental to understand the possibility to diagonalize an Hilbert space in terms of the eigenstates of a set of operators.
 
-\subsubsection{Operatore aggiunto}
-Operatore tale per cui:
+Since, in general, operators do not commute, physical measurements can permanently alter the state of the system, as the system collapses in the eigenstate of the measured operator.
 
-\begin{equation}
-    <A|\overline{\alpha}|B>= \overline{<B|\alpha|A>}
-\end{equation}
+\section{Observables}
 
-Dai corsi precedenti sono note la definizione rigorsosa di tale operatore e le sue proprietà.
-$\alpha$ si dice autoaggiunto o reale se
-\begin{equation}
-    \alpha=\overline{\alpha}
-\end{equation}
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Definition]
+    An observable $\xi$ is a self-adjoint linear operator on a Hilbert space, whose eigenstates form a complete system, meaning that:
 
-TEOREMA:
+    \begin{equation}
+        \text{$|P\rangle$ = $\sum_{0}^{v} <P|\xi_i>|\xi_i> + \int_{0}^{v} <P|\xi'>|\xi'>d\xi'$  $\forall |P\rangle \in H$}
+    \end{equation}
+\end{tcolorbox}
 
+The request of self-adjointness is necessary to ensure that the eigenvalues of the operator are real, meaning they do represent a unique physical quantity.
+Indeed, their complexity would imply the possibility of multiple measurements, each potentially perturbing the following one.
 
-\begin{equation}
-    \forall \psi \in \mathcal{L}(H) : \psi^m <P|=0 , \psi <P|=0
-\end{equation}
+Therefore, if the system is in an eigenstate of an observable, the outcome of a measurement of that observable will be the eigenvalue associated to that eigenstate.
 
-Intuitivamente, ciò può essere desunto dalla convergenza in norma della serie operatoriale:
-la convergenza in norma implica la convergenza forte all'operatore nullo. Avendo a che fare con un m $\in N$, e trattando
-operatori lineari su un dominio ovunque denso e semplicemente connesso, la norma del ket esito dell'applicazione è minorabile
-con il prodotto della norma dell'operatore per quella del ket. Non avendo a che fare con serie infinite, non è plausibile che la produttoria
-di operatori di modulo diverso da zero m volte sia pari a 0. Dunque $\psi$ deve essere necessariamente l'operatore nullo.
+Moreover, if an operator is an observable, the Hilbert space can be diagonalized in terms of the eigenstates of the operator, and a general state,
+for the principle of superposition, can be expressed as a linear combination of the eigenstates of the operator.
 
-\subsubsection{Autovalori e autovettori}
+\subsection{Functions of observables}
 
-$|\xi>$ è autoket di $\xi$ relativo all'autovalore $\xi'$ \footnote{
-    ma che è sta robaccia
-} se:
+\begin{tcolorbox}[colframe=gray!90, colback=blue!5, coltitle=white, title= \textbf{Definition}: Function of Observables, fonttitle=\large]
+    A function of an observable $\xi$ is defined as:
+    \begin{equation}
+        \text{$(f(\xi): L(H) \rightarrow L(H))$ : $f(\xi)|\xi'>= f(\xi')|\xi'>$ , $\forall |\xi'>$}
+    \end{equation}
+\end{tcolorbox}
 
-\begin{equation}
-    \alpha |P>= a |P>
-\end{equation}
+\subsection{Physical interpretation of observables}
 
-Analogamente si definiscono autobra.
+The average value of an observable $\xi$ on a system in a state $|x>$ is expected to be equal to $<x|\xi|x>$.
+Since an observable form a complete system, and thestate can be expressed as a superposition of the eigenstates of the observable,
+this a
 
-Segue che, riferendosi ad operatori reali:
-\begin{itemize}
-    \item gli autovalori sono reali.
-    \item gli autovalori associati agli autoket sono gli stessi associati agli autobra.
-    \item l'immaginario coniugato di un autoket è un autobra riferito allo stesso autovalore, e viceversa.
-\end{itemize}
-
-Nell'ambito del formalismo della meccanica quantistica un autoket è detto autostato del sistema rispetto alla variabile dinamica $\alpha$, operatore.
-Non riporterò di seguito ulteriori proprietà relative ad autovalori ed autovettori, in quanto già note dai corsi precedenti.
-
-\section{Osservabili}
-Se il sistema dinamico si trova in un autostato rispetto alla variabile dinamica $\xi$, allora una misura di tale variabile darà come esito
-$\xi'$. Viceversa se ogni misura riporta come esito $\xi'$, allora il sistema si trova in un autostato rispetto a $\xi$.
-Importante è osservare che $\xi'$, essendo reale, risulta compatibile con la necessità di effettuare un'unica misura per rilevarlo:
-se fossero multiple, ognuna perturberebbe le successive.
-Ovviamente $\xi'$ si otterrà per ogni sovrapposizione di autostati ad esso relativi.
-Per entrare nell'ottica della teoria, possiamo aspettarci cosa possa accadere nel caso di uno stato esito di sovrapposizione di autostati relativi ad autovalori differenti,
-dunque ortogonali (da qui la quantizzazione dell'esito della misura (terminologia discutibile?)).
-Dunque l'esito di una successiva misura sarà uguale a quello della precedente, essendo il sistema collassato nell'autostato relativo allo scalare misurato nella misura 1.
-Dunque l'insieme degli autovalori di un operatore lineare non è che l'insieme dei risultati ottenibili attraverso una misura.
-Dato che uno stato appartiene ad un insieme completo generato dalla base di autostati, si definisce osservabile una variabile dinamica i cui autostati formano un sistema completo.
-Nella pratica un osservabile è una quantità misurabile, in quanto solo i sistemi completi rendono misure.
-Dunque l'insieme delle misure possibili di una variabile dinamica è l'insieme degli autovalori associati al corrispettivo operatore lineare.
-
-La completezza di uno spazo generato da un sistema di autoket è tale che ogni $|P>$ possa essere espresso come
-
-\begin{equation}
-    |P>= \int{|\xi'c>d\xi'}+ \sum_{r}|\xi'>
-\end{equation}
-Per via del fatto che la cardinalità di base è non necessariamente numerabile.
-Ogni operatore soddisfacente un'equazione algebrica è un osservabile.
-
-\subsection{Funzioni di Osservabili}
-
-Si definisce funzione di osservabili:
-\begin{equation}
-    f(\xi): L(H) \rightarrow L(H) : f(\xi)|\xi'>= f(\xi')|\xi'>, \forall |\xi'> autostato \quad di \quad  \xi
-\end{equation}
-
-In questo modo si definisce una funzione di osservabile f, sotto la sola ipotesi di inclusione degli autovalori nel dominio della
-funzione reale, tale che gli autovalori di $f(\xi)$ siano uguali all'immagine degli autovalori di $\xi$ tramite f, con f iniettiva.
-
-\subsubsection{Inverso di un osservabile}
-L'inverso di un osservabile $\xi$ esiste se e solo se 0 non è autovalore di $\xi$, ed è definito da:
-
-\begin{equation}
-    \xi^{-1} |\xi'>= \xi'^{-1}|\xi'>
-\end{equation}
-
-ovvero $\xi$ tale che:
-
-\begin{equation}
-    \xi\xi^{-1}=\mathcal{I}
-\end{equation}
-
-\subsubsection{Radice di un osservabile}
-
-Si definisce radice di un osservabile un operatore tale che:
-
-\begin{equation}
-    \sqrt{\xi} |\xi'>= \pm \sqrt{\xi'} |\xi'>
-\end{equation}
-
-ovvero tale che
-
-\begin{equation}
-    \sqrt{\xi}\sqrt{\xi}=\xi
-\end{equation}
-
-
-\subsection{Interpretazione Fisica}
 Si ipotizza che il valor medio delle misure di un osservabile $\xi$ su un sistema dinamico in uno stato $/x>$
 assuma un valore medio pari a $<x|\xi|x>$.
 Tale interpretazione fisica è formalizzata nell'ambito della rappresentazione degli stati di un sistema quantistico,
@@ -734,7 +668,9 @@ Analoghe equazioni si ottengono per le altre coordinate.
 nella rappresentazione di Schrödinger, con diagonalizzazione rispetto all'impulso, si ottiene la ben nota equazione di De Broglie.
 E' utile notare che le onde piane sono anche autostati di H. Dunque, l'impulso e l'Hamiltoniano commutano. Pertanto l'impulso è una costante del moto di una particella libera.
 
-\section{Applicazioni elementari}
+\section{1D Systems}
+
+
 Considerando uno stato stazionario, esso evolve nel tempo a meno di un fattore di fase, essendo l'operatore di traslazione temporale dato da:
 
 \begin{equation}
@@ -1846,12 +1782,12 @@ E' possibile esprimere le alpha in termini di matrici di Pauli e matrici $rho$ a
 
 \begin{equation}
     \alpha_i=\begin{pmatrix}
-        0 & \sigma_i \\
+        0        & \sigma_i \\
         \sigma_i & 0
     \end{pmatrix}
     \quad
     \beta=\begin{pmatrix}
-        I & 0 \\
+        I & 0  \\
         0 & -I
     \end{pmatrix}
 \end{equation}
