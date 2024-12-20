@@ -65,7 +65,7 @@ Since, in general, operators do not commute, physical measurements can permanent
 
 \section{Observables}
 
-\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Definition]
+\begin{tcolorbox}[colframe=gray!90, colback=blue!5, coltitle=white, title=\textbf{Definition: Observable}, fonttitle=\large\bfseries]
     An observable $\xi$ is a self-adjoint linear operator on a Hilbert space, whose eigenstates form a complete system, meaning that:
 
     \begin{equation}
@@ -81,6 +81,20 @@ Therefore, if the system is in an eigenstate of an observable, the outcome of a 
 Moreover, if an operator is an observable, the Hilbert space can be diagonalized in terms of the eigenstates of the operator, and a general state,
 for the principle of superposition, can be expressed as a linear combination of the eigenstates of the operator.
 
+The non commutative algebra of the operatorial space leads to the definition of the commutator:
+
+\begin{tcolorbox}[colframe=gray!90, colback=blue!5, coltitle=white, sharp corners, title=\textbf{Definition: Commutator}, fonttitle=\large\bfseries]
+    Given an operatorial space, the commutator of two observables $\xi$ and $\eta$ is defined as:
+
+    \begin{equation}
+        [\xi,\eta]=\xi\eta-\eta\xi
+    \end{equation}
+\end{tcolorbox}
+
+
+Physically, the commutator gives the possibility to measure two dynamical variables simultaneously.
+Matematically, it implies the possibility to diagonalize simoltaneously the two observables.
+
 \subsection{Functions of observables}
 
 \begin{tcolorbox}[colframe=gray!90, colback=blue!5, coltitle=white, title= \textbf{Definition}: Function of Observables, fonttitle=\large]
@@ -93,160 +107,111 @@ for the principle of superposition, can be expressed as a linear combination of 
 \subsection{Physical interpretation of observables}
 
 The average value of an observable $\xi$ on a system in a state $|x>$ is expected to be equal to $<x|\xi|x>$.
-Since an observable form a complete system, and thestate can be expressed as a superposition of the eigenstates of the observable,
-this a
 
-Si ipotizza che il valor medio delle misure di un osservabile $\xi$ su un sistema dinamico in uno stato $/x>$
-assuma un valore medio pari a $<x|\xi|x>$.
-Tale interpretazione fisica è formalizzata nell'ambito della rappresentazione degli stati di un sistema quantistico,
-su basi ortonormali di cardinalità finita o infinita, numerabili o meno, tale per cui risulta, come analizzato nel seguito:
-
-\begin{equation}
-    \left\{
-    \begin{aligned}
-         & |x>= \sum_{0}^{v} <x|\xi_i>|\xi_i>+ \int_{0}^{v} <x|\xi'>|\xi'>d\xi' \\
-         & <\xi' | \xi''>= \delta(\xi'-\xi'')
-    \end{aligned}
-    \right.
-\end{equation}
-
-ove $\delta$ è la delta di Dirac, e v è la cardinalità della base ortonormale numerabile. $\xi_i$ sono gli autovalori dell'osservabile $\xi$, rispetto a quali si costruisce la base degli autostati.
-Si sottointende la complementarietà dello spettro continuo rispetto al numerabile nell'ambito della rappresentazione dello spazio degli stati.
+Since an observable form a complete system, and the state can be expressed as a superposition of the orthonormal eigenstates of the observable,
+this assumption is perfectly embodied in the formalism, as shown in the following.
 
 
-\subsection{Commutazione di osservabili}
-Gli operatori non sono in generale commutativi.
-Si definisce pertanto il commutatore di due osservabili $\xi$ e $\eta$ l'operatore:
+\section{Representations}
 
-\begin{equation}
-    [\xi,\eta]=\xi\eta-\eta\xi
-\end{equation}
+Representing a quantity is equivalent to the search of the coordinates on a base of the Hilbert space in which it exists.
+The simplest base to operate on, in the context of an observable $\xi$, is given by its normalized eigenstates:
 
-fisicamente, il commutatore ritorna la possibilità di misurare contemporaneamente due variabili dinamiche.
-Matematicamente, ciò equivale ad affermare che i due osservabili formano lo stesso sistema completo di autostati.
-Se due osservabili commutano, allora esiste una base di autostati comuni ad entrambi.
-Vale anche l'inverso del teorema.
-Dunque, data una funzione di osservabili che commutano, la densità di misurare un set di autovalori è data dalla produttoria:
+\begin{tcolorbox}[colframe=gray!90, colback=blue!5, coltitle=white, title=\textbf{Definition: Orthonormalized Eigenstates}, fonttitle=\large\bfseries]
 
-\begin{equation}
-    P_{a,b,...,n}=<x|\delta_{\xi,a}\delta_{\eta,b}...\delta_{\nu,n}|x>
-\end{equation}
+    A spectrum of an observable $\xi$ is said to be orthonormalized if:
 
-Solo se le variabili commutano talee probabilità ha un senso fisico.
+    \begin{equation}
+        <\xi'|\xi''> = \delta(\xi'-\xi'') + \delta_{\xi',\xi''} \quad \forall \xi',\xi'' \text{ eigenstates of $\xi$}
+    \end{equation}
 
+    where $\delta(\xi'-\xi'')$ is the Dirac delta function, and $\delta_{\xi',\xi''}$ is the Kronecker delta function.
 
-\section{Rappresentazioni}
-Rappresentare una grandezza equivale alla ricerca delle coordinate su una data base dello spazio di Hilbert in cui essa esiste.
-La più semplice delle basi su cui operare, nell'ambito di un osservabile $\xi$, è data dai sui autostati, normalizzati.
-La condizione di normalizzazione, nel più generale dei casi, equivalente alla composizione di uno spettro continuo con uno discreto, è data da:
+\end{tcolorbox}
 
-\begin{equation}
-    <\xi'|\xi''> = \delta(\xi'-\xi'') + \delta_{\xi',\xi''}
-\end{equation}
+\subsection{Ket and Bra representation}
 
-ove $\delta$ è da intendere come un funzionale astratto che restituisce 1 se i due argomenti sono uguali, 0 altrimenti.
-Nel caso di uno spettro continuo, la delta di Dirac è da intendere come un funzionale tale che:
+For the superposition principle, the most general state of a quantum system can be expressed as a linear combination of the eigenstates of an observable $\xi$.
 
-\begin{equation}
-    \int_{0}^{v} \delta(\xi'-\xi'')d\xi' = 1
-\end{equation}
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Ket representation]
+    \begin{equation}
+        |P>= \sum_{0}^{v} <P|\xi_i>|\xi_i>+ \int <P|\xi'>|\xi'>d\xi'
+    \end{equation}
+\end{tcolorbox}
 
-dunque, il simbolo $\delta$ nel caso di uno spettro continuo, rappresenta una generalizzazione della delta di Kronecker per uno spettro discreto.
-Data tale assunzione, si possono definire le seguenti rappresentazioni.
-Generalizzando tale concetto a varietà di dimensionalità superiore, corrispondenti cioè a spazi di Hilbert generati da prodotto dialico
-di autovettori di autovettori corrispondenti ad un set di n osservabili commutativi, si può scrivere la condizione di ortogonalità come:
+Specularly, one can find the corresponding bra representation.
 
-\begin{equation}
-    <\xi_1,\xi_2,...,\xi_n|\xi'_1,\xi'_2,...,\xi'_n> = \delta(\xi_1-\xi'_1)\delta(\xi_2-\xi'_2)...\delta(\xi_n-\xi'_n)
-\end{equation}
+Therefore, the scalar product assumes the form:
 
-\subsection{Rappresentazione di Bra e Ket}
-Bra e Ket rappresentano degli stati di un sistema quantistico, dunque, per il principio di sovrapposizione,
-rispetto ad una base ortonormale di H, di autovettori relativi ad un osservabile $\xi$, sono rappresentabili come
-una generalizzazione a dimensione potenzialmente infinita dei componenti della base.
-Nel caso di un ket, si ha:
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Scalar product]
+    \begin{equation}
+        <Q|P>= \sum_{0}^{v} <Q|\xi_i><\xi_i|P>+ \int <Q|\xi'><\xi'|P>d\xi'
+    \end{equation}
+\end{tcolorbox}
 
-\begin{equation}
-    |P>= \sum_{0}^{v} <P|\xi_i>|\xi_i>+ \int <P|\xi'>|\xi'>d\xi'
-\end{equation}
+thanks to the property of orthonormalization of the eigenstates of the observable $\xi$.
 
-dove si sottointende il dominio di integrazione sulla componente continua dello spettro.
-Data la linearità dell'espressione e del prodotto scalare, si può scrivere:
+\subsection{Representation of an observable}
 
-\begin{equation}
-    <Q|P>= \sum_{0}^{v} <Q|\xi_i><\xi_i|P>+ \int <Q|\xi'><\xi'|P>d\xi'
-\end{equation}
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Observable Representation]
+    Given an Hilbert space diagonalized with respect to an observable $\xi$, a generic observable $\chi$ can be represented as:
 
+    \begin{equation}
+        \begin{aligned}
+             & \chi= \sum_{i,j} <\xi_i|\chi|\xi_j>|\xi_i><\xi_j|+ \int\int <\xi'|\chi|\xi''>|\xi'><\xi''| d\xi'd\xi'' + \\
+             & + \sum_i\int <\xi_i|\chi|\xi'>|\xi_i><\xi'|d\xi'
+        \end{aligned}
+    \end{equation}
 
-\subsection{Rappresentazione di un osservabile}
-Il caso di rappresentazione di un osservabile introduce un indice di variabilità tensoriale pari a 2, in quanto si ha a che fare con un operatore lineare, operante su un ket e su un bra.
-Alla luce di ciò, si può scrivere:
+\end{tcolorbox}
+
+It follows that the observable in respect to which the space is diagonalized, can be represented as a generalized diagonal matrix:
 
 \begin{equation}
     \xi = \sum_{0}^{v} \xi_i|\xi_i><\xi_i|+ \int \xi'|\xi'><\xi'|d\xi'
 \end{equation}
 
-Il fatto che l'integrale sia esteso solamente agli elementi diagonali di matrice è naturalmente determinato dalla diagonalizzazione
-dello spazio rispetto all'osservabile $\xi$, ossia l'introduzione degli autostati di $\xi$ come base ortonormale di H, ossia tali che:
+\subsection{Probability of measurement}
 
-\begin{equation}
-    <\xi' | \xi | \xi''>= \xi' \delta(\xi'-\xi'')
-\end{equation}
+To find the probabilty of a measurement of an observable, one can diagonalize the Hilbert space in respect to that observable,
+and then square the module of the scalar product between the normalized state and the eigenstate of the observable referred to the specific eigenvalue.
+Many examples will be shown in the following.
 
-definendo così la generalizzazione di una matrice diagonale nel caso di uno spettro continuo.
+An immediate consequence is that the mean value of a measurement of an observable is given by:
 
-\subsection{Rappresentazione generica}
-
-Nel caso di uno spazio di Hilbert generato dagli autostati di n osservabili commutative, definisco la rappresentazione per
-un tensore di rango n $\omega$, dato dalla produttoria dialica degli osservabili rappresentati diagonalmente, come:
-
-\begin{equation}
-    <\xi_1,\xi_2,...,\xi_n|\omega|\xi'_1,\xi'_2,...,\xi'_n> = \omega' \delta(\xi_1-\xi'_1)\delta(\xi_2-\xi'_2)...\delta(\xi_n-\xi'_n)
-\end{equation}
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Mean Value of an Observable]
+    \begin{equation}
+        <\xi> = \sum_i |<x|\xi_i>|^2 \xi_i + \int |<x|\xi'>|^2 \xi' d\xi'
+    \end{equation}
+\end{tcolorbox}
 
 
-\subsection{Applicazione delle rappresentazioni alla probabilità di una misura}
-Nel caso di una misura di n set di n osservabili commutative, la probabilità di ottenere un set di autovalori $\xi_1,\xi_2,...,\xi_n$ è data da:
+\section{Wave function as a representation of a ket}
 
-\begin{equation}
-    P_{\xi_1,\xi_2,...,\xi_n} = <x|\delta_{\xi_1,\xi_1}\delta_{\xi_2,\xi_2}...\delta_{\xi_n,\xi_n}|x>
-\end{equation}
+A generic function of observables can represent the evolution of a quantum system in time.
 
-si trova immediatamente che la probabilità di una misura di un osservabile non è altro che il modulo quadro dello stato a cui si applica l'operatore set di autovalori in questione.
-Dunque la media di una misura di un osservabile è data da:
-
-\begin{equation}
-    <\xi> = \int \xi' P_{\xi'}d\xi'
-\end{equation}
-
-dove l'integrale è esteso allo spettro dell'osservabile $\xi$, nel caso in cui sia continuo. Alternativamente l'integrale si riduce ad una sommatoria.
-
-
-\section{Funzione d'onda come rappresentazione di ket}
-Una generica funzione di osservabili può rappresentarre un ket in H, ovvero uno stato variabile dinamicamente nel contesto di una sistema quantistico.
-Si definisce ora la funzione d'onda come rappresentazione di un ket, ovvero come funzione di osservabili operante sul ket standard $>$:
+One defines the wave function as the representation of a ket, that is, as a function of observables operating on the standard ket $>$:
 
 \begin{equation}
     \psi = |\psi>
 \end{equation}
 
-dunque, sottointendendo ora la presenza del ket standard $>$, si desume che la differenza tra una generica funzione di osservabili f e $\psi$ è che
-quest'ultima può essere applicata ad un operatore solo a sinistra, mentre f da entrambi i lati.
-Le proprietà che tale funzione deve soddisfare, affinhé possa essere rappresentativa dell'evoluzione di un
-sistema quantistico nel tempo, sono:
+So, assuming the presence of the standard ket $>$, it follows that the difference between a generic function of observables $f$ and $\psi$ is that
+the latter can be applied to an operator only on the left, while $f$ can be applied to both sides.
 
-\begin{itemize}
-    \item $\psi$ $\in$ $L^2(\mathbb{R}^3)$, a meno di normalizzazione "in scatola".
-    \item $P$(x,t)=|$\psi(x,t)$|$^2$ è la densità di probabilità di misurare il sistema in x al tempo t, nel caso in cui $\psi$ sia normalizzata.
-    \item La probabilità totale estesa su tutto lo spazio è pari a 1.
-\end{itemize}
+The properties it has to satisfy in order to represent a state of a quantum system are:
 
-Fisicamente, dunque, una generica f non rappresenta lo stato del sistema quantistico, mentre la $\psi$ così definita sì.
-In generale, è corretto affermare che per ogni funzione d'onda esiste una forma di equazione di Shrodinger tale per cui essa risulta soluzione. Questo non è in generale vero
-per una generica funzione di osservabili. (affermazione da verificare...costituirebbe un sunto delle proprietà di $\psi$).
+\begin{tcolorbox}[colframe=gray!90, colback=blue!5, coltitle=white, title=\textbf{Definition: Wave Function}, fonttitle=\large\bfseries]
+    $\psi$ $\in$ $L^2(\mathbb{R}^3)$ is a wave function if:
+    \begin{itemize}
+        \item $\psi$ $\in$ $L^2(\mathbb{R}^3)$.
+        \item $P$(x,t)=|$\psi(x,t)$|$^2$ is the probability density of finding the particle in the interval $[x,x+dx]$ at time t.
+        \item $\int_{-\infty}^{\infty}$ |$\psi(x,t)$|$^2$dx=1.
+    \end{itemize}
+\end{tcolorbox}
 
 
-\subsection{Esempio di funzione d'onda}
+\subsection{Example of wave function}
 Sullo spazio di Hilbert degli stati, diagonalizzato rispetto all'osservabile impulso, le armoniche piane relative ad uno spettro continuo di impulsi, costituiscono una base ortonormale.
 Pertanto, considerando un modello di pacchetto d'onda, ovverosia un'onda risultante dalla sovrapposizione di armoniche di base tali che l'impulso sia incluso in
 un certo range, si può scrivere la funzione d'onda, secondo la rappresentazione di ket dell'equazione ... come:
