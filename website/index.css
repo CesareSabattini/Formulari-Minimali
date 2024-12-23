@@ -106,3 +106,15 @@ select:hover {
   opacity: 0.6; /* Mostra l'immagine con opacità */
   transition: opacity 0.5s ease-in-out; /* Mantieni la transizione opacità */
 }
+
+#github-link {
+  background: none;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #e0e0e0;
+  margin-top: 0.5rem;
+  font-weight: bolder;
+  font-family: "Courier New", Courier, monospace;
+}
