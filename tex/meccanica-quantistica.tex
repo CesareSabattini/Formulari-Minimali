@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass{report}
 
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
@@ -27,11 +27,13 @@
 \tableofcontents
 \newpage
 
-\section{Introduzione}
+\chapter{Introduzione}
 ATTENZIONE: formulario ancora in fase di sviluppo. Alcune informazioni potrebbero essere incomplete o errate.
 Inoltre, è in corso la riscrittura in inglese.
 
-\section{Development of the formalism}
+
+
+\chapter{Development of the formalism}
 
 \subsection{Bra an Ket}
 
@@ -370,337 +372,263 @@ For the canonical operators, in particular, due to the fundamental commutation r
   \Delta q_i \Delta p_j\geq \frac{\hbar}{2}\delta_{ij}
 \end{equation}
 
-\subsection{Traslation operators}
-One can study the representation of a finite translation on an Hilbert space
-from its Lie algebra:
+\subsection{Time traslation operator and Shrodinger equation}
 
 
-
-The representation of the infinitesimal translation operator on an Hilbert space is given by
-the basis
-... da terminare...
-
-
-
-Si definiscono operatori di traslazione, tali per cui risulti valida la seguente relazione:
+Translations operators are defined as operators that satisfy the following relation:
 
 \begin{equation}
   |R\rangle =c_1|A\rangle +c_2|B\rangle  \rightarrow |Rd\rangle =c_1|Ad\rangle +c_2|Bd\rangle
 \end{equation}
 
-in tal modo la sola arbitrarietà dei ket traslati risulta essere data da un fattore di fase.
-Si vede immediatamente che la traslazione di un ket è lineare, per cui si può definire l'operatore D:
+from which derives the unitarity of the traslation operator.
 
-\begin{equation}
-  D|A\rangle =|Ad\rangle
-\end{equation}
+Given a translation operator D, it's easy to dderive how an observable transforms under a traslation:
 
-D è determinato a meno di un fattore di fase.
-Le leggi fisiche devono essere invarianti per traslazione..
-Da tale asserto si possono ricavare le principali propietà dell'operatore D:
-
-\begin{equation}
+\begin{align*}
   \left\{
   \begin{aligned}
-     & \langle Q |P\rangle =c=\langle Qd|Pd\rangle                                                     \\
-     & \langle Q |\bar{D}= \langle Qd| \rightarrow \langle Q |D \bar{D}|P\rangle =\langle Qd|Pd\rangle
+     & \xi'= |a'><a'|          \\
+     & |a'\rangle = D|a\rangle \\
+     & <a'|= <a|D^{-1}
   \end{aligned}
   \right.
-\end{equation}
+  \rightarrow \xi'= D\xi D^{-1}
+\end{align*}
 
-dunque, essendo l'immagine dell'operatore coincidente con $L(H)$, ossia l'insieme completo degli operatori
-lineari su H, D risulta unitario.
-Inoltre:
+The form of the time translation operator T and the Shrodinger equation are logically
+equivalente postulates of quantum mechanics. One of them is necessary.
+
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Time translation operator and Shrodinger equation]
+  \begin{equation}
+    T=e^{-\frac{i}{\hbar}Ht} \longleftrightarrow i\hbar \frac{\partial \psi}{\partial t}=H\psi
+  \end{equation}
+\end{tcolorbox}
+
+Equivalently, the Hamiltonian operator form a representation of the Lie algebra of the time traslation operator.
+
+\vspace{1cm}
+\textbf{Proof:}
+
+First forward:
+
+\begin{align*}
+   & T=e^{-\frac{i}{\hbar}Ht}\rightarrow |\psi(t)\rangle =T|\psi\rangle =e^{-\frac{i}{\hbar}Ht}|\psi\rangle \rightarrow \\
+   & \rightarrow i\hbar \frac{\partial}{\partial t}|\psi(t)\rangle= H\frac{\partial}{\partial t}|\psi\rangle
+\end{align*}
+
+Then backward:
+
+\begin{align*}
+   & i\hbar \frac{\partial}{\partial t} |\psi\rangle = H |\psi\rangle \rightarrow |\psi(t)\rangle=e^{-\frac{i}{\hbar}Ht}|\psi\rangle=T|\psi\rangle
+\end{align*}
+
+
+Therefore, the Lie group of the time traslation operator is represented by the Hamiltonian operator,
+meaning that:
+
+\begin{align*}
+  T|\psi\rangle=e^{-\frac{i}{\hbar}Ht}|\psi\rangle = -\frac{i}{\hbar}Ht|\psi\rangle+o(t^2)
+\end{align*}
+
+\subsection{Heisenberg equations of motion}
+
+Symmetrically to the Shrodinger representation, it's possible to build a formalism in which the states remain unchanged in time,
+while the observables change.
+
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Heisenberg equations of motion]
+  \begin{equation}
+    \frac{d\xi}{dt}=\frac{i}{\hbar}[\xi,H]
+  \end{equation}
+\end{tcolorbox}
+
+\textbf{Proof:}
+For a generic observable $\xi$:
+
+\begin{align*}
+   & \xi (t) = T\xi T^{-1} \rightarrow T\xi (t) = \xi T \rightarrow                     \\
+   & \frac{d}{dt}T\xi T^{-1} = \frac{d}{dt}T\xi T^{-1} \rightarrow                      \\
+   & \rightarrow HT\xi (t) + i\hbar T\frac{d\xi (t)}{dt} = T\frac{d\xi}{dt} \rightarrow \\
+   & \rightarrow i\hbar \frac{d\xi}{dt} = T\xi (t)H - H\xi (t)T \rightarrow             \\
+   & \rightarrow \frac{d\xi}{dt} = \frac{i}{\hbar}[\xi,H]
+\end{align*}
+
+Therefore, if an observable is constant in time, it must commute with the Hamiltonian.
+
+
+
+
+Diagonalizing the Hilbert space in respect to the Hamiltonian, one finds that the matrix elements of the observables are periodic in time, with a frequency given by the difference of the eigenvalues of the Hamiltonian:
+
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Matrix elements periodicity]
+  \begin{equation}
+    \nu= \frac{E'-E''}{h}
+  \end{equation}
+\end{tcolorbox}
+
+\textbf{Proof:}
+
+The only hypotesis of diagonalization in respect to H allows to convert the exponential of an operator in the exponential of a scalar:
+\begin{align*}
+  <H'|\xi(t)|H''>=<H'|T \xi T^{-1} |H''>=e^{\frac{i}{\hbar}(H'-H'')t}<H'|\xi|H''>
+\end{align*}
+
+From which one can extract the periodicity of the matrix elements.
+
+\chapter{1D Systems}
+
+\section{Introduction}
+In the Shrodinger picture, a state evolves as:
 
 \begin{equation}
+  \psi(x,t)=T\psi(x,0)=e^{-\frac{i}{\hbar}H't}\psi(x,0)
+\end{equation}
+
+this implies that the Shrodinger equation can be conveniently reduced for stationary systems to the eigenvalue equation of the Hamiltonian for t=0:
+
+\begin{align*}
+   & i\hbar \frac{\partial}{\partial t}  |\psi(t)\rangle = H|\psi(t)\rangle= E|\psi(t)\rangle =                                                           \\
+   & i\hbar e^{-\frac{i}{\hbar}H't}\frac{\partial}{\partial t} \psi(x,0)=H'e^{-\frac{i}{\hbar}H't}\psi(x,0)=Ee^{-\frac{i}{\hbar}H't}\psi(x,0) \rightarrow \\
+   & \rightarrow H |\psi(x, 0)\rangle = \hat{p}^2\psi(x,0)+V(x)\psi(x,0)=E\psi(x,0) \rightarrow                                                           \\
+   & -\hbar^2\frac{d^2}{dx^2}\psi(x,0)+V(x)\psi(x,0)=E\psi(x,0)
+\end{align*}
+
+To obtain the solution at a generic time, one can use the time traslation operator T.
+
+One dimensional system are kinda of a paradox, since they would simply violate the Heisenberg principle for
+the othogonal components.
+
+However, their importance emerges whenever a problem can be broken down into
+one dimensional problems, for independent degrees of freedom.
+
+\subsection{Fundamental theorems}
+
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Non degeneracy of the spectrum]
+  The spectrum of the Hamiltonian of a one dimensional system is non degenerate.
+\end{tcolorbox}
+
+\textbf{Proof:}
+
+Suppose that 2 states are eigenstates of the Hamiltonian with the same eigenvalue:
+
+\begin{align*}
+   & \left\{
   \begin{aligned}
-     & \xi |P\rangle =|R\rangle  \rightarrow \xi_d |Pd\rangle = |Rd\rangle \\
-     & D^{-1}\xi D |P\rangle = |R\rangle  \quad \forall  \xi \in L(H)
+     & H|\psi_1\rangle = -\hbar^2\frac{d^2}{dx^2}\psi_1(x)+V(x)\psi_1(x)=E\psi_1(x) \\
+     & H|\psi_2\rangle = -\hbar^2\frac{d^2}{dx^2}\psi_2(x)+V(x)\psi_2(x)=E\psi_2(x)
   \end{aligned}
-\end{equation}
+  \right. \rightarrow                                                                                                                                               \\
+   & \psi_2 \frac{d^2 \psi_1}{dx^2} - \psi_1 \frac{d^2 \psi_2}{dx^2}=0                                                                                              \\                                                                                         \\
+   & \frac{d}{dx}(\psi_2 \frac{d \psi_1}{dx} - \psi_1 \frac{d \psi_2}{dx})=0 \rightarrow \psi_2 \frac{d \psi_1}{dx} - \psi_1 \frac{d \psi_2}{dx}=cost=0 \rightarrow \\
+   & \frac{d}{dx}\ln(\psi_1)=\frac{d}{dx}\ln(\psi_2) \rightarrow \ln(\psi_1)=\ln(\psi_2)+cost \rightarrow \psi_1=\psi_2e^{cost}=C\psi_2
+\end{align*}
 
-quindi gli osservabili si trasformano come:
+Where the constant is equalized to zero, since $\psi_{1,2}\in \mathcal{L}^2$.
 
-\begin{equation}
-  \xi_d = D \xi D^{-1}
-\end{equation}
-Considerando ora una traslazione infinitesima, mi aspetto che esista, per continuità fisica,
 
-\begin{equation}
-  \lim_{\delta x \rightarrow 0} \frac{|Pd\rangle -|P\rangle }{\delta x}= \frac{D-1}{\delta x}|P\rangle \equiv d_x |P\rangle
-\end{equation}
-dove si è definito l'operatore di traslazione infinitesimo lungo x.
-Inoltre, considerando la variabilità dell'operatore in funzione della fase, essa deve tendere ad 1 per $\delta x \rightarrow 0$:
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Parity of the solutions]
+  The solutions of the Shrodinger equation for a one dimensional system with even Hamiltonian are either even or odd.
+\end{tcolorbox}
 
-\begin{equation}
-  \lim_{\delta x \rightarrow 0} \frac{De^{i\gamma}-1}{\delta x}|P\rangle = \frac{D-1+i\gamma}{\delta x}\equiv d_x+ia_x
-\end{equation}
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Minimum value]
+  If the potential V(x) has an absolute minimum, any Hamiltonian eigenvalue is greater or equal to the minimum value of the potential.
+\end{tcolorbox}
 
-è infatti intuitivo routare un ket mediante un immaginario puro.
-Si dimostra inoltre che l'operatore di traslazione infinitesimo è immaginario puro.
-Per spostamenti infinitesimi vale:
+\textbf{Proof:}
 
-\begin{equation}
-  D= 1+d_x\delta x \rightarrow \delta x (\bar{d_x}+d_x)=0
-\end{equation}
+\begin{align*}
+   & -\frac{\hbar^2}{2m}\int_{-\infty}^\infty \psi*(x)\frac{d^2}{dx^2} \psi(x)dx + \int_{-\infty}^\infty V(x)\psi*(x)\psi(x)dx = E\int_{-\infty}^\infty \psi*(x)\psi(x)dx \leftrightarrow \\
+   & \leftrightarrow <V>+<T>=E\geq V_{min}+<T>\geq V_{min}
+\end{align*}
 
-Si trova ora la relazione fondamentale tra operatore di traslazione e impulso:
 
-\begin{equation}
+\section{Infinite potential well}
+
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Infinite potential well]
+  Given a potential V(x) such that:
+  \begin{equation}
+    \left\{
+    \begin{aligned}
+       & V(x)=0 \quad se \quad 0\leq x\leq L \\
+       & V(x)=\infty \quad otherwise
+    \end{aligned}
+    \right.
+  \end{equation}
+
+  a general state is given by:
+
+  \begin{equation}
+    \Psi(x,t)=\left(\sum_0^\infty \psi_n(x) \right)e^{-\frac{i}{\hbar}H t}= \left(\sum_0^\infty \sqrt{\frac{2}{L}}\sin\left(\frac{n \pi}{L}\right) \right)e^{-\frac{i}{\hbar}H t}
+  \end{equation}
+
+  with energy
+
+  \begin{equation}
+    E= \sum_0^\infty E_n= \sum_0^\infty \frac{\hbar^2 \pi^2 n^2}{2mL^2}
+  \end{equation}
+
+\end{tcolorbox}
+
+
+
+The particle function cannot exist for x<0 and x>L, so $\psi(0)=\psi(L)=0$.
+
+In the segment, the spectrum is discrete as shown it the following:
+
+\begin{align*}
+   & H|psi>=-\hbar^2\frac{d^2}{dx^2} \psi(x)= E\psi(x) \rightarrow \frac{d^2}{dx^2}\psi(x)=-\frac{2mE}{\hbar^2}\psi(x) \rightarrow \\
+   & \left\{
   \begin{aligned}
-     & \lim_{\delta x \rightarrow 0} \frac{v_d-v}{\delta x}= d_xv-vd_x               \\
-     & d_x x- xd_x= \lim_{\delta x \rightarrow 0} \frac{x-\delta x -x}{\delta x}= -1 \\
-     & p_x= i\hbar d_x
+     & \psi(x)=A\sin(kx)+B\cos(kx) \\
+     & \psi(0)=\psi(L)=0           \\
+     & k= \frac{\sqrt{2mE}}{\hbar}
   \end{aligned}
-\end{equation}
-
-Dove si sono trascurati i termini $\delta x^2$, e si è dimostrata la validità della commutazione di $d_x$ con la sola variabile x.
-Si trova con ragionamenti analoghi che le condizioni quantiche di $i\hbar d_x$ e $p_x$, rispetto alle altre variabili canoniche, sono le stesse.
-Perciò è lecita tale rappresentazione.
-La traslazione è un operatore unitario, e dunque è un'isometria. Non è in generale vero che un'isometria sia un operatore unitario, per via
-della condizione di suriettività.
-
-
-\section{Equations of motion}
-
-
-
-
-Si vuole ora studiare l'evoluzione di un sistema quantistico in funzione del tempo.
-In linea con il principio di causlità, possiamo supporre l'evoluzione temporale come un operatore di traslazione, in accordo con quanto sviluppato
-nel paragrafo precedente.
-Dato un  ket $|P\rangle $, si può definire l'operatore di traslazione temporale T:
-
-\begin{equation}
+  \right. \rightarrow                                                                                                              \\
+   & \left\{
   \begin{aligned}
-     & T |P\rangle = |P(t)\rangle
+     & \psi=A\sin(kx)
+     & k= \frac{\sqrt{2mE}}{\hbar}=\frac{n \pi}{L}
   \end{aligned}
-\end{equation}
+  \right. \rightarrow
+   & E_n= \frac{\hbar^2 n^2 \pi^2}{2mL^2}
+\end{align*}
 
-che gode delle proprietà precedentemente dimostrate per un generico operatore di traslazione.
-Come precedentemente dimostrato, vale la relazione:
+The condition of normalization leads to:
 
-\begin{equation}
-  d_t= \lim_{\delta t \rightarrow 0} \frac{T-1}{\delta t}
-\end{equation}
-
-In analogia con quanto fatto precedentemente per l'operatore di tralazione di coordinate e l'impulso, posso porre:
-
-\begin{equation}
-  \begin{aligned}
-     & d_t= i\hbar H
-  \end{aligned}
-\end{equation}
-
-in questo modo ho:
-
-\begin{equation}
-  \begin{aligned}
-     & \lim_{\delta t \rightarrow 0} \frac{T-1}{\delta t}|P\rangle = \frac{d |P\rangle }{d to_0}= d_t |P\rangle \\
-     & i\hbar \frac{d |P\rangle }{dt}= H|P\rangle
-  \end{aligned}
-\end{equation}
-
-o, operatorialmente:
-
-\begin{equation}
-  i\hbar \frac{d T}{dt}= HT \rightarrow T=e^{-\frac{i}{\hbar}Ht}
-\end{equation}
-
-Si dimostra che H è l'hamiltoniana del sistema per un principio di simmetria:
-l'invarianza del sistema fisico per traslazioni di coordinate determina la conservazione della quantità di moto,
-mentre l'invarianza per traslazioni temporali determina la conservazione dell'energia \footnote{
-  Ragionamento non di certo formale, ma logicamente esaustivo. Magari in futuro proverò a fare una dimostrazione
-  più rigorosa.
-}
-
-Introducendo ora il formalismo del ket standard, su uno spazio di Hilbert tale per cui un osservabile $\xi$ sia diagonale,
-si giunge all'equazione di Schrödinger, che descrive l'evoluzione temporale dello stato di un sistema quantistico:
-
-\begin{equation}
-  i\hbar \frac{\partial \psi(\epsilon,t)\rangle }{\partial t}= H\psi(\epsilon,t)\rangle
-\end{equation}
-
-\subsection{Forma di Heisenberg delle equazioni del moto}
-Simmetricamente alla rappresentazione di Schrödinger, è possibile costruire un formalismo tale per cui gli stati rimangano invariati nel tempo,
-mentre le osservabili mutino.
-Matematicamente, ciò equivale a ripercorrere il processo di ricavazione della trasformazione di una generica variabile dinamica $v$, fatta nella sezione precedente,
-nell'ambito di una traslazione temporale.
-Si ricavano di seguito le equazioni del moto di Heisenberg per un generico osservabile $\xi$:
-
-\begin{equation}
-  \begin{aligned}
-     & v_t=T^{-1}vT \rightarrow Tv_t= vT                 \\
-     & \frac{dT}{dt}v_t+T\frac{dv_t}{dt}= v\frac{dT}{dt} \\
-     & HTv_t+i\hbar T \frac{d v_t}{dt}=v\frac{dT}{dt}    \\
-     & i\hbar \frac{dv_t}{dt}=v_tH_t-H_tv_t              \\
-     & \frac{dv_t}{dt}=[v_t, H_t]
-  \end{aligned}
-\end{equation}
-
-In accordo con il principio di corrispondenza, si è ricavata una perfetta analogia con le equazioni del moto classiche.
-In particolare, se $\xi$ è una costante del moto, allora commuta con l'Hamiltoniano.
-Si può dimostrare che in meccanica quantistica valgono le stesse leggi di conservazione della meccanica classica.
-
-\subsection{Stati stazionari}
-Per sistemi stazionari, cioè ad energia costante, vale l'equazione 57.
-Diagonalizando lo spazio di Hilbert rispetto all'Hamiltoniana, si può scrivere, per un generico autostato $|H'\rangle $:
-
-\begin{equation}
-  T |H'\rangle = e^{-\frac{i}{\hbar}Ht}|H'\rangle = e^{-\frac{i}{\hbar}H't}|H'\rangle
-\end{equation}
-
-semplificando notevolmente l'equazione (per via della difficoltà di calcolare l'esponenziale di un operatore).
-In questo modo, si è ricavato il seguente risultato: Per un sistema stazionario, lo stato evolve nel tempo solo per un fattore di fase.
-Un sistema stazionario è così rappresentato da un autostato dell'Hamiltoniana.
-La rappresentazione di ket su uno spazio di Hilbert diagonalizzato rispetto ad H prende il nome di rappresentazione di Heisenberg.
-In questa base, è ricavabile l'espressione matriciale dell'evoluzione nel tempo di una generica osservabile $\xi$:
-
-\begin{equation}
-  \begin{aligned}
-    \langle H'|\xi(t)|H''\rangle =\langle H'|e^{\frac{i}{\hbar}Ht}\epsilon e^{-\frac{i}{\hbar}Ht}|H''\rangle =e^{\frac{i}{\hbar}(H'-H'')t}\langle H'|\xi|H''\rangle
-  \end{aligned}
-\end{equation}
-Nel caso degli elementi di matrice dell'osservabile $\xi$, risulta una periodicità con frequenza pari a:
-
-\begin{equation}
-  \nu= \frac{E'-E''}{h}
-\end{equation}
-in accordo con il modello di Bohr.
-
-\subsection{Equazioni del moto per una particella libera}
-L'evoluzione temporale dello stato di unsistema quantistico in uno spazio di Hilbert diagonalizzato rispetto all'impulso,
-è descritta dall'equazione di Schrödinger, come già affrontato.
-Si calcolano ora le equazioni delle osservabili canoniche nel tempo,secondo la rappresentazione di Heisenberg.
-L'Hamiltoniana di un sistema quantistico di particella libera, senza approssimazioni relativistiche, è pari a:
-
-\begin{equation}
-  H=c\sqrt{p^2+m^2c^4}
-\end{equation}
-
-le equazioni del moto di Heisenberg per la coordinata x sono date da:
-
-\begin{equation}
-  \begin{aligned}
-     & \frac{dx(t)}{dt}= [x(t),H(t)]          \\
-     & i\hbar \frac{dx}{dt}= \frac{c^2p_x}{H}
-  \end{aligned}
-\end{equation}
-
-Analoghe equazioni si ottengono per le altre coordinate.
-nella rappresentazione di Schrödinger, con diagonalizzazione rispetto all'impulso, si ottiene la ben nota equazione di De Broglie.
-E' utile notare che le onde piane sono anche autostati di H. Dunque, l'impulso e l'Hamiltoniano commutano. Pertanto l'impulso è una costante del moto di una particella libera.
-
-\section{1D Systems}
+\begin{align*}
+  \int_0^L|\psi(x)|^2 dx=A^2\int_0^L \sin^2(kx)dx=1 \rightarrow A=\sqrt{\frac{2}{L}}
+\end{align*}
 
 
-Considerando uno stato stazionario, esso evolve nel tempo a meno di un fattore di fase, essendo l'operatore di traslazione temporale dato da:
+One can verify that the eigenstates form a complete othonormal system for $\mathcal{L}^2(0,L)$.
 
-\begin{equation}
-  T=e^{-\frac{i}{\hbar}H't}
-\end{equation}
-con H' autovalore di H nella rappresentazione di Heisenberg.
-Per cui, il problema si riduce semplicemente a calcolare le soluzioni dell'equazione agli autovalori di H per t=0, per poi applicarvi l'operatore di traslazione temporale T.
-E' importante notare come la soluzione $\psi(x,t)$ risulti essere ancora un autostato dell'Hamiltoniano, ovviamente, essendo a questo punto la funzione d'onda fattorizzata.
+One can even calculate the mean value of the position on a stationary state.
 
-Sebbene i sistemi unidimensionali rappresentino una sorta di paradosso a livello quantistico, essi si rivelano utili nell'estensione a sistemi multidimensionali.
-Si pensi, per esempio, al fatto che ogni sistema naturale periodico ammette una decomposizione in oscillazioni proprie.
-Si tratta ora di studiare casi specifici, in funzione del potenziale V(x).
+...da inserire calcoli...
 
-\subsection{Buca di potenziale infinita}
 
-Il potenziale V(x) è definito da:
 
-\begin{equation}
-  \left\{
-  \begin{aligned}
-     & V(x)=0 \quad se \quad 0\leq x\leq L \\
-     & V(x)=\infty \quad altrimenti
-  \end{aligned}
-  \right.
-\end{equation}
+\section{Delta attractive potential}
 
-seguono le condizioni al contorno:
+\begin{tcolorbox}[colframe=gray!50, colback=gray!10, coltitle=black, title=Delta attractive potential]
 
-\begin{equation}
-  \psi(0)=\psi(L)=0
-\end{equation}
+  Given the potential V(x):
+  \begin{align*}
+    V(x)=-\alpha \delta(x)
+  \end{align*}
 
-L'equazione di Shroedinger nella regione interna è quella di una particella libera, nell'ambito di un'approssimazione
-non relativistica. Per t=0:
 
-\begin{equation}
-  -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\psi_0= E\psi_0
-\end{equation}
+\end{tcolorbox}
 
-la cui soluzione è del tipo:
 
-\begin{equation}
-  \left\{
-  \begin{aligned}
-     & \psi_0=A\sin(kx)+B\cos(kx) \\
-     & k=\frac{\sqrt{2mE}}{\hbar}
-  \end{aligned}
-  \right.
-\end{equation}
+\textbf{Proof:}
 
-che, a sistema con le condizioni a contorno diviene:
-
-\begin{equation}
-  \begin{aligned}
-    \psi_0= A\sin(kx) \quad , \quad k=\frac{n\pi}{L}
-  \end{aligned}
-\end{equation}
-
-Da cui emerge una quantizzazione dell'energia:
-
-\begin{equation}
-  E_n=\frac{\hbar^2n^2\pi^2}{2mL^2}
-\end{equation}
-
-Per calcolare la distribuzione di probabilità dello stato n-esimo, calcolo la costante di normalizzazione A:
-\begin{equation}
-  \begin{aligned}
-     & \langle \psi_n | \psi_n\rangle =1                                \\
-     & \int_{0}^{L} A^2\sin^2(kx)dx=1  \rightarrow A=\sqrt{\frac{2}{L}} \\
-     & \psi_n=\sqrt{\frac{2}{L}}\sin(\frac{n\pi x}{L})
-  \end{aligned}
-\end{equation}
-
-essendo lo spazio di Hilbert dato dalla produttoria dialica R per R, per via della fattorizzazione eseguita, e sapendo che le armoniche piane costituiscono un sistema completo (in un intervallo simmetrico rispetto all'origine, dunque a meno di una traslazione),
-è sufficiente dimostrare che le onde stazionarie così trovate formano una base ortonormale per R.
-La dimostrazione è semplice e sfrutta la disparità della funzione seno.
-Dunque la funzione d'onda traslata temporalmente a t è data da, per un generico stato, come sovrapposizione delle armoniche di base traslate:
-
-\begin{equation}
-  T\psi_{0_n}\rangle = e^{-\frac{i}{\hbar}E_nt}\psi_{0_n}= \sum_{1}^{\infty} B_n \sin(\frac{n\pi x}{L})e^{-\frac{i}{\hbar}E_nt}
-\end{equation}
-
-Il valor medio della posizione è dato da \footnote{il calcolo si svolge eseguendo un'integrazione per parti}
-
-\begin{equation}
-  \begin{aligned}
-     & \langle x\rangle =\langle \psi_n |x|\psi_\rangle =...=L/2
-  \end{aligned}
-\end{equation}
-
-Si evince che il valor medio non dipende dal tempo, secondo le aspettazioni.
-
-\subsection{Potenziale deltiforme}
-
-Considero un potenziale attrattivo del tipo:
-
-\begin{equation}
-  V(x)= -\alpha \delta(x) \quad , \quad \alpha\rangle 0
-\end{equation}
-
-da cui segue un'equazione di Shroedinger agli autovalori pari a (omettendo il pedice 0)
-
-\begin{equation}
+The eigenvalues Shrodinger equation is
+\begin{align*}
   -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\psi-\alpha \delta(x)\psi=E\psi
-\end{equation}
+\end{align*}
 
-\subsubsection[short]{Stati legati}
+\subsection[short]{Stati legati}
 Mi chiedo se possano esistere stati legati, ossia stati tali per cui la probabilità all'infinito sia nulla.
 Per x $\neq$ 0, l'equazione di Shroedinger è:
 
